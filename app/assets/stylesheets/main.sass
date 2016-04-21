@@ -291,3 +291,44 @@ header
           position: absolute
         cursor: pointer
         +border-radius(50%)
+
+
+.coverage-map-wrap
+
+  .coverage-map-navigation
+    +grid-column(4)
+    padding-left: 0 !important
+    padding-right: 0 !important
+    padding-bottom: 33.33333%
+    background: #263238
+    //border: 1px solid
+    .title
+      +default_font_style(#1976d2, 24, 600, 21)
+      text-align: center
+      text-transform: uppercase
+      padding-top: 30px
+      padding-bottom: 8px
+    .subtitle
+      +default_font_style(#fff, 16, 300, 24)
+      text-align: center
+      text-transform: uppercase
+
+  .coverage-map-slider-wrap
+    +grid-column(8)
+    padding: 0 !important
+    .unit-of-measurement
+      +grid-column(6)
+      border: 1px solid
+      padding-bottom: 50%
+    .coverage-map-slider-inner
+      .coverage-map-slider
+        ul#coverage-map
+          list-style: none
+          li
+            .cover-photo
+              +grid-column(6)
+              .image
+                height: 100%
+            .coverage-object-info
+              +grid-column(6)
+              background: #263238

@@ -4,9 +4,19 @@
 
 $(document).ready ->
 #  =========================================================================
-#  one advert banner
+#  main banner
 #  =========================================================================
   $("ul#main-banner").bxSlider
+  #    auto: true,
+    pause: 5000
+    controls: false
+  #    pagerCustom: ".promotion-banner-pager"
+
+
+#  =========================================================================
+#  coverage map
+#  =========================================================================
+  $("ul#coverage-map").bxSlider
   #    auto: true,
     pause: 5000
     controls: false
