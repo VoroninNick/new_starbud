@@ -1,0 +1,406 @@
+
+= line
+  display: inline-block
+  width: $navicon-size
+  height: $navicon-size/7
+  background-color: rgba(0,255,0,.25)
+  background-image: radial-gradient(yellow 10%, rgba(0,0,0,.25) 10%, rgba(0,0,0,.25) 50%, transparent 50%)
+  background-repeat: no-repeat
+  background-size: $navicon-size/7 $navicon-size/7
+  user-select: none
+  border-radius: $navicon-size/14
+  color: green
+  transition: .3s
+  box-shadow: inset 0 0 0 .125rem
+
+= default_font_style($color, $size, $weight, $line-height )
+  color: $color
+  font-size: rem-calc($size)
+  font-weight: $weight
+  line-height: $line-height+px
+
+= triangle($dir, $size, $color)
+  border: $size transparent solid
+  width: $size
+  @if ($dir == "top" or $dir == "up")
+    border-bottom-color: $color
+  @else if ($dir == "right" or $dir == "after")
+    border-left-color: $color
+  @else if ($dir == "bottom" or $dir == "down")
+    border-top-color: $color
+  @else if ($dir == "left" or $dir == "before")
+    border-right-color: $color
+
+= my_vertical_align($size: 50%)
+  position: relative
+  top: $size
+  -webkit-transform: translateY(-$size)
+  -moz-transform: translateY(-$size)
+  -ms-transform: translateY(-$size)
+  -o-transform: translateY(-$size)
+  transform: translateY(-$size)
+  @content
+
+= my_horizontal_align
+  position: relative
+  left: 50%
+  -webkit-transform: translateX(-50%)
+  -moz-transform: translateX(-50%)
+  -ms-transform: translateX(-50%)
+  -o-transform: translateX(-50%)
+  transform: translateX(-50%)
+  @content
+
+= my_center_align ($top: 50%)
+  position: relative
+  top: $top
+  left: 50%
+  -webkit-transform: translate(-50%, -50%)
+  -moz-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%)
+  -o-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+  @content
+
+= scrollbar($size,$size-track,$size-thumb, $primary, $secondary: lighten($primary, 25%))
+  ::-webkit-scrollbar
+    width:  $size
+    height: $size
+
+
+  ::-webkit-scrollbar-thumb
+    background: $primary
+    width: $size-thumb
+
+
+  ::-webkit-scrollbar-track
+    background: $secondary
+    width: $size-track
+    margin-left: 3px
+    margin-right: 3px
+
+
+  // For Internet Explorer
+  body
+    scrollbar-face-color: $primary
+    scrollbar-track-color: $secondary
+
+=placeholder($color: #cccccc !important, $size: 18 !important, $font_style: italic !important)
+
+  &::-webkit-input-placeholder
+    color: $color
+    font:
+      size: rem-calc($size)
+      style: $font_style
+    @content
+
+  &:-moz-placeholder
+    color: $color
+    font:
+      size: rem-calc($size)
+      style: $font_style
+    @content
+
+  &::-moz-placeholder
+    color: $color
+    font:
+      size: rem-calc($size)
+      style: $font_style
+    @content
+
+  &:-ms-input-placeholder
+    color: $color
+    font:
+      size: rem-calc($size)
+      style: $font_style
+    @content
+
+= rotate($deg)
+  -moz-transform: rotate($deg)
+  -ms-transform: rotate($deg)
+  -webkit-transform: rotate($deg)
+  -o-transform: rotate($deg)
+  transform: rotate($deg)
+
+
+= keyframes($animation_name)
+  @-webkit-keyframes #{$animation_name}
+    @content
+
+  @-moz-keyframes #{$animation_name}
+    @content
+
+  @-o-keyframes #{$animation_name}
+    @content
+
+  @keyframes #{$animation_name}
+    @content
+
+= border-radius($radius)
+  -webkit-border-radius: $radius
+  border-radius: $radius
+  background-clip: padding-box  /* stops bg color from leaking outside the border: */
+
+= box-shadow($shadow1, $shadow2:false)
+  $params: $shadow1
+  @if $shadow2
+    $params: $shadow1, $shadow2
+  -webkit-box-shadow: $params
+  -moz-box-shadow: $params
+  box-shadow: $params
+
+= stickyfooter
+  html,body
+    height: 100% !important
+
+  body
+    display: table
+    width: 100%
+
+  .page-row
+    display: table-row
+    height: 1px
+
+  .page-row-expanded
+    min-height: 100%
+= blur($var)
+  -webkit-filter: blur($var)
+  -moz-filter: blur($var)
+  -o-filter: blur($var)
+  -ms-filter: blur($var)
+  filter: blur($var)
+
+= custom_transition($property, $time, $method: null, $duration: null)
+  -webkit-transition: #{unquote($property)} $time $method $duration
+  -moz-transition: $property $time $method $duration
+  -ms-transition: $property $time $method $duration
+  -o-transition: $property $time $method $duration
+  transition: $property $time $method $duration
+  @content
+
+= transition($transition-property, $transition-time, $method: null)
+  -webkit-transition: #{unquote($transition-property)} $transition-time $method
+  -moz-transition: $transition-property $transition-time $method
+  -ms-transition: $transition-property $transition-time $method
+  -o-transition: $transition-property $transition-time $method
+  transition: $transition-property $transition-time $method
+
+= transition_all( $transition-time)
+  -webkit-transition: unquote($transition-time)
+  -moz-transition: unquote($transition-time)
+  -ms-transition: unquote($transition-time)
+  -o-transition: unquote($transition-time)
+  transition: unquote($transition-time)
+  @content
+
+= transform($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+  @content
+
+= translateX($value)
+  -moz-transform: translateX($value)
+  -o-transform: translateX($value)
+  -ms-transform: translateX($value)
+  -webkit-transform: translateX($value)
+  transform: translateX($value)
+  @content
+= translateY($value)
+  -moz-transform: translateY($value)
+  -o-transform: translateY($value)
+  -ms-transform: translateY($value)
+  -webkit-transform: translateY($value)
+  transform: translateY($value)
+  @content
+
+= font_mixin($size: rem-calc(18), $family: "'Fira Sans', sans-serif", $height: rem-calc(24))
+  font:
+    size: $size
+    family: $family
+  line-height: $height
+  @content
+
+// keyframes mixin
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=custom_animation($duration, $name, $fill-mode: null, $delay: null)
+  -webkit-animation: $delay $duration $name $fill-mode /* Safari 4+ */
+  -moz-animation:    $delay $duration $name $fill-mode /* Fx 5+ */
+  -o-animation:      $delay $duration $name $fill-mode /* Opera 12+ */
+  animation:         $delay $duration $name $fill-mode
+
+
+
+=animation ($delay, $duration, $animation)
+  -webkit-animation-delay: $delay
+  -webkit-animation-duration: $duration
+  -webkit-animation-name: $animation
+  -webkit-animation-fill-mode: forwards /* this prevents the animation from restarting! */
+
+  -moz-animation-delay: $delay
+  -moz-animation-duration: $duration
+  -moz-animation-name: $animation
+  -moz-animation-fill-mode: forwards /* this prevents the animation from restarting! */
+
+  -o-animation-delay: $delay
+  -o-animation-duration: $duration
+  -o-animation-name: $animation
+  -o-animation-fill-mode: forwards /* this prevents the animation from restarting! */
+
+  animation-delay: $delay
+  animation-duration: $duration
+  animation-name: $animation
+  animation-fill-mode: forwards /* this prevents the animation from restarting! */
+
+@-webkit-keyframes opa_panel
+  0%
+    opacity: 1
+  50%
+    opacity: 0.5
+  100%
+    opacity: 0
+    z-index: 0
+@-moz-keyframes opa_panel
+  0%
+    opacity: 1
+  50%
+    opacity: 0.5
+  100%
+    opacity: 0
+    z-index: 0
+@-o-keyframes opa_panel
+  0%
+    opacity: 1
+  50%
+    opacity: 0.5
+  100%
+    opacity: 0
+    z-index: 0
+@keyframes opa_panel
+  0%
+    opacity: 1
+  50%
+    opacity: 0.5
+  100%
+    opacity: 0
+    z-index: 0 !important
+
+
+@-webkit-keyframes flicker
+  0%
+    opacity: .5
+  50%
+    opacity: 1
+  100%
+    opacity: .5
+@-moz-keyframes flicker
+  0%
+    opacity: .5
+  50%
+    opacity: 1
+  100%
+    opacity: .5
+@-o-keyframes flicker
+  0%
+    opacity: .5
+  50%
+    opacity: 1
+  100%
+    opacity: .5
+
+@keyframes flicker
+  0%
+    opacity: .5
+  50%
+    opacity: 1
+  100%
+    opacity: .5
+select
+  border: 0   /*Removes border*/
+  outline: none
+  appearance: none
+  -webkit-appearance: none  /*Removes default chrome and safari style*/
+  -moz-appearance: none  /*Removes default style Firefox*/
+  background: asset-url("select_arrow.png")no-repeat right #fff
+
+
+= test_transition
+  -moz-transition: all 0.5s cubic-bezier(0.33, 0.66, 0.66, 1)
+  -o-transition: all 0.5s cubic-bezier(0.33, 0.66, 0.66, 1)
+  -webkit-transition: all 0.5s cubic-bezier(0.18, 0.97, 0.64, 0.2)
+  transition: all 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19)
+
+
+
+
+
+//  default styles
+ul.v-block-wrap
+  margin: 0 !important
+  padding-top: 10px
+  li
+    list-style: none
+    float: left
+    p
+      font:
+        size: rem-calc(12)
+        family: 'Fira Sans', sans-serif !important
+        style: normal !important
+        weight: 500
+      color: #AFBDC4 !important
+      white-space: nowrap
+      margin:
+        bottom: 0 !important
+        top: 0 !important
+      padding-top: 0px
+
+      a
+        color: inherit
+        text-decoration: none
+        font-family: inherit
+        padding: 0 4px
+      a:hover
+        color: #AFBDC4
+    svg
+      width: 48px
+      height: 100%
+      path
+        fill: rgba(175, 189, 196, 1)
+  li.vbw-image
+    width: 30px
+    a
+      display: block
+      svg
+        width: 100%
+        path
+          fill: #AFBDC4
+  li.vbw-image a:hover path
+    fill: #AFBDC4
+    -webkit-transition: all 1s
+    -moz-transition: all 1s
+    -o-transition: all 1s
+    transition: all 1s
+
+  li.vbw-text
+    width: 80%
+    padding: 3% 0 0 2%
+    p
+      letter-spacing: normal !important
+      font:
+        weight: 200
+        size: rem-calc(12)
+
+
+
+

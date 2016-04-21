@@ -1,0 +1,83 @@
+=render "partials/main_banner"
+
+.main-page-media-block-wrap
+  .unit-of-measurement
+  .main-page-media-block-inner
+    .main-page-media-block.video-wrap
+      .video-item
+        iframe allowfullscreen="" class="youtube_video" data-video="http://www.youtube.com/embed/ERfPOnYostY?controls=2&amp;showinfo=0&amp;autoplay=1&amp;autohide=1" frameborder="0" id="video_4" src=""
+        .video-control-info-panel
+          .image style="background: url('#{asset_path("Starbud-video.jpg")}')no-repeat center center;"
+          .video-play-button
+            = image_tag "Starbud-play-button-1.png"
+
+.main-page-media-block-wrap.main-page-about-company
+  .unit-of-measurement
+  .main-page-media-block-inner
+    .main-page-media-block
+      .row
+        .columns
+          .title Компанія «Старбуд»
+
+          span 7 років креативної та ексклюзивної роботи на Західному ринку України
+
+          p Основний напрямок діяльності компанії Стар-Буд – оптовий і роздрібний продаж будівельно оздоблювальних матеріалів у 10 областях України:
+            Львівська, Закарпатська, Чернівецька, Хмельницька, Житомирська, Вінницька, Івано-Франківська, Рівненська, Волинська, Тернопільська.
+
+          .subtitle Наші сертифікати
+
+.main-page-media-block-wrap
+  .unit-of-measurement
+  .main-page-media-block-inner
+    .main-page-media-block
+      .main-page-media-block-part
+        .image style="background: url('#{asset_path("Starbud-photos-peoples-1-1.jpg")}')no-repeat center center;"
+
+      .main-page-media-block-part
+        .image style="background: url('#{asset_path("Starbud-photos-peoples-1-2.jpg")}')no-repeat center center;"
+
+.main-page-media-block-wrap
+  .unit-of-measurement
+  .main-page-media-block-inner
+    .main-page-media-block
+      .image style="background: url('#{asset_path("Starbud-photos-peoples-1-3.jpg")}')no-repeat center center;"
+
+.clearfix
+
+.main-page-navigation-blocks-wrap
+
+  .main-page-navigation-block-inner
+    .main-page-navigation-block
+      .main-page-navigation-item
+        .image style="background: url('#{asset_path("Starbud-catalogue-1-1.jpg")}')no-repeat center center;"
+        .main-page-navigation-item-title
+          .title Двері
+          p 452 одиниці
+
+  .main-page-navigation-block-inner.mp-nb-last
+    .main-page-navigation-block
+      .main-page-navigation-item
+        .image style="background: url('#{asset_path("Starbud-catalogue-1-2.jpg")}')no-repeat center center;"
+        .main-page-navigation-item-title
+          .title Підлога
+          p 123 одиниці
+
+    .main-page-navigation-block
+      .main-page-navigation-item
+        .image style="background: url('#{asset_path("Starbud-catalogue-1-3.jpg")}')no-repeat center center;"
+        .main-page-navigation-item-title
+          .title Стіни
+          p 300 одиниць
+
+      .main-page-navigation-item
+        .image style="background: url('#{asset_path("Starbud-catalogue-1-4.jpg")}')no-repeat center center;"
+        .main-page-navigation-item-title
+          .title Супутні товари
+          p 997 одиниць
+
+  .main-page-link-to-catalog
+    a
+      = inline_svg "file-pdf-box.svg"
+      span Завантажити каталог
+
+  .clearfix
