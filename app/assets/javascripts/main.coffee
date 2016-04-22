@@ -28,7 +28,7 @@ $(document).ready ->
   owl1 = $("ul#our-partners")
   owl1.owlCarousel
     pagination: false,
-    navigation: true,
+    navigation: false,
     items: 6 #10 items above 1000px browser width
     itemsMobile: false # itemsMobile disabled - inherit from itemsTablet option
     autoPlay : false
