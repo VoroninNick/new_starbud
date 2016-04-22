@@ -52,3 +52,5 @@ gem 'foundation-rails'
 gem 'inline_svg'
 
 gem 'bxslider-rails'
+
+gem 'owlcarousel-rails'

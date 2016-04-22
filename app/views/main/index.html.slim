@@ -146,6 +146,43 @@
   .main-page-jobs-wrap
     .main-page-jobs-inner
       .main-page-jobs
+        .main-page-jobs-top-wrap
+          .main-page-jobs-top-inner
+            .title Станьте нашим диллером
+            .subtitle
+              |Та отримайте&nbsp;
+              span унікальні переваги
+
+            .mp-jobs-why-we-wrap
+              .mp-jobs-why-we
+                = inline_svg "Starbyd-icon-for dealer-v1.svg"
+                p
+                  |Доступ до нашої
+                  br
+                    |Crm системи
+
+              .mp-jobs-why-we
+                = inline_svg "Starbyd-icon-for dealer-v2.svg"
+                p
+                  |Спеціальні
+                  br
+                    |пропозиції
+
+              .mp-jobs-why-we
+                = inline_svg "Starbyd-icon-for dealer-v3.svg"
+                p
+                  |Доступ до
+                  br
+                    | каталогу товарів
+              .clearfix
+
+            .mp-jobs-why-we-button
+              .material-component.ripple.default-button.red.float-center
+                a data-open="become_s_dealer" Стати дилером
+
+        .main-page-jobs-bottom-wrap
+          .main-page-jobs-bottom-inner
+
   .main-page-jobs-wrap
     .main-page-jobs-inner
       .main-page-jobs
@@ -157,4 +194,47 @@
         .image style="background: url('#{asset_path("Starbud-photos-peoples-1-5.jpg")}')no-repeat center center;"
   .main-page-dealers-wrap
     .main-page-dealers-inner
-      .main-page-dealers
+      .main-page-dealers.jobs-list
+        .title Вакансії
+        .subtitle Доступно 13 вакансій
+        ul
+          - 4.times
+            li
+              .title Регіональний торговий представник
+              .subtitle Івано-Франківськ
+              a
+                = inline_svg "ic_arrow_forward_black_48px.svg"
+
+        a.main-page-link-to href="http://star-bud.ua/about_us"
+          = inline_svg "ic_arrow_forward_black_48px.svg"
+
+.main-page-our-partners-wrap
+  /.title 1976d2
+  .title Наші партнери
+  .subtitle
+    |26 партнерів
+    span &nbsp;по всій україні
+
+  ul#our-partners
+    li
+      = inline_svg "Starbyd-logo-v1.svg"
+    li
+      = inline_svg "Starbyd-logo-v2.svg"
+    li
+      = inline_svg "Starbyd-logo-v3.svg"
+    li
+      = inline_svg "Starbyd-logo-v4.svg"
+    li
+      = inline_svg "Starbyd-logo-v5.svg"
+    li
+      = inline_svg "Starbyd-logo-v6.svg"
+    li
+      = inline_svg "Starbyd-logo-v7.svg"
+    li
+      = inline_svg "Starbyd-logo-v8.svg"
+    li
+      = inline_svg "Starbyd-logo-v9.svg"
+    li
+      = inline_svg "Starbyd-logo-v10.svg"
+    li
+      = inline_svg "Starbyd-logo-v11.svg"

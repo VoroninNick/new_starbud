@@ -432,7 +432,52 @@ header
         width: 100%
         height: 100%
         position: relative
+        .main-page-jobs-top-wrap
+          position: absolute
+          left: 0
+          top: 0
+          right: 0
+          bottom: 40%
+          .main-page-jobs-top-inner
+            width: 100%
+            height: 100%
+            background: #fff
+            padding-top: 35px
+            .title
+              +default_font_style(#1976d2, 24, 600, 21)
+              text-transform: uppercase
+              text-align: center
+            .subtitle
+              +default_font_style(#546e7a, 16, 300, 24)
+              text-transform: uppercase
+              text-align: center
+              span
+                font-weight: 500
+            .mp-jobs-why-we-wrap
+              padding: 0 45px
+              .mp-jobs-why-we
+                +grid-column(4)
+                svg
+                  padding: 0 30px
+                  width: 100%
+                p
+                  +default_font_style(#546e7a, 14, 300, 16)
+                  text-transform: uppercase
+                  text-align: center
+            .mp-jobs-why-we-button
+              .default-button
+                width: 140px
 
+        .main-page-jobs-bottom-wrap
+          position: absolute
+          left: 0
+          top: 60%
+          right: 0
+          bottom: 0
+          .main-page-jobs-bottom-inner
+            width: 100%
+            height: 100%
+            background: #263238
 
   .main-page-dealers-wrap
     +grid-column(6)
@@ -450,5 +495,75 @@ header
         width: 100%
         height: 100%
         background: #263238
+        &.jobs-list
+          padding: 42px 42px 0 42px
+          .title
+            +default_font_style(#1976d2, 24, 600, 21)
+            text-transform: uppercase
+            margin-bottom: 10px
+          .subtitle
+            +default_font_style(#fff, 16, 300, 24)
+            text-transform: uppercase
+
+          ul
+            margin: 0
+            margin-top: 40px
+            list-style: none
+            li
+              position: relative
+              padding-right: 40px
+              padding-top: 21px
+              padding-bottom: 19px
+              border-top: 1px solid #37474f
+              .title
+                +default_font_style(#90a4ae, 18, 600, 21)
+                text-transform: uppercase
+                margin-bottom: 0
+              .subtitle
+                +default_font_style(#90a4ae, 16, 300, 24)
+                text-transform: uppercase
+              a
+                width: 40px
+                height: 40px
+                background: #1976d2
+                display: block
+                +my_vertical_align()
+                  position: absolute
+                right: 0
+                svg
+                  path
+                    fill: #fff
+              &:last-child
+                border-bottom: 1px solid #37474f
+
+          a.main-page-link-to
+            width: 40px
+            height: 40px
+            background: #1976d2
+            display: block
+            position: absolute
+            right: 2px
+            bottom: 2px
+            svg
+              path
+                fill: #fff
+
   .image
     height: 100%
+
+.main-page-our-partners-wrap
+  background: #1976d2
+  padding-top: 45px
+  padding-bottom: 55px
+  .title
+    +default_font_style(#fff, 24, 600, 21)
+    text-transform: uppercase
+    text-align: center
+  .subtitle
+    +default_font_style(#fff, 16, 500, 24)
+    text-transform: uppercase
+    text-align: center
+    span
+      font-weight: 300
+  ul
+    li
