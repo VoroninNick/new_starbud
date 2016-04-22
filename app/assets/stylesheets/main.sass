@@ -354,6 +354,26 @@ header
           box-shadow: none
           border: none
           background: transparent
+          .bx-controls
+            .bx-controls-direction
+              width: 50%
+              position: relative
+              float: right
+              padding-left: 0.9375rem
+              padding-right: 0.9375rem
+              top: -57px
+              a
+                background-size: 65%!important
+                background-repeat: no-repeat!important
+                background-position: center!important
+                height: 40px
+                width: 20px
+                &.bx-prev
+                  background: asset-url("banner-left-arrow.png")
+                &.bx-next
+                  background: asset-url("banner-right-arrow.png")
+            .bx-pager
+              display: none
         ul#coverage-map
           list-style: none
           margin: 0
@@ -381,3 +401,54 @@ header
                   width: 100%
                   height: 100%
                   background: #263238
+                  padding-left: 0.9375rem
+                  padding-right: 0.9375rem
+                  .title
+                    +default_font_style(#1976d2, 24, 600, 21)
+                    text-transform: uppercase
+                    padding-top: 30px
+                    padding-bottom: 8px
+                  .subtitle
+                    +default_font_style(#fff, 16, 300, 24)
+                    text-transform: uppercase
+                    padding-bottom: 15px
+                  p
+                    +default_font_style(#b0bec5, 14, 300, 21)
+
+.main-page-jobs-dealers-wrap
+  .main-page-jobs-wrap
+    +grid-column(6)
+    position: relative
+    padding: 0 !important
+    padding-bottom: 50% !important
+    //border: 1px solid
+    .main-page-jobs-inner
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      .main-page-jobs
+        width: 100%
+        height: 100%
+        position: relative
+
+
+  .main-page-dealers-wrap
+    +grid-column(6)
+    position: relative
+    padding: 0 !important
+    padding-bottom: 50% !important
+    //border: 1px solid
+    .main-page-dealers-inner
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      .main-page-dealers
+        width: 100%
+        height: 100%
+        background: #263238
+  .image
+    height: 100%

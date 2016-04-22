@@ -19,5 +19,5 @@ $(document).ready ->
   $("ul#coverage-map").bxSlider
   #    auto: true,
     pause: 5000
-    controls: false
+    controls: true
   #    pagerCustom: ".promotion-banner-pager"
