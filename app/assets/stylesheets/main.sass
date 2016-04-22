@@ -695,7 +695,50 @@ footer
         text-transform: uppercase
 
   .footer-block
+    +grid-column(4)
 
 
   .footer-down
+
+#mc_embed_signup
+  position: relative
+  #mce-EMAIL
+    margin-bottom: 0
+    background: rgba(255, 255, 255, .3)
+    border: 0
+    outline: none
+
+    height: 40px
+    padding-right: 40px
+    +placeholder(rgba(255, 255, 255, .6), 14, none)
+      font-family: "Roboto", sans-serif
+  button
+    width: 40px
+    height: 40px
+    position: absolute
+    top: 0
+    right: 0
+    background: #fff
+    padding: 4px
+    svg
+      width: 100%
+      height: 100%
+      path
+        fill: #1976d2
+
+
+ul.socials
+  margin: 0
+  list-style: none
+  li
+    display: inline-block
+    a
+      display: block
+      width: 40px
+      height: 40px
+      padding: 4px
+      svg
+        width: 100%
+        height: 100%
+
 

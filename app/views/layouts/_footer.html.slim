@@ -19,7 +19,30 @@ footer
         a data-open="become_s_dealer" Стати дилером
 
     .footer-block
+      ul.socials
+        li
+          a href="https://www.facebook.com/starbudwest"
+            = inline_svg "Starbyd-social-facebook-v1.svg"
+        li
+          a href="https://vk.com/stardesign.doors"
+            = inline_svg "Starbyd-social-vk-v1.svg"
+        li
+          a href="https://instagram.com/star_dyzain_lviv/"
+            = inline_svg "Starbyd-social-insta-v1.svg"
+        li
+          a href="https://plus.google.com/101534844120340824149"
+            = inline_svg "Starbyd-social-google-v1.svg"
 
-    .footer-block
+    .footer-block.subscribe-form
+      #mc_embed_signup
+        form action="http://star-bud.us8.list-manage.com/subscribe/post?u=1f0d3bfe3fa97466d4dd1b2bd&amp;id=a4a427cb30" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate=""
+          input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Розсилка новин" required=""
+            div style="position: absolute; left: -5000px;"
+              input type="text" name="b_1f0d3bfe3fa97466d4dd1b2bd_a4a427cb30" value=""
+          .clear
+          button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value=""
+            = inline_svg "ic_arrow_forward_black_48px.svg"
+
+    .clearfix
 
   .footer-down
