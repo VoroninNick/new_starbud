@@ -84,9 +84,14 @@
 
 
 .coverage-map-wrap
-  .coverage-map-navigation
-    .title Карта покриття україни
-    .subtitle 10 областей західної та центральної україни
+  .coverage-map-navigation-wrap
+    .coverage-map-navigation-inner
+      .coverage-map-navigation
+        .title Карта покриття україни
+        .subtitle 10 областей західної та центральної україни
+
+        #navigation-map
+          = inline_svg "Starbud-map-Ukraine-v1.svg"
 
   .coverage-map-slider-wrap
     .unit-of-measurement
@@ -96,12 +101,23 @@
           li
             .cover-photo
               .image style="background: url('#{asset_path("Starbud-cities-Lviv.jpg")}')no-repeat center center;"
-            .coverage-object-info
+            .coverage-object-info-wrap
+              .unit-of-measurement
+              .coverage-object-info-inner
+                .coverage-object-info
           li
             .cover-photo
               .image style="background: url('#{asset_path("Starbud-cities-Kyiv.jpg")}')no-repeat center center;"
-            .coverage-object-info
+            .coverage-object-info-wrap
+              .unit-of-measurement
+              .coverage-object-info-inner
+                .coverage-object-info
           li
             .cover-photo
               .image style="background: url('#{asset_path("Starbud-cities-Kyiv.jpg")}')no-repeat center center;"
-            .coverage-object-info
+            .coverage-object-info-wrap
+              .unit-of-measurement
+              .coverage-object-info-inner
+                .coverage-object-info
+
+  .clearfix

@@ -295,40 +295,89 @@ header
 
 .coverage-map-wrap
 
-  .coverage-map-navigation
+  .coverage-map-navigation-wrap
     +grid-column(4)
     padding-left: 0 !important
     padding-right: 0 !important
-    padding-bottom: 33.33333%
-    background: #263238
-    //border: 1px solid
-    .title
-      +default_font_style(#1976d2, 24, 600, 21)
-      text-align: center
-      text-transform: uppercase
-      padding-top: 30px
-      padding-bottom: 8px
-    .subtitle
-      +default_font_style(#fff, 16, 300, 24)
-      text-align: center
-      text-transform: uppercase
+    padding-bottom: 33.333%
+    position: relative
+    .coverage-map-navigation-inner
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      .coverage-map-navigation
+        width: 100%
+        height: 100%
+        background: #263238
+        //border: 1px solid
+        .title
+          +default_font_style(#1976d2, 24, 600, 21)
+          text-align: center
+          text-transform: uppercase
+          padding-top: 30px
+          padding-bottom: 8px
+        .subtitle
+          +default_font_style(#fff, 16, 300, 24)
+          text-align: center
+          text-transform: uppercase
+        #navigation-map
+          padding: 55px
+          svg
+
 
   .coverage-map-slider-wrap
     +grid-column(8)
+    position: relative
     padding: 0 !important
     .unit-of-measurement
       +grid-column(6)
-      border: 1px solid
+      //border: 1px solid
       padding-bottom: 50%
     .coverage-map-slider-inner
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
       .coverage-map-slider
+        width: 100%
+        height: 100%
+        .bx-wrapper, .bx-viewport, ul#coverage-map
+          width: 100%
+          height: 100% !important
+        .bx-wrapper
+          margin: 0
+          -moz-box-shadow: none
+          -webkit-box-shadow: none
+          box-shadow: none
+          border: none
+          background: transparent
         ul#coverage-map
           list-style: none
+          margin: 0
           li
+            height: 100%
             .cover-photo
               +grid-column(6)
+              padding: 0 !important
               .image
-                height: 100%
-            .coverage-object-info
+                padding-bottom: 100%
+            .coverage-object-info-wrap
               +grid-column(6)
-              background: #263238
+              position: relative
+              padding: 0 !important
+              .unit-of-measurement
+                width: 100%
+                padding-bottom: 100%
+              .coverage-object-info-inner
+                position: absolute
+                left: 0
+                top: 0
+                right: 0
+                bottom: 0
+                .coverage-object-info
+                  width: 100%
+                  height: 100%
+                  background: #263238
