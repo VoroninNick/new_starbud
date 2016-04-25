@@ -333,8 +333,12 @@ header
         #navigation-map
           padding: 55px
           svg
+            polygon
+              cursor: pointer
+              &.current
+                fill: #1976D2
 
-
+    //class="active" data-region-id=""
   .coverage-map-slider-wrap
     +grid-column(8)
     position: relative
