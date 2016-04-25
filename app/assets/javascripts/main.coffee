@@ -34,12 +34,14 @@ $(document).ready ->
 
       console.log "current slide :", current_slide
       console.log "total slides :", total_slides
-      console.log "object :", currentSlideHtmlObject
-      console.log "html object :", currentSlideHtmlObject[0]
-      console.log "html object attr :", currentSlideHtmlObject[0].attr("data-slide-to-region")
-      console.log "html test :", $(currentSlideHtmlObject[0])
+#      console.log "object :", currentSlideHtmlObject
+#      console.log "html object :", currentSlideHtmlObject[0]
+#      console.log "html object attr :", currentSlideHtmlObject[0]
+      region_id = $(currentSlideHtmlObject[0]).attr("data-slide-to-region")
 #      console.log "html test :", currentSlideHtmlObject.dataset.slideToRegion
-#      current_polygon = $('.coverage-map-wrap').find("[data-region-id='" + reg_id + "']")
+      current_polygon = $('.coverage-map-wrap').find("[data-region-id='" + region_id + "']")
+      $('#navigation-map polygon').removeClass('current')
+      current_polygon.addClass('current')
 
 #      console.log "informetion :", this
 
