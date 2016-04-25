@@ -97,8 +97,14 @@
     .unit-of-measurement
     .coverage-map-slider-inner
       .coverage-map-slider
+        .coverage-map-slide-status
+          span.current-slide
+            |1
+          |/
+          span.total-slide
+            |6
         ul#coverage-map
-          li
+          li data-slide-to-region="14"
             .cover-photo
               .image style="background: url('#{asset_path("Starbud-cities-Lviv.jpg")}')no-repeat center center;"
             .coverage-object-info-wrap
@@ -112,7 +118,7 @@
                       Экзарация унаследованно сдвигает межпластовый огненный пояс. Сброс, но если принять для простоты некоторые докущения, жестко определяет терригенный конус выноса.
                       Закарстованность упруго аккумулирует фьорд.
 
-          li
+          li data-slide-to-region="6"
             .cover-photo
               .image style="background: url('#{asset_path("Starbud-cities-Kyiv.jpg")}')no-repeat center center;"
             .coverage-object-info-wrap
@@ -126,7 +132,7 @@
                       Экзарация унаследованно сдвигает межпластовый огненный пояс. Сброс, но если принять для простоты некоторые докущения, жестко определяет терригенный конус выноса.
                       Закарстованность упруго аккумулирует фьорд.
 
-          li
+          li data-slide-to-region="20"
             .cover-photo
               .image style="background: url('#{asset_path("Starbud-cities-Kyiv.jpg")}')no-repeat center center;"
             .coverage-object-info-wrap

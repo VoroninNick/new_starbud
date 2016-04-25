@@ -356,6 +356,19 @@ header
       .coverage-map-slider
         width: 100%
         height: 100%
+        position: relative
+        .coverage-map-slide-status
+          position: absolute
+          +grid-col(6)
+          bottom: 42px
+          right: 0
+          z-index: 1
+          +default_font_style(#fff, 14, 300, 21)
+          text-align: center
+          span
+            &.current-slide
+            &.total-slide
+
         .bx-wrapper, .bx-viewport, ul#coverage-map
           width: 100%
           height: 100% !important

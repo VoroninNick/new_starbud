@@ -21,26 +21,53 @@ $(document).ready ->
     pause: 5000
     controls: true
   #    pagerCustom: ".promotion-banner-pager"
-    onSlideAfter: ->
+
+#    onSlideBefore: ->
+#      $('.coverage-map-slide-status .total-slide').text(map_slider.getSlideCount())
+
+
+    onSlideAfter: (currentSlideHtmlObject) ->
       current_slide = map_slider.getCurrentSlide()
       total_slides = map_slider.getSlideCount()
-      console.log current_slide +'/'+total_slides
+      $('.coverage-map-slide-status .current-slide').text(current_slide)
+      $('.coverage-map-slide-status .total-slide').text(total_slides)
+
+      console.log "current slide :", current_slide
+      console.log "total slides :", total_slides
+      console.log "html object :", currentSlideHtmlObject[0]
+      console.log "html test :", $(currentSlideHtmlObject[0])
+#      current_polygon = $('.coverage-map-wrap').find("[data-region-id='" + reg_id + "']")
+
+#      console.log "informetion :", this
+
+#      $slideElement = $(currentSlideHtmlObject)
+#      current_element = $slideElement[0]
+#      console.log "element - ", current_element
+#
+#      ret_i = current_element.attr("data-slide-to-region")
+#      console.log "informetion details :", ret_i
+
+
+
 
   $('#navigation-map polygon.active').click (e) ->
     $this = $(@)
     $('#navigation-map polygon').removeClass('current')
     $this.addClass('current')
     reg_id = $this.attr 'data-region-id'
-    i = $this.attr 'data-slide-index'
-    console.log i
+#    i = $this.attr 'data-slide-index'
+
+
+    i = $this.closest('.coverage-map-wrap').find("[data-slide-to-region='" + reg_id + "']").index()
+    console.log 'element index : ',i
 
     map_slider.goToSlide i
     map_slider.stopAuto()
-    restart = setTimeout((->
-      map_slider.startAuto()
-      return
-    ), 500)
-    false
+#    restart = setTimeout((->
+#      map_slider.startAuto()
+#      return
+#    ), 500)
+#    false
 
 
 #  =========================================================================
