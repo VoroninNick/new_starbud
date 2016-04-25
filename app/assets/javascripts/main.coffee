@@ -34,8 +34,10 @@ $(document).ready ->
 
       console.log "current slide :", current_slide
       console.log "total slides :", total_slides
+      console.log "object :", currentSlideHtmlObject
       console.log "html object :", currentSlideHtmlObject[0]
       console.log "html test :", $(currentSlideHtmlObject[0])
+#      console.log "html test :", currentSlideHtmlObject.dataset.slideToRegion
 #      current_polygon = $('.coverage-map-wrap').find("[data-region-id='" + reg_id + "']")
 
 #      console.log "informetion :", this
