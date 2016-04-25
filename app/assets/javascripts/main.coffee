@@ -16,10 +16,15 @@ $(document).ready ->
 #  =========================================================================
 #  coverage map
 #  =========================================================================
+
+  total_slides =$('#coverage-map li').length
+  $('.coverage-map-slide-status .total-slide').text(total_slides)
+
   map_slider = $("ul#coverage-map").bxSlider
   #    auto: true,
     pause: 5000
     controls: true
+    infiniteLoop: false
   #    pagerCustom: ".promotion-banner-pager"
 
 #    onSlideBefore: ->
@@ -29,7 +34,7 @@ $(document).ready ->
     onSlideAfter: (currentSlideHtmlObject) ->
       current_slide = map_slider.getCurrentSlide()
       total_slides = map_slider.getSlideCount()
-      $('.coverage-map-slide-status .current-slide').text(current_slide)
+      $('.coverage-map-slide-status .current-slide').text(current_slide+1)
       $('.coverage-map-slide-status .total-slide').text(total_slides)
 
       console.log "current slide :", current_slide
@@ -59,12 +64,11 @@ $(document).ready ->
     $this = $(@)
     $('#navigation-map polygon').removeClass('current')
     $this.addClass('current')
-    reg_id = $this.attr 'data-region-id'
-#    i = $this.attr 'data-slide-index'
-
+    reg_id = $this.attr('data-region-id')
+    console.log 'data-region-id : ', reg_id
 
     i = $this.closest('.coverage-map-wrap').find("[data-slide-to-region='" + reg_id + "']").index()
-    console.log 'element index : ',i
+    console.log 'index slide : ',i
 
     map_slider.goToSlide i
     map_slider.stopAuto()

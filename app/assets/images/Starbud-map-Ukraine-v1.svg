@@ -6,7 +6,7 @@
 <g>
 	<g>
 		
-			<polygon class="active" data-region-id="6" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="" data-region-id="6" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			258,131.4 258,131.2 256.1,128.1 256,127.9 255.9,127.7 255.9,127.3 256,127.1 256.2,126.9 256.3,126.7 256.3,126.6 255.9,124.7 
 			255.8,124.2 255.8,123.9 255.9,123.6 256,123.5 256.1,123.4 256.2,123.4 257.3,123.1 257.5,123 257.7,122.7 258,122.2 258,122 
 			257.9,121.7 257.8,121.4 257.8,120.8 257.7,120.4 257.6,120.2 257.5,120.1 257,119.8 256.9,119.7 256.8,119.5 256.7,119.4 
@@ -348,7 +348,7 @@
 			264.1,208.8 264.1,209 264.1,209.1 264.2,209.3 264.4,209.6 264.4,209.7 264.6,210.6 264.7,210.7 264.8,210.9 264.9,211 
 			265.1,210.9 265.5,210.6 266.2,209.7 266.6,208.8 266.8,208.7 267,208.6 268.1,208.4 268.6,208.1 269.4,207 		"/>
 		
-			<polygon class="active" data-slide-index="2" data-region-id="20" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="active" data-region-id="20" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			145.9,202.8 145.6,202.1 145.5,201.7 145.6,201.5 145.7,201.4 145.9,201.4 146,201.3 146.1,201.1 146,201 145.5,200.7 
 			145.2,200.4 145.1,200.3 144.4,199.9 144.2,199.7 143.9,199.5 143.9,199.3 143.9,199.1 143.9,198.9 144.2,198.4 144.2,198.3 
 			144.3,198.1 144.3,197.9 144.2,197.6 144.1,197.5 144,197.6 143.8,197.8 143.7,197.9 143.5,197.9 143.2,197.7 143.1,197.5 
@@ -421,7 +421,7 @@
 			137.2,200.7 137.1,200.1 137.1,199.4 137.2,199.2 138.1,199.3 138.6,199.9 138.5,201.4 138.7,202.8 139.7,203.4 141.7,203.1 
 			142.3,203.1 142.7,203.3 143.5,203.8 144.6,204.2 145.5,204.3 146.4,203.9 		"/>
 		
-			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="active" data-region-id="19" fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			455.7,110.9 455,110.8 454.3,110.6 453.6,110.3 453,109.8 452.2,109 452,108.2 452,107.3 451.7,106 451.3,105.1 450.7,104.7 
 			450,104.4 449.3,104.3 448.1,103.8 447.4,102.5 445.8,96.2 445.8,95.5 446.3,94.9 448.9,93.7 448.1,92.7 448,91.6 448.1,90.3 
 			447.9,88.8 447.6,88.3 447.2,87.9 446.4,87.4 445.9,87 445.8,86.4 445.9,85.8 445.8,85.1 445.6,84.4 444.9,83.5 444.6,82.8 
@@ -495,7 +495,7 @@
 			452.8,111.6 453.1,111.6 454.1,111.9 454.8,112 455.3,112 455.6,111.9 455.8,111.8 455.9,111.7 456,111.6 456.1,111.4 
 			456.2,111.2 456.3,111 456.3,110.7 		"/>
 		
-			<polygon class="active" data-region-id="18" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="" data-region-id="18" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			190.5,46.1 190.1,45 189.5,44.7 187.7,44.7 184.1,43.2 184,43.2 182.9,43.2 182.3,43.5 181.3,44.5 180.6,44.9 179.9,44.9 
 			178,44.6 176.6,45 175.9,45.1 175.5,44.7 175.6,43.8 176.1,42.6 176.2,41.7 175.3,41.5 174.4,41.6 173.8,41.5 173.3,41 173,40 
 			173,38.6 173.1,37.4 172.9,36.6 172,36.1 170.7,35.8 167.7,35.6 164.4,36.8 162.2,36.5 155.9,33.7 148.5,33.4 148.1,33.2 
@@ -572,7 +572,7 @@
 			186.2,53.6 186.2,53.1 186.3,52.1 186.4,51.6 186.5,51.3 186.6,51.2 186.9,51 187.3,50.9 188.1,50.5 189.2,50.3 189.2,50.3 
 			189.1,50.2 190.2,47.5 		"/>
 		
-			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="active" data-region-id="17" fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			446.5,151.4 448.1,151.4 448.8,151.3 449,151.2 449.1,151.1 449,150.7 448.7,150 447.2,147.2 447.1,146.8 447,146.5 447,146.3 
 			447,146.1 447.1,146 447.4,145.9 447.5,145.8 447.5,145.6 447.5,145.5 447.4,144.9 447.4,144.8 447.2,144.6 447,144.6 446,144.6 
 			445.8,144.6 445.7,144.7 445.6,144.9 445.5,145.3 445.4,145.5 445.2,145.6 445.1,145.6 444.6,145.5 443,145 442.8,144.9 
@@ -1026,7 +1026,7 @@
 			394.5,191.3 394.8,190.5 395,190 395.3,189.8 395.5,189.6 395.7,189.2 396,188.9 396.2,188.7 396.2,188.5 396.3,188.3 
 			396.5,187.7 397.3,186.4 		"/>
 		
-			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="active" data-region-id="10" fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			336.7,113.4 337.2,112.6 338.1,110.4 336,109.1 335.8,108.9 335.6,108.6 335.7,108.5 335.8,108.3 336.1,108.1 336.2,108 
 			336.3,107.9 336.4,107.7 336.4,107.5 336.3,107.3 336.1,107.2 335.8,107.2 335.4,107.2 335.1,107.2 334.8,107.2 334.3,106.9 
 			334.1,106.7 333.9,106.6 333.9,106.4 333.8,106.3 333.8,106.1 333.7,105.9 333.8,105.7 333.7,105.4 333.7,105.1 333.6,104.9 
@@ -1134,7 +1134,7 @@
 			334.7,115.6 335,115.8 335.3,116 335.7,116.1 336.6,114.9 336.7,114.7 336.8,114.4 336.8,114.2 336.7,114.1 336.6,113.9 
 			336.5,113.7 336.6,113.6 		"/>
 		
-			<polygon class="active" data-region-id="23" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="" data-region-id="23" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			196.6,171.2 196.4,170.9 196.3,170.5 196.3,170.3 196.3,170.1 196.3,169.7 196.3,169.3 196.3,169.1 196.2,169 196.1,168.8 
 			196.1,168.7 195.7,168.1 195.6,168 195.5,167.8 195.5,167.6 195.5,167.3 195.5,167 195.6,166.7 195.8,166.4 196.1,166 
 			196.2,165.8 196.2,165.6 196.1,165.4 196,165.1 195.6,164.6 195.5,164.5 195.4,164.1 195.3,163.9 195.4,163.7 195.4,163.4 
@@ -1376,7 +1376,7 @@
 			533.9,140.1 534.3,139.9 534.5,139.7 534.6,139.6 534.6,139.4 534.6,139.3 533.2,138.2 533.1,138.1 533,137.9 533.1,137.8 
 			533.1,137.6 533.3,137.4 533.9,137.1 534.5,136.9 535.3,136.9 535.5,136.8 535.6,136.7 535.8,136.6 535.8,136.4 		"/>
 		
-			<polygon class="active" data-region-id="9" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="" data-region-id="9" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			121.7,194.3 121.4,193.9 121.3,193.8 121.3,193.7 121.4,193.2 121.5,192.9 121.7,192.8 121.7,192.5 121.4,191.7 121.2,191.5 
 			120.2,191 119.3,190 118.7,189.7 117.8,189.6 117.3,189.5 116.5,189 115.8,188.4 115.4,187.9 115.7,187.6 115.8,187.3 
 			116.1,186.5 115.8,186.5 115.3,186.2 115.1,186.2 114.8,186.3 114.8,186.6 114.8,187 114.8,187.2 114.2,187.3 113.8,187.2 
@@ -1685,7 +1685,7 @@
 			l0.8,0l0.3-0.2l0.2-0.4L483,360l-0.2-0.2l-0.1-0.3l0.2-0.9l0.4-0.5l0.6-0.1l0.8,0.1l1,0.5l0.4,0.1l0.4,0l1.1-0.3l0.2-0.5
 			L487.6,356.7z"/>
 		
-			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="active" data-region-id="25" fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			382.9,18.6 382.8,18.4 382.7,18.3 381.7,18.3 381.5,18.2 381.4,18.1 381.3,17.9 381.2,17.7 381.1,17.6 381,17.4 380.7,17 
 			380.1,16.2 379.3,15.4 379.2,15.3 377.7,14.8 377.5,14.7 377.5,14.2 377.3,11.6 377.5,11 378.3,10.1 378.7,9.5 378.7,9.2 
 			378.8,8.1 378.9,7.7 379.1,7.4 379.5,6.7 379.6,6.4 379.7,5.5 379.9,4.6 380,4.3 379.2,3.7 378.7,3.6 376.5,3.6 373.2,3 
@@ -1763,7 +1763,7 @@
 			379.1,22.4 379.1,22.2 379.1,20.4 379.2,20.1 379.3,19.9 379.5,19.8 379.6,19.8 379.7,19.9 379.8,20.1 379.9,20.3 379.9,20.4 
 			380.1,20.5 380.3,20.6 380.7,20.6 381.5,20.5 382.2,20.3 382.4,20.2 382.6,19.9 382.8,19.4 382.9,19 382.9,18.7 		"/>
 		
-			<polygon class="active" data-region-id="26" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="" data-region-id="26" fill-rule="evenodd" clip-rule="evenodd" fill="#CFD8DC" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			183.8,206.1 183.5,205.7 182.7,202.4 182.3,200.9 181.6,199.6 180.6,198.7 179.3,198.3 178.9,198.5 178.5,199.4 178.1,199.7 
 			177.7,199.7 177.4,199.5 177.1,199.2 176.8,199 175.5,198.7 174.8,198.8 174.9,199.5 175.2,199.7 175.5,199.8 175.7,200 
 			175.7,200.7 175.5,201 175.2,201.2 174.9,201.3 174.5,201.3 174.1,201.3 173.4,200.8 173,200.7 171.9,200.7 171.7,200.8 
@@ -1800,7 +1800,7 @@
 			173.9,211.7 175.2,211.1 175.4,210.9 177.2,208.6 178.4,208 179,208.1 180,209 180.4,209.2 181,208.9 183,207.2 183.8,206.2 
 			183.8,206.2 		"/>
 		
-			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
+			<polygon class="active" data-region-id="24" fill-rule="evenodd" clip-rule="evenodd" fill="#ECEFF1" stroke="#546E7A" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" points="
 			361.8,178.5 361.7,178.4 361.1,178.3 361,178.2 360.9,178.1 360.3,176.5 360.2,176.3 360.1,175.9 360.1,175.8 360,175.6 
 			360,175.3 360,173.9 360,173.4 359.7,172.2 359.4,171.5 359.4,171.4 359.3,171.3 359.2,171.1 359.1,171 358.7,170.7 358.5,170.4 
 			358.4,170.2 358.5,170.1 359.2,167.9 359.3,167.8 359.7,166.3 359.8,163.9 359.8,163 359.7,162.7 358.3,159 358.1,158.7 
