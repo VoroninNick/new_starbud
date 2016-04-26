@@ -61,6 +61,15 @@
   -o-transform: translate(-50%, -50%)
   transform: translate(-50%, -50%)
   @content
+= my_center_align_none
+  position: static
+  top: 0
+  left: 0
+  -webkit-transform: translate(0, 0)
+  -moz-transform: translate(0, 0)
+  -ms-transform: translate(0, 0)
+  -o-transform: translate(0, 0)
+  transform: translate(0, 0)
 
 = scrollbar($size,$size-track,$size-thumb, $primary, $secondary: lighten($primary, 25%))
   ::-webkit-scrollbar
@@ -163,6 +172,7 @@
 
   .page-row-expanded
     min-height: 100%
+
 = blur($var)
   -webkit-filter: blur($var)
   -moz-filter: blur($var)

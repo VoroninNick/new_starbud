@@ -19,10 +19,17 @@ header
     margin-left: 30px
     float: left
     margin-bottom: -33px
+    @media #{$small-only}
+      height: 80px
+      width: 96px
+      margin-left: 0
+      margin-bottom: 0
   nav#main-menu
     float: left
     list-style: none
     margin-left: 18px
+    @media #{$small-only}
+      display: none
     li
       display: inline-block
       a
@@ -42,6 +49,8 @@ header
     border-left: 1px solid rgba(255, 255, 255, .2)
     padding-left: 5px
     padding-right: 5px
+    @media #{$small-only}
+      display: none
     img
       height: inherit
       padding: 22px
@@ -120,9 +129,15 @@ header
 .main-page-media-block-wrap
   position: relative
   +grid-column(6)
+  @media #{$small-only}
+    +grid-column(12)
+
   .unit-of-measurement
     +grid-column(6)
     padding-bottom: 50%
+    @media #{$small-only}
+      +grid-column(12)
+      padding-bottom: 62.5%
   .main-page-media-block-inner
     position: absolute
     left: 0
@@ -137,10 +152,21 @@ header
         +grid-column(6)
         height: 100%
         padding: 0 !important
+        @media #{$small-only}
+          +grid-column(12)
 
       .image
         height: 100%
   &.main-page-about-company
+    @media #{$small-only}
+      padding: 0 !important
+      .unit-of-measurement
+        display: none
+      .main-page-media-block-inner
+        position: static
+        .main-page-media-block
+          padding-bottom: 20px
+
     .main-page-media-block
       background: #263238
       padding-top: 20px
@@ -164,6 +190,11 @@ header
     background: #1976d2
     +my_center_align()
       position: absolute
+    z-index: 1
+    @media #{$small-only}
+      +grid-column(12)
+      +my_center_align_none
+
     a
       display: block
       height: 100%
@@ -183,6 +214,10 @@ header
     position: relative
     +grid-column(6)
     padding-bottom: 50%
+    @media #{$small-only}
+      +grid-column(12)
+      padding-bottom: 100%!important
+
     .main-page-navigation-block
       position: absolute
       left: 0
@@ -221,16 +256,27 @@ header
 
     &.mp-nb-last
       //background: yellow
+      @media #{$small-only}
+        padding-bottom: 300%!important
       .main-page-navigation-block
         //border: 1px solid
+
         &:first-child
           bottom: 50%
+          @media #{$small-only}
+            bottom: 66.66666%
         &:last-child
           top: 50%
+          @media #{$small-only}
+            top: 33.33333%
+            bottom: 33.33333%
           .main-page-navigation-item
             +grid-column(6)
             padding: 0!important
-            //border: 1px solid
+            @media #{$small-only}
+              +grid-column(12)
+              //padding-bottom: 100%!important
+
 
 .default-button
   a, input[type="submit"], button
@@ -293,6 +339,12 @@ header
       bottom: 0
       overflow: hidden
       background: white
+      &.active-youtube-panel
+        -webkit-animation: opa_panel 0.5s
+        -moz-animation: opa_panel 0.5s
+        -o-animation: opa_panel 0.5s
+        animation: opa_panel 0.5s
+        z-index: -1 !important
 
       .video-play-button
         width: 60px
@@ -663,13 +715,15 @@ ul#main-page-certificates-slider
     padding-bottom: 50% !important
     @media #{$small-only}
       +grid-column(12)
-      padding-bottom: 100% !important
+      padding-bottom: 0 !important
     .main-page-contacts-info-info
       position: absolute
       left: 0
       top: 0
       right: 0
       bottom: 0
+      @media #{$small-only}
+        position: static
       .main-page-contacts-info-inner
         width: 100%
         height: 100%
@@ -780,16 +834,29 @@ ul#main-page-certificates-slider
             top: 0
             right: 0
             bottom: 0
-            background: rgba(255, 255, 0, .3)
+            //background: rgba(255, 255, 0, .3)
             .representatives-one-person-details
               width: 100%
               height: 100%
+              padding: 0.9375rem
               .title
                 text-align: center
-                color: #fff
+                +default_font_style(#fff, 24, 600, 21)
+                text-transform: uppercase
+
               .subtitle
                 text-align: center
-                color: #fff
+                +default_font_style(#fff, 16, 300, 24)
+                text-transform: uppercase
+              p
+                +default_font_style(#fff, 16, 300, 36)
+                span
+                  display: inline-block
+                  font-weight: 600
+                  &.label-contact
+                    font-weight: 300
+
+
 
 footer
   background: #1976d2

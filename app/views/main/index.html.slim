@@ -5,10 +5,10 @@
   .main-page-media-block-inner
     .main-page-media-block.video-wrap
       .video-item
-        iframe allowfullscreen="" class="youtube_video" data-video="http://www.youtube.com/embed/ERfPOnYostY?controls=2&amp;showinfo=0&amp;autoplay=1&amp;autohide=1" frameborder="0" id="video_4" src=""
-        .video-control-info-panel
+        iframe allowfullscreen="" class="youtube_video" data-video="http://www.youtube.com/embed/7jp3HMkhaVw?controls=2&amp;showinfo=0&amp;autoplay=1&amp;autohide=1" frameborder="0" id="video_4" src=""
+        .video-control-info-panel.video_panel_4
           .image style="background: url('#{asset_path("Starbud-video.jpg")}')no-repeat center center;"
-          .video-play-button
+          .video-play-button data-video-id="video_4" data-video-panel="video_panel_4"
             = image_tag "Starbud-play-button-1.png"
 
 .main-page-media-block-wrap.main-page-about-company
@@ -61,6 +61,10 @@
 .clearfix
 
 .main-page-navigation-blocks-wrap
+  .main-page-link-to-catalog
+    a href="http://star-bud.ua/assets/pdf_catalog/2/pdf_original.pdf?1400582668"
+      = inline_svg "file-pdf-box.svg"
+      span Завантажити каталог
 
   .main-page-navigation-block-inner
     .main-page-navigation-block
@@ -94,11 +98,6 @@
           .main-page-navigation-item-title
             .title Супутні товари
             p 997 одиниць
-
-  .main-page-link-to-catalog
-    a href="http://star-bud.ua/assets/pdf_catalog/2/pdf_original.pdf?1400582668"
-      = inline_svg "file-pdf-box.svg"
-      span Завантажити каталог
 
   .clearfix
 
@@ -300,12 +299,16 @@
         .title Вакансії
         .subtitle Доступно 13 вакансій
         ul
-          - 4.times
-            li
-              .title Регіональний торговий представник
-              .subtitle Івано-Франківськ
-              a
-                = inline_svg "ic_arrow_forward_black_48px.svg"
+          li
+            .title Координатор продаж
+            .subtitle Львів
+            a
+              = inline_svg "ic_arrow_forward_black_48px.svg"
+          li
+            .title Дизайнер, 3D-візуалізатор
+            .subtitle Львів
+            a
+              = inline_svg "ic_arrow_forward_black_48px.svg"
 
         a.main-page-link-to href="http://star-bud.ua/about_us"
           = inline_svg "ic_arrow_forward_black_48px.svg"
@@ -407,33 +410,76 @@
         .representatives-one-person-details-wrap
           .representatives-one-person-details-inner
             .representatives-one-person-details
-              .title Львів
-              .subtitle Оксана
+              .title м.Львів / Львівська / Вінницька
+              .subtitle Наталя
+              p
+                span.label-contact тел.моб.:
+                span +38(067)340 09 01
 
   .representatives-one-person-wrap
     .representatives-one-person-inner
       .representatives-one-person
         .image style="background: url('#{asset_path("2.jpg")}')no-repeat center center;"
+        .representatives-one-person-details-wrap
+          .representatives-one-person-details-inner
+            .representatives-one-person-details
+              .title Івано-Франківська
+              .subtitle Олеся
+              p
+                span.label-contact тел.моб.:
+                span +38(067)696 70 53
 
   .representatives-one-person-wrap
     .representatives-one-person-inner
       .representatives-one-person
         .image style="background: url('#{asset_path("3.jpg")}')no-repeat center center;"
+        .representatives-one-person-details-wrap
+          .representatives-one-person-details-inner
+            .representatives-one-person-details
+              .title Волинська / Рівенська
+              .subtitle Роксолана
+              p
+                span.label-contact тел.моб.:
+                span +38(067)670 04 33
 
   .representatives-one-person-wrap
     .representatives-one-person-inner
       .representatives-one-person
         .image style="background: url('#{asset_path("4.jpg")}')no-repeat center center;"
+        .representatives-one-person-details-wrap
+          .representatives-one-person-details-inner
+            .representatives-one-person-details
+              .title Тернопільська / Хмельницька
+              .subtitle Христина
+              p
+                span.label-contact тел.моб.:
+                span +38(067)674 71 91
 
   .representatives-one-person-wrap
     .representatives-one-person-inner
       .representatives-one-person
         .image style="background: url('#{asset_path("5.jpg")}')no-repeat center center;"
+        .representatives-one-person-details-wrap
+          .representatives-one-person-details-inner
+            .representatives-one-person-details
+              .title Житомирська / Чернівецька
+              .subtitle Лілія
+              p
+                span.label-contact тел.моб.:
+                span +38(097)103 13 06
 
   .representatives-one-person-wrap
     .representatives-one-person-inner
       .representatives-one-person
         .image style="background: url('#{asset_path("6.jpg")}')no-repeat center center;"
+        .representatives-one-person-details-wrap
+          .representatives-one-person-details-inner
+            .representatives-one-person-details
+              .title Закарпатська / Львівська
+              .subtitle Віра
+              p
+                span.label-contact тел.моб.:
+                span +38(067)670 13 09
 
   .representatives-one-person-wrap
     .representatives-one-person-inner
