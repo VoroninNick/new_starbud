@@ -311,6 +311,9 @@ header
     padding-right: 0 !important
     padding-bottom: 33.333%
     position: relative
+    @media #{$small-only}
+      +grid-column(12)
+      padding-bottom: 100%!important
     .coverage-map-navigation-inner
       position: absolute
       left: 0
@@ -350,10 +353,15 @@ header
     +grid-column(8)
     position: relative
     padding: 0 !important
+    @media #{$small-only}
+      +grid-column(12)
     .unit-of-measurement
       +grid-column(6)
       //border: 1px solid
       padding-bottom: 50%
+      @media #{$small-only}
+        +grid-column(12)
+        padding-bottom: 75%!important
     .coverage-map-slider-inner
       position: absolute
       left: 0
@@ -367,6 +375,8 @@ header
         .coverage-map-slide-status
           position: absolute
           +grid-col(6)
+          @media #{$small-only}
+            +grid-column(12)
           bottom: 42px
           right: 0
           z-index: 1
@@ -394,6 +404,8 @@ header
               padding-left: 0.9375rem
               padding-right: 0.9375rem
               top: -57px
+              @media #{$small-only}
+                width: 100%
               a
                 background-size: 65%!important
                 background-repeat: no-repeat!important
@@ -468,6 +480,10 @@ ul#main-page-certificates-slider
     position: relative
     padding: 0 !important
     padding-bottom: 50% !important
+    @media #{$small-only}
+      +grid-column(12)
+      padding-bottom: 100% !important
+
     //border: 1px solid
     .main-page-jobs-inner
       position: absolute
