@@ -45,7 +45,9 @@ group :development do
   gem 'spring'
 end
 
-gem 'thin'
+# gem 'thin'
+gem 'puma'
+
 gem 'slim-rails'
 
 gem 'foundation-rails'

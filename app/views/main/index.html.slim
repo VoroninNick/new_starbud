@@ -354,6 +354,37 @@
         .main-page-contacts-info
           .title Наші контакти
 
+          p
+            span.label-contact
+              |Магазин т.:
+            span +38 (032) 295 85 00
+          p
+            span.label-contact
+              |Офіс т./факс:
+            a href="tel:+380322423841" +38 (032) 242 38 41
+          p
+            span.label-contact
+              |Офіс моб.:
+            a href="tel:+380673400901" +38 (067) 340 09 01
+          p
+            span.label-contact
+              |Ел. скринька:
+            a href="mailto:starbud@ukr.net" starbud@ukr.net
+          p
+            span.label-contact
+              |СтарДизайн:
+            span +38(097)513 63 32
+
+          p
+            span.label-contact
+              |Адреса:
+            span м. Львів, вул. Луганська, 18
+          p
+            span.label-contact
+              |Графік роботи:
+            span Пн-Пт:   8:30 — 18:00
+
+
           .material-component.ripple.default-button.red
             a data-open="contact_us" Написати нам
 
@@ -365,7 +396,7 @@
         .title
           |Представники
           br
-            |&nbsp;в області
+            |в області
 
         .subtitle в 10 областях україни
 
@@ -406,12 +437,13 @@
 
   .representatives-one-person-wrap
     .representatives-one-person-inner
-      .representatives-one-person.representative-future
-        = inline_svg "headphones.svg"
-        .title
-          |Майбутній
-          br
-            |представник
-        .subtitle Очікуєм розширення в 2016
+      .representatives-one-person.representative-future-wrap
+        .representative-future
+          = inline_svg "headphones.svg"
+          .title
+            |Майбутній
+            br
+              |представник
+          .subtitle Очікуєм розширення в 2016
 
   .clearfix

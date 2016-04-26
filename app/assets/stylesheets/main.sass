@@ -335,6 +335,8 @@ header
         #navigation-map
           padding: 55px
           svg
+            circle
+              display: none
             polygon
               cursor: pointer
               fill: #ECEFF1
@@ -414,9 +416,17 @@ header
               padding: 0 !important
               .image
                 padding-bottom: 100%
+              @media #{$medium-only}
+                display: none
+              @media #{$small-only}
+                display: none
             .coverage-object-info-wrap
               +grid-column(6)
               position: relative
+              @media #{$medium-only}
+                +grid-column(12)
+              @media #{$small-only}
+                +grid-column(12)
               padding: 0 !important
               .unit-of-measurement
                 width: 100%
@@ -617,6 +627,9 @@ ul#main-page-certificates-slider
     position: relative
     padding: 0 !important
     padding-bottom: 50% !important
+    @media #{$small-only}
+      +grid-column(12)
+      padding-bottom: 100% !important
     .main-page-contacts-map-inner
       position: absolute
       left: 0
@@ -632,6 +645,9 @@ ul#main-page-certificates-slider
     position: relative
     padding: 0 !important
     padding-bottom: 50% !important
+    @media #{$small-only}
+      +grid-column(12)
+      padding-bottom: 100% !important
     .main-page-contacts-info-info
       position: absolute
       left: 0
@@ -661,6 +677,18 @@ ul#main-page-certificates-slider
           .title
             +default_font_style(#1976d2, 24, 600, 21)
             text-transform: uppercase
+            margin-bottom: 40px
+          p
+            +default_font_style(#fff, 18, 300, 36)
+            span, a
+              color: inherit
+              font-size: inherit
+              font-weight: 600
+              display: inline-block
+            span
+              &.label-contact
+                font-weight: 300
+                width: 180px
 
 .representatives-wrap
   .representatives-one-person-wrap
@@ -668,6 +696,14 @@ ul#main-page-certificates-slider
     padding: 0!important
     position: relative
     padding-bottom: 25% !important
+    @media #{$medium-only}
+      +grid-column(6)
+      padding-bottom: 50% !important
+    @media #{$small-only}
+      +grid-column(12)
+      padding-bottom: 100% !important
+      .black
+        border-top: 1px solid #fff
     .representatives-one-person-inner
       position: absolute
       left: 0
@@ -696,7 +732,8 @@ ul#main-page-certificates-slider
             top: 0
         &.black
           background: #263238
-        &.representative-future
+          padding: 0.9375rem
+        &.representative-future-wrap
           background: #fff
           svg
             width: 100%
@@ -704,13 +741,16 @@ ul#main-page-certificates-slider
             path
               fill: #cfd8dc
           .title
-            +default_font_style(#cfd8dc, 24, 600, 21)
+            +default_font_style(#cfd8dc, 24, 600, 24)
             text-transform: uppercase
             text-align: center
           .subtitle
             +default_font_style(#cfd8dc, 16, 300, 24)
             text-align: center
             text-transform: uppercase
+          .representative-future
+            +my_center_align()
+
 
         .representatives-one-person-details-wrap
           position: absolute
