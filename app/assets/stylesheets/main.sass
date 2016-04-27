@@ -755,11 +755,13 @@ ul#main-page-certificates-slider
             margin-top: 40px
             list-style: none
             li
-              position: relative
-              padding-right: 40px
-              padding-top: 21px
-              padding-bottom: 19px
               border-top: 1px solid #37474f
+              a
+                display: block
+                position: relative
+                padding-right: 40px
+                padding-top: 21px
+                padding-bottom: 19px
               .title
                 +default_font_style(#90a4ae, 18, 600, 21)
                 text-transform: uppercase
@@ -767,7 +769,7 @@ ul#main-page-certificates-slider
               .subtitle
                 +default_font_style(#90a4ae, 16, 300, 24)
                 text-transform: uppercase
-              a
+              .icon-link-to
                 width: 40px
                 height: 40px
                 background: #1976d2
@@ -780,6 +782,15 @@ ul#main-page-certificates-slider
                     fill: #fff
               &:last-child
                 border-bottom: 1px solid #37474f
+              &:hover
+                .title, .subtitle
+                  color: #fff
+                .icon-link-to
+                  background: #fff
+                svg
+                  path
+                    fill: #e91e63
+
 
           a.main-page-link-to
             right: 0
