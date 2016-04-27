@@ -7,6 +7,29 @@
 h1, h2, h3, h4, h5, p, b, span, a, label, input, textarea, body, button, .title, .subtitle, .number-of-step, .default-font
   font-family: "Roboto", sans-serif
 
+
+body
+  .mobile-menu-wrap
+    background: #263238
+    position: absolute
+    left: 0
+    top: 80px
+    right: 0
+    bottom: 0
+    z-index: 1
+    display: none
+  &.locked-body
+    overflow: hidden
+    .mobile-menu-wrap
+      display: block
+    header
+      .header-logo
+        svg
+          rect
+            fill: #263238
+      .constructor-link
+        display: none
+
 header
   height: 80px
   background: #263238

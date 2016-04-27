@@ -26,7 +26,6 @@ $(document).ready ->
 #==========================================================================
 
   $('.mobile-menu-icon').click ->
-#    $(@).toggleClass('open')
     if $(@).hasClass('open')
       $(@).removeClass('open')
       $('body').removeClass('locked-body')
@@ -34,14 +33,14 @@ $(document).ready ->
       $(@).addClass('open')
       $('body').addClass('locked-body')
 
-    wrap = $(@).closest('.main-menu-wrap')
-    if wrap.hasClass('open')
-      wrap.removeClass('open')
-    else
-      wrap.addClass('open')
-    if wrap.hasClass('open-sub-menu')
-      wrap.removeClass('open-sub-menu')
-      $('.main-menu .has-sub-menu').removeClass('current')
+#    wrap = $(@).closest('.main-menu-wrap')
+#    if wrap.hasClass('open')
+#      wrap.removeClass('open')
+#    else
+#      wrap.addClass('open')
+#    if wrap.hasClass('open-sub-menu')
+#      wrap.removeClass('open-sub-menu')
+#      $('.main-menu .has-sub-menu').removeClass('current')
 
 #  =========================================================================
 #  coverage map
