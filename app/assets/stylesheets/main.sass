@@ -337,6 +337,7 @@ main
 
 
 .default-button
+  +box-shadow(1px 1px 3px 0px rgba(0,0,0,0.35))
   a, input[type="submit"], button
     display: inline-block
     +default_font_style(#78909c, 14, 500, 16.8)
@@ -1111,6 +1112,7 @@ footer
     margin: 0
     list-style: none
     text-align: center
+    margin-bottom: 35px
     li
       display: inline-block
       a
@@ -1118,12 +1120,16 @@ footer
         +default_font_style(#fff, 16, 500, 19.2)
         text-transform: uppercase
 
+  .footer-block-wrap
+    +grid-row(9,$width: 1000px)
   .footer-block
-    +grid-column(4)
+    +grid-column(3)
 
 
   .footer-down
     border-top: 1px solid rgba(255, 255, 255, .2)
+    margin-top: 30px
+    padding: 5px 0
     p.copyright
       +default_font_style(#fff,12, 400, 16)
       margin-bottom: 0
