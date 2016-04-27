@@ -206,7 +206,16 @@ main
 
       .image
         height: 100%
+  &.main-page-about-company-video, &.main-page-about-company
+    .unit-of-measurement
+      padding-bottom: 66.66666%!important
+
   &.main-page-about-company
+    .title
+      margin-bottom: 5px
+    .about-company-slogan
+      margin-bottom: 20px
+      display: inline-block
     @media #{$small-only}
       padding: 0 !important
       .unit-of-measurement
@@ -569,7 +578,29 @@ main
                     +default_font_style(#b0bec5, 14, 300, 21)
 ul#main-page-certificates-slider
   margin: 0
+  margin-top: 20px
   list-style: none
+  padding-left: 30px
+  padding-right: 30px
+  .owl-controls
+    .owl-buttons
+      .owl-prev, .owl-next
+        color: transparent
+        background-repeat: no-repeat !important
+        width: 40px
+        height: 40px
+        background-size: 50%!important
+        background-position: center!important
+        opacity: 1
+        +my_vertical_align()
+          position: absolute
+      .owl-prev
+        background: asset-url("banner-left-arrow.png")
+        left: 0
+      .owl-next
+        background: asset-url("banner-right-arrow.png")
+        right: 0
+
   li
     margin: 0 20px
     .image

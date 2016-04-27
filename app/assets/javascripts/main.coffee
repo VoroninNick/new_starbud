@@ -124,8 +124,8 @@ $(document).ready ->
 #  =========================================================================
   owl1 = $("ul#main-page-certificates-slider")
   owl1.owlCarousel
-    pagination: false,
-    navigation: false,
+    pagination: false
+    navigation: true
     items: 6 #10 items above 1000px browser width
     itemsMobile: false # itemsMobile disabled - inherit from itemsTablet option
     autoPlay : false
