@@ -720,11 +720,12 @@ ul#main-page-certificates-slider
                 fill: #fff
 
     &.main-page-dealers-wrap-mobile
-      padding-bottom: 0 !important
-      .main-page-dealers-inner
-        position: static
-        .jobs-list
-          padding-bottom: 82px
+      @media #{$small-only}
+        padding-bottom: 0 !important
+        .main-page-dealers-inner
+          position: static
+          .jobs-list
+            padding-bottom: 82px
 
   .image
     height: 100%
