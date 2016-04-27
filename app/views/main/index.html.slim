@@ -286,12 +286,40 @@
             .title Відгуки клієнтів
             ul#feedback-clients-carousel
               li
-                blockquote «……компанія Стар-Буд це завжди приємна співпраця, підкажете по роботі зорієнтує по товару, завчасно попереджаєте про нюанси які випадково трапляються. Власне мені завжди з вами приємно працювати»
+                .feedback-client-avatar
+                  .avatar
+                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
+                  p Людмила
+                .feedback-client-description
+                  blockquote ...компанія Стар-Буд це завжди приємна співпраця, підкажете по роботі зорієнтує по товару, завчасно попереджаєте про нюанси які випадково трапляються. Власне мені завжди з вами приємно працювати.
               li
-                blockquote «….лаконічно скажу про компанію Стар-Буд -  Вау!!!, радий співпрацюю з такими приємними людьми які якісно та вчасно надають інформацію та товар.»
+                .feedback-client-avatar
+                  .avatar
+                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
+                  p Гудзій Роман
+                .feedback-client-description
+                  blockquote ...лаконічно скажу про компанію Стар-Буд -  Вау!!!, радий співпрацюю з такими приємними людьми які якісно та вчасно надають інформацію та товар.
               li
-                blockquote «Співпраця із компанією «Стар-Буд» приємно здивувала швидкістю оформлення замовлення та оперативної доставки  магазин. Особливо приємно було почути кваліфіковану відповідь на усі мої запитання, а також допомогу у підборі комплектуючих. Загалом хороша компанія із хорошими людьми!!! Кращої ціни та якості не знайти! Рекомендую.»
-                blockquote …компанія Стар-Буд мені подобається, нічого поганого не можу сказати, усі обіцянки виконуються, усе як має бути, спілкуємось нормально, замовлення виконується вчасно. Нормально працюємо, немає жодних нарікань. Усе добре.
+                .feedback-client-avatar
+                  .avatar
+                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
+                  p Валентин Петрович
+                .feedback-client-description
+                  blockquote Співпраця із компанією «Стар-Буд» приємно здивувала швидкістю оформлення замовлення та оперативної доставки  магазин. Особливо приємно було почути кваліфіковану відповідь на усі мої запитання, а також допомогу у підборі комплектуючих. Загалом хороша компанія із хорошими людьми!!! Кращої ціни та якості не знайти! Рекомендую.
+              li
+                .feedback-client-avatar
+                  .avatar
+                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
+                  p Людмила
+                .feedback-client-description
+                  blockquote ...компанія Стар-Буд мені подобається, нічого поганого не можу сказати, усі обіцянки виконуються, усе як має бути, спілкуємось нормально, замовлення виконується вчасно. Нормально працюємо, немає жодних нарікань. Усе добре.
+              li
+                .feedback-client-avatar
+                  .avatar
+                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
+                  p Мицак Мирослав
+                .feedback-client-description
+                  blockquote ...дуже добре що компанія «Стар-Буд» розділяє і сайт і ціни між роздрібом та гуртом. Існує розуміння роботи двох напрямків. Завжди можу розраховувати на кваліфіковану підтримку.
 
   .main-page-jobs-wrap
     .main-page-jobs-inner
@@ -302,7 +330,7 @@
     .main-page-dealers-inner
       .main-page-dealers
         .image style="background: url('#{asset_path("Starbud-photos-peoples-1-5.jpg")}')no-repeat center center;"
-  .main-page-dealers-wrap
+  .main-page-dealers-wrap.main-page-dealers-wrap-mobile
     .main-page-dealers-inner
       .main-page-dealers.jobs-list
         .title Вакансії

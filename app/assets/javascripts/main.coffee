@@ -11,6 +11,15 @@ $(document).ready ->
     pause: 5000
     controls: false
   #    pagerCustom: ".promotion-banner-pager"
+  #
+# =========================================================================
+#  feedback clients
+#  =========================================================================
+  $("ul#feedback-clients-carousel").bxSlider
+  #    auto: true,
+    pause: 5000
+    controls: false
+  #    pagerCustom: ".promotion-banner-pager"
 
 
 #  =========================================================================
