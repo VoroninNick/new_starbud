@@ -41,6 +41,8 @@ header
   .default-button
     margin-top: 20px
     margin-right: 25px
+    @media #{$small-only}
+      display: none
     a
       +default_font_style(#eceff1, 14, 500, 14)
       text-transform: uppercase
@@ -50,7 +52,7 @@ header
     padding-left: 5px
     padding-right: 5px
     @media #{$small-only}
-      display: none
+      border: none
     img
       height: inherit
       padding: 22px
@@ -752,6 +754,85 @@ ul#main-page-certificates-slider
       svg
         path, polyline, polygon, rect, ellipse, text
           fill: #fff
+
+.mobile-menu-icon-wrap
+  width: 48px
+  height: 48px
+  cursor: pointer
+  display: none
+  @media #{$small-only}
+    display: block
+  &.open
+    .mobile-menu-icon-wrap
+      background: #ffffff
+      .mobile-menu-icon
+        &.open
+          span
+            background: #fff
+
+  .mobile-menu-icon
+    width: 28px
+    height: 20px
+    position: relative
+    margin: 30px auto
+    -webkit-transform: rotate(0deg)
+    -moz-transform: rotate(0deg)
+    -o-transform: rotate(0deg)
+    transform: rotate(0deg)
+    -webkit-transition: .5s ease-in-out
+    -moz-transition: .5s ease-in-out
+    -o-transition: .5s ease-in-out
+    transition: .5s ease-in-out
+    cursor: pointer
+    span
+      display: block
+      position: absolute
+      height: 3px
+      width: 100%
+      background: #ffffff
+      //border-radius: 9px
+      opacity: 1
+      left: 0
+      -webkit-transform: rotate(0deg)
+      -moz-transform: rotate(0deg)
+      -o-transform: rotate(0deg)
+      transform: rotate(0deg)
+      -webkit-transition: .25s ease-in-out
+      -moz-transition: .25s ease-in-out
+      -o-transition: .25s ease-in-out
+      transition: .25s ease-in-out
+      &:nth-child(1)
+        top: 0px
+
+      &:nth-child(2), &:nth-child(3)
+        top: 8px
+
+      &:nth-child(4)
+        top: 16px
+
+    &.open
+      span
+        &:nth-child(1)
+          top: 8px
+          width: 0%
+          left: 50%
+
+        &:nth-child(2)
+          -webkit-transform: rotate(45deg)
+          -moz-transform: rotate(45deg)
+          -o-transform: rotate(45deg)
+          transform: rotate(45deg)
+
+        &:nth-child(3)
+          -webkit-transform: rotate(-45deg)
+          -moz-transform: rotate(-45deg)
+          -o-transform: rotate(-45deg)
+          transform: rotate(-45deg)
+
+        &:nth-child(4)
+          top: 8px
+          width: 0%
+          left: 50%
 
 .main-page-contacts-block-wrap
   .main-page-contacts-map-wrap

@@ -21,6 +21,27 @@ $(document).ready ->
     controls: false
   #    pagerCustom: ".promotion-banner-pager"
 
+# =========================================================================
+# mobile menu handler
+#==========================================================================
+
+  $('.mobile-menu-icon').click ->
+#    $(@).toggleClass('open')
+    if $(@).hasClass('open')
+      $(@).removeClass('open')
+      $('body').removeClass('locked-body')
+    else
+      $(@).addClass('open')
+      $('body').addClass('locked-body')
+
+    wrap = $(@).closest('.main-menu-wrap')
+    if wrap.hasClass('open')
+      wrap.removeClass('open')
+    else
+      wrap.addClass('open')
+    if wrap.hasClass('open-sub-menu')
+      wrap.removeClass('open-sub-menu')
+      $('.main-menu .has-sub-menu').removeClass('current')
 
 #  =========================================================================
 #  coverage map
