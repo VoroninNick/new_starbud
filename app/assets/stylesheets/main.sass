@@ -41,7 +41,7 @@ body
         svg
           rect
             fill: #263238
-      .constructor-link
+      .constructor-link, .default-button
         display: none
 
 header
@@ -56,17 +56,21 @@ header
     margin-left: 30px
     float: left
     margin-bottom: -33px
+    @media screen and (max-width: 880px)
+      margin-left: 0
     @media #{$small-only}
       height: 80px
       width: 96px
-      margin-left: 0
+      //margin-left: 0
       margin-bottom: 0
   nav#main-menu
     float: left
     list-style: none
     margin-left: 18px
-    @media #{$small-only}
+    @media screen and (max-width: 850px)
       display: none
+    //@media #{$small-only}
+
     li
       display: inline-block
       a
@@ -78,7 +82,7 @@ header
   .default-button
     margin-top: 20px
     margin-right: 25px
-    @media #{$small-only}
+    @media screen and (max-width: 450px)
       display: none
     a
       +default_font_style(#eceff1, 14, 500, 14)
@@ -88,7 +92,7 @@ header
     border-left: 1px solid rgba(255, 255, 255, .2)
     padding-left: 5px
     padding-right: 5px
-    @media #{$small-only}
+    @media screen and (max-width: 850px)
       border: none
     img
       height: inherit
@@ -797,8 +801,10 @@ ul#main-page-certificates-slider
   height: 48px
   cursor: pointer
   display: none
-  @media #{$small-only}
+  @media screen and (max-width: 850px)
+    //@media #{$small-only}
     display: block
+
   &.open
     .mobile-menu-icon-wrap
       background: #ffffff
