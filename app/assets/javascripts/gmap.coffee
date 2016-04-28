@@ -46,7 +46,7 @@ initialize = ->
     position: myLatlng
     map: map
     title: 'Budapest'
-    icon: '/assets/Valko-icon-location.svg')
+    icon: '/assets/map-marker.svg')
   google.maps.event.addListener marker, 'click', ->
     infowindow.open map, marker
 

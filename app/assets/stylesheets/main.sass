@@ -174,6 +174,9 @@ main
               .default-button
                 margin-top: 25px
                 width: 123px
+                -webkit-box-shadow: none
+                -moz-box-shadow: none
+                box-shadow: none
 
 .main-page-media-block-wrap
   position: relative
@@ -213,6 +216,8 @@ main
   &.main-page-about-company
     .title
       margin-bottom: 5px
+    .subtitle
+      padding-top: 20px
     .about-company-slogan
       margin-bottom: 20px
       display: inline-block
@@ -307,6 +312,7 @@ main
           .title
             text-align: center
             +default_font_style(#fff ,72, 600, 72)
+            text-transform: uppercase
           p
             +default_font_style(#fff, 18, 400, 36)
             text-align: center
@@ -325,6 +331,9 @@ main
             bottom: 66.66666%
         &:last-child
           top: 50%
+          .title
+            font-size: 45px
+            line-height: 40px
           @media #{$small-only}
             top: 33.33333%
             bottom: 33.33333%
@@ -494,12 +503,13 @@ main
         .coverage-map-slide-status
           position: absolute
           +grid-col(6)
-          @media #{$small-only}
+          @media #{$medium-only}
             +grid-column(12)
           bottom: 42px
           right: 0
           z-index: 1
-          +default_font_style(#fff, 14, 300, 21)
+          +default_font_style(rgba(255, 255, 255, .7), 14, 500, 21)
+          font-family: "Roboto", sans-serif
           text-align: center
           span
             &.current-slide
@@ -523,12 +533,13 @@ main
               padding-left: 0.9375rem
               padding-right: 0.9375rem
               top: -57px
-              @media #{$small-only}
+              @media #{$medium-only}
                 width: 100%
               a
-                background-size: 65%!important
+                background-size: 50%!important
                 background-repeat: no-repeat!important
                 background-position: center!important
+                opacity: .7
                 height: 40px
                 width: 20px
                 &.bx-prev
@@ -598,9 +609,9 @@ ul#main-page-certificates-slider
         background-repeat: no-repeat !important
         width: 40px
         height: 40px
-        background-size: 50%!important
+        background-size: 30%!important
         background-position: center!important
-        opacity: 1
+        opacity: .4
         +my_vertical_align()
           position: absolute
       .owl-prev
@@ -662,13 +673,14 @@ ul#main-page-certificates-slider
               .mp-jobs-why-we
                 +grid-column(4)
                 svg
-                  padding: 0 30px
+                  padding: 0 20px
                   width: 100%
                 p
                   +default_font_style(#546e7a, 14, 300, 16)
                   text-transform: uppercase
                   text-align: center
             .mp-jobs-why-we-button
+              margin-top: 40px
               .default-button
                 width: 140px
 
@@ -710,6 +722,7 @@ ul#main-page-certificates-slider
                   +grid-column(10)
                 blockquote
                   +default_font_style(#b0bec5, 14, 300, 18)
+                  font-family: Georgia
                   font-style: italic
                   position: relative
                   padding: 0px 15px 0px 35px
@@ -718,7 +731,7 @@ ul#main-page-certificates-slider
                   &:before, &:after
                     color: #1976d2
                     font-style: italic
-                    font-family: "Roboto", sans-serif
+                    font-family: Georgia
                     position: absolute
                   &:before
                     content: '«'
@@ -786,6 +799,7 @@ ul#main-page-certificates-slider
                 +my_vertical_align()
                   position: absolute
                 right: 0
+                padding: 8px
                 svg
                   path
                     fill: #fff
@@ -803,7 +817,7 @@ ul#main-page-certificates-slider
 
           a.main-page-link-to
             right: 0
-            bottom: 2px
+            bottom: 1px
 
     &.main-page-dealers-wrap-mobile
       @media #{$small-only}
@@ -823,6 +837,7 @@ a.main-page-link-to
   position: absolute
   right: 0
   bottom: 0
+  padding: 8px
   svg
     path
       fill: #fff
@@ -835,17 +850,19 @@ a.main-page-link-to
     +default_font_style(#fff, 24, 600, 21)
     text-transform: uppercase
     text-align: center
+    margin-bottom: 5px
   .subtitle
     +default_font_style(#fff, 16, 500, 24)
     text-transform: uppercase
     text-align: center
+    opacity: .6
     span
       font-weight: 300
   ul
     list-style: none
     margin: 0
     li
-      padding: 0 30px
+      padding: 0 45px
       svg
         path, polyline, polygon, rect, ellipse, text
           fill: #fff
@@ -998,9 +1015,18 @@ a.main-page-link-to
               font-weight: 600
               display: inline-block
             span
+              width: 65%
               &.label-contact
                 font-weight: 300
                 width: 180px
+              &.sub-label-contact
+                font-weight: 300
+                width: 75px
+            &:last-of-type
+              .label-contact
+                float: left
+          .default-button
+            margin-top: 30px
 
 .representatives-wrap
   .representatives-one-person-wrap
@@ -1030,14 +1056,16 @@ a.main-page-link-to
         position: relative
         overflow: hidden
         .title
-          +default_font_style(#1976d2, 24, 600, 21)
+          +default_font_style(#1976d2, 24, 600, 24)
           text-transform: uppercase
+          margin-bottom: 5px
         .subtitle
           +default_font_style(#fff, 16, 300, 24)
           text-transform: uppercase
         .image
           height: 100%
           opacity: 1
+          +transition(all, 0.3s, cubic-bezier(0, 0, 0.42, 0.99))
         &:hover
           .image
             opacity: 0
@@ -1071,6 +1099,7 @@ a.main-page-link-to
           padding-bottom: 100%
           z-index: 1
           top: 80%
+          +transition(all, 0.3s, cubic-bezier(0, 0, 0.42, 0.99))
           .representatives-one-person-details-inner
             position: absolute
             left: 0
@@ -1086,7 +1115,7 @@ a.main-page-link-to
                 text-align: center
                 +default_font_style(#fff, 24, 600, 21)
                 text-transform: uppercase
-
+                height: 42px
               .subtitle
                 text-align: center
                 +default_font_style(#fff, 16, 300, 24)
