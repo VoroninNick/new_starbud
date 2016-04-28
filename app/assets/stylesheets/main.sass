@@ -347,6 +347,14 @@ main
     border: none
     outline: none
     white-space: nowrap
+    svg
+      width: 20px
+      float: left
+      display: inline-block
+      height: 16px
+      margin-right: 10px
+      path
+        fill: #fff
 
   &.red
     background: #e91e63
@@ -1176,5 +1184,146 @@ ul.socials
       svg
         width: 100%
         height: 100%
+
+
+.popup-default-style
+  background: #eceff1 !important
+  border: none !important
+  outline: none !important
+  padding: 30px !important
+  .title
+    +default_font_style(#1976d2, 25, 600, 21)
+    text-transform: uppercase
+    margin-bottom: 10px
+  .subtitle
+    +default_font_style(#546e7a, 14, 300, 21)
+    font-style: italic
+  form
+    margin-bottom: 20px
+    .input
+      margin-bottom: 15px
+
+$error_color: #f50057
+form
+  .input
+    label
+      color: #AFBDC4
+      font:
+        size: rem-calc(14)
+      line-height: rem-calc(30)
+    &:not(.animate-input)
+      label
+        opacity: .5
+    input, textarea, select
+      font:
+        size: rem-calc(16)
+        weight: 400
+      color: #4d4d4d
+      background: transparent !important
+    &.animate-input
+      position: relative
+      label
+        display: block
+        transform: translateY(25px)
+        transition: all 0.5s
+
+        +default_font_style(#78909c, 16, 400, 30)
+        //color: #AFBDC4
+        //font:
+        //  size: rem-calc(14)
+        //line-height: rem-calc(20)
+        opacity: .5
+        span
+          display: none
+      input, select
+        height: 30px
+      input, textarea, select
+        position: relative
+        width: 100%
+        border: 0 solid #b0bec5
+        border-width: 0 0 2px 0
+        box-shadow: none
+        outline: none
+        margin: 0
+
+      &.error
+        svg
+          path
+            fill: $error_color
+        label
+          color: $error_color
+          & span
+            display: inline-block
+        input, textarea, select
+          border-color: $error_color
+
+      &.is-completed
+        label
+          font-size: rem-calc(12)
+          transform: translateY(0px)
+          color: #455a64
+        input
+          +default_font_style(#37474f, 16, 500, 30)
+          text-transform: uppercase
+        svg
+          path
+            fill: #607d8b
+
+      &.is-active
+        &::after
+          transform: scaleX(1)
+        label
+          opacity: 1
+          color: #1976d2
+          font:
+            size: rem-calc(12)
+        input, textarea, select
+          color: #1976d2
+          border-bottom: 3px solid #1976d2
+
+    &.animated-select
+      select
+        margin: 0
+        padding: 0
+
+  .button-wrap
+    margin-top: 20px
+  .material-component
+    background: #f50057
+    button
+      background: transparent
+      margin: 0
+      color: #fff
+      font:
+        size: rem-calc(14)
+        weight: 500
+      text-transform: uppercase
+      padding: 11px 30px
+
+  &.default-form-with-icons
+    svg
+      path
+        fill: #bcbec0
+    //fill: #607d8b
+    .animate-input
+      padding-left: 35px
+
+      .input-ico
+        width: 32px
+        height: 32px
+        position: absolute
+        bottom: -8px
+        left: 0
+        svg
+          height: 22px
+      &.is-active
+        .input-ico
+          svg
+            path
+              fill: #1e88e5
+    .animate-textarea
+      .input-ico
+        top: 25px
+        bottom: inherit
 
 

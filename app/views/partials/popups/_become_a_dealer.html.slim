@@ -1,7 +1,23 @@
-#become_s_dealer.reveal data-reveal=""
-  .title test
-
-
+#become_s_dealer.reveal.popup-default-style data-reveal=""
+  .title Стати диллером
+  p Надати нам сюди текст!
+  form.ajax-form.default-animation-form action="" method="POST"
+    .input.animate-input
+      label Як вас звати?
+      input name="name" type="text" required=""
+    .input.animate-input
+      label Компанія
+      input name="company" type="text"
+    .input.animate-input
+      label Електронна скринька
+      input name="email" type="email" required=""
+    .input.animate-input
+      label Контактний телефон
+      input name="phone" type="tel"
+    .button-wrap.material-component.ripple.default-button.red
+      button type="submit"
+        = inline_svg "Valko-icon-mail.svg"
+        |Надіслати
 
 /компанія
 /імя

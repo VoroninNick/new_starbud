@@ -131,3 +131,14 @@ $(document).ready ->
     autoPlay : false
 
 
+
+#--------------
+#func = ()->
+#
+#$(".cont").on "click", "button.a", func
+#
+#create_elem = ()->
+#  $btn = $("<button>")
+#  $('.cont').append($btn)
+#  $btn.click(fvunc)
+#$(".cont button.a").click(fvunc)
