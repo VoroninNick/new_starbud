@@ -304,7 +304,6 @@ main
           right: 0
           bottom: 0
           padding-top: 30px
-
           /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100,000000+100&0+0,0.2+100 */
           background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%) /* FF3.6-15 */
           background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%) /* Chrome10-25,Safari5.1-6 */
@@ -1078,6 +1077,19 @@ a.main-page-link-to
         background: #1976d2
         position: relative
         overflow: hidden
+        &:after
+          content: ''
+          position: absolute
+          left: 0
+          right: 0
+          bottom: 0
+          top: 70%
+          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100,000000+100&0+0,0.2+100 */
+          background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%) /* FF3.6-15 */
+          background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%) /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#33000000',GradientType=0 ) /* IE6-9 */
+
         .title
           +default_font_style(#1976d2, 24, 600, 24)
           text-transform: uppercase
@@ -1090,6 +1102,8 @@ a.main-page-link-to
           opacity: 1
           +transition(all, 0.3s, cubic-bezier(0, 0, 0.42, 0.99))
         &:hover
+          &:after
+            display: none
           .image
             opacity: 0
           .representatives-one-person-details-wrap
@@ -1097,8 +1111,12 @@ a.main-page-link-to
         &.black
           background: #263238
           padding: 0.9375rem
+          &:after
+            display: none
         &.representative-future-wrap
           background: #fff
+          &:after
+            display: none
           svg
             width: 100%
             height: 120px
