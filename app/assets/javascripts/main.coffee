@@ -134,6 +134,11 @@ $(document).ready ->
 #===========================================================
 # callback handler for contact form submit
 #===========================================================
+  $('.close-button').click ->
+    $(@).closest('.success-wrap').hide()
+# ===========================================================
+# callback handler for contact form submit
+#===========================================================
   $('form.ajax-form').submit (e) ->
     $this = $(@)
     postData = $this.serializeArray()
@@ -150,6 +155,11 @@ $(document).ready ->
       success: ->
         console.log('success')
         $('.success-wrap').show()
+        setTimeout ->
+#          something param
+          $('.success-wrap').hide()
+        , 3000
+
         form.reset()
         $this.closest('form').find('.animate-input').each ->
 #          if !$(@).hasClass('is-locked-for-clear')

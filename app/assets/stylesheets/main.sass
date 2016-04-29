@@ -1313,6 +1313,17 @@ form
         weight: 400
       color: #4d4d4d
       background: transparent !important
+    &.animate-textarea
+      label
+        +default_font_style(#78909c, 16, 400, 30)
+      textarea
+        position: relative
+        width: 100%
+        border: 0 solid #b0bec5
+        border-width: 0 0 2px 0
+        box-shadow: none
+        outline: none
+        margin: 0
     &.animate-input
       position: relative
       label
@@ -1355,7 +1366,7 @@ form
           font-size: rem-calc(12)
           transform: translateY(0px)
           color: #455a64
-        input
+        input, textarea
           +default_font_style(#37474f, 16, 500, 30)
           text-transform: uppercase
         svg

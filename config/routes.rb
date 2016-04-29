@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'main#index'
 
   post 'become-a-dealer' => 'main#become_a_dealer'
+  post 'contact-us' => 'main#contact_us'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
