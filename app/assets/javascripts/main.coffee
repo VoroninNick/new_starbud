@@ -131,8 +131,46 @@ $(document).ready ->
     autoPlay : false
 
 
+#===========================================================
+# callback handler for contact form submit
+#===========================================================
+  $('form.ajax-form').submit (e) ->
+    $this = $(@)
+    postData = $this.serializeArray()
+    formURL = $this.attr('action')
+    form = this
+
+    $.ajax
+      url: formURL
+      dataType: 'html'
+      type: "POST"
+      data: postData
+      beforeSend: ->
+        console.log('before send')
+      success: ->
+        console.log('success')
+        $('.success-wrap').show()
+        form.reset()
+        $this.closest('form').find('.animate-input').each ->
+#          if !$(@).hasClass('is-locked-for-clear')
+          $(@).removeClass('is-completed')
+
+#        $this.closest('form').find('.field-to-hide').each ->
+#          $(@).addClass('hide')
+
+      complete: ->
+        console.log('complete')
+      error: ->
+        console.log('error')
+
+    e.preventDefault()
 
 #--------------
+#  $popup = $('#become_s_dealer')
+#  $popup.foundation('open')
+#  $popup.foundation('reveal', 'open')
+#  $('#become_s_dealer').foundation('open');
+
 #func = ()->
 #
 #$(".cont").on "click", "button.a", func
@@ -142,3 +180,11 @@ $(document).ready ->
 #  $('.cont').append($btn)
 #  $btn.click(fvunc)
 #$(".cont button.a").click(fvunc)
+
+
+
+
+#  popup
+#
+#  popup = new Foundation.Reveal($('#popup-modal'))
+#  popup.open()
