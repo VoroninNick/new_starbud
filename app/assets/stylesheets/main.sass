@@ -646,9 +646,11 @@ ul#main-page-certificates-slider
     padding-bottom: 50% !important
     @media #{$small-only}
       +grid-column(12)
-      padding-bottom: 100% !important
+      padding-bottom: 150% !important
 
-    //border: 1px solid
+    &.main-page-jobs-wrap-second
+      @media #{$small-only}
+        padding-bottom: 100% !important
     .main-page-jobs-inner
       position: absolute
       left: 0
@@ -665,6 +667,8 @@ ul#main-page-certificates-slider
           top: 0
           right: 0
           bottom: 40%
+          @media #{$small-only}
+            bottom: 50%
           .main-page-jobs-top-inner
             width: 100%
             height: 100%
@@ -702,6 +706,8 @@ ul#main-page-certificates-slider
           top: 60%
           right: 0
           bottom: 0
+          @media #{$small-only}
+            top: 50%
           .main-page-jobs-bottom-inner
             width: 100%
             height: 100%
@@ -1183,7 +1189,16 @@ footer
     margin: 0 auto
   .footer-block
     +grid-column(4)
-
+    @media #{$small-only}
+      +grid-column(12)
+      .default-button
+        width: 140px
+        margin: 0 auto
+        display: block
+        margin-bottom: 15px
+      ul.socials
+        text-align: center
+        margin-bottom: 10px
 
   .footer-down
     border-top: 1px solid rgba(255, 255, 255, .2)
