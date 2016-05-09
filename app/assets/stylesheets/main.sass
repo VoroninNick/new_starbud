@@ -79,6 +79,9 @@ header
         display: block
         padding-left: 17px
         padding-right: 17px
+        &:hover
+          color: #1976d2
+
   .default-button
     margin-top: 20px
     margin-right: 25px
@@ -177,6 +180,25 @@ main
                 -webkit-box-shadow: none
                 -moz-box-shadow: none
                 box-shadow: none
+                &:hover
+                  background: #e91e63
+                  border-color: #e91e63
+    .bx-controls
+      .bx-controls-direction
+        a
+          background-repeat: no-repeat
+          width: 40px
+          height: 40px
+          background-size: 120%!important
+          background-position: center!important
+          &.bx-prev
+            background: asset-url("ic_keyboard_arrow_left_white_48px.svg")
+            &:hover
+              background: asset-url("ic_keyboard_arrow_left_red_48px.svg")
+          &.bx-next
+            background: asset-url("ic_keyboard_arrow_right_white_48px.svg")
+            &:hover
+              background: asset-url("ic_keyboard_arrow_right_red_48px.svg")
 
 .main-page-media-block-wrap
   position: relative

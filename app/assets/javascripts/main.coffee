@@ -7,9 +7,9 @@ $(document).ready ->
 #  main banner
 #  =========================================================================
   $("ul#main-banner").bxSlider
-  #    auto: true,
+    auto: true
     pause: 5000
-    controls: false
+#    controls: false
   #    pagerCustom: ".promotion-banner-pager"
   #
 # =========================================================================
