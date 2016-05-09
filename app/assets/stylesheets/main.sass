@@ -759,6 +759,7 @@ ul#main-page-certificates-slider
               padding-top: 20px
               li
                 .feedback-client-avatar
+                  display: none
                   +grid-column(2)
                   .avatar
                     background-color: #fff
@@ -767,11 +768,17 @@ ul#main-page-certificates-slider
                     .image
                       padding-bottom: 100%
                   p
-                    +default_font_style(#cfd8dc, 12, 300, 16)
+
                     text-align: center
 
                 .feedback-client-description
-                  +grid-column(10)
+                  //+grid-column(10)
+                  p.client-name
+                    +default_font_style(#cfd8dc, 12, 300, 16)
+                    text-align: right
+                    padding-top: 15px
+                    padding-right: 40px
+
                 blockquote
                   +default_font_style(#b0bec5, 14, 300, 18)
                   font-family: Georgia
