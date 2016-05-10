@@ -403,45 +403,82 @@
     .main-page-contacts-info-info
       .main-page-contacts-info-inner
         .main-page-contacts-info
-          .title Наші контакти
+          .title
+            |Наші контакти
+            ul#contacts-by-city.tabs data-tabs=""
+              li.tabs-title.is-active
+                a href="#lviv" aria-selected="true" Львів
+              li.tabs-title
+                a href="#kyiv" aria-selected="true" Київ
 
-          p
-            span.label-contact
-              |Магазин т.:
-            span +38 (032) 295 85 00
-          p
-            span.label-contact
-              |Офіс т./факс:
-            a href="tel:+380322423841" +38 (032) 242 38 41
-          p
-            span.label-contact
-              |Офіс моб.:
-            a href="tel:+380673400901" +38 (067) 340 09 01
-          p
-            span.label-contact
-              |Ел. скринька:
-            a href="mailto:starbud@ukr.net" starbud@ukr.net
-          p
-            span.label-contact
-              |СтарДизайн:
-            span +38(097)513 63 32
+          .tabs-content data-tabs-content="contacts-by-city"
+            #lviv.tabs-panel.is-active
+              p
+                span.label-contact
+                  |Магазин т.:
+                span +38 (032) 295 85 00
+              p
+                span.label-contact
+                  |Офіс т./факс:
+                a href="tel:+380322423841" +38 (032) 242 38 41
+              p
+                span.label-contact
+                  |Офіс моб.:
+                a href="tel:+380673400901" +38 (067) 340 09 01
+              p
+                span.label-contact
+                  |Ел. скринька:
+                a href="mailto:info@star-bud.com.ua" info@star-bud.com.ua
+              p
+                span.label-contact
+                  |СтарДизайн:
+                span +38(097)513 63 32
 
-          p
-            span.label-contact
-              |Адреса:
-            span м. Львів, вул. Луганська, 18
-          p
-            span.label-contact
-              |Графік роботи:
+              p
+                span.label-contact
+                  |Адреса:
+                span м. Львів, вул. Луганська, 18
+              p
+                span.label-contact
+                  |Графік роботи:
 
-            span
-              span
-                span.sub-label-contact Пн-Пт:
-                |8:30 — 18:00
-              span
-                span.sub-label-contact Cб:
-                |9:00 — 14:00
+                span
+                  span
+                    span.sub-label-contact Пн-Пт:
+                    |8:30 — 18:00
+                  span
+                    span.sub-label-contact Cб:
+                    |9:00 — 14:00
 
+            #kyiv.tabs-panel
+              p
+                span.label-contact
+                  |Офіс т./факс:
+                a href="tel:+380445007801" +38 (044) 500 78 01
+              p
+                span.label-contact
+                  |Офіс моб.:
+                a href="tel:+380674803635" +38 (067) 480 36 35
+              p
+                span.label-contact
+                  |Ел. скринька:
+                a href="mailto:info@star-bud.com.ua" info@star-bud.com.ua
+              p
+                span.label-contact
+                  |Адреса:
+                span м.Київ, вул.Алма-Атинська, 35-А
+
+              p
+                span.label-contact
+                  |Графік роботи:
+
+                span
+                  span
+                    span.sub-label-contact Пн-Пт:
+                    |8:30 — 18:00
+                  span
+                    span.sub-label-contact Cб:
+                    |9:00 — 14:00
 
           .material-component.ripple.default-button.red
             a data-open="contact_us" Написати нам

@@ -275,6 +275,8 @@ main
         text-transform: uppercase
       p
         +default_font_style(#b0bec5, 14, 300, 21)
+        @media screen and (min-width: 1425px)
+          width: 675px
       .subtitle
         +default_font_style(#b0bec5, 16, 300, 24)
         text-transform: uppercase
@@ -1056,8 +1058,8 @@ a.main-page-link-to
         &:before
           content: ''
           position: absolute
-          left: -34%
-          top: -26%
+          left: -42%
+          top: -31%
           right: 0
           bottom: 0
           background-image: asset-url("Starbud-logo-for-background.svg")
@@ -1067,10 +1069,28 @@ a.main-page-link-to
 
         .main-page-contacts-info
           padding: 42px
+          position: relative
           .title
             +default_font_style(#1976d2, 24, 600, 21)
             text-transform: uppercase
             margin-bottom: 40px
+
+          .tabs
+            background: transparent!important
+            border: none!important
+            display: inline-block
+            float: right
+            position: relative
+            top: -8px
+            .tabs-title
+              a
+                +default_font_style(#1976d2, 12, 600, 21)
+                padding: .5rem 1.5rem
+                //background: transparent!important
+
+          .tabs-content
+            background: transparent!important
+            border: none !important
           p
             +default_font_style(#fff, 18, 300, 36)
             span, a
