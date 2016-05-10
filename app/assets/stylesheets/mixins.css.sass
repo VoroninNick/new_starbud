@@ -250,7 +250,13 @@
   -o-animation:      $delay $duration $name $fill-mode /* Opera 12+ */
   animation:         $delay $duration $name $fill-mode
 
-
+/// Text Shadow
+/// @param {Size} $x [2px] - X
+/// @param {Size} $y [2px] - Y
+/// @param {Size} $blur [2px] - Blur
+/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+=text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, 0.4))
+  text-shadow: $x $y $blur $color
 
 =animation ($delay, $duration, $animation)
   -webkit-animation-delay: $delay

@@ -37,7 +37,7 @@ initialize = ->
   map.mapTypes.set "map_style", styledMap
   map.setMapTypeId "map_style"
 
-  contentString = "<div id=\"content\">" + "<div id=\"siteNotice\">" + "</div><div class=\"info-window\"><div class=\"address\"><p>"+address+"</p></div></div>" + "</div>"
+  contentString = "<div id=\"content\">" + "<div id=\"siteNotice\">" + "</div><div class=\"info-window\"><div class=\"address\"><p>Компанія «Стар-Буд»</p><p>"+address+"</p></div></div>" + "</div>"
   infowindow = new (google.maps.InfoWindow)(
     content: contentString
 
