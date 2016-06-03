@@ -514,6 +514,7 @@ main
         #navigation-map
           padding: 55px
           svg
+            width: 100%
             circle
               display: none
             polygon
@@ -686,9 +687,24 @@ ul#main-page-certificates-slider
     position: relative
     padding: 0 !important
     padding-bottom: 50% !important
-    @media #{$small-only}
+    @media screen and (max-width: 1315px)
+      padding-bottom: 60%!important
+    @media screen and (max-width: 1030px)
+      padding-bottom: 70%!important
+      .main-page-jobs-top-wrap
+        bottom: 50%!important
+      .main-page-jobs-bottom-wrap
+        top: 50%!important
+    @media screen and (max-width: 830px)
+      padding-bottom: 80%!important
+      .main-page-jobs-top-wrap
+        bottom: 50%!important
+      .main-page-jobs-bottom-wrap
+        top: 50%!important
+
+    @media screen and (max-width: 750px)
       +grid-column(12)
-      padding-bottom: 150% !important
+      padding-bottom: 120% !important
 
     &.main-page-jobs-wrap-second
       @media #{$small-only}
@@ -1076,6 +1092,10 @@ a.main-page-link-to
         .main-page-contacts-info
           padding: 42px
           position: relative
+          @media #{$medium-only}
+            padding: 20px
+          @media #{$small-only}
+            padding: 20px
           .title
             +default_font_style(#1976d2, 24, 600, 21)
             text-transform: uppercase
@@ -1088,6 +1108,11 @@ a.main-page-link-to
             float: right
             position: relative
             top: -8px
+            @media #{$small-only}
+              float: left
+              top: 0
+              margin-top: 10px
+              margin-bottom: 5px
             .tabs-title
               a
                 +default_font_style(#1976d2, 12, 600, 21)
@@ -1097,6 +1122,11 @@ a.main-page-link-to
           .tabs-content
             background: transparent!important
             border: none !important
+            .tabs-panel
+              @media #{$medium-only}
+                padding: 0
+              @media #{$small-only}
+                padding: 0
           p
             +default_font_style(#fff, 18, 300, 36)
             span, a
@@ -1106,6 +1136,8 @@ a.main-page-link-to
               display: inline-block
             span
               width: 65%
+              @media #{$small-only}
+                width: 100%
               &.label-contact
                 font-weight: 300
                 width: 180px
