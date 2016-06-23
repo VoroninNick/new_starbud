@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'become-a-dealer' => 'main#become_a_dealer'
   post 'contact-us' => 'main#contact_us'
 
+  post '*args' => 'application#listener_1c'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
