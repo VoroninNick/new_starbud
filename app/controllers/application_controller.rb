@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
                        request_url: params[:args]} )
 
 
-    if params['mode'] == 'auth'
+    if params['mode'] == 'checkauth'
       auth
     elsif params['mode'] == 'init'
       init
