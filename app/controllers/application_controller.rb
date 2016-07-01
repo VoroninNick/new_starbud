@@ -11,20 +11,24 @@ class ApplicationController < ActionController::Base
                        request_params: params.as_json,
                        request_url: params[:args]} )
 
-    # cookies[:user_name] = "david"
+    cookies[:company] = "star_bud"
 
     # render inline: 'слово "success";\nимя Cookie;\nзначение Cookie.'
-    render inline: "success"
+    if params['mode'] == 'auth'
+      auth
+    elsif params['mode'] == 'init'
+      init
+    else
+      render inline: "something else"
+    end
 
-    # respond_to do |format|
-    #   if @favorite_list_item.save
-    #     format.html { redirect_to @favorite_list_item, notice: 'Favorite list item was successfully created.' }
-    #     format.json { render :show, status: :created, location: @favorite_list_item }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @favorite_list_item.errors, status: :unprocessable_entity }
-    #   end
-    # end
+  end
 
+  def auth
+    render inline: "success\ncompany\nstarbud"
+  end
+
+  def init
+    render inline: "zip=yes\nfile_limit=#{1024*100}"
   end
 end
