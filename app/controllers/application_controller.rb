@@ -5,19 +5,19 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :exception
 
   def listener_1c
-    # return render inline: request.headers.inspect
-    log = OneCLog.create({
+
+    @log = OneCLog.create({
                        # request_headers: "request.headers.to_json",
                        request_params: params.as_json,
                        request_url: params[:args]} )
 
-    cookies[:company] = "star_bud"
 
-    # render inline: 'слово "success";\nимя Cookie;\nзначение Cookie.'
     if params['mode'] == 'auth'
       auth
     elsif params['mode'] == 'init'
       init
+    elsif params['mode'] == 'file'
+      file
     else
       render inline: "something else"
     end
@@ -29,6 +29,14 @@ class ApplicationController < ActionController::Base
   end
 
   def init
-    render inline: "zip=yes\nfile_limit=#{1024*100}"
+    render inline: "zip=no\nfile_limit=#{1024 * 1000 * 100}"
+  end
+
+  def file
+    #@log.attachment_file =
+    puts "request.body.inspect START"
+    puts request.body.inspect
+    puts "request.body.inspect END"
+    render inline: "file"
   end
 end

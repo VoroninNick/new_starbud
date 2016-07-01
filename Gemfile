@@ -61,3 +61,7 @@ gem 'bxslider-rails'
 gem 'owlcarousel-rails'
 
 gem 'figaro'
+
+gem 'paperclip'
+
+gem 'protected_attributes'
