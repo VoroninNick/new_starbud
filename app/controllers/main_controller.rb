@@ -15,4 +15,8 @@ class MainController < ApplicationController
     Subscribe.contact_us(data).deliver
     head :ok
   end
+
+  def dev
+
+  end
 end
