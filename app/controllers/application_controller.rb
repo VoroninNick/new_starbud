@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
 
     @log = OneCLog.create({
-                       attachment_file: open(params[:filename]),
+                       # attachment_file: open(params[:filename]),
                        request_params: params.as_json,
                        request_url: params[:args]} )
 
