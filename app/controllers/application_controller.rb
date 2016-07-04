@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     else
       render inline: "something else"
     end
-    render inline: "something"
+    # render inline: "something"
   end
 
   def auth
