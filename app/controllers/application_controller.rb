@@ -7,22 +7,22 @@ class ApplicationController < ActionController::Base
 
   def listener_1c
 
-    download = open('/bitrix/admin/1c_exchange.php?type=catalog&mode=file&filename=import0_1.xml')
+    # download = open('/bitrix/admin/1c_exchange.php?type=catalog&mode=file&filename=import0_1.xml')
     # file_data = File.read(params[:filename].tempfile)
 
 
     # puts "test: #{params[:url]}"
 
-    FileUtils.mkdir_p('accounting_imports')
-    file_path = "accounting_imports/import-#{Time.current.strftime('%F--%H-%M-%S')}.xml"
-    IO.copy_stream(download, Rails.root + file_path)
-    OneCLog.new(request_url: file_path).save!
+    # FileUtils.mkdir_p('accounting_imports')
+    # file_path = "accounting_imports/import-#{Time.current.strftime('%F--%H-%M-%S')}.xml"
+    # IO.copy_stream(download, Rails.root + file_path)
+    # OneCLog.new(request_url: file_path).save!
 
 
-    # @log = OneCLog.create({
-    #                    attachment_file: open(params[:filename]),
-    #                    request_params: params.as_json,
-    #                    request_url: params[:args]} )
+    @log = OneCLog.create({
+                       attachment_file: open(params[:filename]),
+                       request_params: params.as_json,
+                       request_url: params[:args]} )
 
 
     if params['mode'] == 'checkauth'
