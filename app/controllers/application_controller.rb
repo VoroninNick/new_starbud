@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def init
-    render inline: "zip=no\nfile_limit=#{1024 * 50}"
+    render inline: "zip=yes\nfile_limit=#{1024 * 100}"
   end
 
   def file
