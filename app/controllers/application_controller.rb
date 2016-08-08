@@ -27,7 +27,8 @@ class ApplicationController < ActionController::Base
       render inline: "something else"
     end
 
-    Rails.logger.info("request.raw_post: " + request.raw_post)
+    text = request.raw_post.encode("UTF-8")
+    Rails.logger.info("request.raw_post: " + text)
   end
 
   def auth
