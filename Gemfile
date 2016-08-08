@@ -54,6 +54,7 @@ gem 'puma'
 gem 'slim-rails'
 
 gem 'foundation-rails'
+
 gem 'inline_svg'
 
 gem 'bxslider-rails'
@@ -65,3 +66,5 @@ gem 'figaro'
 gem 'paperclip'
 
 gem 'protected_attributes'
+
+gem 'quiet_assets'
