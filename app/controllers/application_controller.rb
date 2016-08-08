@@ -26,9 +26,13 @@ class ApplicationController < ActionController::Base
     else
       render inline: "something else"
     end
+    post_source = request.raw_post
+    text = post_source
+    post_source_encoding = post_source.encoding
+               #.encode("UTF-8")
 
-    text = request.raw_post.encode("UTF-8")
     Rails.logger.info("request.raw_post: " + text)
+    Rails.logger.info("request.raw_post#encoding: " + post_source_encoding)
   end
 
   def auth
