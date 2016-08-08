@@ -26,6 +26,8 @@ class ApplicationController < ActionController::Base
     else
       render inline: "something else"
     end
+
+    Rails.logger.info("request.raw_post: " + request.raw_post)
   end
 
   def auth
@@ -35,7 +37,47 @@ class ApplicationController < ActionController::Base
   def init
     render inline: "zip=yes\nfile_limit=#{200 * 1024}"
   end
-
+  #
+  # //Receive files
+  # elseif (($_GET["mode"] == "file") && $ABS_FILE_NAME)
+  # {
+  #     //Read http data
+  # if (function_exists("file_get_contents"))
+  #   $DATA = file_get_contents("php://input");
+  #   elseif (isset($HTTP_RAW_POST_DATA))
+  #   $DATA = &$HTTP_RAW_POST_DATA;
+  # else
+  #   $DATA = false;
+  #
+  #   $DATA_LEN = defined("BX_UTF")? mb_strlen($DATA, 'latin1'): strlen($DATA);
+  #   //And save it the file
+  #   if (isset($DATA) && $DATA !== false)
+  #     {
+  #         CheckDirPath($ABS_FILE_NAME);
+  #     if ($fp = fopen($ABS_FILE_NAME, "ab"))
+  #       {
+  #           $result = fwrite($fp, $DATA);
+  #       if ($result === $DATA_LEN)
+  #         {
+  #             echo "success\n";
+  #         if ($_SESSION["BX_CML2_IMPORT"]["zip"])
+  #           $_SESSION["BX_CML2_IMPORT"]["zip"] = $ABS_FILE_NAME;
+  #           }
+  #         else
+  #           {
+  #               echo "failure\n",GetMessage("CC_BSC1_ERROR_FILE_WRITE", array("#FILE_NAME#"=>$FILE_NAME));
+  #           }
+  #           }
+  #           else
+  #           {
+  #               echo "failure\n",GetMessage("CC_BSC1_ERROR_FILE_OPEN", array("#FILE_NAME#"=>$FILE_NAME));
+  #           }
+  #           }
+  #           else
+  #           {
+  #               echo "failure\n",GetMessage("CC_BSC1_ERROR_HTTP_READ");
+  #           }
+  #           }
   def file_request
     render inline: "success"
   end
