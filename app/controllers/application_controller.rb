@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
     @log = OneCLog.create({
                        # attachment_file: open(params[:filename]),
                        request_params: params.as_json,
-                       request_url: params[:args]} )
+                       request_url: params[:args],
+                       session_id: session.id
+                          } )
 
     if params['mode'] == 'checkauth'
       auth
@@ -42,7 +44,7 @@ class ApplicationController < ActionController::Base
     file_progress = session["file_progress"].try(&:to_i) || 0
     session["file_progress"] = file_progress + 1
 
-    if file_progress <= 4
+    if file_progress <= -1
       render inline: "progress"
     else
       render inline: "success"
