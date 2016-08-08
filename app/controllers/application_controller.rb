@@ -35,7 +35,8 @@ class ApplicationController < ActionController::Base
     Rails.logger.info("request.raw_post#encoding: " + post_source_encoding.name)
     file_path = Rails.root.join("public/logs/#{@log.id}").to_s
     if !File.exists?(file_path)
-      File.write(file_path, text)
+      #File.write(file_path, text)
+      File.open(file_path, "w+") {|f| f.write(text) }
     end
   end
 
