@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
       render inline: "something else"
     end
     post_source = request.raw_post
-    text = post_source
+    text = post_source.force_encoding("UTF-8")
     post_source_encoding = post_source.encoding
                #.encode("UTF-8")
 
