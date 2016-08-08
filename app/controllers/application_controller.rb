@@ -2,39 +2,27 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
 
+  http_basic_authenticate_with name: "admin", password: "star_bud", only: [:listener_1c]
+
   #protect_from_forgery with: :exception
   require 'open-uri'
 
   def listener_1c
-
-    # download = open('/bitrix/admin/1c_exchange.php?type=catalog&mode=file&filename=import0_1.xml')
-    # file_data = File.read(params[:filename].tempfile)
-
-
-    # puts "test: #{params[:url]}"
-
-    # FileUtils.mkdir_p('accounting_imports')
-    # file_path = "accounting_imports/import-#{Time.current.strftime('%F--%H-%M-%S')}.xml"
-    # IO.copy_stream(download, Rails.root + file_path)
-    # OneCLog.new(request_url: file_path).save!
-
-
     @log = OneCLog.create({
                        # attachment_file: open(params[:filename]),
                        request_params: params.as_json,
                        request_url: params[:args]} )
-
 
     if params['mode'] == 'checkauth'
       auth
     elsif params['mode'] == 'init'
       init
     elsif params['mode'] == 'file'
-      file
+      file_request
+      # file_receiving
     else
       render inline: "something else"
     end
-    # render inline: "something"
   end
 
   def auth
@@ -42,17 +30,21 @@ class ApplicationController < ActionController::Base
   end
 
   def init
-    render inline: "zip=yes\nfile_limit=#{1024 * 100}"
+    render inline: "zip=yes\nfile_limit=#{200 * 1024}"
   end
 
-  def file
+  def file_request
+    render inline: "success"
+  end
+
+  def file_receiving
+    render inline: "progress"
 
     #@log.attachment_file =
-
-    puts "request.body.inspect START"
-    puts request.body.inspect
-    puts "request.body.inspect END"
-    render inline: "file"
+    # puts "request.body.inspect START"
+    # puts request.body.inspect
+    # puts "request.body.inspect END"
+    # render inline: "file"
   end
 
 
