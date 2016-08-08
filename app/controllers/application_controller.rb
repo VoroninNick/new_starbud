@@ -39,7 +39,15 @@ class ApplicationController < ActionController::Base
   end
 
   def file_receiving
-    render inline: "progress"
+    file_progress = session["file_progress"].try(&:to_i) || 0
+    session["file_progress"] = file_progress + 1
+
+    if file_progress <= 10
+      render inline: "progress"
+    else
+      render inline: "success"
+    end
+
 
     #@log.attachment_file =
     # puts "request.body.inspect START"
