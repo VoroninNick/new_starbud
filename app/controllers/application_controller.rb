@@ -19,7 +19,8 @@ class ApplicationController < ActionController::Base
       init
     elsif params['mode'] == 'file'
       file_request
-      # file_receiving
+    elsif params['mode'] == 'import'
+      file_receiving
     else
       render inline: "something else"
     end
