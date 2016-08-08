@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
     file_progress = session["file_progress"].try(&:to_i) || 0
     session["file_progress"] = file_progress + 1
 
-    if file_progress <= 10
+    if file_progress <= 4
       render inline: "progress"
     else
       render inline: "success"
