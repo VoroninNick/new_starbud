@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def auth
-    render inline: "success\ncompany\nstarbud\nsessid=#{session.id}"
+    render inline: "success\ncompany\nstarbud\n#{'_star_bud_new_session'}=#{session.id}"
   end
 
   def init
