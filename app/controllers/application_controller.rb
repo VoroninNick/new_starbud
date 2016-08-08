@@ -33,6 +33,10 @@ class ApplicationController < ActionController::Base
 
     Rails.logger.info("request.raw_post: " + text)
     Rails.logger.info("request.raw_post#encoding: " + post_source_encoding.name)
+    file_path = Rails.root.join("public/logs/#{@log.id}").to_s
+    if !File.exists?(file_path)
+      File.write(file_path, text)
+    end
   end
 
   def auth
