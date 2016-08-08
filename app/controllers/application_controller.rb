@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
                #.encode("UTF-8")
 
     Rails.logger.info("request.raw_post: " + text)
-    Rails.logger.info("request.raw_post#encoding: " + post_source_encoding)
+    Rails.logger.info("request.raw_post#encoding: " + post_source_encoding.name)
   end
 
   def auth
