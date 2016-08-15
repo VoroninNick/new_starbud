@@ -138,6 +138,7 @@ main
   .ac-more-details-with-icons
     position: relative
     overflow: hidden
+    padding-bottom: 165px
     &:before
       content: ''
       position: absolute
@@ -178,16 +179,36 @@ main
 
     .ac-info-card
       background: #1976d2
+      padding: 45px 0
+      margin: 0.5px
       svg
+        height: 80px
         width: 100%
+      .title-wrap
+        width: 80%
+        height: 54px
+        margin: 0 auto
+        padding-top: 30px
       .title
-        +default_font_style(#eceff1, 14, 300, 18)
+        +default_font_style(#eceff1, 14, 400, 18)
         font-style: italic
         text-align: center
+      &.ac-info-card-large
+        svg
+          height: 200px
 
     .ac-info-quote
+      padding-left: 0.9375rem * 2
+      width: 80%
+      .title
+        +default_font_style(#b0bec5, 30, 400, 36)
+        font-style: italic
       &:before
         content: '«»'
+        position: relative
+        left: -0.9375rem
+        +default_font_style(#1976d2, 48, 400, 50)
+
 
 
   .bx-wrapper
