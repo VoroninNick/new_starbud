@@ -63,7 +63,7 @@ header
       width: 96px
       //margin-left: 0
       margin-bottom: 0
-  nav#main-menu
+  nav.main-menu
     float: left
     list-style: none
     margin-left: 18px
@@ -73,6 +73,7 @@ header
 
     li
       display: inline-block
+      position: relative
       a
         +default_font_style(#eceff1, 16, 500, 80)
         text-transform: uppercase
@@ -81,6 +82,16 @@ header
         padding-right: 17px
         &:hover
           color: #1976d2
+        &.current-page
+          &:after
+            content: ''
+            position: absolute
+            display: block
+            height: 4px
+            background: #1976d2
+            left: 0
+            right: 0
+            bottom: 0
 
   .default-button
     margin-top: 20px
@@ -102,6 +113,83 @@ header
       padding: 22px
 
 main
+  .page-wrap
+    &.about-company-page-wrap
+      .video-wrap
+        height: 400px
+        width: 100%
+        position: relative
+        .video-item
+          .image
+            height: 100%
+
+    .black-block-wrap
+      background: #263238
+
+    .grey-block-wrap
+      background: #37474f
+
+    .blue-block-wrap
+      background: #1976d2
+
+    .white-block-wrap
+      background: #fff
+
+  .ac-more-details-with-icons
+    position: relative
+    overflow: hidden
+    &:before
+      content: ''
+      position: absolute
+      left: 16%
+      top: -53%
+      right: 0
+      bottom: 0
+      background-image: asset-url("Starbud-logo-for-background.svg")
+      background-repeat: no-repeat
+      background-size: 122%
+      opacity: .05
+
+    .ac-title-wrap
+      padding-top: 60px
+      padding-bottom: 15px
+      .title
+        +default_font_style(#1976d2, 60, 600, 60)
+        text-transform: uppercase
+
+    .ac-subtitle-wrap
+      padding-bottom: 50px
+      .subtitle
+        +default_font_style(#b0bec5, 36, 400, 36)
+        font-style: italic
+
+    .ac-description-wrap
+      margin-top: 50px
+      padding-bottom: 25px
+      p
+        +default_font_style(#cfd8dc, 16, 400, 21)
+        &:before
+          content: ''
+          display: block
+          background: #1976d2
+          height: 4px
+          width: 55px
+          margin-bottom: 25px
+
+    .ac-info-card
+      background: #1976d2
+      svg
+        width: 100%
+      .title
+        +default_font_style(#eceff1, 14, 300, 18)
+        font-style: italic
+        text-align: center
+
+    .ac-info-quote
+      &:before
+        content: '«»'
+
+
   .bx-wrapper
     height: 100% !important
     -moz-box-shadow: none

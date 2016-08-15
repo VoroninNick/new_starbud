@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   end
 
   def init
-    render inline: "zip=yes\nfile_limit=#{200 * 1024}"
+    render inline: "zip=no\nfile_limit=#{200 * 1024}"
   end
   #
   # //Receive files

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'main#index'
+  get 'about-company' => 'main#about_company', as: :about_company
 
   post 'become-a-dealer' => 'main#become_a_dealer'
   post 'contact-us' => 'main#contact_us'

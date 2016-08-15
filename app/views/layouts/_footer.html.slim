@@ -4,15 +4,7 @@ footer
       = inline_svg "Logo.svg"
 
   div
-    nav
-      li
-        a href="http://star-bud.ua/about_us" Про нас
-      li
-        a href="http://star-bud.ua/promotion" Акції
-      li
-        a href="http://star-bud.ua/publication/interesting_news" Публікації
-      li
-        a href="http://star-bud.ua/contacts" Контакти
+    = render partial: "layouts/main_menu"
 
   .footer-block-wrap
     .footer-block

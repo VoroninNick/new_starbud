@@ -1,17 +1,12 @@
 header
   .header-logo
-    /= inline_svg "Starbud-logo.svg"
-    = inline_svg "Logo.svg"
+    - unless current_page?(root_path)
+      a href=root_path title="На головну"
+        = inline_svg "Logo.svg"
+    - else
+      = inline_svg "Logo.svg"
 
-  nav#main-menu
-    li
-      a href="http://star-bud.ua/about_us" title="Про нас" Про нас
-    li
-      a href="http://star-bud.ua/promotion" title="Акції" Акції
-    li
-      a href="http://star-bud.ua/publication/interesting_news" title="Публікації"  Публікації
-    li
-      a href="http://star-bud.ua/contacts" title="Контакти"  Контакти
+  = render partial: "layouts/main_menu"
 
   .mobile-menu-icon-wrap.float-right
     .mobile-menu-icon
