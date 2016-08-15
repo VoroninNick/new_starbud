@@ -114,6 +114,21 @@ header
 
 main
   .page-wrap
+    .squad-height-block-wrap
+      position: relative
+      .unit-of-measurement
+        width: 100%
+        padding-bottom: 100%
+      .squad-height-block-inner
+        position: absolute
+        left: 0.9375rem
+        top: 0.9375rem
+        right: 0.9375rem
+        bottom: 0.9375rem
+        .squad-height-block
+          width: 100%
+          height: 100%
+
     &.about-company-page-wrap
       .video-wrap
         height: 400px
@@ -138,6 +153,45 @@ main
 
     .white-block-wrap
       background: #fff
+
+  .ac-our-history-wrap
+    background: #263238
+    .description-block
+      +grid-column(3)
+      padding-left: 0!important
+      padding-right: 0!important
+      position: relative
+      .title
+        +default_font_style(#263238, 24, 600, 24)
+        text-transform: uppercase
+      p
+        +default_font_style(#ffffff, 16, 300, 24)
+
+    .carousel-block
+      +grid-column(9)
+      padding-left: 0!important
+      padding-right: 0!important
+      .unit-of-measurement
+        width: 33.333%
+        padding-bottom: 33.333%
+      ul.ac-our-history-carousel
+        li
+          .title
+            +default_font_style(#1976d2, 60, 300, 50)
+            text-transform: uppercase
+          .subtitle
+            +default_font_style(#1976d2, 24, 600, 24)
+            text-transform: uppercase
+          p
+            +default_font_style(#ffffff, 16, 300, 18)
+
+      ul.ac-our-partners-carousel
+        li
+          svg
+            width: 100%
+            height: 110px
+            path, polyline, circle, polygon, ellipse, rect, text
+              fill: #b0bec5
 
   .ac-more-details-with-icons
     position: relative
