@@ -142,6 +142,33 @@ main
 
 
     &.contacts-page-wrap
+      .representatives-wrap
+        min-height: 340px
+        .representatives-header-wrap
+          min-height: 340px
+          position: relative
+          .representatives-header
+            left: 0
+            right: 0
+            +my_vertical_align()
+              position: absolute
+        .title
+          +default_font_style(#1976d2, 24, 600, 24)
+          text-transform: uppercase
+        .subtitle
+          +default_font_style(#fff, 16, 300, 24)
+      .contacts-map-wrap
+        .contacts-map
+          height: 395px
+          background: #1e242a
+          +grid-column(8)
+        .contacts-form
+          height: 395px
+          background: #eceff1
+          +grid-column(4)
+
+        #map_canvas2
+          height: 395px
       .socials-wrap
         overflow: hidden
         padding-top: 75px

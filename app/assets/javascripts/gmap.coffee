@@ -1,6 +1,5 @@
 map = undefined
-
-window.initMap = ->
+initialize = ->
   $map = $('#map_canvas')
   lat = $map.attr 'data-lat'
   lng = $map.attr 'data-lng'
@@ -14,16 +13,10 @@ window.initMap = ->
     {
       stylers: [
         { "Saturation": "-100" }
-#        { "hue": "#ff7700" },
-#        { "lightness": -2 },
-#        { "gamma": 0.69 }
       ]
     }
   ]
-  #
-  styledMap = new google.maps.StyledMapType(styles,
-    name: "Styled Map"
-  )
+  styledMap = new google.maps.StyledMapType(styles, name: "StyledMap")
 
   mapOptions =
     zoom: 17
@@ -46,12 +39,12 @@ window.initMap = ->
   marker = new (google.maps.Marker)(
     position: myLatlng
     map: map
-    title: 'Budapest'
+    title: 'StarBud'
     icon: '/assets/landing/map-marker.png')
   google.maps.event.addListener marker, 'click', ->
     infowindow.open map, marker
 
-google.maps.event.addDomListener window, 'load', initMap
+google.maps.event.addDomListener window, 'load', initialize
 
 # on resize map will allways centered
 google.maps.event.addDomListener window, 'resize', ->
@@ -59,16 +52,3 @@ google.maps.event.addDomListener window, 'resize', ->
   google.maps.event.trigger map, 'resize'
   map.setCenter center
 
-#
-#[
-#  {
-#    "stylers": [
-#      { "invert_lightness": true },
-#      { "weight": 0.9 },
-#      { "hue": "#0077ff" },
-#      { "saturation": -28 },
-#      { "gamma": 1.18 },
-#      { "lightness": -9 }
-#    ]
-#  }
-#]

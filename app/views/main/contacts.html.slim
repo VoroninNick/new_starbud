@@ -78,3 +78,34 @@
 
     .socials-wrap
       = render partial: "partials/socials"
+
+    .contacts-map-wrap
+      .contacts-map
+        #map_canvas2 data-lat="49.80888" data-lng="24.04313" data-city="" data-address="м. Львів, вул. Луганська, 18"
+          /styles = [
+          /{
+          /  "stylers": [
+          /    { "invert_lightness": true },
+          /    { "weight": 0.9 },
+          /    { "hue": "#0077ff" },
+          /    { "saturation": -28 },
+          /    { "gamma": 1.18 },
+          /    { "lightness": -9 }
+          /  ]
+          /}
+          /]
+
+      .contacts-form
+
+
+    .representatives-wrap
+      .row.text-center
+        .columns
+          .representatives-header-wrap
+            .representatives-header
+              .title
+                |Представники в області
+              .subtitle
+                |в 10 областях україни
+
+      = render partial: "partials/representives_list"
