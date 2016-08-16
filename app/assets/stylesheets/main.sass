@@ -4,7 +4,7 @@
 
 @import "mixins"
 
-h1, h2, h3, h4, h5, p, b, span, a, label, input, textarea, body, button, .title, .subtitle, .number-of-step, .default-font
+h1, h2, h3, h4, h5, p, b, span, a, label, input, textarea, body, button, .title, .subtitle, .number-of-step, .default-font, .label-text
   font-family: "Roboto", sans-serif
 
 
@@ -114,6 +114,17 @@ header
 
 main
   .page-wrap
+    .header-page
+      padding-top: 70px
+      padding-bottom: 60px
+      .title
+        +default_font_style(#1976d2, 36, 600, 21)
+        text-transform: uppercase
+        padding-bottom: 12px
+      .subtitle
+        +default_font_style(#90a4ae, 21, 300, 24)
+        text-transform: uppercase
+
     .squad-height-block-wrap
       position: relative
       .unit-of-measurement
@@ -128,6 +139,61 @@ main
         .squad-height-block
           width: 100%
           height: 100%
+
+
+    &.contacts-page-wrap
+      .c-address-card
+        margin-top: 55px
+        margin-bottom: 65px
+        min-height: 190px
+        width: 50%
+        float: left
+        position: relative
+        .title
+          +default_font_style(#b0bec5, 16, 300, 30)
+          font-style: italic
+        hr
+          width: 53px
+          border-bottom: 2px solid #455a64
+        p
+          +default_font_style(#eceff1, 18, 500, 30)
+          text-transform: uppercase
+          span
+            +default_font_style(#b0bec5, 16, 400, 30)
+          .label-text
+            width: 70px
+            display: inline-block
+            text-align: left
+        &:first-child
+          &:after
+            content: ''
+            width: 1px
+            height: 115px
+            background: #455a64
+            +my_vertical_align()
+              position: absolute
+            right: 0
+
+      .c-office-card
+        min-height: 260px
+        margin: 0.5px
+        .title
+          +default_font_style(#fff, 21, 500, 30)
+          text-transform: uppercase
+        .label-text
+          +default_font_style(#fff, 14, 300, 30)
+          font-style: italic
+        hr
+          width: 53px
+          border-bottom: 2px solid rgba(255, 255, 255, .3)
+        a
+          //display: block
+          &.tell
+            +default_font_style(#fff, 21, 600, 21)
+          &.email
+            +default_font_style(#fff, 18, 400, 36)
+            border-bottom: 1px solid rgba(255, 255, 255, .5)
+
 
     &.about-company-page-wrap
       .video-wrap

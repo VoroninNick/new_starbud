@@ -1,11 +1,12 @@
 class MainController < ApplicationController
 
   def index
-
   end
 
   def about_company
-    
+  end
+
+  def contacts
   end
 
   def become_a_dealer
