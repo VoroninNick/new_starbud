@@ -142,6 +142,37 @@ main
 
 
     &.contacts-page-wrap
+      .socials-wrap
+        overflow: hidden
+        padding-top: 75px
+        padding-bottom: 100px
+        ul.socials
+          text-align: center
+          li
+            position: relative
+            margin-left: 5px
+            margin-right: 5px
+            a
+              svg
+                path
+                  fill: #b0bec5
+            &:first-child
+              &:before
+                content: ''
+                width: 2000px
+                border-bottom: 1px solid #455a64
+                position: absolute
+                top: 20px
+                right: 60px
+            &:last-child
+              &:after
+                content: ''
+                width: 2000px
+                border-bottom: 1px solid #455a64
+                position: absolute
+                top: 20px
+                left: 60px
+
       .c-address-card
         margin-top: 55px
         margin-bottom: 65px
@@ -155,9 +186,11 @@ main
         hr
           width: 53px
           border-bottom: 2px solid #455a64
+          margin: 15px auto
         p
           +default_font_style(#eceff1, 18, 500, 30)
           text-transform: uppercase
+          margin-bottom: 2px
           span
             +default_font_style(#b0bec5, 16, 400, 30)
           .label-text
@@ -177,15 +210,18 @@ main
       .c-office-card
         min-height: 260px
         margin: 0.5px
+        padding-top: 25px
         .title
           +default_font_style(#fff, 21, 500, 30)
           text-transform: uppercase
         .label-text
-          +default_font_style(#fff, 14, 300, 30)
+          +default_font_style(#fff, 14, 300, 24)
           font-style: italic
         hr
           width: 53px
           border-bottom: 2px solid rgba(255, 255, 255, .3)
+        p
+          margin-bottom: 10px
         a
           //display: block
           &.tell

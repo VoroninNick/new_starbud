@@ -12,19 +12,7 @@ footer
         a data-open="become_s_dealer" Стати дилером
 
     .footer-block
-      ul.socials
-        li
-          a href="https://www.facebook.com/starbudwest"
-            = inline_svg "Starbyd-social-facebook-v1.svg"
-        li
-          a href="https://vk.com/stardesign.doors"
-            = inline_svg "Starbyd-social-vk-v1.svg"
-        li
-          a href="https://instagram.com/star_dyzain_lviv/"
-            = inline_svg "Starbyd-social-insta-v1.svg"
-        li
-          a href="https://plus.google.com/101534844120340824149"
-            = inline_svg "Starbyd-social-google-v1.svg"
+      = render partial: "partials/socials"
 
     .footer-block.subscribe-form
       #mc_embed_signup
