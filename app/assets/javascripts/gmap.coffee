@@ -57,3 +57,17 @@ google.maps.event.addDomListener window, 'resize', ->
   center = map.getCenter()
   google.maps.event.trigger map, 'resize'
   map.setCenter center
+
+#
+#[
+#  {
+#    "stylers": [
+#      { "invert_lightness": true },
+#      { "weight": 0.9 },
+#      { "hue": "#0077ff" },
+#      { "saturation": -28 },
+#      { "gamma": 1.18 },
+#      { "lightness": -9 }
+#    ]
+#  }
+#]
