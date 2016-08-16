@@ -1,5 +1,6 @@
 map = undefined
-initialize = ->
+
+window.initMap = ->
   $map = $('#map_canvas')
   lat = $map.attr 'data-lat'
   lng = $map.attr 'data-lng'
@@ -46,11 +47,11 @@ initialize = ->
     position: myLatlng
     map: map
     title: 'Budapest'
-    icon: '/assets/map-marker.svg')
+    icon: '/assets/landing/map-marker.png')
   google.maps.event.addListener marker, 'click', ->
     infowindow.open map, marker
 
-google.maps.event.addDomListener window, 'load', initialize
+google.maps.event.addDomListener window, 'load', initMap
 
 # on resize map will allways centered
 google.maps.event.addDomListener window, 'resize', ->
