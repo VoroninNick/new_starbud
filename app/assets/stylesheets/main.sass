@@ -239,6 +239,13 @@ main
       background: #1976d2
       padding: 45px 0
       margin: 0.5px
+      position: relative
+      &:after
+        content: attr(data-number)
+        +my_horizontal_align
+        position: absolute
+        top: 0
+        +default_font_style(rgba(236, 239, 241, .1), 60, 600, 60)
       svg
         height: 80px
         width: 100%
@@ -252,20 +259,31 @@ main
         font-style: italic
         text-align: center
       &.ac-info-card-large
+        @media #{$medium-up}
+          min-height: 350px
         svg
           height: 200px
 
     .ac-info-quote
       padding-left: 0.9375rem * 2
       width: 80%
+      position: relative
+      @media #{$medium-up}
+        min-height: 350px
+      .title-wrap
+        @media #{$medium-up}
+          +my_vertical_align()
+            position: absolute
+        &:before
+          content: '«»'
+          position: relative
+          left: -0.9375rem
+          +default_font_style(#1976d2, 48, 400, 50)
+
       .title
         +default_font_style(#b0bec5, 30, 400, 36)
         font-style: italic
-      &:before
-        content: '«»'
-        position: relative
-        left: -0.9375rem
-        +default_font_style(#1976d2, 48, 400, 50)
+
 
 
 
