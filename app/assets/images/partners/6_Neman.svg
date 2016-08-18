@@ -1,94 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
-<g id="_738489917520">
-	<g>
-		
-			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="1977.6337" y1="-3286.7107" x2="-32.9614" y2="-3286.7107" gradientTransform="matrix(2.978669e-002 0 0 -2.978669e-002 0.9818 6.9871)">
-			<stop  offset="0" style="stop-color:#E31E24"/>
-			<stop  offset="0.3098" style="stop-color:#DE2D29"/>
-			<stop  offset="0.6196" style="stop-color:#6B6663"/>
-			<stop  offset="1" style="stop-color:#5B5B5B"/>
-		</linearGradient>
-		<path fill="url(#SVGID_1_)" d="M59.9,106.6c-0.3,4.1-18.4,6.5-40.4,5.4c-7.1-0.4-13.8-1.1-19.5-2c4.7,0.6,9.9,1,15.3,1.2
-			c22,1,40.3-2.4,40.4-5.3c0-4.7-18-8.2-47.2-6.7C32.9,95.4,60.4,98,59.9,106.6z"/>
-		<g>
-			<defs>
-				<polygon id="SVGID_2_" points="24,93.2 52.4,93.2 44.1,111 15.6,111 				"/>
-			</defs>
-			<clipPath id="SVGID_3_">
-				<use xlink:href="#SVGID_2_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_3_)">
-				
-					<image overflow="visible" enable-background="new    " width="189" height="92" xlink:href="data:image/jpeg;base64,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" transform="matrix(0.1946 0 0 0.1938 15.6358 93.2034)">
-				</image>
-			</g>
-		</g>
-		
-			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1393.8087" y1="-3199.3645" x2="581.9562" y2="-2981.812" gradientTransform="matrix(2.978669e-002 0 0 -2.978669e-002 0.9818 6.9871)">
-			<stop  offset="0" style="stop-color:#E31E24"/>
-			<stop  offset="0.4" style="stop-color:#DE2D29"/>
-			<stop  offset="0.4706" style="stop-color:#FEFEFE"/>
-			<stop  offset="0.5294" style="stop-color:#6B6663"/>
-			<stop  offset="1" style="stop-color:#5B5B5B"/>
-		</linearGradient>
-		<path fill="url(#SVGID_4_)" d="M42.8,90.3l-4.6,19.5h-5.7c-0.6,0-1.1-0.1-1.6-0.2c-0.4-0.2-0.7-0.5-0.8-0.9l-3.2-7.7l-1.8,6.9
-			l-0.1,0.5c0,0.2,0.1,0.4,0.3,0.5c0.2,0.1,0.4,0.2,0.7,0.2l-0.2,0.7h-7c-0.4,0-0.6-0.1-0.8-0.3c-0.2-0.2-0.3-0.5-0.3-0.8
-			c0-0.1,0-0.3,0.1-0.5L22.2,90c0-0.2,0-0.4-0.3-0.7c-0.2-0.2-0.4-0.3-0.7-0.3l0.2-0.7h7.9c0.2,0,0.5,0.1,0.9,0.4
-			c0.3,0.2,0.5,0.5,0.6,0.8l3.4,7.8l1.5-6.7c0-0.1,0.1-0.3,0.1-0.6c0-0.3-0.1-0.5-0.3-0.7C35.2,89.1,35,89,34.7,89l0.2-0.7h7
-			c0.3,0,0.6,0.1,0.8,0.3c0.2,0.2,0.3,0.5,0.3,0.8L42.8,90.3z"/>
-	</g>
-	<polygon fill="#E31E24" points="74.8,110 74.8,87.8 77.8,87.8 89.5,105.2 89.5,87.8 92.3,87.8 92.3,110 89.3,110 77.6,92.6 
-		77.6,110 	"/>
-	<polygon id="_x31_" fill="#E31E24" points="101.8,110 101.8,87.8 117.9,87.8 117.9,90.4 104.7,90.4 104.7,97.2 117,97.2 117,99.8 
-		104.7,99.8 104.7,107.4 118.4,107.4 118.4,110 	"/>
-	<path id="_x32_" fill="#E31E24" d="M126.9,110V87.8h4.4l5.3,15.8c0.5,1.5,0.8,2.6,1.1,3.3c0.3-0.8,0.7-2,1.2-3.6l5.4-15.5h3.9V110
-		h-2.8V91.4l-6.5,18.6h-2.7l-6.4-19v19H126.9z"/>
-	<path id="_x33_" fill="#E31E24" d="M154.9,110l8.5-22.3h3.2l9.1,22.3h-3.4l-2.6-6.7h-9.4L158,110H154.9z M161.3,100.9h7.6l-2.3-6.2
-		c-0.7-1.9-1.2-3.4-1.6-4.6c-0.3,1.4-0.7,2.9-1.2,4.3L161.3,100.9z"/>
-	<polygon id="_x34_" fill="#E31E24" points="182.5,110 182.5,87.8 185.5,87.8 197.2,105.2 197.2,87.8 200,87.8 200,110 197,110 
-		185.3,92.6 185.3,110 	"/>
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<g id="Слой_x0020_1">
+	<path class="st0" d="M60.2,106.5c-0.3,4.1-18.2,6.5-40.1,5.3c-7-0.4-13.6-1.1-19.3-2c4.7,0.6,9.8,1,15.2,1.2c21.9,1,40-2.4,40-5.2
+		c0-4.7-17.8-8.1-46.8-6.6C33.4,95.5,60.8,98,60.2,106.5z"/>
+	<path class="st0" d="M43.3,90.4l-4.6,19.3h-5.6c-0.6,0-1.1-0.1-1.6-0.2c-0.4-0.2-0.7-0.5-0.8-0.9l-3.1-7.6l-1.8,6.9l-0.1,0.5
+		c0,0.2,0.1,0.4,0.3,0.5c0.2,0.1,0.4,0.2,0.7,0.2l-0.2,0.7h-6.9c-0.4,0-0.6-0.1-0.8-0.3c-0.2-0.2-0.3-0.5-0.3-0.8
+		c0-0.1,0-0.3,0.1-0.5l4.2-18c0-0.2,0-0.4-0.2-0.6s-0.4-0.3-0.7-0.3l0.2-0.7h7.8c0.2,0,0.5,0.1,0.8,0.4c0.3,0.2,0.5,0.5,0.6,0.8
+		l3.3,7.8l1.5-6.7c0-0.1,0.1-0.3,0.1-0.6c0-0.2-0.1-0.5-0.3-0.6c-0.2-0.2-0.4-0.3-0.7-0.3l0.2-0.7h6.9c0.3,0,0.6,0.1,0.8,0.3
+		c0.2,0.2,0.3,0.5,0.3,0.8L43.3,90.4z"/>
+	<path class="st0" d="M75,109.9V87.9h3l11.6,17.3V87.9h2.8v22.1h-3L77.8,92.6v17.3H75z M101.8,109.9V87.9h15.9v2.6h-13v6.8h12.2v2.6
+		h-12.2v7.5h13.5v2.6H101.8z M126.6,109.9V87.9h4.4l5.2,15.6c0.5,1.5,0.8,2.5,1.1,3.3c0.3-0.8,0.6-2,1.2-3.5l5.3-15.4h3.9v22.1h-2.8
+		V91.5l-6.4,18.5h-2.6l-6.4-18.8v18.8H126.6z M154.4,109.9l8.5-22.1h3.2l9,22.1h-3.3l-2.6-6.7h-9.3l-2.4,6.7H154.4z M160.8,100.9
+		h7.5l-2.3-6.1c-0.7-1.9-1.2-3.4-1.6-4.6c-0.3,1.4-0.7,2.9-1.2,4.2L160.8,100.9z M181.8,109.9V87.9h3l11.6,17.3V87.9h2.8v22.1h-3
+		l-11.6-17.3v17.3H181.8z"/>
 </g>
 </svg>

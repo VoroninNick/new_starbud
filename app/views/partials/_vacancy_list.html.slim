@@ -2,9 +2,13 @@
   .title
     |Ваканції
   .subtitle
-    |Доступно
-    = vacancy_all.count
-    | вакансій
+    |Доступно&nbsp; #{vacancy_all.count}
+    - if vacancy_all.count == 1
+      |ваканція
+    - elsif vacancy_all.count > 1 && vacancy_all.count < 5
+      |ваканції
+    - else
+      |вакансій
 
 ul
   - vacancy_all.each do |vacancy|
