@@ -5,6 +5,68 @@
 $(document).ready ->
 
 #===========================================================
+# file upload
+#===========================================================
+  $('.file-upload input:file').change ->
+    $this = $(@)
+    $wrap =$this.closest('form')
+    $file_name = $wrap.find('.fu-file')
+    exists_file = $this[0].files[0]
+
+    console.log 'value',exists_file.name
+
+    if exists_file
+      $wrap.addClass('file-exists')
+      $file_name.text(exists_file.name)
+    else
+      $wrap.removeClass('file-exists')
+
+  $('.file-upload .fu-remove').click ->
+    $this = $(@)
+    $wrap =$this.closest('form')
+
+    $wrap.removeClass('file-exists')
+    $wrap.find('input:file').val("")
+
+
+
+#  wrapper = $('.file_upload')
+#  inp = wrapper.find('input')
+#  btn = wrapper.find('button')
+#  lbl = wrapper.find('span')
+#  btn.focus ->
+#    inp.focus()
+#    return
+#  # Crutches for the :focus style:
+#  inp.focus(->
+#    wrapper.addClass 'focus'
+#    return
+#  ).blur ->
+#    wrapper.removeClass 'focus'
+#    return
+#
+#  btn.add(lbl).click ->
+#    alert 'test'
+#    inp.click()
+#
+#  file_api = if window.File and window.FileReader and window.FileList and window.Blob then true else false
+#  inp.change(->
+#    file_name = undefined
+#    console.log "file_api: ", file_api
+#    if file_api and inp[0].files[0]
+#      file_name = inp[0].files[0].name
+#    else
+#      file_name = inp.val().replace('C:\\fakepath\\', '')
+#    if !file_name.length
+#      return
+#    if lbl.is(':visible')
+#      lbl.text file_name
+#      btn.text 'Выбрать'
+#    else
+#      btn.text file_name
+#    return
+#  ).change()
+#===========================================================
 # page up
 #===========================================================
   $('.scroll-top-button').click ->

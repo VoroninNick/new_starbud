@@ -4,3 +4,35 @@ form.default-form.cv-form
   .label-text
     |Прикладіть ваше резюме, ми його переглянемо та зв’яжемось з вами
 
+  .file-upload
+    .material-component.ripple.default-box-shadow-slim
+      button type="button" for="file-upload"
+        |Прикласти резюме
+
+    input#file-upload name="cv" type="file" accept="application/pdf,application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    .file-uploaded
+      .fu-file
+      .fu-remove
+        = inline_svg "ic_close_black_32px.svg"
+
+    span .doc, .docx, .pdf
+
+  .input.animate-input
+    label Як вас звати
+    input name="name" type="text" required=""
+
+  .input.animate-input
+    label Номер телефону
+    input name="tel" type="tel" required=""
+
+  .input.animate-input
+    label Електронна скринька
+    input name="email" type="email" required=""
+
+  .button-wrap
+    .material-component.ripple.default-box-shadow-slim
+      button type="submit"
+        = inline_svg "contacts/mail.svg"
+        |Надіслати
+
+  .clearfix
