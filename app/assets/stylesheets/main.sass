@@ -114,7 +114,7 @@ header
 
 main
   .page-wrap
-    .header-page
+    .page-header
       padding-top: 70px
       padding-bottom: 60px
       .title
@@ -139,6 +139,11 @@ main
         .squad-height-block
           width: 100%
           height: 100%
+
+    &.vacancy-page-wrap
+      .page-body
+        padding-top: 45px
+        padding-bottom: 110px
 
 
     &.contacts-page-wrap
@@ -1159,62 +1164,6 @@ ul#main-page-certificates-slider
         width: 100%
         height: 100%
         background: #263238
-        &.jobs-list
-          padding: 42px 42px 0 42px
-          .title
-            +default_font_style(#1976d2, 24, 600, 21)
-            text-transform: uppercase
-            margin-bottom: 10px
-          .subtitle
-            +default_font_style(#fff, 16, 300, 24)
-            text-transform: uppercase
-
-          ul
-            margin: 0
-            margin-top: 40px
-            list-style: none
-            li
-              border-top: 1px solid #37474f
-              a
-                display: block
-                position: relative
-                padding-right: 40px
-                padding-top: 21px
-                padding-bottom: 19px
-              .title
-                +default_font_style(#90a4ae, 18, 600, 21)
-                text-transform: uppercase
-                margin-bottom: 0
-              .subtitle
-                +default_font_style(#90a4ae, 16, 300, 24)
-                text-transform: uppercase
-              .icon-link-to
-                width: 40px
-                height: 40px
-                background: #1976d2
-                display: block
-                +my_vertical_align()
-                  position: absolute
-                right: 0
-                padding: 8px
-                svg
-                  path
-                    fill: #fff
-              &:last-child
-                border-bottom: 1px solid #37474f
-              &:hover
-                .title, .subtitle
-                  color: #fff
-                .icon-link-to
-                  background: #fff
-                svg
-                  path
-                    fill: #e91e63
-
-
-          a.main-page-link-to
-            right: 0
-            bottom: 1px
 
     &.main-page-dealers-wrap-mobile
       @media #{$small-only}
@@ -1226,6 +1175,65 @@ ul#main-page-certificates-slider
 
   .image
     height: 100%
+
+
+.jobs-list
+  padding: 42px 42px 0 42px
+  .title
+    +default_font_style(#1976d2, 24, 600, 21)
+    text-transform: uppercase
+    margin-bottom: 10px
+  .subtitle
+    +default_font_style(#fff, 16, 300, 24)
+    text-transform: uppercase
+
+  ul
+    margin: 0
+    margin-top: 40px
+    list-style: none
+    li
+      border-top: 1px solid #37474f
+      a
+        display: block
+        position: relative
+        padding-right: 40px
+        padding-top: 21px
+        padding-bottom: 19px
+      .title
+        +default_font_style(#90a4ae, 18, 600, 21)
+        text-transform: uppercase
+        margin-bottom: 0
+      .subtitle
+        +default_font_style(#90a4ae, 16, 300, 24)
+        text-transform: uppercase
+      .icon-link-to
+        width: 40px
+        height: 40px
+        background: #1976d2
+        display: block
+        +my_vertical_align()
+          position: absolute
+        right: 0
+        padding: 8px
+        svg
+          path
+            fill: #fff
+      &:last-child
+        border-bottom: 1px solid #37474f
+      &:hover
+        .title, .subtitle
+          color: #fff
+        .icon-link-to
+          background: #fff
+        svg
+          path
+            fill: #e91e63
+
+
+  a.main-page-link-to
+    right: 0
+    bottom: 1px
+
 a.main-page-link-to
   width: 40px
   height: 40px
@@ -1890,5 +1898,46 @@ form
       .input-ico
         top: 25px
         bottom: inherit
+
+.default-article
+  h3
+    +default_font_style(#1976d2, 24, 600, 24)
+    text-transform: uppercase
+    margin-top: 45px
+    margin-bottom: 25px
+  h4
+  h5
+  h6
+  p
+    +default_font_style(#b0bec5, 16, 400, 21)
+  blockquote
+  ul
+    list-style-type: none
+    li
+      text-indent: -18px
+      +default_font_style(#b0bec5, 16, 400, 21)
+      margin-bottom: 10px
+      &:before
+        content: "— "
+        text-indent: -18px
+        color: #1976d2
+      span
+  ol
+    list-style-type: none
+    li
+      span
+
+.default-form
+  &.cv-form
+    background: #eceff1
+    padding: 25px
+    .title
+      +default_font_style(#1976d2, 24, 600, 24)
+      text-transform: uppercase
+      margin-bottom: 10px
+    .label-text
+      +default_font_style(#546e7a, 14, 300, 18)
+      font-style: italic
+      margin-bottom: 20px
 
 

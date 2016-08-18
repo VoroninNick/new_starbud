@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'main#index'
   get 'about-company' => 'main#about_company', as: :about_company
+  get 'about-company/:title' => 'main#vacancy', as: :vacancy
   get 'contacts' => 'main#contacts', as: :contacts
 
   post 'become-a-dealer' => 'main#become_a_dealer'

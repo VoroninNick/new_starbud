@@ -1,0 +1,18 @@
+- if vacancy_all.any?
+  .title
+    |Ваканції
+  .subtitle
+    |Доступно
+    = vacancy_all.count
+    | вакансій
+
+ul
+  - vacancy_all.each do |vacancy|
+    li
+      a href=vacancy_path(vacancy.slug)
+        .title
+          = vacancy.title
+        .subtitle
+          = vacancy.city
+        .icon-link-to
+          = inline_svg "ic_arrow_forward_black_48px.svg"

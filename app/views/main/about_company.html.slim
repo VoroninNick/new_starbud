@@ -187,3 +187,8 @@
     .clearfix
 
   = image_tag "about_company/business_background.jpg"
+  .ac-vacancy-list.black-block-wrap.jobs-list
+    .row
+      .columns
+        = render partial: "partials/vacancy_list", locals: { vacancy_all: @vacancy_all}
+

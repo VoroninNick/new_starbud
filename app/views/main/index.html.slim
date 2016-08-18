@@ -398,21 +398,7 @@
   .main-page-dealers-wrap.main-page-dealers-wrap-mobile
     .main-page-dealers-inner
       .main-page-dealers.jobs-list
-        .title Вакансії
-        .subtitle Доступно 13 вакансій
-        ul
-          li
-            a
-              .title Координатор продаж
-              .subtitle Львів
-              .icon-link-to
-                = inline_svg "ic_arrow_forward_black_48px.svg"
-          li
-            a
-              .title Дизайнер, 3D-візуалізатор
-              .subtitle Львів
-              .icon-link-to
-                = inline_svg "ic_arrow_forward_black_48px.svg"
+        = render partial: "partials/vacancy_list", locals: { vacancy_all: @vacancy_all}
 
         a.main-page-link-to href=about_company_path
           = inline_svg "ic_arrow_forward_black_48px.svg"

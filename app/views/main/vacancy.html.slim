@@ -1,0 +1,16 @@
+.page-wrap.vacancy-page-wrap
+  .row.text-center
+    .columns
+      .page-header
+        .title
+          = @vacancy.title
+        .subtitle
+          = @vacancy.city
+
+  .black-block-wrap.page-body
+    .row
+      .columns.medium-8.default-article
+        - if @vacancy.description.present?
+          = raw @vacancy.description
+      .columns.medium-4
+        = render partial: "partials/forms/cv_form"

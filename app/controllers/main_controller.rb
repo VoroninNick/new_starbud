@@ -1,9 +1,14 @@
 class MainController < ApplicationController
 
   def index
+    @vacancy_all = Vacancy.all
   end
 
   def about_company
+    @vacancy_all = Vacancy.all
+  end
+  def vacancy
+    @vacancy = Vacancy.find_by_slug(params[:title])
   end
 
   def contacts

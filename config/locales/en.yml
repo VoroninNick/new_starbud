@@ -21,3 +21,55 @@
 
 en:
   hello: "Hello world"
+  views:
+    pagination:
+      first: "<<"
+      previous: "<"
+      next: ">"
+      last: ">>"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%Y-%m-%d"
+      short: "%b %d"
+  enumerize:
+    wind_type:
+      internal: Внутрішній
+      external: Зовнішній
+    decor:
+      wooden: "Дерев'яний"
+      stone: "Кам’яний"
+      hi-tech: "Хай-тек"
+      white: Білий
+    kapinos:
+      round: Заокруглений
+      direct: Прямий
+    material:
+      aluminum: Алюміній
+      steel: Сталь
+      plastic: Пластик
+    type_of_surface:
+      wood: Дерево
+      glossiness: Глянець
+      opaque: Матовий
+    color_type:
+      mat: Матовий
+      glossy: Глянцевий
+    color:
+      white: Білий
+      milk: Молочний
+      silver: Срібний
+      anthracite: Антрацит
+      yellow: Жовтий
+      blue: Синій
+      brick: Цегловий
+      red: Червоний
+      cherry: Вишневий
+      brick_red: Цеглово-червоний
+      brown: Коричневий
+      dark_brown: Темно-коричневий
+      green: Зелений
+      light_green: Світло-зелений
+      zinc: Цинк
+      nut: Горіх
+      golden_oak: Золотий-дуб

@@ -63,8 +63,17 @@ gem 'owlcarousel-rails'
 
 gem 'figaro'
 
-gem 'paperclip'
+gem 'ckeditor'
+gem "paperclip", "~> 5.0.0"
+gem 'paperclip-compression'
 
 gem 'protected_attributes'
 
 gem 'quiet_assets'
+
+gem 'rails_admin'
+gem 'rails-i18n'
+gem 'truncate_html'
+gem 'devise'
+
+gem 'protected_attributes'
