@@ -408,10 +408,16 @@
   /.title 1976d2
   .title Наші партнери
   .subtitle
-    |34 партнерів
+    |#{@partners.count} партнерів
     span &nbsp;по всій україні
 
-  ul#our-partners
+  - if @partners.any?
+    ul#our-partners
+      - @partners.each do |partner|
+        li
+          = embedded_svg_from_absolute_path partner.logo.path
+
+  /ul#our-partners
     li
       = inline_svg "partners/1_Abwehr.svg"
     li

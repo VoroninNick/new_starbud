@@ -2,10 +2,12 @@ class MainController < ApplicationController
 
   def index
     @vacancy_all = Vacancy.all
+    @partners = Partner.where(published: 't').order(position: :asc)
   end
 
   def about_company
     @vacancy_all = Vacancy.all
+    @partners = Partner.where(published: 't').order(position: :asc)
   end
   def vacancy
     @vacancy = Vacancy.find_by_slug(params[:title])

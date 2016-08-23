@@ -167,13 +167,15 @@ main
           height: 395px
           background: #1e242a
           +grid-column(8)
+          padding-left: 0 !important
+          padding-right: 0 !important
+          #map_canvas
+            height: 395px
         .contacts-form
           height: 395px
           background: #eceff1
           +grid-column(4)
 
-        #map_canvas2
-          height: 395px
       .socials-wrap
         overflow: hidden
         padding-top: 75px
@@ -272,9 +274,12 @@ main
           .image
             height: 100%
 
+      .ac-page-banner
+        background: #263238
+
       .main-banner-wrap
         .bx-pager, .main-banner-info-block-wrap
-          display: none
+          //display: none
 
     .black-block-wrap
       background: #263238
@@ -296,8 +301,9 @@ main
       padding-right: 0!important
       position: relative
       .title
-        +default_font_style(#263238, 24, 600, 24)
+        +default_font_style(#263238, 24, 600, 21)
         text-transform: uppercase
+        margin-bottom: 16px
       p
         +default_font_style(#ffffff, 16, 300, 24)
 
@@ -308,6 +314,13 @@ main
       .unit-of-measurement
         width: 33.333%
         padding-bottom: 33.333%
+
+      .bx-wrapper
+        .bx-viewport
+        .bx-controls
+          .bx-pager
+            bottom: 0
+
       ul.ac-our-history-carousel
         li
           .title
@@ -316,9 +329,12 @@ main
           .subtitle
             +default_font_style(#1976d2, 24, 600, 24)
             text-transform: uppercase
+            margin-bottom: 16px !important
           p
-            +default_font_style(#ffffff, 16, 300, 18)
-
+            +default_font_style(#ffffff, 16, 300, 21)
+          .subtitle, p
+            width: 80%
+            margin: 0 auto
       ul.ac-our-partners-carousel
         li
           svg
@@ -395,8 +411,8 @@ main
       &.ac-info-card-large
         @media #{$medium-up}
           min-height: 350px
-        svg
-          height: 200px
+          svg
+            height: 200px
 
     .ac-info-quote
       padding-left: 0.9375rem * 2
