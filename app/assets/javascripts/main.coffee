@@ -4,6 +4,12 @@
 
 $(document).ready ->
 
+#===================================================================
+#  photo - video gallery
+#===================================================================
+  $('.lightGallery').lightGallery ->
+    thumbnail: true
+
 #===========================================================
 # file upload
 #===========================================================
@@ -221,6 +227,7 @@ $(document).ready ->
 #===========================================================
   $('.close-button').click ->
     $(@).closest('.success-wrap').hide()
+
 # ===========================================================
 # callback handler for contact form submit
 #===========================================================
@@ -259,6 +266,37 @@ $(document).ready ->
         console.log('error')
 
     e.preventDefault()
+
+# ==========================================================
+# handler owl certificates
+#===========================================================
+  owleg = $("#our-certeficates-carousel")
+  owleg.owlCarousel()
+
+  gallery = null
+  $('#our-certeficates-carousel .owl-item').click ->
+    $wrap =$(@).closest('#our-certeficates-carousel')
+    slides = $wrap.find('.image')
+
+    cii = $(@).index()
+    elmenetsListData = $.map($wrap.find('.image'), (el) ->
+      {
+        src: $(el).attr 'data-gallery-src'
+        thumb: $(el).attr 'data-gallery-thumb'
+      }
+    )
+    console.log("cii", cii)
+    $gallery = $('#our-certeficates-carousel')
+    $gallery.lightGallery
+      dynamic: true
+      dynamicEl: elmenetsListData
+      index: cii
+
+    gallery ?= $gallery.data("lightGallery")
+    gallery.index = cii
+    console.log("gallery", gallery)
+    window.gallery = gallery
+
 
 #--------------
 #  $popup = $('#become_s_dealer')

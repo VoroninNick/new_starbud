@@ -293,6 +293,16 @@
       .unit-of-measurement
       .squad-height-block-inner
         .squad-height-block
+          - if @cereteficates.any?
+            ul#our-certeficates-carousel
+              - @cereteficates.each do |item|
+                li
+                  .image-file
+                    .image style="background: url('#{item.image.url(:thumb)}')no-repeat center center;" data-gallery-thumb=item.image.url(:thumb)  data-gallery-src=item.image.url(:large)
+                    a
+                      = inline_svg "image_zoom_out.svg"
+                  .title
+                    = item.title
           /ul.ac-our-history-carousel
             - 4.times do
               li

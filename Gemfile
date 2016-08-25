@@ -58,7 +58,6 @@ gem 'foundation-rails'
 gem 'inline_svg'
 
 gem 'bxslider-rails'
-
 gem 'owlcarousel-rails'
 
 gem 'figaro'
@@ -77,3 +76,5 @@ gem 'truncate_html'
 gem 'devise'
 
 gem 'protected_attributes'
+
+gem 'bower-rails'
