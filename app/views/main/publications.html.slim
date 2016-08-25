@@ -12,8 +12,8 @@
           |Категорії:
     .row
       - if @publications.any?
-        - 5.times do
-          - @publications.each do |publication|
+        - @publications.each_with_index do |publication, i|
+          - if i < 14
             .publication-card
               .image style="background: url('#{publication.photo.url(:thumb)}')no-repeat center center;"
               .publication-title
