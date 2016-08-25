@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
 
   def do_auth
+    #return render inline: params[:args].inspect
     if determine_if_1c
       self.class.http_basic_authenticate_with name: "admin", password: "star_bud"#, if: :determine_if_1c
     else
@@ -18,20 +19,26 @@ class ApplicationController < ActionController::Base
   end
 
   def determine_if_1c
-    return false
-    url = params[:args]
     ignored_scopes = %w(assets)
+
+    url = params[:args]
+    if url.starts_with?("/")
+      url = url[1, url.length - 1]
+    end
+
+
     ignored_scopes.each do |scope|
       # prepend slash
-      if !scope.starts_with?("/")
-        scope = "/#{scope}"
+      if scope.starts_with?("/")
+        scope = scope[1, scope.length - 1]
       end
       # append slash
-      if !scope.end_with?("/")
-        scope = "#{scope}/"
+      if scope.end_with?("/")
+        scope = scope[0, scope.length - 1]
       end
 
-      if url.starts_with?(scope)
+
+      if url.starts_with?(scope) && (url.length == scope.length || url[scope.length] == "/")
         return false
       end
     end
