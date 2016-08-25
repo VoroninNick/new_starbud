@@ -47,7 +47,7 @@ class Publication < ActiveRecord::Base
       end
       field :photo, :paperclip do
         label 'Логотип:'
-        help 'Логотипи вантажити лише в форматі svg 1920x500 pixels'
+        help 'Логотипи вантажити лише в форматі jpg 1920x500 pixels'
       end
       field :body, :ck_editor do
         label 'Тіло публікації:'
