@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def determine_if_1c
-    ignored_scopes = %w(assets)
+    ignored_scopes = %w(assets fonts img favicon.ico)
 
     url = params[:args]
     if url.starts_with?("/")
