@@ -2,7 +2,42 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
 
-  http_basic_authenticate_with name: "admin", password: "star_bud", only: [:listener_1c]
+  before_action :do_auth, only: [:listener_1c]
+
+
+  def do_auth
+    if determine_if_1c
+      self.class.http_basic_authenticate_with name: "admin", password: "star_bud"#, if: :determine_if_1c
+    else
+      render_not_found
+    end
+  end
+
+  def render_not_found
+    render "errors/not_found.html.slim", status: 404
+  end
+
+  def determine_if_1c
+    return false
+    url = params[:args]
+    ignored_scopes = %w(assets)
+    ignored_scopes.each do |scope|
+      # prepend slash
+      if !scope.starts_with?("/")
+        scope = "/#{scope}"
+      end
+      # append slash
+      if !scope.end_with?("/")
+        scope = "#{scope}/"
+      end
+
+      if url.starts_with?(scope)
+        return false
+      end
+    end
+
+    true
+  end
 
   #protect_from_forgery with: :exception
   require 'open-uri'
