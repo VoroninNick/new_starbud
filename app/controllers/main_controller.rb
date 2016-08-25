@@ -14,6 +14,15 @@ class MainController < ApplicationController
     @vacancy = Vacancy.find_by_slug(params[:title])
   end
 
+  def publications
+    @featured = Publication.featured
+    # @publications = Publication.published
+    @publications = Publication.all
+  end
+  def publication
+    @publication = Publication.find_by_slug(params[:title])
+  end
+
   def contacts
   end
 

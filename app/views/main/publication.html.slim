@@ -1,0 +1,11 @@
+.page-wrap.publication-page-wrap
+  .image-page-header
+    .image style="background: url('#{@publication.photo.url(:large)}')no-repeat center center;"
+
+  .black-block-wrap.page-body
+    .row
+      .columns.large-8.large-centered.default-article
+        .title
+          = @publication.title
+        hr
+        = raw @publication.body

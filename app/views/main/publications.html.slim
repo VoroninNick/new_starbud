@@ -1,0 +1,25 @@
+.page-wrap.publications-page-wrap
+  - if @featured.any?
+    ul#main-banner.ps-featured
+      - @featured.each do |publication|
+        li
+          .image style="background: url('#{publication.photo.url(:large)}')no-repeat center center;"
+
+  .black-block-wrap.page-body
+    .row
+      .columns
+        .label-text
+          |Категорії:
+    .row
+      - if @publications.any?
+        - 5.times do
+          - @publications.each do |publication|
+            .publication-card
+              .image style="background: url('#{publication.photo.url(:thumb)}')no-repeat center center;"
+              .publication-title
+                .title
+                  = publication.title
+
+              .material-component.ripple.default-button.red.default-box-shadow-slim
+                a href=publication_path(publication.slug)
+                  |Читати
