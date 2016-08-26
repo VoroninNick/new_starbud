@@ -11,7 +11,10 @@
                   a href=publication_path(publication.slug)
                     = publication.title
                 .subtitle
-                  |#{publication.tags.first.name} — #{publication.created_at.strftime('%d.%m.%Y')}
+                  - if publication.tags.any?
+                    |#{publication.tags.first.name} — #{publication.created_at.strftime('%d.%m.%Y')}
+                  - else
+                    |#{publication.created_at.strftime('%d.%m.%Y')}
 
   .black-block-wrap.page-body
     .row
@@ -38,7 +41,10 @@
                 .title
                   = publication.title
                 .subtitle
-                  |#{publication.tags.first.name} — #{publication.created_at.strftime('%d.%m.%Y')}
+                  - if publication.tags.any?
+                    |#{publication.tags.first.name} — #{publication.created_at.strftime('%d.%m.%Y')}
+                  - else
+                    |#{publication.created_at.strftime('%d.%m.%Y')}
 
               .material-component.ripple.default-button.red.default-box-shadow-slim
                 a href=publication_path(publication.slug)
