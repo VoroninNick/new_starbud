@@ -6,8 +6,12 @@
 # t.boolean :featured
 
 class Publication < ActiveRecord::Base
+  acts_as_taggable
+  # acts_as_taggable_on :skills, :interests
+
+
   attr_accessible *attribute_names
-  attr_accessible :photo
+  attr_accessible :photo, :tag_list
   has_attached_file :photo,
                     styles: { thumb: "500x500>",
                               large: "1920x500>"},
@@ -44,6 +48,12 @@ class Publication < ActiveRecord::Base
       end
       field :title do
         label 'Назва:'
+      end
+      field :tag_list do
+        label "Категорії:"
+        help 'Якщо це новий тег, то вводимо його назву. А якщо існуючий то вибираємо з боку з існуючих...'
+        partial 'tag_list_with_suggestions'
+        # ratl_max_suggestions -1
       end
       field :photo, :paperclip do
         label 'Логотип:'

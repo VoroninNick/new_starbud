@@ -4,12 +4,30 @@
       - @featured.each do |publication|
         li
           .image style="background: url('#{publication.photo.url(:large)}')no-repeat center center;"
+          .title-wrap
+            .row.text-center
+              .columns.large-10.large-centered
+                .title
+                  a href=publication_path(publication.slug)
+                    = publication.title
+                .subtitle
+                  |#{publication.tags.first.name} — #{publication.created_at.strftime('%d.%m.%Y')}
 
   .black-block-wrap.page-body
     .row
-      .columns
+      .columns.ps-tag-list
         .label-text
           |Категорії:
+        - if @tags.any?
+          ul.tag-list
+            li
+              a.active
+                |Всі категорії
+            - @tags.each do |tag|
+              li
+                a
+                  = tag.name
+
     .row
       - if @publications.any?
         - @publications.each_with_index do |publication, i|
@@ -19,6 +37,8 @@
               .publication-title
                 .title
                   = publication.title
+                .subtitle
+                  |#{publication.tags.first.name} — #{publication.created_at.strftime('%d.%m.%Y')}
 
               .material-component.ripple.default-button.red.default-box-shadow-slim
                 a href=publication_path(publication.slug)

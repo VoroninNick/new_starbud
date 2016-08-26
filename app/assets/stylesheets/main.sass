@@ -166,8 +166,53 @@ main
       ul.ps-featured
         margin-left: 0
         li
+          position: relative
           .image
             height: 100%
+          .title-wrap
+            +my_vertical_align()
+              position: absolute
+            left: 0
+            right: 0
+
+            .title, a
+              +default_font_style(#fff, 60, 600, 60)
+              text-transform: uppercase
+
+            .subtitle
+              +default_font_style(#fff, 18, 300, 36)
+              font-family: Georgia
+              font-style: italic
+      .ps-tag-list
+        margin-top: 20px
+        margin-bottom: 44px
+        .label-text
+          +default_font_style(#90a4ae, 14, 500, 30)
+          float: left
+        ul
+          list-style: none
+          &.tag-list
+            float: left
+            margin-bottom: 0
+            margin-left: 15px
+            li
+              height: 30px
+              display: inline-block
+              float: left
+              margin: 0 1px 0 0
+              a
+                +default_font_style(#455a64, 14, 300, 30)
+                font-family: Georgia
+                font-style: italic
+                display: block
+                padding: 0 10px
+                background: #90a4ae
+                &.active
+                  background: #1976d2
+                  color: #fff
+                &:hover
+                  background: #e91e63
+                  color: #fff
 
     &.vacancy-page-wrap
       .page-body
@@ -2144,6 +2189,17 @@ form
   position: relative
   .image
     padding-bottom: 100%
+    &:after
+      display: block
+      content: ''
+      +linearGradient(#fff, #000)
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      opacity: .3
+
   .publication-title
     position: absolute
     left: 20px
@@ -2152,6 +2208,11 @@ form
     .title
       +default_font_style(#fff, 24, 600, 24)
       text-transform: uppercase
+    .subtitle
+      +default_font_style(#fff, 14, 300, 18)
+      font-family: Georgia
+      font-style: italic
+
   .material-component
     +my_center_align()
       position: absolute
@@ -2174,6 +2235,8 @@ form
   &:nth-child(14), &:nth-child(15)
     //display: none
   &:hover
+    .image:after
+      opacity: 0
     .publication-title
       display: none
     .material-component

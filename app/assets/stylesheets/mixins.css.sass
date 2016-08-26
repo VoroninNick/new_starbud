@@ -357,6 +357,15 @@ select
   -webkit-transition: all 0.5s cubic-bezier(0.18, 0.97, 0.64, 0.2)
   transition: all 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19)
 
+= linearGradient($top, $bottom)
+  background: $top /* Old browsers */
+  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top 0%,$bottom 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%) /* IE10+ */
+  background: linear-gradient(to bottom,  $top 0%,$bottom 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ) /* IE6-9 */
 
 
 
@@ -416,6 +425,9 @@ ul.v-block-wrap
       font:
         weight: 200
         size: rem-calc(12)
+
+
+
 
 
 
