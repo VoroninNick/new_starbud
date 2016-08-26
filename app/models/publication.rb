@@ -61,13 +61,23 @@ class Publication < ActiveRecord::Base
       end
       field :body, :ck_editor do
         label 'Тіло публікації:'
-        help 'Використовувати теги h3, h4, h5, h6, p, blockquote, <ul or ol> <li> <span>text</span></li></ul or /ol>'
+        help 'Використовувати теги h3, h4, h5, h6, p, цитата: <blockquote><p></p><footer></footer></blockquote>, списки: <ul or ol> <li> <span>text</span></li></ul or /ol>, картинка з підписом: <figure><img>
+              <figcaption>підпис</figcaption>
+              </figure>'
       end
     end
 
   end
 
-  scope :published, -> { where(:published => true).where.not(:featured => true).order('created_at asc')}
+  scope :def_published, -> { where(:published => true).order('created_at asc')}
+  scope :published, -> { :def_published.where.not(:featured => true)}
   scope :featured, -> { where(:published => true).where(:featured => true).order('created_at asc')}
 
+  def next
+    Publication.def_published.where("id > ?", id).first
+  end
+
+  def prev
+    Publication.def_published.where("id < ?", id).last
+  end
 end

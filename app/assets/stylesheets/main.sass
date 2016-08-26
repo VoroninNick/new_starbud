@@ -153,16 +153,49 @@ main
         .title
           +default_font_style(#1976d2, 48, 600, 48)
           text-transform: uppercase
-          //text-align: center
+          text-align: center
           margin-top: 42px
           margin-bottom: 22px
           padding: 0 40px
+        .subtitle
+          +default_font_style(#b0bec5, 16, 300, 36)
+          font-family: Georgia
+          font-style: italic
+          text-align: center
         hr
           border-bottom: 4px solid #546e7a
+      .page-footer
+        height: 100px
+        background: #eceff1
+        .other-publications
+          +grid-column(5)
+          .op-icon
+            width: 75px
+            height: 100%
+            svg
+              height: 24px
+              width: 100%
+              path
+                fill: #78909c
+          &.prev-publication-link
+            .op-icon
+              float: left
+            .op-title
+              text-align: left
+          &.next-publication-link
+            .op-icon
+              float: right
+            .op-title
+              text-align: right
+
+        .share-publication-link
+          +grid-column(2)
 
     &.publications-page-wrap
       #main-banner, .ps-featured
         height: 400px
+      .page-body
+        padding-bottom: 125px
       ul.ps-featured
         margin-left: 0
         li
@@ -2052,11 +2085,48 @@ form
     margin-top: 45px
     margin-bottom: 25px
   h4
+    +default_font_style(#1976d2, 21, 500, 21)
   h5
   h6
   p
     +default_font_style(#b0bec5, 16, 400, 21)
+  figure
+    img
+    figcaption
+      +default_font_style(#cfd8dc, 16, 300, 21)
+      font-family: Georgia
+      font-style: italic
+      text-align: center
+      padding: 10px
+      background: #37474f
+
   blockquote
+    border-top: 4px solid #546e7a
+    border-left: none
+    padding-left: 0
+    padding-right: 0
+    margin-bottom: 45px
+    &:before
+      content: '«»'
+      +default_font_style(#1976d2, 48, 300, 70)
+      font-family: Georgia
+      font-style: italic
+      display: block
+      text-align: center
+    p
+      +default_font_style(#eceff1, 21, 300, 30)
+      font-family: Georgia
+      font-style: italic
+      text-align: center
+    footer
+      +default_font_style(#1976d2, 16, 300, 44)
+      font-family: Georgia
+      font-style: italic
+      background: transparent
+      border-top: 1px solid #546e7a
+      text-align: right
+      margin-top: 35px
+
   ul
     list-style-type: none
     li

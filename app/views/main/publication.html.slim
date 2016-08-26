@@ -7,5 +7,30 @@
       .columns.large-8.large-centered.default-article
         .title
           = @publication.title
+        .subtitle
+          - if @publication.tags.any?
+            |#{@publication.tags.first.name} — #{@publication.created_at.strftime('%d.%m.%Y')}
+          - else
+            |#{@publication.created_at.strftime('%d.%m.%Y')}
         hr
         = raw @publication.body
+
+  .page-footer
+    .other-publications.prev-publication-link
+      .op-icon
+        = inline_svg "ic_keyboard_arrow_left_white_36px.svg"
+      .op-title
+        - if @publication.prev
+          a href=publication_path(@publication.prev.slug)
+            = @publication.prev.try(:title)
+    .share-publication-link
+      .label-text
+        |Поділитись публікацією
+
+    .other-publications.next-publication-link
+      .op-title
+        - if @publication.next
+          a href=publication_path(@publication.next.slug)
+            = @publication.next.try(:title)
+      .op-icon
+        = inline_svg "ic_keyboard_arrow_right_white_36px.svg"
