@@ -12,6 +12,7 @@ class MainController < ApplicationController
     @vacancy_all = Vacancy.all
     @partners = Partner.where(published: 't').order(position: :asc)
     @cereteficates = OurCertificate.with_public
+    @our_histories = AboutCompanyHistory.published
   end
   def vacancy
     @vacancy = Vacancy.find_by_slug(params[:title])

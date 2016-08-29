@@ -95,6 +95,7 @@ $(document).ready ->
   $("ul.ac-our-history-carousel").bxSlider
     auto: true
     pause: 5000
+    paginationSpeed: 3000
 
 #  =========================================================================
 #  about company - our partners
