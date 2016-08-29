@@ -4,6 +4,7 @@ class MainController < ApplicationController
     @vacancy_all = Vacancy.all
     @partners = Partner.where(published: 't').order(position: :asc)
     @personals = OurRepresentative.published
+    @comments = Comment.published
   end
 
   def about_company

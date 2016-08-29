@@ -344,8 +344,16 @@
         .main-page-jobs-bottom-wrap
           .main-page-jobs-bottom-inner
             .title Відгуки клієнтів
-            ul#feedback-clients-carousel
-              li
+            - if @comments.any?
+              ul#feedback-clients-carousel
+                - @comments.each do |comment|
+                  li
+                    .feedback-client-description
+                      blockquote
+                        = comment.body
+                      p.client-name
+                        = comment.title
+              /li
                 /.feedback-client-avatar
                   .avatar
                     .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
@@ -353,7 +361,7 @@
                 .feedback-client-description
                   blockquote ...компанія Стар-Буд це завжди приємна співпраця, підкажете по роботі зорієнтує по товару, завчасно попереджаєте про нюанси які випадково трапляються. Власне мені завжди з вами приємно працювати.
                   p.client-name  Людмила, Магазин «Квартал»
-              li
+              /li
                 /.feedback-client-avatar
                   .avatar
                     .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
@@ -361,7 +369,7 @@
                 .feedback-client-description
                   blockquote ...лаконічно скажу про компанію Стар-Буд -  Вау!!!, радий співпрацюю з такими приємними людьми які якісно та вчасно надають інформацію та товар.
                   p.client-name Гудзій Роман, «Галерея Паркету»
-              li
+              /li
                 /.feedback-client-avatar
                   .avatar
                     .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
@@ -369,7 +377,7 @@
                 .feedback-client-description
                   blockquote Співпраця із компанією «Стар-Буд» приємно здивувала швидкістю оформлення замовлення та оперативної доставки  магазин. Особливо приємно було почути кваліфіковану відповідь на усі мої запитання, а також допомогу у підборі комплектуючих. Загалом хороша компанія із хорошими людьми!!! Кращої ціни та якості не знайти! Рекомендую.
                   p.client-name Стопачинський Валентин Петрович
-              li
+              /li
                 /.feedback-client-avatar
                   .avatar
                     .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
@@ -377,7 +385,7 @@
                 .feedback-client-description
                   blockquote ...компанія Стар-Буд мені подобається, нічого поганого не можу сказати, усі обіцянки виконуються, усе як має бути, спілкуємось нормально, замовлення виконується вчасно. Нормально працюємо, немає жодних нарікань. Усе добре.
                   p.client-name Людмила, «Галерея Дверей»
-              li
+              /li
                 /.feedback-client-avatar
                   .avatar
                     .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
