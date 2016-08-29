@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person: MyString
+  region: MyString
+  phone: MyString
+  published: false
+  position: 1
+  avatar: 
+
+two:
+  person: MyString
+  region: MyString
+  phone: MyString
+  published: false
+  position: 1
+  avatar: 

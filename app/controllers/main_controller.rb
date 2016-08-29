@@ -3,6 +3,7 @@ class MainController < ApplicationController
   def index
     @vacancy_all = Vacancy.all
     @partners = Partner.where(published: 't').order(position: :asc)
+    @personals = OurRepresentative.published
   end
 
   def about_company
@@ -26,6 +27,7 @@ class MainController < ApplicationController
   end
 
   def contacts
+    @personals = OurRepresentative.published
   end
 
   def become_a_dealer

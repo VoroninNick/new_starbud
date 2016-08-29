@@ -1,25 +1,24 @@
 # t.string :title
 # t.string :slug
-# t.has_attached_file :photo
+# t.text :short_description
 # t.text :body
+# t.has_attached_file :image
 # t.boolean :published
-# t.boolean :featured
+# t.date :date_begin
+# t.date :date_finish
 
-class Publication < ActiveRecord::Base
-  acts_as_taggable
-  # acts_as_taggable_on :skills, :interests
-
+class Promotion < ActiveRecord::Base
 
   attr_accessible *attribute_names
-  attr_accessible :photo, :tag_list
-  has_attached_file :photo,
-                    styles: { thumb: "500x500>",
+  attr_accessible :image
+  has_attached_file :image,
+                    styles: { thumb: "1000x605>",
                               large: "1920x500>"},
                     convert_options: { thumb: "-quality 94 -interlace Plane",
                                        large: "-quality 94 -interlace Plane"},
                     default_url: "/images/:style/missing.png"
 
-  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def to_slug
     "#{title.parameterize}"
@@ -30,10 +29,10 @@ class Publication < ActiveRecord::Base
   before_save :save_slug
 
   rails_admin do
-    navigation_label 'Публікації'
+    navigation_label 'Акції'
 
-    label 'Публікація'
-    label_plural 'Публікації'
+    label 'Акція'
+    label_plural 'Акції'
 
     list do
     end
@@ -41,26 +40,28 @@ class Publication < ActiveRecord::Base
     edit do
       field :published do
         label 'Чи публікувати?'
+        help 'Ставимо галочку якщо акція не має визначений часових меж'
       end
-      field :featured do
-        label 'Чи особлива?'
-        help 'Публікації які будуть відображатись на банері сторінки всіх публікацій...'
+      field :date_begin do
+        label 'Дата початку:'
+        help 'Заповнюємо якщо акція має час проведення'
+      end
+      field :date_finish do
+        label 'Дата завершення:'
+        help 'Заповнюємо якщо акція має час проведення'
       end
       field :title do
         label 'Назва:'
       end
-      field :tag_list do
-        label "Категорії:"
-        help 'Якщо це новий тег, то вводимо його назву. А якщо існуючий то вибираємо з боку з існуючих...'
-        partial 'tag_list_with_suggestions'
-        # ratl_max_suggestions -1
-      end
-      field :photo, :paperclip do
+      field :image, :paperclip do
         label 'Зображення:'
         help 'Зображення вантажити лише в форматі jpg 1920x500 pixels'
       end
+      field :short_description do
+        label 'Короткий опис:'
+      end
       field :body, :ck_editor do
-        label 'Тіло публікації:'
+        label 'Тіло акції:'
         help 'Використовувати теги h3, h4, h5, h6, p, цитата: <blockquote><p></p><footer></footer></blockquote>, списки: <ul or ol> <li> <span>text</span></li></ul or /ol>, картинка з підписом: <figure><img>
               <figcaption>підпис</figcaption>
               </figure>'

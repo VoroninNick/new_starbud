@@ -95,6 +95,34 @@
               .title
                 |Представники в області
               .subtitle
-                |в 10 областях україни
+                |в 15 областях україни
 
-      = render partial: "partials/representives_list"
+      /= render partial: "partials/representives_list"
+      - if @personals.any?
+        - @personals.each do |person|
+          .representatives-one-person-wrap
+            .representatives-one-person-inner
+              .representatives-one-person
+                .image style="background: url('#{person.avatar.url(:large)}')no-repeat center center;"
+                .representatives-one-person-details-wrap
+                  .representatives-one-person-details-inner
+                    .representatives-one-person-details
+                      .title
+                        = person.try(:region)
+                      .subtitle
+                        = person.try(:person)
+                      p
+                        span.label-contact тел.моб.:
+                        span
+                          = person.try(:phone)
+
+        .representatives-one-person-wrap
+          .representatives-one-person-inner
+            .representatives-one-person.representative-future-wrap
+              .representative-future
+                = inline_svg "headphones.svg"
+                .title
+                  |Майбутній
+                  br
+                    |представник
+                .subtitle Очікуєм розширення в 2016
