@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 
   def index
+    @pdf_catalog = PdfCatalog.first
     @vacancy_all = Vacancy.all
     @partners = Partner.where(published: 't').order(position: :asc)
     @personals = OurRepresentative.published

@@ -8,7 +8,7 @@ class Comment < ActiveRecord::Base
   attr_accessible *attribute_names
 
   rails_admin do
-    navigation_label 'Відгуки'
+    navigation_label 'Головна сторінка'
 
     label 'Відгук'
     label_plural 'Відгуки'

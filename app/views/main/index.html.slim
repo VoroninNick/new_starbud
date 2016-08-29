@@ -66,9 +66,14 @@
 
 .main-page-navigation-blocks-wrap
   .main-page-link-to-catalog
-    a href="http://star-bud.ua/assets/pdf_catalog/2/pdf_original.pdf?1400582668"
-      = inline_svg "file-pdf-box.svg"
-      span Завантажити каталог
+    - if @pdf_catalog && @pdf_catalog.catalog.exists?
+      a href=@pdf_catalog.catalog
+        = inline_svg "file-pdf-box.svg"
+        span Завантажити каталог
+    - else
+      a
+        = inline_svg "file-pdf-box.svg"
+        span Завантажити каталог
 
   .main-page-navigation-block-inner
     .main-page-navigation-block
@@ -353,46 +358,6 @@
                         = comment.body
                       p.client-name
                         = comment.title
-              /li
-                /.feedback-client-avatar
-                  .avatar
-                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
-                  p Людмила
-                .feedback-client-description
-                  blockquote ...компанія Стар-Буд це завжди приємна співпраця, підкажете по роботі зорієнтує по товару, завчасно попереджаєте про нюанси які випадково трапляються. Власне мені завжди з вами приємно працювати.
-                  p.client-name  Людмила, Магазин «Квартал»
-              /li
-                /.feedback-client-avatar
-                  .avatar
-                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
-                  p Гудзій Роман
-                .feedback-client-description
-                  blockquote ...лаконічно скажу про компанію Стар-Буд -  Вау!!!, радий співпрацюю з такими приємними людьми які якісно та вчасно надають інформацію та товар.
-                  p.client-name Гудзій Роман, «Галерея Паркету»
-              /li
-                /.feedback-client-avatar
-                  .avatar
-                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
-                  p Валентин Петрович
-                .feedback-client-description
-                  blockquote Співпраця із компанією «Стар-Буд» приємно здивувала швидкістю оформлення замовлення та оперативної доставки  магазин. Особливо приємно було почути кваліфіковану відповідь на усі мої запитання, а також допомогу у підборі комплектуючих. Загалом хороша компанія із хорошими людьми!!! Кращої ціни та якості не знайти! Рекомендую.
-                  p.client-name Стопачинський Валентин Петрович
-              /li
-                /.feedback-client-avatar
-                  .avatar
-                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
-                  p Людмила
-                .feedback-client-description
-                  blockquote ...компанія Стар-Буд мені подобається, нічого поганого не можу сказати, усі обіцянки виконуються, усе як має бути, спілкуємось нормально, замовлення виконується вчасно. Нормально працюємо, немає жодних нарікань. Усе добре.
-                  p.client-name Людмила, «Галерея Дверей»
-              /li
-                /.feedback-client-avatar
-                  .avatar
-                    .image style="background: url('#{asset_path("Historical-Santa-Claus-Male-icon.png")}')no-repeat center center;"
-                  p Мицак Мирослав
-                .feedback-client-description
-                  blockquote ...дуже добре що компанія «Стар-Буд» розділяє і сайт і ціни між роздрібом та гуртом. Існує розуміння роботи двох напрямків. Завжди можу розраховувати на кваліфіковану підтримку.
-                  p.client-name Мицак Мирослав
 
   .main-page-jobs-wrap.main-page-jobs-wrap-second
     .main-page-jobs-inner
@@ -424,76 +389,6 @@
       - @partners.each do |partner|
         li
           = embedded_svg_from_absolute_path partner.logo.path
-
-  /ul#our-partners
-    li
-      = inline_svg "partners/1_Abwehr.svg"
-    li
-      = inline_svg "partners/2_Berez.svg"
-    li
-      = inline_svg "partners/3_Galicia.svg"
-    li
-      = inline_svg "partners/4_OMiC.svg"
-    li
-      = inline_svg "partners/5_Formet.svg"
-    li
-      = inline_svg "partners/6_Neman.svg"
-    li
-      = inline_svg "partners/7_Apex.svg"
-    li
-      = inline_svg "partners/8_Rotex.svg"
-    li
-      = inline_svg "partners/9_USK.svg"
-    li
-      = inline_svg "partners/10_UniLock.svg"
-    li
-      = inline_svg "partners/11_VinciDecor.svg"
-    li
-      = inline_svg "partners/12_Classen.svg"
-    li
-      = inline_svg "partners/13_SwissKrono.svg"
-    li
-      = inline_svg "partners/14_Dianaforest.svg"
-    li
-      = inline_svg "partners/15_Barlinek.svg"
-    li
-      = inline_svg "partners/16_Linoplast.svg"
-    li
-      = inline_svg "partners/17_Alex.svg"
-    li
-      = inline_svg "partners/18_IVC.svg"
-    li
-      = inline_svg "partners/19_Grabo.svg"
-    li
-      = inline_svg "partners/20_Riko.svg"
-    li
-      = inline_svg "partners/21_Korner.svg"
-    li
-      = inline_svg "partners/22_Bravo.svg"
-    li
-      = inline_svg "partners/23_OpenTeck.svg"
-    li
-      = inline_svg "partners/24_Premium Decor.svg"
-    li
-      = inline_svg "partners/25_D-c-fix.svg"
-    li
-      = inline_svg "partners/26_Deko profil.svg"
-    li
-      = inline_svg "partners/27_Cardinal.svg"
-    li
-      = inline_svg "partners/28_Crocus.svg"
-    li
-      = inline_svg "partners/29_Slobozanskue.svg"
-    li
-      = inline_svg "partners/30_NewServise.svg"
-    li
-      = inline_svg "partners/31_Sintra.svg"
-    li
-      = inline_svg "partners/32_Komar.svg"
-    li
-      = inline_svg "partners/33_Simia.svg"
-    li
-      = inline_svg "partners/34_Sintelon.svg"
 
 .main-page-contacts-block-wrap
   .main-page-contacts-map-wrap
@@ -597,7 +492,6 @@
 
         .subtitle в 15 областях україни
 
-  /= render partial: "partials/representives_list", locals: {personals: @personals}
   - if @personals.any?
     - @personals.each do |person|
       .representatives-one-person-wrap
