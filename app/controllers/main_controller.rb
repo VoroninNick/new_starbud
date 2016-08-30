@@ -22,7 +22,7 @@ class MainController < ApplicationController
     @special_offers = Promotion.active_or_published
   end
   def special_offer
-
+    @special_offer = Promotion.find_by_slug(params[:title])
   end
 
   def publications

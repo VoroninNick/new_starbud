@@ -86,7 +86,7 @@ class Promotion < ActiveRecord::Base
   end
 
   # scope :def_published, -> { where(:published => true).order('created_at asc')}
-  # scope :activeDate, -> { where("? BETWEEN date_begin AND date_finish", Date.today)}
+  scope :activeDate, -> { where("? BETWEEN date_begin AND date_finish", Date.today)}
   # scope :published, -> { :def_published.where.not(:featured => true)}
 
   scope :active_or_published, -> { where("(? BETWEEN date_begin AND date_finish) OR published = 't'", Date.today).order('created_at desc') }

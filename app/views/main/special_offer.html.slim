@@ -1,0 +1,29 @@
+.page-wrap.special-offer-page-wrap
+  .image-page-header
+    .image style="background: url('#{@special_offer.image.url(:large)}')no-repeat center center;"
+
+  .black-block-wrap.page-body
+    .row
+      .columns.large-8.default-article
+        .title
+          = @special_offer.title
+
+        - if @special_offer.date_begin.present? && @special_offer.date_finish.present?
+          .label-text
+            |Період проведення акції
+
+        .subtitle
+          |#{@special_offer.date_begin.strftime('%d.%m.%Y')} — #{@special_offer.date_finish.strftime('%d.%m.%Y')}
+
+        hr
+        = raw @special_offer.body
+
+      .columns.large-4
+        - if @special_offer.date_begin.present? && @special_offer.date_finish.present?
+          .about-special-offers-wrap
+            .label-text
+              |До кінця акції залишилось
+
+        - elsif @special_offer.published?
+          .about-special-offers-wrap
+            |Акція діє до закінчення товарного запасу
