@@ -93,7 +93,7 @@ $(document).ready ->
 #  about company - our history
 #  =========================================================================
   $("ul.ac-our-history-carousel").bxSlider
-    auto: true
+    auto: false
     pause: 5000
     paginationSpeed: 3000
 
