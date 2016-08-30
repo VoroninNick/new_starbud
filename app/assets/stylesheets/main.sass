@@ -133,6 +133,65 @@ main
       height: 400px
       .image
         height: 100%
+    .page-footer
+      height: 100px
+      background: #eceff1
+      .other-item
+        +grid-column(5)
+        a
+          display: block
+        .op-title
+          height: 100px
+          padding-top: 30px
+          .title
+            +default_font_style(#546e7a, 18, 600, 21)
+            text-transform: uppercase
+          .subtitle
+            +default_font_style(#546e7a, 14, 300, 21)
+            font-family: Georgia
+            font-style: italic
+
+        .op-icon
+          width: 75px
+          height: 100px
+          position: relative
+          svg
+            height: 24px
+            width: 24px
+            +my_center_align()
+            path
+              fill: #78909c
+        &.prev-item-link
+          .op-icon
+            float: left
+          .op-title
+            float: left
+            text-align: left
+        &.next-item-link
+          .op-icon
+            float: right
+          .op-title
+            float: right
+            text-align: right
+
+      .share-item-link
+        +grid-column(2)
+        height: 100%
+        border-left: 1px solid #263238
+        border-right: 1px solid #263238
+        .label-text
+          +default_font_style(#546e7a, 16, 300, 18)
+          font-family: Georgia
+          font-style: italic
+          text-align: center
+          margin-top: 20px
+        ul.socials
+          text-align: center
+          li
+            a
+              svg
+                path
+                  fill: #1976d2
 
     .squad-height-block-wrap
       position: relative
@@ -151,6 +210,7 @@ main
 
     &.special-offer-page-wrap
       .page-body
+        padding-bottom: 80px
         .title
           +default_font_style(#1976d2, 48, 600, 48)
           text-transform: uppercase
@@ -176,6 +236,15 @@ main
             font-family: Georgia
             font-style: italic
             text-align: center
+          .about-so-modal
+            background: #eceff1
+            padding: 25px
+            p
+              +default_font_style(#1976d2, 21, 300, 24)
+              font-family: Georgia
+              font-style: italic
+              text-align: center
+              margin-bottom: 0
 
     &.special-offers-page-wrap
       padding-top: 60px
@@ -215,6 +284,7 @@ main
 
     &.publication-page-wrap
       .page-body
+        padding-bottom: 80px
         .title
           +default_font_style(#1976d2, 48, 600, 48)
           text-transform: uppercase
@@ -229,32 +299,7 @@ main
           text-align: center
         hr
           border-bottom: 4px solid #546e7a
-      .page-footer
-        height: 100px
-        background: #eceff1
-        .other-publications
-          +grid-column(5)
-          .op-icon
-            width: 75px
-            height: 100%
-            svg
-              height: 24px
-              width: 100%
-              path
-                fill: #78909c
-          &.prev-publication-link
-            .op-icon
-              float: left
-            .op-title
-              text-align: left
-          &.next-publication-link
-            .op-icon
-              float: right
-            .op-title
-              text-align: right
 
-        .share-publication-link
-          +grid-column(2)
 
     &.publications-page-wrap
       #main-banner, .ps-featured

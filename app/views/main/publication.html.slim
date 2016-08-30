@@ -16,21 +16,35 @@
         = raw @publication.body
 
   .page-footer
-    .other-publications.prev-publication-link
-      .op-icon
-        = inline_svg "ic_keyboard_arrow_left_white_36px.svg"
-      .op-title
-        - if @publication.prev
-          a href=publication_path(@publication.prev.slug)
-            = @publication.prev.try(:title)
-    .share-publication-link
+    .other-item.prev-item-link
+      - if @publication.prev
+        a href=publication_path(@publication.prev.slug)
+          .op-icon
+            = inline_svg "ic_keyboard_arrow_left_white_36px.svg"
+          .op-title
+            .title
+              = @publication.prev.try(:title)
+            .subtitle
+              |Попередня публікація
+
+    .share-item-link
       .label-text
         |Поділитись публікацією
+      ul.socials
+        li
+          a class="facebook" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer/sharer.php?u=#{request.original_url}"
+            = inline_svg "Star_bud_social_fb_blue.svg"
+        li
+          a href="https://plus.google.com/share?url=#{request.original_url}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+            = inline_svg "Star_Bud_social_gp_blue.svg"
 
-    .other-publications.next-publication-link
-      .op-title
-        - if @publication.next
-          a href=publication_path(@publication.next.slug)
-            = @publication.next.try(:title)
-      .op-icon
-        = inline_svg "ic_keyboard_arrow_right_white_36px.svg"
+    .other-item.next-item-link
+      - if @publication.next
+        a href=publication_path(@publication.next.slug)
+          .op-icon
+            = inline_svg "ic_keyboard_arrow_right_white_36px.svg"
+          .op-title
+            .title
+              = @publication.next.try(:title)
+            .subtitle
+              |Наступна публікація

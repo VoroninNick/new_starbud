@@ -12,8 +12,8 @@
           .label-text
             |Період проведення акції
 
-        .subtitle
-          |#{@special_offer.date_begin.strftime('%d.%m.%Y')} — #{@special_offer.date_finish.strftime('%d.%m.%Y')}
+          .subtitle
+            |#{@special_offer.date_begin.strftime('%d.%m.%Y')} — #{@special_offer.date_finish.strftime('%d.%m.%Y')}
 
         hr
         = raw @special_offer.body
@@ -26,4 +26,42 @@
 
         - elsif @special_offer.published?
           .about-special-offers-wrap
-            |Акція діє до закінчення товарного запасу
+            .about-so-modal
+              p
+                |Акція діє до закінчення товарного запасу
+
+  .page-footer
+    .other-item.prev-item-link
+      - if @special_offer.prev
+        a href=special_offer_path(@special_offer.prev.slug)
+          .op-icon
+            = inline_svg "ic_keyboard_arrow_left_white_36px.svg"
+          .op-title
+            .title
+              = @special_offer.prev.try(:title)
+            .subtitle
+              |Попередня акція
+
+    .share-item-link
+      .label-text
+        |Поділитись акцією
+      ul.socials
+        li
+          a class="facebook" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer/sharer.php?u=#{request.original_url}"
+            = inline_svg "Star_bud_social_fb_blue.svg"
+        li
+          a href="https://plus.google.com/share?url=#{request.original_url}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+            = inline_svg "Star_Bud_social_gp_blue.svg"
+
+
+    .other-item.next-item-link
+      - if @special_offer.next
+        a href=special_offer_path(@special_offer.next.slug)
+          .op-icon
+            = inline_svg "ic_keyboard_arrow_right_white_36px.svg"
+
+          .op-title
+            .title
+              = @special_offer.next.try(:title)
+            .subtitle
+              |Наступна акція
