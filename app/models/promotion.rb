@@ -6,6 +6,8 @@
 # t.boolean :published
 # t.date :date_begin
 # t.date :date_finish
+# t.boolean :right_order
+# t.boolean :white_style
 
 class Promotion < ActiveRecord::Base
 
@@ -50,6 +52,19 @@ class Promotion < ActiveRecord::Base
         label 'Дата завершення:'
         help 'Заповнюємо якщо акція має час проведення'
       end
+      group :char_external do
+        label 'Стилі відображення'
+        active true
+
+        field :right_order do
+          label 'Права сторона вирівнювання (на сторінці всі акції):'
+          help 'По замовчуванню тексти на сторінці всі акції вирівнюється по ліву сторону...'
+        end
+        field :white_style do
+          label 'Білий колір текстів (на сторінці всі акції):'
+          help 'По замовчуванню тексти на сторінці всі акції темного кольору...'
+        end
+      end
       field :title do
         label 'Назва:'
       end
@@ -71,8 +86,10 @@ class Promotion < ActiveRecord::Base
   end
 
   scope :def_published, -> { where(:published => true).order('created_at asc')}
+  scope :activeDate, -> { where("? BETWEEN date_begin AND date_finish", Date.today)}
   scope :published, -> { :def_published.where.not(:featured => true)}
-  scope :featured, -> { where(:published => true).where(:featured => true).order('created_at asc')}
+
+  scope :active_or_published, -> { where("(? BETWEEN date_begin AND date_finish) OR published = 't'", Date.today) }
 
   def next
     Publication.def_published.where("id > ?", id).first

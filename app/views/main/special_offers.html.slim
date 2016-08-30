@@ -1,0 +1,18 @@
+.page-wrap.special-offers-page-wrap
+  .page-body
+    - if @special_offers.any?
+      - @special_offers.each do |sp_off|
+        .row
+          .columns
+            .special-offer-one-wrap class=("#{"right-order" if sp_off.right_order}#{"white-style" if sp_off.white_style}")
+              .image style="background: url('#{sp_off.image.url(:thumb)}')no-repeat center center;"
+
+              .special-offer-description
+                .title
+                  = sp_off.title
+                p
+                  = sp_off.short_description
+
+                .material-component.ripple.default-button.red.default-box-shadow-slim
+                  a href=special_offer_path(sp_off.slug)
+                    |Детальніше

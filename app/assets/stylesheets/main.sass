@@ -49,6 +49,7 @@ header
   background: #263238
   position: relative
   z-index: 1
+  border-bottom: 1px solid #37474f
   .header-logo
     width: 136px
     height: 113px
@@ -143,6 +144,43 @@ main
         .squad-height-block
           width: 100%
           height: 100%
+
+
+    &.special-offers-page-wrap
+      padding-top: 60px
+      padding-bottom: 120px
+      background: #263238
+      .special-offer-one-wrap
+        height: 605px
+        margin-bottom: 50px
+        position: relative
+        .image
+          height: 100%
+        .special-offer-description
+          position: absolute
+          top: 100px
+          left: 0
+          +grid-column(6)
+          @media #{$medium-only}
+            +grid-column(12)
+          @media #{$small-only}
+            +grid-column(12)
+          .title
+            +default_font_style(#263238, 36, 600, 42)
+            text-transform: uppercase
+            margin-bottom: 1rem
+          p
+            +default_font_style(#263238, 16, 300, 21)
+            font-family: Georgia
+            font-style: italic
+
+        &.white-style
+          .title, p
+            color: #eceff1
+        &.right-order
+          .special-offer-description
+            left: inherit
+            right: 0
 
     &.publication-page-wrap
       .image-page-header

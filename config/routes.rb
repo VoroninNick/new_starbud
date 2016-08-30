@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   root 'main#index'
   get 'about-company' => 'main#about_company', as: :about_company
   get 'about-company/:title' => 'main#vacancy', as: :vacancy
+
+
+  get 'special-offers' => 'main#special_offers', as: :special_offers
+  get 'special-offers/:title' => 'main#special_offer', as: :special_offer
+
   get 'publications' => 'main#publications', as: :publications
   get 'publications/:title' => 'main#publication', as: :publication
   get 'contacts' => 'main#contacts', as: :contacts

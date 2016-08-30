@@ -18,6 +18,13 @@ class MainController < ApplicationController
     @vacancy = Vacancy.find_by_slug(params[:title])
   end
 
+  def special_offers
+    @special_offers = Promotion.active_or_published
+  end
+  def special_offer
+
+  end
+
   def publications
     @featured = Publication.featured
     # @publications = Publication.published
