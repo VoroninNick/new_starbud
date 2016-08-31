@@ -5,7 +5,7 @@
         .row
           .columns
             .special-offer-one-wrap class=("#{"right-order" if sp_off.right_order}#{"white-style" if sp_off.white_style}")
-              .image style="background: url('#{sp_off.image.url(:thumb)}')no-repeat center center;"
+              .image style="background: url('#{sp_off.thumbnail.url(:large)}')no-repeat center center;"
 
               .special-offer-description
                 .title

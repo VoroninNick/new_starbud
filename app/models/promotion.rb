@@ -3,6 +3,7 @@
 # t.text :short_description
 # t.text :body
 # t.has_attached_file :image
+# t.has_attached_file :thumbnail
 # t.boolean :published
 # t.date :date_begin
 # t.date :date_finish
@@ -12,15 +13,20 @@
 class Promotion < ActiveRecord::Base
 
   attr_accessible *attribute_names
-  attr_accessible :image
+  attr_accessible :image, :thumbnail
   has_attached_file :image,
-                    styles: { thumb: "1000x605>",
-                              large: "1920x500>"},
-                    convert_options: { thumb: "-quality 94 -interlace Plane",
-                                       large: "-quality 94 -interlace Plane"},
+                    styles: { large: "1920x500>"},
+                    convert_options: { large: "-quality 94 -interlace Plane"},
                     default_url: "/images/:style/missing.png"
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  has_attached_file :thumbnail,
+                    styles: { large: "1170x605>"},
+                    convert_options: { large: "-quality 94 -interlace Plane"},
+                    default_url: "/images/:style/missing.png"
+
+  validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\Z/
 
   def to_slug
     "#{title.parameterize}"
@@ -69,8 +75,12 @@ class Promotion < ActiveRecord::Base
         label 'Назва:'
       end
       field :image, :paperclip do
-        label 'Зображення:'
+        label 'Зображення на банер:'
         help 'Зображення вантажити лише в форматі jpg 1920x500 pixels'
+      end
+      field :thumbnail, :paperclip do
+        label 'Зображення тумбочка:'
+        help 'Зображення вантажити лише в форматі jpg 1170x605 pixels'
       end
       field :short_description do
         label 'Короткий опис:'
