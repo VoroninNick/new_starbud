@@ -9,72 +9,142 @@
 
 
   .black-block-wrap
-    .row.text-center
-      .columns
-        .c-address-card
-          = inline_svg "contacts/location.svg"
-          .title
-            |Адреса
-          hr
-          p
-            |вул. Луганська, 18
-          p
-            span
-              |м. Львів
+    .block-address-wrap
+      .row.text-center
+        .columns
+          .c-header-address
+            .subtitle
+              |ЛьВІВ
 
-        .c-address-card
-          = inline_svg "contacts/time_work.svg"
-          .title
-            |Графік роботи
-          hr
-          p
-            span.label-text
-              |Пн-Пт:
-            |8:30 — 18:00
-          p
-            span.label-text
-              |Cб:
-            |9:00 — 14:00
+      .row.text-center
+        .columns
+          .c-address-card
+            = inline_svg "contacts/location.svg"
+            .title
+              |Адреса
+            hr
+            p
+              |вул. Луганська, 18
+            p
+              span
+                |м. Львів
 
-    .row.collapse.text-center
-      .columns.medium-4
-        .c-office-card.blue-block-wrap
-          .title
-            |Офіс
-          .label-text
-            |Загальні питання
-          hr
-          p
-            a.tell
-              |+38 (032) 295 85 00
-          p
-            a.tell
-              |+38 (067) 340 09 01
-          p
-            a.email
-              |starbud@ukr.net
+          .c-address-card
+            = inline_svg "contacts/time_work.svg"
+            .title
+              |Графік роботи
+            hr
+            p
+              span.label-text
+                |Пн-Пт:
+              |8:30 — 18:00
+            p
+              span.label-text
+                |Cб:
+              |9:00 — 14:00
 
-      .columns.medium-4
-        .c-office-card.blue-block-wrap
-          .title
-            |Магазин
-          .label-text
-            |Для покупців
-          hr
-          p
-            a.tell
-              |+38 (032) 295 85 00
+      .row.collapse.text-center
+        .columns.medium-4
+          .c-office-card.blue-block-wrap
+            .title
+              |Офіс
+            .label-text
+              |Загальні питання
+            hr
+            p
+              a.tell
+                |+38 (032) 295 85 00
+            p
+              a.tell
+                |+38 (067) 340 09 01
+            p
+              a.email
+                |starbud@ukr.net
 
-      .columns.medium-4
-        .c-office-card.blue-block-wrap
-          .title
-            |СтарДизайн
-          .label-text
-            |Питання по дизайну
-          hr
-          p
-            a.tell
-              |+38 (032) 295 85 00
+        .columns.medium-4
+          .c-office-card.blue-block-wrap
+            .title
+              |Магазин
+            .label-text
+              |Для покупців
+            hr
+            p
+              a.tell
+                |+38 (032) 295 85 00
+
+        .columns.medium-4
+          .c-office-card.blue-block-wrap
+            .title
+              |СтарДизайн
+            .label-text
+              |Питання по дизайну
+            hr
+            p
+              a.tell
+                |+38 (032) 295 85 00
+
+    .block-address-wrap
+      .row.text-center
+        .columns
+          .c-header-address
+            .subtitle
+              |Київ
+
+      .row.text-center
+        .columns
+          .c-address-card
+            = inline_svg "contacts/location.svg"
+            .title
+              |Адреса
+            hr
+            p
+              |вул. Алма-Атинська, 35-А
+            p
+              span
+                |м. Київ, ТзОВ «Стар-Буд»
+
+          .c-address-card
+            = inline_svg "contacts/time_work.svg"
+            .title
+              |Графік роботи
+            hr
+            p
+              span.label-text
+                |Пн-Пт:
+              |8:30 — 18:00
+            p
+              span.label-text
+                |Cб:
+              |9:00 — 14:00
+
+      .row.collapse.text-center
+        .columns.medium-6
+          .c-office-card.blue-block-wrap
+            .title
+              |Офіс
+            .label-text
+              |Загальні питання
+            hr
+            p
+              a.tell
+                |+38 (044) 390 30 09
+            p
+              a.tell
+                |+38 (067) 480 36 35
+            p
+              a.email
+                |info@star-bud.com.ua
+
+        .columns.medium-6
+          .c-office-card.blue-block-wrap
+            .title
+              |Директор Філіалу
+            .label-text
+              |&nbsp;
+            hr
+            p
+              a.tell
+                |+38 (093) 161 58 89
 
     .socials-wrap
       = render partial: "partials/socials"
