@@ -1,0 +1,23 @@
+form.default-form.contact-us-form
+  .title
+    |Напишіть нам
+  .label-text
+    |Якщо виникли будь-які питання
+
+  .input.animate-input
+    label Як вас звати?
+    input name="name" type="text" required=""
+
+  .input.animate-input
+    label Номер телефону
+    input name="tel" type="tel" required=""
+
+  .input.animate-input
+    label Електронна скринька
+    input name="email" type="email" required=""
+
+  .button-wrap
+    .material-component.ripple.default-box-shadow-slim
+      button type="submit"
+        = inline_svg "contacts/mail.svg"
+        |Надіслати

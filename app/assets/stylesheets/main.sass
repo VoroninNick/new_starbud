@@ -396,15 +396,15 @@ main
 
       .contacts-map-wrap
         .contacts-map
-          height: 395px
+          height: 475px
           background: #1e242a
           +grid-column(8)
           padding-left: 0 !important
           padding-right: 0 !important
           #map_canvas
-            height: 395px
+            height: 475px
         .contacts-form
-          height: 395px
+          height: 475px
           background: #eceff1
           +grid-column(4)
 
@@ -2322,20 +2322,46 @@ form
       -ms-transform: scale(20) /* IE 9 fix */
       opacity: 0
       cursor: pointer
+  .title
+    +default_font_style(#1976d2, 24, 600, 24)
+    text-transform: uppercase
+    margin-bottom: 10px
+  .label-text
+    +default_font_style(#546e7a, 14, 300, 18)
+    font-style: italic
+    margin-bottom: 20px
 
+  &.contact-us-form
+    padding: 25px
+    .material-component
+      margin-top: 40px
+      margin-bottom: 10px
+      button
+        +default_font_style(#fff, 14, 500, 18)
+        svg
+          margin-right: 10px
+          position: relative
+          top: 2px
+          //path
+            fill: #90a4ae
+    .button-wrap
+      margin-top: 0
+      position: relative
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        right: 0
+        bottom: 0
+      //.material-component
+        background: #fff
+        button
+          color: #90a4ae
 
   &.cv-form
     background: #eceff1
     padding: 25px
-    .title
-      +default_font_style(#1976d2, 24, 600, 24)
-      text-transform: uppercase
-      margin-bottom: 10px
-    .label-text
-      +default_font_style(#546e7a, 14, 300, 18)
-      font-style: italic
-      margin-bottom: 20px
-
     .material-component
       margin-top: 40px
       margin-bottom: 10px
