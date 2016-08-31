@@ -27,7 +27,7 @@
               a.active
                 |Всі категорії
             - @tags.each do |tag|
-              li
+              li data-state=tag.inspect
                 a
                   = tag.name
 

@@ -92,10 +92,10 @@ class Promotion < ActiveRecord::Base
   scope :active_or_published, -> { where("(? BETWEEN date_begin AND date_finish) OR published = 't'", Date.today).order('created_at desc') }
 
   def next
-    Publication.def_published.where("id > ?", id).first
+    Promotion.active_or_published.where("id > ?", id).first
   end
 
   def prev
-    Publication.def_published.where("id < ?", id).last
+    Promotion.active_or_published.where("id < ?", id).last
   end
 end
