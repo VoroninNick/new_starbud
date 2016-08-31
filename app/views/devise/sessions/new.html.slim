@@ -2,28 +2,29 @@
   .row
     .columns.medium-8.medium-centered
 
-      h2
-        |Вхід в адмін панель сайту
+      = form_for(resource, as: resource_name, url: session_path(resource_name), :html => { class: 'default-form log-in-form'}) do |f|
+        .title
+          |Вхід
 
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          = f.label :email
-          br
+        .label-text
+          |в адмін панель сайту
+
+        .input.animate-input.is-completed
+          = f.label :email, 'Ваша електронна скринька'
           = f.email_field :email, autofocus: true
 
 
-        .field
-          = f.label :password
-          br
+        .input.animate-input.is-completed
+          = f.label :password, 'Ваш пароль'
           = f.password_field :password, autocomplete: "off"
 
 
-        - if devise_mapping.rememberable?
+        /- if devise_mapping.rememberable?
           .field
             = f.check_box :remember_me
             = f.label :remember_me
-
-        .material-component.ripple.default-button.red.default-box-shadow-slim.float-right
-          = f.submit "Увійти"
+        .button-wrap
+          .material-component.ripple.default-button.red.default-box-shadow-slim.float-right
+            = f.submit "Увійти"
 
     /  = render "devise/shared/links"
