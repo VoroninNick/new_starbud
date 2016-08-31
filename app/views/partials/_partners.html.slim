@@ -1,0 +1,6 @@
+ul.ac-our-partners-carousel#our-partners
+  - partners.in_groups_of(2, false).each do |group|
+    li
+      .our-partners-slide-wrap
+        - group.each do |partner|
+          = embedded_svg_from_absolute_path partner.logo.path

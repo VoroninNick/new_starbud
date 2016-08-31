@@ -348,44 +348,7 @@
       .squad-height-block-inner
         .squad-height-block
           - if @partners.any?
-            ul.ac-our-partners-carousel
-              - @partners.in_groups_of(8, false).each do |group|
-                li
-                  .row
-                    - group.each do |partner|
-                      .columns.medium-3
-                        /h1
-                          = partner.logo.path
-                        = embedded_svg_from_absolute_path partner.logo.path
-
-          /ul.ac-our-partners-carousel
-            li
-              .row
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v1.svg"
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v2.svg"
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v3.svg"
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v4.svg"
-              .row
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v5.svg"
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v6.svg"
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v7.svg"
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v8.svg"
-            li
-              .row
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v9.svg"
-                .columns.medium-3
-                  = inline_svg "Starbyd-logo-v10.svg"
-                .columns.medium-3.end
-                  = inline_svg "Starbyd-logo-v11.svg"
+            = render partial: "partials/partners", locals: { partners: @partners }
 
     .clearfix
 

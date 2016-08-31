@@ -385,10 +385,13 @@
     span &nbsp;по всій україні
 
   - if @partners.any?
+    = render partial: "partials/partners", locals: { partners: @partners }
+  /- if @partners.any?
     ul#our-partners
       - @partners.each do |partner|
         li
           = embedded_svg_from_absolute_path partner.logo.path
+
 
 .main-page-contacts-block-wrap
   .main-page-contacts-map-wrap

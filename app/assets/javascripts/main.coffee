@@ -100,9 +100,18 @@ $(document).ready ->
 #  =========================================================================
 #  about company - our partners
 #  =========================================================================
-  $("ul.ac-our-partners-carousel").bxSlider
-    auto: true
-    pause: 5000
+#  $("ul.ac-our-partners-carousel").bxSlider
+
+#    auto: true
+#    pause: 5000
+
+  owl1 = $("ul#our-partners")
+  owl1.owlCarousel
+    pagination: false,
+    navigation: false,
+    items: 6 #10 items above 1000px browser width
+    itemsMobile: false # itemsMobile disabled - inherit from itemsTablet option
+    autoPlay : true
 
 # =========================================================================
 #  feedback clients

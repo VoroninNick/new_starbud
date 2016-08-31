@@ -612,13 +612,18 @@ main
           .subtitle, p
             width: 80%
             margin: 0 auto
+
       ul.ac-our-partners-carousel
+        list-style: none
         li
-          svg
-            width: 100%
-            height: 110px
-            path, polyline, circle, polygon, ellipse, rect, text
-              fill: #b0bec5
+          padding: 0 10px
+          .our-partners-slide-wrap
+            width: 110px
+            svg
+              width: 110px
+              height: 110px
+              path, polyline, circle, polygon, ellipse, rect, text
+                fill: #b0bec5
 
   .ac-more-details-with-icons
     position: relative
@@ -1568,7 +1573,7 @@ a.main-page-link-to
     list-style: none
     margin: 0
     li
-      padding: 0 45px
+      padding: 0 55px
       svg
         path, polyline, polygon, rect, ellipse, text
           fill: #fff
