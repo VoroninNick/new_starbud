@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require foundation
 
+//= require jquery.plugin.min.js
+//= require jquery.countdown.min.js
 //= require bxslider
 //= require owl.carousel
 

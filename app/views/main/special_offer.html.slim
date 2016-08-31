@@ -20,9 +20,54 @@
 
       .columns.large-4
         - if @special_offer.date_begin.present? && @special_offer.date_finish.present?
+
+          - date_begin = @special_offer.date_begin
+          - date_end = @special_offer.date_finish
+
+          - count_days_to_finish = (date_end - date_begin).to_i
+
           .about-special-offers-wrap
             .label-text
               |До кінця акції залишилось
+
+            .countdown-special-offer-wrap
+              .countdown-special-offer data-count-days=count_days_to_finish data-year=date_end.strftime("%Y") data-month=date_end.strftime("%m") data-day=date_end.strftime("%d")
+              .countdown-special-offer-status
+                .count-section.count-section-day
+                  .status-bar
+                    span
+                  .label-text
+                    |днів
+
+                .count-section.count-section-hour
+                  .status-bar
+                    span
+                  .label-text
+                    |годин
+
+                .count-section.count-section-min
+                  .status-bar
+                    span
+                  .label-text
+                    |хвилин
+
+                .count-section.count-section-sec
+                  .status-bar
+                    span
+                  .label-text
+                    |секунд
+
+                .clearfix
+
+            /#monitor
+            /.countdown-special-offer.is-countdown data-day="10" data-month="09" data-year="2016"
+            /span.countdown-row.countdown-show4
+              span.countdown-section
+                span.countdown-amount
+                  |9
+                span.countdown-period
+                  |Днів
+
 
         - elsif @special_offer.published?
           .about-special-offers-wrap

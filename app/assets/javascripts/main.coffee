@@ -2,8 +2,41 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready ->
+#===================================================================
+# countdown timer
+#===================================================================
+$ ->
+  countdown_timer = $('.countdown-special-offer')
+  countdown_timer.each ->
+    ct_year = $(@).attr "data-year"
+    ct_month = $(@).attr "data-month"
+    ct_day = $(@).attr "data-day"
+    $(@).countdown
+      until: new Date(ct_year, parseInt(ct_month)-1, ct_day), onTick: watchCountdown
 
+watchCountdown = (periods) ->
+#  console.log 'args: ', arguments
+  total_count_days = parseInt($('.countdown-special-offer').attr 'data-count-days')
+  day = (1 - periods[3] / total_count_days) * 100
+  hour = (1 - periods[4] / 24) * 100
+  min = (1 - periods[5] / 60) * 100
+  sec = (1 - periods[6] / 60) * 100
+
+#  console.log 'days: ', total_count_days
+
+#  test_sec = (1 - periods[6] / 60) * 100
+#  console.log 'test sec: ', test_sec
+
+  $('.count-section-day .status-bar span').css("width", "#{day}%")
+  $('.count-section-hour .status-bar span').css("width", "#{hour}%")
+  $('.count-section-min .status-bar span').css("width", "#{min}%")
+  $('.count-section-sec .status-bar span').css("width", "#{sec}%")
+
+#  $('#monitor').text 'Just ' + periods[5] + ' minutes and ' + periods[6] + ' seconds to go'
+
+
+
+$(document).ready ->
 #===================================================================
 #  photo - video gallery
 #===================================================================
@@ -72,6 +105,7 @@ $(document).ready ->
 #      btn.text file_name
 #    return
 #  ).change()
+
 #===========================================================
 # page up
 #===========================================================
@@ -80,6 +114,7 @@ $(document).ready ->
       scrollTop: 0
     , 800
     false
+
 #  =========================================================================
 #  main banner
 #  =========================================================================
@@ -100,11 +135,6 @@ $(document).ready ->
 #  =========================================================================
 #  about company - our partners
 #  =========================================================================
-#  $("ul.ac-our-partners-carousel").bxSlider
-
-#    auto: true
-#    pause: 5000
-
   owl1 = $("ul#our-partners")
   owl1.owlCarousel
     pagination: false,
@@ -120,7 +150,6 @@ $(document).ready ->
   #    auto: true,
     pause: 5000
     controls: false
-  #    pagerCustom: ".promotion-banner-pager"
 
 # =========================================================================
 # mobile menu handler
@@ -133,15 +162,6 @@ $(document).ready ->
     else
       $(@).addClass('open')
       $('body').addClass('locked-body')
-
-#    wrap = $(@).closest('.main-menu-wrap')
-#    if wrap.hasClass('open')
-#      wrap.removeClass('open')
-#    else
-#      wrap.addClass('open')
-#    if wrap.hasClass('open-sub-menu')
-#      wrap.removeClass('open-sub-menu')
-#      $('.main-menu .has-sub-menu').removeClass('current')
 
 #  =========================================================================
 #  coverage map
