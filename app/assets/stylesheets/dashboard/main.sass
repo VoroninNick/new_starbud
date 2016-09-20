@@ -1,0 +1,126 @@
+@import "mixins"
+
+
+h1, h2, h3, h4, h5, p, b, span, a, label, input, textarea, body, button, .title, .subtitle, .number-of-step, .default-font, .label-text
+  font-family: "Roboto", sans-serif
+
+$transition: .3s
+$navicon-size: 2rem
+$navicon-color: #fff
+
+= line
+  display: inline-block
+  width: $navicon-size
+  height: $navicon-size/8
+  background-color: $navicon-color
+  //background-image: radial-gradient(yellow 10%, rgba(0,0,0,.25) 10%, rgba(0,0,0,.25) 50%, transparent 50%)
+  background-repeat: no-repeat
+  background-size: $navicon-size/7 $navicon-size/7
+  user-select: none
+  border-radius: $navicon-size/14
+  color: $navicon-color
+  transition: $transition
+  box-shadow: inset 0 0 0 .125rem
+
+
+.navicon-button
+  display: inline-block
+  padding: $navicon-size/2
+  transition: $transition
+  cursor: pointer
+  user-select: none
+  background: transparent
+  float: left
+
+  &:hover
+    opacity: 1
+
+    .navicon:before
+      top: -($navicon-size/3.5)
+    .navicon:after
+      top: $navicon-size/3.5
+
+  &.open
+    transform: scale3d(.8,.8,.8)
+    .navicon:before, .navicon:after
+      top: 0
+      width: $navicon-size/1.8
+
+    .navicon:before
+      transform: rotate3d(0,0,1,-35deg)
+    .navicon:after
+      transform: rotate3d(0,0,1,35deg)
+
+  .navicon
+    +line
+    position: relative
+
+    &:before, &:after
+      +line
+      position: absolute
+      content: ''
+      transform-origin: $navicon-size/14 center
+
+    &:before
+      top: -($navicon-size/4)
+      color: $navicon-color
+      background-color: $navicon-color
+
+    &:after
+      top: $navicon-size/4
+      color: $navicon-color
+      background-color: $navicon-color
+
+
+
+
+$header-nav-section-width: 20%
+$header-inf-section-width: 60%
+
+header
+  height: 60px
+  background: #0d47a1
+  +box-shadow(1px 4px 2px 0px rgba(0,0,0,0.35))
+  position: relative
+  z-index: 10
+  .navigation-section, .information-section
+    height: 100%
+    float: left
+  .navigation-section
+    width: $header-nav-section-width
+  .information-section
+    width: $header-inf-section-width
+    .one-info
+      float: left
+  .title
+    +default_font_style(#fff, 16, 400, 60)
+    display: inline-block
+
+body
+
+
+  .main-menu-wrap
+    position: absolute
+    left: 0
+    top: 60px
+    bottom: 0
+    width: 300px
+    background: #fff
+    z-index: 9
+    -webkit-transform: translateX(-300px)
+    transform: translateX(-300px)
+    -webkit-transition: -webkit-transform .15s ease-in-out
+    transition: transform .15s ease-in-out
+  &.opened-menu
+    .main-menu-wrap
+      -webkit-transform: translateX(0)
+      transform: translateX(0)
+    .main-menu-background-cover
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      background: #263238
+      opacity: .9

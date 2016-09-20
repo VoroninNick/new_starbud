@@ -15,10 +15,17 @@ header
       span
       span
 
-  a.constructor-link.float-right href="http://star-bud.ua/designer"
+  /a.constructor-link.float-right href="http://star-bud.ua/designer"
     = image_tag "visual-constructor-icon.png"
 
 
 
+
   .material-component.ripple.default-button.red.float-right
-    a data-open="become_s_dealer" Стати дилером
+    a href=dashboard_path
+      = inline_svg "crm/ic_person_white_48px.svg"
+      |Увійти
+
+  a.header-link.float-right data-open="become_s_dealer"
+    |Стати дилером
+

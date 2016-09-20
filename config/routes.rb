@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   post 'contact-us' => 'main#contact_us'
   get 'dev' => 'main#dev'
 
+  scope "dashboard" do
+    root 'dashboard#index', as: "dashboard"
+  end
+
   # match '*args' => 'application#listener_1c', via: [:post, :get, :put]
   match '*args' => 'application#render_not_found', via: [:post, :get, :put]
 

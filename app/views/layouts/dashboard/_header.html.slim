@@ -1,0 +1,18 @@
+header
+  .navigation-section
+    a.navicon-button
+      .navicon
+
+  .information-section
+    .one-info
+      = inline_svg "crm/ic_today_white_48px.svg"
+      .title
+        = I18n.l(DateTime.now, format: "%a,%d")
+    .one-info
+      = inline_svg "crm/ic_dollar_symbol_white_48px.svg"
+      .title
+        |25,40 - 25,65
+    .one-info
+      = inline_svg "crm/ic_euro_symbol_white_48px.svg"
+      .title
+        |26,33 - 26,94

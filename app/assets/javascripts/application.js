@@ -16,14 +16,21 @@
 
 //= require jquery.plugin.min.js
 //= require jquery.countdown.min.js
+//= require jquery.countdown-uk.js
 //= require bxslider
 //= require owl.carousel
+
+//= require youTubeEmbed-jquery-1.0
 
 //= require lightgallery/dist/js/lightgallery.min
 //= require lightgallery/dist/js/lg-thumbnail.min
 //= require lightgallery/dist/js/lg-fullscreen.min
 //= require lightgallery/dist/js/lg-video
 
-//= require_tree .
+//= require material
+//= require video
+//= require main
+
+// require_tree .
 
 $(function(){ $(document).foundation(); });

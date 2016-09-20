@@ -14,25 +14,15 @@ html lang="en"
 
     title == content_for?(:title) ? yield(:title) : "Стар Буд"
 
-    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "dashboard"
 
     = csrf_meta_tag
-    script src="https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}" async="" defer=""
+    /script src="https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}" async="" defer=""
 
-    = javascript_include_tag "application"
+    = javascript_include_tag "dashboard"
 
   body
-    = render "layouts/header"
-    = render "partials/mobile_menu"
+    = render "layouts/dashboard/header"
+    = render "layouts/dashboard/main_menu"
     main
       == yield
-    = render "layouts/footer"
-
-    = render "partials/popups/become_a_dealer"
-    = render "partials/popups/contact_us"
-
-
-
-
-
-

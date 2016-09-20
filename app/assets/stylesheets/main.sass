@@ -50,6 +50,13 @@ header
   position: relative
   z-index: 1
   border-bottom: 1px solid #37474f
+  .header-link
+    +default_font_style(#eceff1, 16, 500, 80)
+    text-transform: uppercase
+    display: block
+    padding-left: 17px
+    padding-right: 17px
+
   .header-logo
     width: 136px
     height: 113px
@@ -102,6 +109,14 @@ header
     a
       +default_font_style(#eceff1, 14, 500, 14)
       text-transform: uppercase
+      padding-left: 40px
+      svg
+        height: 25px
+        width: 32px
+        position: absolute
+        left: 5px
+        top: 5px
+
   .constructor-link
     height: 100%
     border-left: 1px solid rgba(255, 255, 255, .2)
