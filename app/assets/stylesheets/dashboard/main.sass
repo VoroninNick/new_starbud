@@ -193,13 +193,33 @@ main
 
     nav
       list-style: none
+      display: inline-block
       li
         display: inline-block
+        padding-right: 18px
+        margin-right: 40px
         a
-          +default_font_style(#455a64, 14, 400, 18)
+          +default_font_style(#455a64, 14, 400, 60)
           text-transform: uppercase
+          display: block
           svg
             height: 35px
             width: 30px
+            position: relative
+            top: 12px
             path
               fill: #455a64
+
+    .order-form-button
+      display: inline-block
+      float: right
+      a
+        +default_font_style(#e91e63, 14, 400, 60)
+        text-transform: uppercase
+        svg
+          height: 36px
+          width: 38px
+          position: relative
+          top: 12px
+          path
+            fill: #e91e63
