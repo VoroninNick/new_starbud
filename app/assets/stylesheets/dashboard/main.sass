@@ -97,7 +97,7 @@ header
     display: inline-block
 
 body
-
+  background: #eceff1
 
   .main-menu-wrap
     position: fixed
@@ -184,3 +184,22 @@ body
       bottom: 0
       background: #263238
       opacity: .9
+
+main
+  .index-page-menu
+    height: 60px
+    background: #fff
+    +box-shadow(1px 1px 2px 0px rgba(0,0,0,0.35))
+
+    nav
+      list-style: none
+      li
+        display: inline-block
+        a
+          +default_font_style(#455a64, 14, 400, 18)
+          text-transform: uppercase
+          svg
+            height: 35px
+            width: 30px
+            path
+              fill: #455a64
