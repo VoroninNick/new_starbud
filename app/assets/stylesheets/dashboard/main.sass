@@ -225,10 +225,43 @@ main
           path
             fill: #e91e63
 
+.promotion-banner-wrap
+  padding-top: 25px
+  padding-bottom: 20px
+  .bx-wrapper
+    -moz-box-shadow: none
+    -webkit-box-shadow: none
+    box-shadow: none
+    border: none
+    background: transparent
+    margin-bottom: 25px
+    .bx-pager
+      text-align: right
+      bottom: -23px
+      padding-top: 0
+      .bx-pager-item
+        a.bx-pager-link
+          background: #cfd8dc
+          &.active
+            background: #0d47a1
+  ul
+    list-style: none
+    margin-left: 0
+    li
+      .slide1, .slide2, .slide3
+        height: 120px
+      .slide1
+        background: #0097a7
+      .slide2
+        background: #f9a825
+      .slide3
+        background: #ba68c8
+
 .standard-page-block
   .spb-head
     height: 40px
     background: #0d47a1
   .spb-body
     background: #fff
+    min-height: 120px
     margin-bottom: 32px

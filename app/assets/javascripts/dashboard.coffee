@@ -8,6 +8,8 @@
 #= require jquery_ujs
 #= require foundation
 
+#= require bxslider
+
 #= require dashboard/main
 #= require_self
 
