@@ -1,5 +1,42 @@
+- price = 89888
 .product-card-wrap
-  .product-card-door
-    .pc-avatar
-      .image style="background: url('#{asset_path("crm/images/star_bud_door_1.jpg")}')no-repeat center center;"
-    .pc-body
+  .product-card-inner
+    .product-card-door
+      .pc-avatar
+        a href=product_path
+          /.image style="background: url('#{asset_path("crm/images/star_bud_door_1.jpg")}')no-repeat center center;"
+          = image_tag "crm/images/star_bud_door_1.jpg"
+      .pc-body
+        .pc-product-variants
+          .one-variant-wrap.one-variant-92969b.active
+            .one-variant data-asset=asset_path("crm/images/star_bud_door_1.jpg") data-price="9 105"
+          .one-variant-wrap.one-variant-78746e
+            .one-variant
+          .one-variant-wrap.one-variant-bea18e
+            .one-variant data-asset=asset_path("crm/images/star_bud_door_3.jpg") data-price="11 000"
+          .one-variant-wrap.one-variant-a98e7c
+            .one-variant
+          .one-variant-wrap.one-variant-5b5e5b
+            .one-variant
+          .one-variant-wrap.one-variant-a36b40
+            .one-variant data-asset=asset_path("crm/images/star_bud_door_2.jpg") data-price="4 500"
+
+        .pc-product-details
+          .ps-titles
+            .title
+              |Сорренто
+            .subtitle
+              |(сірий)
+            .label-text
+              |Belwooddors
+
+          .ps-price-status
+            .ps-price
+              span
+                = number_to_currency(price, :precision => 0, unit: '')
+              sup
+                |грн.
+
+            .ps-product-status.in-stock
+            /.ps-product-status.do-not-have
+            /.ps-product-status.ends

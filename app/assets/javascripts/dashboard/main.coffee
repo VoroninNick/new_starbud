@@ -30,3 +30,22 @@ $(document).ready ->
       $wrap.removeClass('hidden')
     else
       $wrap.addClass('hidden')
+
+#===================================================================
+# product card door change variant
+#===================================================================
+  $('body').on "click",".one-variant", ->
+    $this = $(@)
+    $wrap = $this.closest(".product-card-wrap")
+    $wrap.find(".one-variant-wrap").removeClass("active")
+    $this.parent().addClass("active")
+
+    preview_el = $wrap.find('img')
+    price_el = $wrap.find('.ps-price span')
+
+    asset_src = $this.attr "data-asset"
+    price = $this.attr "data-price"
+
+    console.log 'asset: ', asset_src
+    preview_el.attr "src", asset_src
+    price_el.text(price)

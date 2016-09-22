@@ -4,4 +4,8 @@ class CatalogController < ApplicationController
   def doors
 
   end
+  
+  def product
+
+  end
 end

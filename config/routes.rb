@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
     scope "doors" do
       root 'catalog#doors', as: "catalog_doors"
+      get 'product' => 'catalog#product', as: "product"
     end
   end
 
