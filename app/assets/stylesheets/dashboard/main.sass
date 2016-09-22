@@ -258,6 +258,9 @@ main
         background: #ba68c8
 
 .standard-page-block
+  margin-bottom: 32px
+  +box-shadow(1px 1px 3px 0px rgba(0,0,0,0.35))
+
   .spb-head
     height: 40px
     background: #0d47a1
@@ -272,6 +275,8 @@ main
         cursor: pointer
         svg
           height: 100%
+          &.maximize
+            display: none
           path
             fill: #fff
 
@@ -302,4 +307,18 @@ main
   .spb-body
     background: #fff
     min-height: 120px
-    margin-bottom: 32px
+    overflow: hidden
+
+  &.hidden
+    .spb-head
+      .spb-switcher
+        .spb-switch-button
+          svg
+            &.minimize
+              display: none
+            &.maximize
+              display: block
+
+    .spb-body
+      min-height: 0
+      height: 0

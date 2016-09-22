@@ -37,11 +37,12 @@
         li
           .slide3
 
-    .standard-page-block
+    .standard-page-block data-section-type="all_history"
       .spb-head
         .spb-switcher
           .spb-switch-button
-            = inline_svg "crm/window-minimize.svg"
+            = inline_svg "crm/window-minimize.svg", class: "minimize"
+            = inline_svg "crm/window-maximize.svg", class: "maximize"
 
         .spb-title
           |Останні замовлення
@@ -53,3 +54,5 @@
 
 
       .spb-body
+        p
+          |Test block body

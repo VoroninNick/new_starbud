@@ -18,3 +18,15 @@ $(document).ready ->
     pause: 5000
     controls: false
 #    pagerCustom: ".promotion-banner-pager"
+
+#===================================================================
+# expand or hiden block body
+#===================================================================
+  $('body').on "click",".spb-switch-button", ->
+    $this = $(@)
+    $wrap = $this.closest('.standard-page-block')
+
+    if $wrap.hasClass('hidden')
+      $wrap.removeClass('hidden')
+    else
+      $wrap.addClass('hidden')
