@@ -1,13 +1,15 @@
 .main-menu-wrap
   .main-menu
     .mm-logo-company
-      = inline_svg "crm/Starbud-logo.svg"
+      a href=dashboard_path
+        = inline_svg "crm/Starbud-logo.svg"
     .mm-section
       .title
         |Каталог
+
       nav
         li
-          a
+          a href=catalog_doors_path
             = inline_svg "crm/ic_flip_black_48px.svg"
             |Двері
         li

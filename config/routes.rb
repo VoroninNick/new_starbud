@@ -24,6 +24,10 @@ Rails.application.routes.draw do
 
   scope "dashboard" do
     root 'dashboard#index', as: "dashboard"
+
+    scope "doors" do
+      root 'catalog#doors', as: "catalog_doors"
+    end
   end
 
   # match '*args' => 'application#listener_1c', via: [:post, :get, :put]

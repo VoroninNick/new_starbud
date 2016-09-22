@@ -3,7 +3,7 @@
     .columns
       nav
         li
-          a
+          a href=catalog_doors_path
             = inline_svg "crm/ic_flip_black_48px.svg"
             |Двері
         li
@@ -26,16 +26,10 @@
           |Сформувати замовлення
 
 
+
 .row
   .columns
-    .promotion-banner-wrap
-      ul#promotion-banner
-        li
-          .slide1
-        li
-          .slide2
-        li
-          .slide3
+    = render partial: "partials/dashboard/promotions_banner"
 
     .standard-page-block data-section-type="all_history"
       .spb-head
@@ -54,5 +48,7 @@
 
 
       .spb-body
-        p
-          |Test block body
+        .spb-one-item
+          .spb-oi-status-info
+          .spb-oi-products
+          .spb-oi-price-info

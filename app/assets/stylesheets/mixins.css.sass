@@ -19,6 +19,16 @@
   font-weight: $weight
   line-height: $line-height+px
 
+= clear_fix()
+  &:before,
+  &:after
+    content: ""
+    display: table
+
+  &:after
+    clear: both
+
+
 = triangle($dir, $size, $color)
   border: $size transparent solid
   width: $size
