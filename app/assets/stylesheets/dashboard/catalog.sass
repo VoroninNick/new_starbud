@@ -45,5 +45,19 @@
               border-bottom: 4px solid #e91e63
 
   .catalog-page-body
-    .large-3.columns
-    .large-9.columns
+    .product-list
+      .product-card-wrap
+        +grid-col(3)
+        @media #{$medium-only}
+          +grid-column(6)
+        @media #{$small-only}
+          +grid-col(12)
+        padding-top: 11px
+        padding-bottom: 11px
+        &:last-child:not(:first-child)
+          float: left
+        .product-card-door
+          .pc-avatar
+            .image
+              padding-bottom: 221%
+
