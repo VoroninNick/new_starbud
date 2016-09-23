@@ -1,3 +1,37 @@
 // Place all the styles related to the product controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.product-page
+  background: #fff
+  .product-avatar
+  .product-body
+    .product-main-info
+      .title
+        +default_font_style(#455a64, 30, 500, 32)
+        text-transform: uppercase
+      .subtitle
+        +default_font_style(#78909c, 14,400, 18)
+        margin-bottom: 20px
+      p
+        +default_font_style(#546e7a, 16, 400, 21)
+      hr
+        border-color: #eceff1
+
+  .product-calculator
+    background: #eceff1
+    margin-bottom: 33px
+    padding-top: 20px
+    padding-bottom: 40px
+    .title
+      +default_font_style(#546e7a, 14, 500, 14)
+      text-transform: uppercase
+      text-align: center
+      svg
+        height: 25px
+        position: relative
+        top: 6px
+        path
+          fill: #546e7a

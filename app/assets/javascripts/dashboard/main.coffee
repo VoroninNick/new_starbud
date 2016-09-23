@@ -49,3 +49,13 @@ $(document).ready ->
     console.log 'asset: ', asset_src
     preview_el.attr "src", asset_src
     price_el.text(price)
+
+#===================================================================
+# product card hover
+#===================================================================
+#  $('body').on "hover",".product-card-inner", (->
+  $('.product-card-inner').hover (->
+    el_height = $(@).find('img').height()
+    $(@).find('.pc-avatar').css('max-height', "#{el_height}px")
+  ), ->
+    $(@).find('.pc-avatar').css('max-height', "260px")

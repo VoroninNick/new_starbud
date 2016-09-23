@@ -334,3 +334,36 @@ main
     .spb-body
       min-height: 0
       height: 0
+
+
+
+ul.custom-breadcrumbs
+  list-style: none
+  margin-left: 0
+  margin-top: 20px
+  margin-bottom: 20px
+  +clear_fix
+  li
+    float: left
+    &:after
+      content: '/'
+      +default_font_style(#90a4ae, 12, 400, 32)
+      padding-left: 7px
+      padding-right: 7px
+
+    &:first-of-type:after
+      content: '//'
+    &:last-of-type:after
+      display: none
+    a
+      +default_font_style(#90a4ae, 12, 400, 32)
+      text-transform: uppercase
+      svg
+        height: 21px
+        width: 20px
+        path
+          fill: #90a4ae
+
+    span
+      +default_font_style(#546e7a, 12, 600, 32)
+      text-transform: uppercase
