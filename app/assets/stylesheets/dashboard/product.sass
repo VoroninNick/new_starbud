@@ -7,6 +7,15 @@
 .product-page
   background: #fff
   .product-avatar
+    img
+      width: 70%
+      margin: 0 auto
+      display: block
+    .title
+      +default_font_style(#78909c,14, 400, 18)
+      text-align: center
+      padding-top: 20px
+
   .product-body
     .product-main-info
       padding-bottom: 20px
@@ -118,62 +127,49 @@
                 .label-text
                   color: #546e7a
 
-//.catalog-rr-radio-element
-  margin: 9px 0
-  position: relative
-  &:after
-    content: ''
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    background: #fff
-    opacity: .8
-  &.enable-catalog-element
-    &:after
-      display: none
-  input[type=radio]
-    position: absolute
-    z-index: -1000
-    left: -1000px
-    overflow: hidden
-    clip: rect(0 0 0 0)
-    height: 1px
-    width: 1px
-    margin: -1px
-    padding: 0
-    border: 0
-
-    & ~ label
-      margin: 0
-      &.icon
-        cursor: pointer
-        display: block
-        width: 20px
-        height: 20px
-        margin: 0 20px
-        border: 2px solid #939598
-        -moz-border-radius: 50%
-        -webkit-border-radius: 50%
-        border-radius: 50%
-        float: left
-
-      &.text
-        +default_font_style(#263238, 14, 400, 20)
-        float: left
-    &:checked
-      & ~ label
-        &.icon
-          border-color: #f50057
-          position: relative
+  .default-tabs-head
+    border: none
+    li
+      width: 25%
+      position: relative
+      a
+        +default_font_style(#90a4ae, 16, 500, 42)
+        text-transform: uppercase
+        text-align: center
+        padding: 0
+        background: transparent
+      &.is-active
+        a
+          color: #e91e63
           &:after
-            content: ''
-            background: #f50057
-            width: 10px
-            height: 10px
-            -moz-border-radius: 50%
-            -webkit-border-radius: 50%
-            border-radius: 50%
-            +my_center_align()
-              position: absolute
+            content: ""
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            border-bottom: 4px solid #e91e63
+
+  .tabs-content
+    background: #eceff1
+    padding-bottom: 20px
+    position: relative
+    z-index: 1
+    +box-shadow(1px 1px 2px 0px rgba(0,0,0,0.35))
+    height: 20px
+    overflow: hidden
+    &.expanded
+      height: auto
+
+.additional-unit
+  .title
+    +default_font_style(#455a64, 30, 500, 32)
+    text-transform: uppercase
+    text-align: center
+    padding-top: 67px
+    padding-bottom: 41px
+
+.grey-back-board
+  background: #eceff1
+
+.white-back-board
+  background: #fff

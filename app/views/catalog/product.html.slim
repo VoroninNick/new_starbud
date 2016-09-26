@@ -32,6 +32,9 @@
   .row
     .large-4.columns
       .product-avatar
+        = image_tag "crm/images/star_bud_door_1.jpg"
+        .title
+          |Темно-сірий
 
     .large-8.columns
       .product-body
@@ -69,7 +72,7 @@
               |Схема відкриття дверей
 
             .product-one-scheme
-              input#right_inside type="radio" name="scheme_door_opening" value="right_inside"
+              input#right_inside type="radio" name="scheme_door_opening" value="right_inside" checked="checked"
                 label for="right_inside"
                   = inline_svg "crm/Starbud-door-schemes-1.svg"
                   .label-text
@@ -95,3 +98,56 @@
                   = inline_svg "crm/Starbud-door-schemes-4.svg"
                   .label-text
                     |ЛІВА (на зовні)
+
+  .row
+    .columns
+      ul#category-items-tabs.default-tabs-head.tabs data-tabs=""
+        li.tabs-title.is-active
+          a href="#specifications" aria-selected="true"
+            |Технічні характеристики
+
+        li.tabs-title
+          a href="#care" aria-selected="true"
+            |Догляд
+
+        li.tabs-title
+          a href="#warranty-terms" aria-selected="true"
+            |Умови гарантії
+
+        li.tabs-title
+          a href="#reviews" aria-selected="true"
+            |Відгуки
+
+
+  .tabs-content.default-tabs-content data-tabs-content="category-items-tabs"
+    .tabs-panel.is-active id="specifications"
+      .row
+        .columns
+          |Технічні характеристики
+
+    .tabs-panel id="care"
+      .row
+        .columns
+          |Догляд
+
+    .tabs-panel id="warranty-terms"
+      .row
+        .columns
+          |Умови гарантії
+
+    .tabs-panel id="reviews"
+      .row
+        .columns
+          |Відгуки
+
+  .additional-unit.grey-back-board
+    .title
+      |Рекомедуємо до товару
+
+  .additional-unit
+    .title
+      |Купляйте також
+
+    .row
+      .columns
+        = render partial: "partials/dashboard/promotions_banner"

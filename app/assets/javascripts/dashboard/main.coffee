@@ -59,3 +59,11 @@ $(document).ready ->
     $(@).find('.pc-avatar').css('max-height', "#{el_height}px")
   ), ->
     $(@).find('.pc-avatar').css('max-height', "260px")
+
+#===================================================================
+# expand tabs content
+#===================================================================
+  $(".tabs li a, .tabs-content").click ->
+    if $(".tabs-content").hasClass("expanded")
+    else
+      $(".tabs-content").addClass("expanded")
