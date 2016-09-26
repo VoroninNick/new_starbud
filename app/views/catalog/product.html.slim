@@ -1,3 +1,20 @@
+/model Door
+  string :1c_id
+  string :title
+  text :short_description
+  string :brand
+  calc:
+    enum :color_variant
+
+    string :door_jamb
+    string :selected_board
+    string :box_without_seal
+    string :collection
+    string :casing_half_round
+    string :production_time
+
+- total_price = 20540
+
 .product-page
   .row
     .columns
@@ -27,8 +44,54 @@
             |Їх міцна сталева конструкція витримає довгі роки експлуатації в екстремальних умовах і потребують лише мінімального догляду.
               Цей тип дверей є класичним, тому зацікавлять як аристократичних осіб, так і любителів поєднувати кілька стильових напрямків в інтер'єрі.
           hr
+          .product-total-price
+            span
+              = number_to_currency(total_price, :precision => 0, unit: '')
+            sup
+              |грн.
+          .product-status.in-stock
 
-        .product-calculator
-          .title
-            = inline_svg "crm/calculator.svg"
-            |Калькулятор вартості
+        .product-info-block.product-calculator
+          .product-info-block-head
+            .title
+              = inline_svg "crm/calculator.svg"
+              |Калькулятор вартості
+          .product-info-block-body
+
+
+        .product-info-block.product-info-block-expand.product-scheme-door-opening
+          .product-info-block-head
+            .title
+              = inline_svg "crm/ic_flip_black_48px.svg"
+              |Схема врізки дверного полотна
+          .product-info-block-body
+            .label-text
+              |Схема відкриття дверей
+
+            .product-one-scheme
+              input#right_inside type="radio" name="scheme_door_opening" value="right_inside"
+                label for="right_inside"
+                  = inline_svg "crm/Starbud-door-schemes-1.svg"
+                  .label-text
+                    |ПРАВА (в середину)
+
+            .product-one-scheme
+              input#left_inside type="radio" name="scheme_door_opening" value="left_inside"
+                label for="left_inside"
+                  = inline_svg "crm/Starbud-door-schemes-2.svg"
+                  .label-text
+                    |ЛІВА (в середину)
+
+            .product-one-scheme
+              input#right_outside type="radio" name="scheme_door_opening" value="right_outside"
+                label for="right_outside"
+                  = inline_svg "crm/Starbud-door-schemes-3.svg"
+                  .label-text
+                    |ПРАВА (на зовні)
+
+            .product-one-scheme
+              input#left_outside type="radio" name="scheme_door_opening" value="left_outside"
+                label for="left_outside"
+                  = inline_svg "crm/Starbud-door-schemes-4.svg"
+                  .label-text
+                    |ЛІВА (на зовні)

@@ -9,6 +9,7 @@
   .product-avatar
   .product-body
     .product-main-info
+      padding-bottom: 20px
       .title
         +default_font_style(#455a64, 30, 500, 32)
         text-transform: uppercase
@@ -19,8 +20,27 @@
         +default_font_style(#546e7a, 16, 400, 21)
       hr
         border-color: #eceff1
+      .product-total-price
+        +default_font_style(#0d47a1, 36, 500, 32)
+        span
+        sup
+          font-size: 60%
+      .product-status
+        &:after
+          +default_font_style(#000, 12, 400, 18)
+          font-family: "Roboto", sans-serif
+        &.in-stock:after
+          content: 'Є на складі'
+          color: #43a047
 
-  .product-calculator
+        &.do-not-have
+          content: 'Немає'
+          color: #455a64
+        &.ends
+          content: 'Закінчується'
+          color: #e91e63
+
+  .product-info-block
     background: #eceff1
     margin-bottom: 33px
     padding-top: 20px
@@ -35,3 +55,125 @@
         top: 6px
         path
           fill: #546e7a
+    .product-info-block-body
+      padding: 0 24px
+      .label-text
+        +default_font_style(#90a4ae, 13, 400, 16)
+
+
+    &.product-info-block-expand
+
+
+    &.product-calculator
+    &.product-scheme-door-opening
+      .product-info-block-body
+        +clear_fix
+
+        .product-one-scheme
+          +grid-column(6)
+          position: relative
+          padding-top: 12px
+          input[type=radio]
+            position: absolute
+            z-index: -1000
+            left: -1000px
+            overflow: hidden
+            clip: rect(0 0 0 0)
+            height: 1px
+            width: 1px
+            margin: -1px
+            padding: 0
+            border: 0
+            & ~ label
+              display: block
+              padding: 22px 0
+              border: 1px solid #eceff1
+              position: relative
+              svg
+                width: 45%
+                display: block
+                margin: 0 auto
+                margin-bottom: 15px
+                path, polyline, polygon, line, rect
+                  fill: #78909c
+              .label-text
+                +default_font_style(#78909c, 16, 500, 19.2)
+                text-align: center
+
+            &:checked
+              & ~ label
+                background: #fff
+                border-color: #cfd8dc
+                &:after
+                  content: ''
+                  width: 20px
+                  height: 20px
+                  background: asset-url("crm/Starbud-check.svg")
+                  position: absolute
+                  top: 20px
+                  right: 20px
+                svg
+                  path, polyline, polygon, line, rect
+                    fill: #0d47a1
+                .label-text
+                  color: #546e7a
+
+//.catalog-rr-radio-element
+  margin: 9px 0
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background: #fff
+    opacity: .8
+  &.enable-catalog-element
+    &:after
+      display: none
+  input[type=radio]
+    position: absolute
+    z-index: -1000
+    left: -1000px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    height: 1px
+    width: 1px
+    margin: -1px
+    padding: 0
+    border: 0
+
+    & ~ label
+      margin: 0
+      &.icon
+        cursor: pointer
+        display: block
+        width: 20px
+        height: 20px
+        margin: 0 20px
+        border: 2px solid #939598
+        -moz-border-radius: 50%
+        -webkit-border-radius: 50%
+        border-radius: 50%
+        float: left
+
+      &.text
+        +default_font_style(#263238, 14, 400, 20)
+        float: left
+    &:checked
+      & ~ label
+        &.icon
+          border-color: #f50057
+          position: relative
+          &:after
+            content: ''
+            background: #f50057
+            width: 10px
+            height: 10px
+            -moz-border-radius: 50%
+            -webkit-border-radius: 50%
+            border-radius: 50%
+            +my_center_align()
+              position: absolute
