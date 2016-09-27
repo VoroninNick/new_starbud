@@ -248,6 +248,7 @@ main
     list-style: none
     margin-left: 0
     li
+      position: relative
       .slide1, .slide2, .slide3
         height: 120px
       .slide1
@@ -256,6 +257,25 @@ main
         background: #f9a825
       .slide3
         background: #ba68c8
+      .pb-info-block
+        position: absolute
+        left: 0
+        top: 0
+        right: 0
+        bottom: 0
+        .title
+          +default_font_style(#ffffff, 30, 400,36)
+          padding-top: 32px
+          text-transform: inherit
+          text-align: left
+          padding-bottom: 0
+        .date-range-promotion
+          +default_font_style(#263238, 12, 400,32)
+          padding: 0 9px
+          white-space: nowrap
+          background: rgba(255, 255, 255, .35)
+
+
 
 .image
   max-width: 100%

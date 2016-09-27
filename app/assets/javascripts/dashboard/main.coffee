@@ -71,7 +71,7 @@ $(document).ready ->
 #===================================================================
 # collapse product info block
 #===================================================================
-  $(".navigation-arrow").click ->
+  $(".product-info-block-expand .product-info-block-head").click ->
     $this = $(@)
     $wrap = $this.closest('.product-info-block-expand')
 
