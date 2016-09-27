@@ -55,24 +55,41 @@
     margin-bottom: 33px
     padding-top: 20px
     padding-bottom: 40px
-    .title
-      +default_font_style(#546e7a, 14, 500, 14)
-      text-transform: uppercase
-      text-align: center
-      svg
-        height: 25px
-        position: relative
-        top: 6px
-        path
-          fill: #546e7a
+    .product-info-block-head
+      position: relative
+      padding-bottom: 20px
+      .title
+        +default_font_style(#546e7a, 14, 500, 14)
+        text-transform: uppercase
+        text-align: center
+        svg
+          height: 25px
+          position: relative
+          top: 6px
+          path
+            fill: #546e7a
+
     .product-info-block-body
       padding: 0 24px
       .label-text
         +default_font_style(#90a4ae, 13, 400, 16)
 
-
     &.product-info-block-expand
-
+      height: 48px
+      overflow: hidden
+      .product-info-block-head
+        .navigation-arrow
+          position: absolute
+          top: 0
+          right: 20px
+          cursor: pointer
+          svg
+            path
+              fill: #90a4ae
+      &.expanded
+        height: auto
+        .navigation-arrow
+          +rotate(180deg)
 
     &.product-calculator
       .color-select-variant
@@ -142,6 +159,7 @@
           +default_font_style(#546e7a, 16, 500, 19.2)
 
     &.product-scheme-door-opening
+      margin-bottom: 75px
       .product-info-block-body
         +clear_fix
 
@@ -224,8 +242,22 @@
     +box-shadow(1px 1px 2px 0px rgba(0,0,0,0.35))
     height: 20px
     overflow: hidden
+
+    .expand-tabs
+      height: 20px
+      width: 25px
+      cursor: pointer
+      +my_horizontal_align
+        position: absolute
+      bottom: 0
+      svg
+        path
+          fill: #90a4ae
+
     &.expanded
       height: auto
+      .expand-tabs
+        display: none
 
 .additional-unit
   .title

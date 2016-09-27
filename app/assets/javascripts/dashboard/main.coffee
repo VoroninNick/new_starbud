@@ -63,7 +63,19 @@ $(document).ready ->
 #===================================================================
 # expand tabs content
 #===================================================================
-  $(".tabs li a, .tabs-content").click ->
+  $(".tabs li a, .tabs-content .expand-tabs").click ->
     if $(".tabs-content").hasClass("expanded")
     else
       $(".tabs-content").addClass("expanded")
+
+#===================================================================
+# collapse product info block
+#===================================================================
+  $(".navigation-arrow").click ->
+    $this = $(@)
+    $wrap = $this.closest('.product-info-block-expand')
+
+    if $wrap.hasClass('expanded')
+      $wrap.removeClass('expanded')
+    else
+      $wrap.addClass('expanded')
