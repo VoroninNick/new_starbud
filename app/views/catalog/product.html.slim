@@ -60,6 +60,106 @@
               = inline_svg "crm/calculator.svg"
               |Калькулятор вартості
           .product-info-block-body
+            .row
+              .columns
+                .color-select-variant
+                  .label-text
+                    |Доступні кольори
+
+                  .input
+                    input#color-92969b type="radio" name="color_variant" checked="checked"
+                    label for="color-92969b"
+
+                  .input
+                    input#color-78746e type="radio" name="color_variant"
+                    label for="color-78746e"
+
+                  .input
+                    input#color-bea18e type="radio" name="color_variant"
+                    label for="color-bea18e"
+
+                  .input
+                    input#color-ffffff type="radio" name="color_variant"
+                    label for="color-ffffff"
+
+                  .input
+                    input#color-5b5e5b type="radio" name="color_variant"
+                    label for="color-5b5e5b"
+
+                  .input
+                    input#color-a36b40 type="radio" name="color_variant"
+                    label for="color-a36b40"
+
+            .row
+              .medium-6.columns
+
+                .calculator-option-select
+                  label
+                    |Полотно
+                  select
+                    option 600x2000
+                    option 800x2000
+                    option 900x2000
+                    option 1000x2000
+                    option 1100x2000
+
+                .calculator-option-select
+                  label
+                    |Коробка без ущільнювача
+                  select
+                    option Коробка дерев’яна 40х80 мм
+                    option Коробка дерев’яна 50х80 мм
+                    option Коробка дерев’яна 60х80 мм
+                    option Коробка дерев’яна 60х90 мм
+
+                .calculator-option-select
+                  label
+                    |Налічник півкруглий
+                  select
+                    option МДФ 70мм
+                    option МДФ 80мм
+                    option МДФ 90мм
+                    option МДФ 100мм
+
+
+              .medium-6.columns
+
+                .calculator-option-select
+                  label
+                    |Добірна дошка
+                  select
+                    option 100 мм
+                    option 110 мм
+                    option 120 мм
+                    option 200 мм
+
+                .calculator-option-select
+                  label
+                    |Колекція
+                  select
+                    option Porto
+                    option Porto new
+                    option Porto old
+                    option Porto antic
+
+                .calculator-option-select
+                  label
+                    |Термін виготовлення
+                  select
+                    option На складі
+                    option Очікується
+                    option Завершився
+
+            .row
+              .medium-6.columns
+                .product-total-price
+                  span
+                    = number_to_currency(total_price, :precision => 0, unit: '')
+                  sup
+                    |грн.
+                .product-status.in-stock
+
+              .medium-6.columns
 
 
         .product-info-block.product-info-block-expand.product-scheme-door-opening
