@@ -13,6 +13,42 @@
     string :casing_half_round
     string :production_time
 
+
+
+
+/
+  prop1:
+    opt1 ratio: 1.1
+    opt2
+  prop2
+    opt1
+    opt2
+  prop3
+    opt1
+    opt2
+
+  1#1 2#1
+  1#2 2#1
+  1#1 2#2
+  1#2 2#2
+
+
+/ Door
+    title
+    slug
+    description
+    brand
+
+    VariantColor
+      title(enum)
+      AdditionalOption
+        canvas_size(*, enum)
+        box(string keyword input)
+        welt
+
+        prices
+        currency
+
 - total_price = 20540
 
 .product-page
@@ -144,7 +180,7 @@
 
                 .calculator-option-select
                   label
-                    |Термін виготовлення
+                    |Додаткові опції
                   select
                     option На складі
                     option Очікується
@@ -201,6 +237,14 @@
                   = inline_svg "crm/Starbud-door-schemes-4.svg"
                   .label-text
                     |ЛІВА (на зовні)
+
+            hr
+            .label-text
+              |Схема укомплектування форнітурою
+            .product-scheme-variant
+
+              .label-text
+                |Варіант-1
 
   .row
     .columns
