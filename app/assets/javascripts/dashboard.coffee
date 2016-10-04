@@ -11,6 +11,7 @@
 #= require bxslider
 
 #= require dashboard/main
+#= require dashboard/product
 #= require_self
 
 $ ->

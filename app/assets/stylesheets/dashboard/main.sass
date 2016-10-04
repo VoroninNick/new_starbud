@@ -387,3 +387,50 @@ ul.custom-breadcrumbs
     span
       +default_font_style(#546e7a, 12, 600, 32)
       text-transform: uppercase
+
+
+.default-button
+  +box-shadow(1px 1px 3px 0px rgba(0,0,0,0.35))
+  a, input[type="submit"], button
+    display: inline-block
+    +default_font_style(#78909c, 14, 500, 16.8)
+    text-transform: uppercase
+    background: transparent
+    padding: 12px
+    border: none
+    outline: none
+    white-space: nowrap
+    svg
+      width: 20px
+      float: left
+      display: inline-block
+      height: 16px
+      margin-right: 10px
+      path
+        fill: #fff
+
+  &.red
+    background: #e91e63
+    color: #fff
+    a, input[type="submit"], button
+      color: inherit
+  &.blue
+    background: #0d47a1
+    color: #fff
+    a, input[type="submit"], button
+      color: inherit
+      svg
+        path
+          fill: #fff
+  &.white
+    background: #fff
+    color: #1976d2
+    a, input[type="submit"], button
+      color: inherit
+
+  &.white-label
+    background: transparent
+    color: #fff
+    border: 1px solid #fff
+    a, input[type="submit"], button
+      color: inherit

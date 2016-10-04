@@ -79,3 +79,5 @@ $(document).ready ->
       $wrap.removeClass('expanded')
     else
       $wrap.addClass('expanded')
+
+

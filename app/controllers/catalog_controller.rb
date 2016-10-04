@@ -6,6 +6,6 @@ class CatalogController < ApplicationController
   end
   
   def product
-
+    @door = Door.first
   end
 end

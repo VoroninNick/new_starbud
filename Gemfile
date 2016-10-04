@@ -81,3 +81,5 @@ gem 'bower-rails'
 
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'rails_admin_tag_list'
+
+gem "enumerize"

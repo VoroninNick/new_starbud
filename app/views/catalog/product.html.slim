@@ -49,7 +49,8 @@
         prices
         currency
 
-- total_price = 20540
+- total_price = @door.door_variant_colors.first.door_color_additional_options.first.price
+- available_colors = @door.available_colors
 
 .product-page
   .row
@@ -68,9 +69,9 @@
   .row
     .large-4.columns
       .product-avatar
-        = image_tag "crm/images/star_bud_door_1.jpg"
+        = image_tag available_colors.first.image.url(:large)
         .title
-          |Темно-сірий
+          = available_colors.first.name
 
     .large-8.columns
       .product-body
@@ -79,9 +80,9 @@
             |Сорренто 800х2000.100.40х80.70
           .subtitle
             |Belwooddors
+
           p
-            |Їх міцна сталева конструкція витримає довгі роки експлуатації в екстремальних умовах і потребують лише мінімального догляду.
-              Цей тип дверей є класичним, тому зацікавлять як аристократичних осіб, так і любителів поєднувати кілька стильових напрямків в інтер'єрі.
+            = raw @door.description
           hr
           .product-total-price
             span
@@ -102,34 +103,17 @@
                   .label-text
                     |Доступні кольори
 
-                  .input
-                    input#color-92969b type="radio" name="color_variant" checked="checked"
-                    label for="color-92969b"
-
-                  .input
-                    input#color-78746e type="radio" name="color_variant"
-                    label for="color-78746e"
-
-                  .input
-                    input#color-bea18e type="radio" name="color_variant"
-                    label for="color-bea18e"
-
-                  .input
-                    input#color-ffffff type="radio" name="color_variant"
-                    label for="color-ffffff"
-
-                  .input
-                    input#color-5b5e5b type="radio" name="color_variant"
-                    label for="color-5b5e5b"
-
-                  .input
-                    input#color-a36b40 type="radio" name="color_variant"
-                    label for="color-a36b40"
+                  - available_colors.any?
+                    - available_colors.each do |color|
+                      .input
+                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == available_colors.first) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name
+                        label for="color-#{color.slug}"
+                          .image style="background: url('#{color.icon}')no-repeat center center;"
 
             .row
               .medium-6.columns
 
-                .calculator-option-select
+                .calculator-option-select.dynamic-cos
                   label
                     |Полотно
                   select
@@ -139,7 +123,7 @@
                     option 1000x2000
                     option 1100x2000
 
-                .calculator-option-select
+                .calculator-option-select.dynamic-cos
                   label
                     |Коробка без ущільнювача
                   select
@@ -148,7 +132,7 @@
                     option Коробка дерев’яна 60х80 мм
                     option Коробка дерев’яна 60х90 мм
 
-                .calculator-option-select
+                .calculator-option-select.dynamic-cos
                   label
                     |Налічник півкруглий
                   select
@@ -160,7 +144,7 @@
 
               .medium-6.columns
 
-                .calculator-option-select
+                .calculator-option-select.dynamic-cos
                   label
                     |Добірна дошка
                   select
@@ -196,6 +180,29 @@
                 .product-status.in-stock
 
               .medium-6.columns
+                .row.product-adding-to-cart
+                  .medium-3.columns.patc-quantity
+                    input#quantity-product type="number" min="1" name="quantity" value="1"
+                    label for="quantity-product"
+                      |Кіл-сть
+                  .medium-9.columns.patc-buttons-wrap
+                    .patc-button-favorite
+                      a
+                        = inline_svg "crm/ic_favorite_black_48px.svg"
+                        |В побажання
+
+                    .patc-button-order
+                      .material-component.ripple.default-button.red
+                        button
+                          |Добавити в корзину
+
+                .row.apply-product-setting-wrap
+                  .columns
+                    .apply-product-setting
+                      .material-component.ripple.default-button.blue
+                        a
+                          = inline_svg "crm/ic_autorenew_black_48px.svg"
+                          |Застосувати зміни
 
 
         .product-info-block.product-info-block-expand.product-scheme-door-opening
@@ -270,17 +277,17 @@
     .tabs-panel.is-active id="specifications"
       .row
         .columns
-          |Технічні характеристики
+          = raw @door.specification
 
     .tabs-panel id="care"
       .row
         .columns
-          |Догляд
+          = raw @door.attention
 
     .tabs-panel id="warranty-terms"
       .row
         .columns
-          |Умови гарантії
+          = raw @door.warranty
 
     .tabs-panel id="reviews"
       .row
