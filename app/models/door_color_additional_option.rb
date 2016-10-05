@@ -82,4 +82,30 @@ class DoorColorAdditionalOption < ActiveRecord::Base
       end
     end
   end
+
+
+  def current_price
+    if price.present?
+      price
+    elsif price_minimal.present?
+      price_minimal
+    elsif price_group_first.present?
+      price_group_first
+    elsif price_group_second.present?
+      price_group_second
+    end
+  end
+
+  def current_currency
+    if currency == 'uah'
+      # t("enumerize.currency.#{currency}")
+      'грн.'
+    elsif currency == 'usd'
+      # t("enumerize.currency.#{currency}")
+      'дол.'
+    elsif currency == 'eur'
+      # t("enumerize.currency.#{currency}")
+      'євро'
+    end
+  end
 end

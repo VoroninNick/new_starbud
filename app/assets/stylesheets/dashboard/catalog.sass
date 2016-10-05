@@ -50,7 +50,10 @@
       .product-card-wrap
 
         height: 433px
-        +grid-col(4)
+        @media #{$xlarge-up}
+          +grid-col(3)
+        @media #{$large-only}
+          +grid-col(4)
         @media #{$medium-only}
           +grid-column(6)
         @media #{$small-only}

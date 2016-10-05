@@ -10,12 +10,12 @@
 # t.text :warranty
 
 class Door < ActiveRecord::Base
-  acts_as_taggable
+  # acts_as_taggable_on :brands
 
   attr_accessible *attribute_names
 
   has_many :door_variant_colors
-  attr_accessible :door_variant_colors, :tag_list
+  attr_accessible :door_variant_colors
   accepts_nested_attributes_for :door_variant_colors, allow_destroy: true
   attr_accessible :door_variant_colors_attributes
 
@@ -40,10 +40,10 @@ class Door < ActiveRecord::Base
       field :title do
         label 'Назва:'
       end
-      field :tag_list do
+      field :brand do
         label "Виробник:"
-        help 'Якщо це новий виробник, то вводимо його назву. А якщо існуючий то вибираємо з боку з існуючих...'
-        partial 'tag_list_with_suggestions'
+        # help ''
+        # partial 'tag_list_with_suggestions'
       end
       field :description do
         html_attributes rows: 10, cols: 100
