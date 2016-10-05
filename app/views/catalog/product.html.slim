@@ -48,11 +48,13 @@
 
         prices
         currency
+- product = @door
+- product_variant = product.door_variant_colors.first
 
-- total_price = @door.door_variant_colors.first.door_color_additional_options.first.price
+- total_price = product_variant.door_color_additional_options.first.current_price
 - available_colors = @door.available_colors
 
-- product = @door
+
 
 .product-page
   .row
@@ -250,10 +252,78 @@
             hr
             .label-text
               |Схема укомплектування форнітурою
-            .product-scheme-variant
 
-              .label-text
-                |Варіант-1
+            .product-scheme-variant
+              input#variant1 type="radio" name="door_scheme_variant" value="variant1" checked="checked"
+                label for="variant1"
+                  .psv-inner
+                    .psv-main-photo
+                      .image style="background: url('#{asset_path("crm/Starbud-scheme.jpg")}')no-repeat center center;"
+                      .label-text
+                        |Варіант-1
+                    ul
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-petli.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-ruchka.jpg")}')no-repeat center center;"
+                      /li
+                        .image style="background: url('#{asset_path("crm/Starbud-ruchka.jpg")}')no-repeat center center;"
+
+            .product-scheme-variant
+              input#variant2 type="radio" name="door_scheme_variant" value="variant2"
+                label for="variant2"
+                  .psv-inner
+                    .psv-main-photo
+                      .image style="background: url('#{asset_path("crm/Starbud-scheme.jpg")}')no-repeat center center;"
+                      .label-text
+                        |Варіант-2
+                    ul
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-petli.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-ruchka.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-korpus-zamka.jpg")}')no-repeat center center;"
+
+
+            .product-scheme-variant
+              input#variant3 type="radio" name="door_scheme_variant" value="variant3"
+                label for="variant3"
+                  .psv-inner
+                    .psv-main-photo
+                      .image style="background: url('#{asset_path("crm/Starbud-scheme.jpg")}')no-repeat center center;"
+                      .label-text
+                        |Варіант-3
+                    ul
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-petli.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-ruchka.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-korpus-zamka.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-tsulinder.jpg")}')no-repeat center center;"
+
+            .product-scheme-variant
+              input#variant4 type="radio" name="door_scheme_variant" value="variant4"
+                label for="variant4"
+                  .psv-inner
+                    .psv-main-photo
+                      .image style="background: url('#{asset_path("crm/Starbud-scheme.jpg")}')no-repeat center center;"
+                      .label-text
+                        |Варіант-4
+                    ul
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-petli.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-ruchka.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-korpus-zamka.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-tsulinder.jpg")}')no-repeat center center;"
+                      li
+                        .image style="background: url('#{asset_path("crm/Starbud-nakladku-na-dveri.jpg")}')no-repeat center center;"
+
 
   .row
     .columns

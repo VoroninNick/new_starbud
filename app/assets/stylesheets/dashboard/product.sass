@@ -257,6 +257,68 @@
                 .label-text
                   color: #546e7a
 
+        .product-scheme-variant
+          //+grid-column(12)
+          position: relative
+          padding-top: 12px
+          input[type=radio]
+            position: absolute
+            z-index: -1000
+            left: -1000px
+            overflow: hidden
+            clip: rect(0 0 0 0)
+            height: 1px
+            width: 1px
+            margin: -1px
+            padding: 0
+            border: 0
+            & ~ label
+              display: block
+              padding: 22px 10px
+              border: 1px solid #eceff1
+              position: relative
+              margin: 0
+              .psv-inner
+                +clear_fix
+              .psv-main-photo
+                width: 25%
+                float: left
+                padding-right: 28px
+                .image
+                  padding-bottom: 100%
+
+                .label-text
+                  +default_font_style(#78909c, 16, 500, 22)
+                  text-align: center
+                  padding-top: 5px
+              ul
+                margin-left: 0
+                margin-bottom: 0
+                margin-top: 20px
+                float: left
+                list-style: none
+                width: 75%
+                +clear_fix
+                li
+                  width: 20%
+                  float: left
+                  padding-right: 2px
+                  .image
+                    padding-bottom: 100%
+
+            &:checked
+              & ~ label
+                background: #fff
+                border-color: #cfd8dc
+                &:after
+                  content: ''
+                  width: 20px
+                  height: 20px
+                  background: asset-url("crm/Starbud-check.svg")
+                  position: absolute
+                  top: 20px
+                  right: 20px
+
   .default-tabs-head
     border: none
     li
