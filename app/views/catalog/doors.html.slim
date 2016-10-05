@@ -10,5 +10,6 @@
     .large-3.columns
     .large-9.columns
       .product-list
-        - 5.times
-          = render partial: "partials/dashboard/product/product_card"
+        - if @doors.any?
+          - @doors.each do |product|
+            = render partial: "partials/dashboard/product/product_card", locals: {product: product}
