@@ -85,6 +85,8 @@
                 width: 16.6666666667%
                 float: left
                 position: relative
+                border-top: 1px solid #ebeef0
+                border-bottom: 1px solid #ebeef0
                 .one-variant
                   width: 100%
                   height: 36px
@@ -97,6 +99,10 @@
                   top: -18px
                   left: 25%
                   display: none
+                &.active
+                  &:after
+                    display: block
+                    +triangle(top, 9px, #455a64)
 
                 &.one-variant-92969b
                   background: #92969b
