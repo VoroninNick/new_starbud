@@ -15,9 +15,9 @@
         .pc-product-variants
           - if product_colors && product_colors
           - product_colors.each do |color|
-            .one-variant-wrap class=("active" if color == product_variant)
-              .one-variant data-asset=asset_path("crm/images/star_bud_door_1.jpg") data-price="9 105"
-
+            .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_variant)
+              .one-variant data-asset=color.image.url(:large) data-price=color.door_color_additional_options.first.current_price
+                .image style="background: url('#{color.icon}')no-repeat center center;"
           /.one-variant-wrap.one-variant-92969b.active
           /  .one-variant data-asset=asset_path("crm/images/star_bud_door_1.jpg") data-price="9 105"
           /.one-variant-wrap.one-variant-78746e

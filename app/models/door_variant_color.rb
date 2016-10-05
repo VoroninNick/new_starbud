@@ -15,7 +15,7 @@ class DoorVariantColor < ActiveRecord::Base
   attr_accessible :image, :icon
 
   has_attached_file :icon,
-                    styles: { large: "80x80>"},
+                    styles: { large: "240x240>"},
                     convert_options: { large: "-quality 94 -interlace Plane"},
                     default_url: "/images/:style/missing.png"
 

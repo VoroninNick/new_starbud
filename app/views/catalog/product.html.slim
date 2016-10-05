@@ -52,6 +52,8 @@
 - total_price = @door.door_variant_colors.first.door_color_additional_options.first.price
 - available_colors = @door.available_colors
 
+- product = @door
+
 .product-page
   .row
     .columns
@@ -79,7 +81,7 @@
           .title
             |Сорренто 800х2000.100.40х80.70
           .subtitle
-            |Belwooddors
+            = product.brand
 
           p
             = raw @door.description
