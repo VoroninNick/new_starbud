@@ -8,6 +8,51 @@
 
   .catalog-page-body
     .large-3.columns
+      .catalog-filters-wrap
+        #selected-filters
+          .selected-filters.default-box-shadow-slim
+            .sf-head
+              .title
+                |Вибрані фільтри
+            .sf-body
+              .sf-group
+                .title
+                  |Test title
+                .sf-filter
+                  span
+                    |Test filter
+
+
+            .sf-footer
+              a
+                = inline_svg "crm/ic_autorenew_black_48px.svg"
+                |Скинути всі фільтри
+        #control-filters-list
+          .control-filters-list
+            .cf-body
+              .control-filter.expanded
+                .filter-head
+                  .title
+                    |Вид дверей
+                .filter-body
+                  /.custom-checkbox
+                    input#the_entrance type="checkbox" value="1" name="filterrific[with_quantity_of_rooms][]"
+                    label.cch-icon for="the_entrance"
+                    label.cch-text for="the_entrance"
+                      span Вхідні
+
+                  - Door.type.values.each do |type|
+                    .custom-checkbox
+                      /= f.check_box(:with_state_room, {multiple: true}, state_room, nil)
+                      /label.cch-icon for="filterrific_with_state_room_#{state_room}"
+                      /label.cch-text for="filterrific_with_state_room_#{state_room}" = t("enumerize.state_room.#{state_room}")
+                      input id=type type="checkbox" value=type name="door_type"
+                      label.cch-icon for=type
+                      label.cch-text for=type
+                        = t("enumerize.door.type.#{type}")
+
+
+
     .large-9.columns
       .product-list
         - if @doors.any?

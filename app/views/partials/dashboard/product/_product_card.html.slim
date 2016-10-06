@@ -5,7 +5,7 @@
 - price = first_product_variant_option.current_price
 
 .product-card-wrap
-  .product-card-inner
+  .product-card-inner.default-box-shadow-slim
     .product-card-door
       .pc-avatar
         a href=product_path(product.slug)
@@ -18,6 +18,7 @@
             .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_variant)
               .one-variant data-asset=color.image.url(:large) data-price=color.door_color_additional_options.first.current_price
                 .image style="background: url('#{color.icon}')no-repeat center center;"
+
           /.one-variant-wrap.one-variant-92969b.active
           /  .one-variant data-asset=asset_path("crm/images/star_bud_door_1.jpg") data-price="9 105"
           /.one-variant-wrap.one-variant-78746e

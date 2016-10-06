@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables"
 
 .catalog-page
   .catalog-page-head
@@ -46,6 +47,64 @@
 
   .catalog-page-body
     padding-top: 35px
+    .catalog-filters-wrap
+      padding-top: 0.625rem
+      .selected-filters
+        background: $light_blue
+        margin-bottom: 30px
+        .sf-head, .sf-body, .sf-footer
+          padding-left: 0.9375rem
+          padding-right: 0.9375rem
+
+        .sf-head
+          background: $main_blue
+          .title
+            +default_font_style($white, 14, 500, 40)
+            text:
+              align: center
+              transform: uppercase
+        .sf-body
+          margin-top: 10px
+          .sf-group
+            .title
+              +default_font_style(#eceff1, 14, 400, 21)
+            .sf-filter
+              +default_font_style(#90caf9, 14, 400, 21)
+              padding-left: 10px
+
+        .sf-footer
+          //padding-bottom: 10px
+          padding-top: 15px
+          padding-bottom: 15px
+          a
+            +default_font_style($white, 14, 500, 40)
+            text:
+              align: center
+              transform: uppercase
+            display: block
+            svg
+              height: 25px
+              width: 25px
+              position: relative
+              top: 6px
+              margin-right: 10px
+              path
+                fill: $white
+
+      .control-filters-list
+        .cf-body
+          .control-filter
+            padding-bottom: 10px
+            border-bottom: 1px solid #cfd8dc
+            .filter-head
+              .title
+                +default_font_style($main_blue, 14, 600, 40)
+                text-transform: uppercase
+            .filter-body
+
+            &.expanded
+
+
     .product-list
       .product-card-wrap
 
@@ -178,7 +237,7 @@
           padding: 7px 8px 0 7px
           position: relative
           +border-radius(5px)
-          +box-shadow(1px 1px 3px 0px rgba(0,0,0,0.35))
+
           &:hover
             z-index: 1
             .pc-avatar

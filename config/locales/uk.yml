@@ -17,3 +17,8 @@ uk:
       usd: Долар
       eur: Євро
 
+    door:
+      type:
+        the_entrance: Вхідні
+        interior: Міжкімнатні
+

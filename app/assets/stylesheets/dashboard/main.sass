@@ -1,5 +1,5 @@
 @import "mixins"
-
+@import "variables"
 
 h1, h2, h3, h4, h5, p, b, span, a, label, input, textarea, body, button, .title, .subtitle, .number-of-step, .default-font, .label-text
   font-family: "Roboto", sans-serif
@@ -388,6 +388,56 @@ ul.custom-breadcrumbs
       +default_font_style(#546e7a, 12, 600, 32)
       text-transform: uppercase
 
+.default-box-shadow-slim
+  //+box-shadow(1px 1px 1px 0px rgba(0,0,0,0.35))
+  +box-shadow(1px 1px 3px 0px rgba(0,0,0,0.35))
+.default-box-shadow-strong
+  +box-shadow(3px 3px 3px 0px rgba(0,0,0,0.5))
+
+
+.custom-checkbox
+  padding-top: 10px
+  padding-bottom: 10px
+  +clear_fix
+  input[type=checkbox]
+    position: absolute
+    z-index: -1000
+    left: -1000px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    height: 1px
+    width: 1px
+    margin: -1px
+    padding: 0
+    border: 0
+    & ~ label
+      cursor: pointer
+      float: left
+      margin: 0 25px 0 0
+      &.cch-icon
+        display: block
+        width: 18px
+        height: 18px
+        border: 2px solid $light_gray
+        position: relative
+        top: 2px
+        &:after
+          content: ''
+          background: asset-url("crm/ic_check_white_24px.svg")
+          width: 100%
+          height: 100%
+          display: block
+          background-size: 100%
+      &.cch-text
+        +default_font_style(#b0bec5, 16, 500, 19.2)
+
+    &:checked
+      & ~ label
+        &.cch-icon
+          border-color: $main_blue
+          background: $main_blue
+        &.cch-text
+          color: $dark_gray
 
 .default-button
   +box-shadow(1px 1px 3px 0px rgba(0,0,0,0.35))

@@ -14,6 +14,9 @@ class Door < ActiveRecord::Base
 
   attr_accessible *attribute_names
 
+  extend Enumerize
+  enumerize :type, in: [:'the_entrance', :'interior']
+
   has_many :door_variant_colors
   attr_accessible :door_variant_colors
   accepts_nested_attributes_for :door_variant_colors, allow_destroy: true
@@ -39,6 +42,9 @@ class Door < ActiveRecord::Base
     edit do
       field :title do
         label 'Назва:'
+      end
+      field :type do
+        label 'Вид дверей:'
       end
       field :brand do
         label "Виробник:"
