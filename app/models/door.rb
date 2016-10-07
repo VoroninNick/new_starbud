@@ -9,13 +9,21 @@
 # t.text :attention
 # t.text :warranty
 
+# rename_column :doors, :brand, :brand_string
+# t.belongs_to :brand
+# rename_column :doors, :type, :product_type
+
 class Door < ActiveRecord::Base
   # acts_as_taggable_on :brands
 
   attr_accessible *attribute_names
 
   extend Enumerize
-  enumerize :type, in: [:'the_entrance', :'interior']
+  enumerize :product_type, in: [:'the_entrance', :'interior']
+
+  belongs_to :brand
+  attr_accessible :brand, :brand_id
+
 
   has_many :door_variant_colors
   attr_accessible :door_variant_colors
@@ -37,13 +45,17 @@ class Door < ActiveRecord::Base
     label_plural 'Двері'
 
     list do
+      field :title
+      field :brand
+      field :product_type
+      field :description
     end
 
     edit do
       field :title do
         label 'Назва:'
       end
-      field :type do
+      field :product_type do
         label 'Вид дверей:'
       end
       field :brand do
