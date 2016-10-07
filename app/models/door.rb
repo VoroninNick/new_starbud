@@ -1,3 +1,37 @@
+
+
+
+# Вхідні
+# -- виробники
+
+# -- ширина: 86, 96, 120
+
+# -- товщина: від 52 до 75
+
+# -- тип: метал, мдф накладка,
+# -- тип покриття:
+# --- тип плівки: вулична, квартирна
+# --- колір: набір кольорів (робимо стандартизацію) опцій но автомазацію
+# --- тип металу:
+# -- елементи декодування: глухі, скло та ковнина
+# -- утеплення: мінвата, пінопласт, відсутне
+#
+# Міжкімнатні
+# -- виробники
+# -- ширина: 60, 70, 80, 90
+# -- тип покриття: шмон, масив, мдф, пвх, емаль
+# -- колір: набір кольорів (стандартизуємо кольори)
+# -- елементи декорування: глухі, з шклом, з молдингом, патиновані, фотодрук
+# -- тип відкривання: гармошнка, стандартна
+#
+# - фурнітура
+# - вид: ручки, петлі, міжкімнатні механізми, комплектуючі.
+# -- тип покриття: срібло, золото, бронза, емаль
+
+
+
+
+
 # t.string :title
 # t.string :slug
 # t.string :brand
@@ -22,6 +56,7 @@ class Door < ActiveRecord::Base
   enumerize :product_type, in: [:'the_entrance', :'interior']
 
   belongs_to :brand
+  # validates_presence_of :brand_id, :presence => true
   attr_accessible :brand, :brand_id
 
 
@@ -29,6 +64,10 @@ class Door < ActiveRecord::Base
   attr_accessible :door_variant_colors
   accepts_nested_attributes_for :door_variant_colors, allow_destroy: true
   attr_accessible :door_variant_colors_attributes
+
+
+  # validates :product_type, :presence => true
+
 
   def to_slug
     "#{title.parameterize}"

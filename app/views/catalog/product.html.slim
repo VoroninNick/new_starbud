@@ -48,6 +48,8 @@
 
         prices
         currency
+
+
 - product = @door
 - product_variant = product.door_variant_colors.first
 
@@ -83,7 +85,7 @@
           .title
             |Сорренто 800х2000.100.40х80.70
           .subtitle
-            = product.brand
+            = product.brand.title
 
           p
             = raw @door.description
