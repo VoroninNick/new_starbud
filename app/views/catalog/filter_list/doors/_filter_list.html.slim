@@ -1,0 +1,31 @@
+.control-filters-list
+  .cf-body
+
+    /type doors
+    .control-filter.expanded
+      .filter-head
+        .title
+          |Вид дверей
+
+      .filter-body
+        - Door.product_type.values.each do |type|
+          .custom-checkbox
+            input id=type type="checkbox" value=type name="door_type"
+            label.cch-icon for=type
+            label.cch-text for=type
+              = t("enumerize.door.product_type.#{type}")
+    /producers
+    .control-filter.expanded
+      .filter-head
+        .title
+          |Виробники
+
+      .filter-body
+        - Brand.all.each do |producer|
+          - el_slug = producer.slug
+          - el_name = producer.title
+          .custom-checkbox
+            input id=el_slug type="checkbox" value=el_slug name="door_producers"
+            label.cch-icon for=el_slug
+            label.cch-text for=el_slug
+              = el_name

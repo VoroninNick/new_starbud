@@ -28,20 +28,8 @@
                 = inline_svg "crm/ic_autorenew_black_48px.svg"
                 |Скинути всі фільтри
         #control-filters-list
-          .control-filters-list
-            .cf-body
-              .control-filter.expanded
-                .filter-head
-                  .title
-                    |Вид дверей
-                .filter-body
+          = render partial: "catalog/filter_list/doors/filter_list"
 
-                  - Door.product_type.values.each do |type|
-                    .custom-checkbox
-                      input id=type type="checkbox" value=type name="door_type"
-                      label.cch-icon for=type
-                      label.cch-text for=type
-                        = t("enumerize.door.product_type.#{type}")
 
 
 
