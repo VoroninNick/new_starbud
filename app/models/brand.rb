@@ -17,6 +17,7 @@ class Brand < ActiveRecord::Base
   before_save :save_slug
 
   rails_admin do
+    visible false
     navigation_label 'Каталог'
 
     label 'Виробник'

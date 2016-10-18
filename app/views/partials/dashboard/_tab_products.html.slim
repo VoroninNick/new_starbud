@@ -1,3 +1,11 @@
+/= @recommended_doors.inspect
+/ul
+  - @recommended_doors.each do |item|
+    li
+      = image_tag item.image.url(:large)
+      = item.slug
+
+
 ul#products-tabs.tabs data-tabs=""
   li.tabs-title.is-active
     a href="#doors" aria-selected="true"

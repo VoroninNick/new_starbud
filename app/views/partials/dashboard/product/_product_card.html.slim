@@ -1,6 +1,6 @@
-- product_colors = product.door_variant_colors
+- product_colors = product.door_variants
 - product_variant = product_colors.first
-- first_product_variant_option = product_variant.door_color_additional_options.first
+- first_product_variant_option = product_variant
 
 - price = first_product_variant_option.current_price
 
@@ -11,43 +11,27 @@
         .product-label.product-is-promotion
       - if product_variant.new?
         .product-label.product-is-new
-      /= product_variant.inspect
 
     .product-card-door
       .pc-avatar
         a href=product_path(product.slug)
-          /.image style="background: url('#{asset_path("crm/images/star_bud_door_1.jpg")}')no-repeat center center;"
           = image_tag product_variant.image.url(:large)
       .pc-body
         .pc-product-variants
           - if product_colors && product_colors
           - product_colors.each do |color|
             .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_variant)
-              .one-variant data-asset=color.image.url(:large) data-price=color.door_color_additional_options.first.current_price
+              .one-variant data-asset=color.image.url(:large) data-price=color.current_price
                 .image style="background: url('#{color.icon}')no-repeat center center;"
-
-          /.one-variant-wrap.one-variant-92969b.active
-          /  .one-variant data-asset=asset_path("crm/images/star_bud_door_1.jpg") data-price="9 105"
-          /.one-variant-wrap.one-variant-78746e
-          /  .one-variant
-          /.one-variant-wrap.one-variant-bea18e
-          /  .one-variant data-asset=asset_path("crm/images/star_bud_door_3.jpg") data-price="11 000"
-          /.one-variant-wrap.one-variant-a98e7c
-          /  .one-variant
-          /.one-variant-wrap.one-variant-5b5e5b
-          /  .one-variant
-          /.one-variant-wrap.one-variant-a36b40
-          /  .one-variant data-asset=asset_path("crm/images/star_bud_door_2.jpg") data-price="4 500"
 
         .pc-product-details
           .ps-titles
             .title
               = product.title
             .subtitle
-              |(#{product_variant.name})
+              |(#{product_variant.name_color})
             .label-text
-              = product.brand.title
-              /|Belwooddors
+              = product.door_collection.door_producer.title
 
           .ps-price-status
             .ps-price

@@ -42,10 +42,11 @@ class DoorVariantColor < ActiveRecord::Base
   before_save :save_slug
 
   rails_admin do
-    navigation_label 'Каталог'
-
-    label 'Колір дверей'
-    label_plural 'Кольори дверей'
+    visible false
+    # navigation_label 'Каталог'
+    #
+    # label 'Колір дверей'
+    # label_plural 'Кольори дверей'
 
     list do
     end

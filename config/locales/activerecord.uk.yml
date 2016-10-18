@@ -1,0 +1,10 @@
+uk:
+  activerecord:
+    attributes:
+      #door:
+      #  name: "my name"
+
+    models:
+      #door:
+      #  one: "Машина"
+      #  other: "Машини"

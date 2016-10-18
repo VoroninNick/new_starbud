@@ -47,6 +47,8 @@
 # t.belongs_to :brand
 # rename_column :doors, :type, :product_type
 
+# t.belongs_to :door_collection
+
 class Door < ActiveRecord::Base
   # acts_as_taggable_on :brands
 
@@ -55,15 +57,13 @@ class Door < ActiveRecord::Base
   extend Enumerize
   enumerize :product_type, in: [:'the_entrance', :'interior']
 
-  belongs_to :brand
-  # validates_presence_of :brand_id, :presence => true
-  attr_accessible :brand, :brand_id
+  belongs_to :door_collection
 
 
-  has_many :door_variant_colors
-  attr_accessible :door_variant_colors
-  accepts_nested_attributes_for :door_variant_colors, allow_destroy: true
-  attr_accessible :door_variant_colors_attributes
+  has_many :door_variants
+  attr_accessible :door_variants
+  accepts_nested_attributes_for :door_variants, allow_destroy: true
+  attr_accessible :door_variants_attributes
 
 
   # validates :product_type, :presence => true
@@ -77,6 +77,7 @@ class Door < ActiveRecord::Base
   end
   before_save :save_slug
 
+
   rails_admin do
     navigation_label 'Каталог'
 
@@ -85,7 +86,7 @@ class Door < ActiveRecord::Base
 
     list do
       field :title
-      field :brand
+      field :door_collection
       field :product_type
       field :description
     end
@@ -97,19 +98,24 @@ class Door < ActiveRecord::Base
       field :product_type do
         label 'Вид дверей:'
       end
-      field :brand do
-        label "Виробник:"
-        # help ''
-        # partial 'tag_list_with_suggestions'
+      field :door_collection_id, :enum do
+        enum do
+          DoorCollection.includes(:door_producer).all.map { |i| [i.door_producer.title + ', ' + i.title, i.id] }
+
+        end
+        label "Колекція:"
       end
       field :description do
         html_attributes rows: 10, cols: 100
         label 'Короткий опис:'
       end
 
+      field :door_variants do
+        label 'Варіанти дверей:'
+      end
       group :specification do
         label 'Додаткові опції'
-        active true
+        active false
 
         field :specification, :ck_editor do
           label 'Технічні характеристики:'
@@ -124,7 +130,16 @@ class Door < ActiveRecord::Base
     end
   end
 
+  def available_sizes
+    if (door_producer rescue false)
+      door_producer.door_canvas_sizes.pluck(:name)
+    else
+      []
+    end
+
+  end
+
   def available_colors
-    self.door_variant_colors.uniq
+    self.door_variants.uniq
   end
 end

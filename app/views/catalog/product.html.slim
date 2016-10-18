@@ -56,9 +56,9 @@
 
 
 - product = @door
-- product_variant = product.door_variant_colors.first
+- product_variant = product.door_variants.first
 
-- total_price = product_variant.door_color_additional_options.first.current_price
+- total_price = product_variant.current_price
 - available_colors = @door.available_colors
 
 
@@ -82,7 +82,7 @@
       .product-avatar
         = image_tag available_colors.first.image.url(:large)
         .title
-          = available_colors.first.name
+          = available_colors.first.name_color
 
     .large-8.columns
       .product-body
@@ -90,7 +90,7 @@
           .title
             |Сорренто 800х2000.100.40х80.70
           .subtitle
-            = product.brand.title
+            = product.door_collection.door_producer.title
 
           p
             = raw @door.description
@@ -117,7 +117,7 @@
                   - available_colors.any?
                     - available_colors.each do |color|
                       .input
-                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == available_colors.first) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name
+                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == available_colors.first) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name_color
                         label for="color-#{color.slug}"
                           .image style="background: url('#{color.icon}')no-repeat center center;"
 

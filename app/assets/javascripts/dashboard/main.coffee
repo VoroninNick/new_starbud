@@ -47,6 +47,8 @@ $(document).ready ->
     price = $this.attr "data-price"
 
     console.log 'asset: ', asset_src
+    console.log 'price: ', price
+
     preview_el.attr "src", asset_src
     price_el.text(price)
 
