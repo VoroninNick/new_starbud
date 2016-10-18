@@ -105,140 +105,153 @@
             &.expanded
 
 
-    .product-list
-      .product-card-wrap
+.product-list
+  .product-card-wrap
 
-        height: 433px
-        @media #{$xlarge-up}
-          +grid-col(3)
-        @media #{$large-only}
-          +grid-col(4)
-        @media #{$medium-only}
-          +grid-column(6)
-        @media #{$small-only}
-          +grid-col(12)
-        padding-top: 11px
-        padding-top: 0.625rem
-        padding-bottom: 11px
-        padding-bottom: 0.625rem
-        &:last-child:not(:first-child)
-          float: left
+    height: 433px
+    @media #{$xlarge-up}
+      +grid-col(3)
+    @media #{$large-only}
+      +grid-col(4)
+    @media #{$medium-only}
+      +grid-column(6)
+    @media #{$small-only}
+      +grid-col(12)
+    padding-top: 11px
+    padding-top: 0.625rem
+    padding-bottom: 11px
+    padding-bottom: 0.625rem
+    &:last-child:not(:first-child)
+      float: left
 
-        .product-card-door
-          .pc-avatar
-            max-height: 260px
-            overflow: hidden
-            +transition_all(1s)
-            //.image
-              padding-bottom: 221%
-            img
+    .product-card-door
+      .pc-avatar
+        max-height: 260px
+        overflow: hidden
+        +transition_all(1s)
+        //.image
+          padding-bottom: 221%
+        img
+          width: 100%
+
+      .pc-body
+        .pc-product-variants
+          +clear_fix
+          padding-top: 11px
+          margin-left: -8px
+          margin-right: -8px
+          .one-variant-wrap
+            width: 16.6666666667%
+            float: left
+            position: relative
+            border-top: 1px solid #ebeef0
+            border-bottom: 1px solid #ebeef0
+            .one-variant
               width: 100%
+              height: 36px
+              cursor: pointer
+              .image
+                height: 100%
+            &:after
+              content: ''
+              position: absolute
+              top: -18px
+              left: 25%
+              display: none
+            &.active
+              &:after
+                display: block
+                +triangle(top, 9px, #455a64)
 
-          .pc-body
-            .pc-product-variants
-              +clear_fix
-              padding-top: 11px
-              margin-left: -8px
-              margin-right: -8px
-              .one-variant-wrap
-                width: 16.6666666667%
-                float: left
-                position: relative
-                border-top: 1px solid #ebeef0
-                border-bottom: 1px solid #ebeef0
-                .one-variant
-                  width: 100%
-                  height: 36px
-                  cursor: pointer
-                  .image
-                    height: 100%
-                &:after
-                  content: ''
-                  position: absolute
-                  top: -18px
-                  left: 25%
-                  display: none
-                &.active
-                  &:after
-                    display: block
-                    +triangle(top, 9px, #455a64)
+            &.one-variant-92969b
+              background: #92969b
+              &:after
+                +triangle(top, 9px, #92969b)
 
-                &.one-variant-92969b
-                  background: #92969b
-                  &:after
-                    +triangle(top, 9px, #92969b)
+            &.one-variant-78746e
+              background: #78746e
+              &:after
+                +triangle(top, 9px, #78746e)
+            &.one-variant-bea18e
+              background: #bea18e
+              &:after
+                +triangle(top, 9px, #bea18e)
+            &.one-variant-a98e7c
+              background: #a98e7c
+              &:after
+                +triangle(top, 9px, #a98e7c)
+            &.one-variant-5b5e5b
+              background: #5b5e5b
+              &:after
+                +triangle(top, 9px, #5b5e5b)
+            &.one-variant-a36b40
+              background: #a36b40
+              &:after
+                +triangle(top, 9px, #a36b40)
 
-                &.one-variant-78746e
-                  background: #78746e
-                  &:after
-                    +triangle(top, 9px, #78746e)
-                &.one-variant-bea18e
-                  background: #bea18e
-                  &:after
-                    +triangle(top, 9px, #bea18e)
-                &.one-variant-a98e7c
-                  background: #a98e7c
-                  &:after
-                    +triangle(top, 9px, #a98e7c)
-                &.one-variant-5b5e5b
-                  background: #5b5e5b
-                  &:after
-                    +triangle(top, 9px, #5b5e5b)
-                &.one-variant-a36b40
-                  background: #a36b40
-                  &:after
-                    +triangle(top, 9px, #a36b40)
+            &.active
+              &:after
+                display: block
 
-                &.active
-                  &:after
-                    display: block
+        .pc-product-details
+          padding: 15px 7px
+          +clear_fix
+          .ps-titles, .ps-price-status
+            float: left
+          .ps-titles
+            width: 60%
+            .title
+              +default_font_style(#455a64, 16, 400, 18)
+              text-transform: uppercase
+            .subtitle
+              +default_font_style(#78909c, 14, 400, 18)
+              text-transform: uppercase
+            .label-text
+              +default_font_style(#78909c, 14, 400, 18)
+              padding-top: 10px
 
-            .pc-product-details
-              padding: 15px 7px
-              +clear_fix
-              .ps-titles, .ps-price-status
-                float: left
-              .ps-titles
-                width: 60%
-                .title
-                  +default_font_style(#455a64, 16, 400, 18)
-                  text-transform: uppercase
-                .subtitle
-                  +default_font_style(#78909c, 14, 400, 18)
-                  text-transform: uppercase
-                .label-text
-                  +default_font_style(#78909c, 14, 400, 18)
-                  padding-top: 10px
+          .ps-price-status
+            width: 40%
+          .ps-price
+            +default_font_style(#0d47a1, 18, 500, 18)
+            span
+            sup
+              font-size: 60%
+          .ps-product-status
+            &:after
+              +default_font_style(#000, 12, 400, 18)
+              font-family: "Roboto", sans-serif
+            &.in-stock:after
+              content: 'Є на складі'
+              color: #43a047
 
-              .ps-price-status
-                width: 40%
-              .ps-price
-                +default_font_style(#0d47a1, 18, 500, 18)
-                span
-                sup
-                  font-size: 60%
-              .ps-product-status
-                &:after
-                  +default_font_style(#000, 12, 400, 18)
-                  font-family: "Roboto", sans-serif
-                &.in-stock:after
-                  content: 'Є на складі'
-                  color: #43a047
+            &.do-not-have
+              content: 'Немає'
+              color: #455a64
+            &.ends
+              content: 'Закінчується'
+              color: #e91e63
 
-                &.do-not-have
-                  content: 'Немає'
-                  color: #455a64
-                &.ends
-                  content: 'Закінчується'
-                  color: #e91e63
+    .product-card-inner
+      background: #fff
+      padding: 7px 8px 0 7px
+      position: relative
+      +border-radius(5px)
+      .product-labels-wrap
+        position: absolute
+        top: -10px
+        right: -10px
+        .product-label
+          width: 50px
+          height: 50px
+          float: right
+          background-size: 100%
+          &.product-is-promotion
+            background-image: asset-url("crm/Starbud-special-offer.png")
+          &.product-is-new
+            background-image: asset-url("crm/Starbud-new.png")
 
-        .product-card-inner
-          background: #fff
-          padding: 7px 8px 0 7px
-          position: relative
-          +border-radius(5px)
-
-          &:hover
-            z-index: 1
-            .pc-avatar
-              max-height: none
+      &:hover
+        z-index: 1
+        .pc-avatar
+          max-height: none

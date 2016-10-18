@@ -52,3 +52,12 @@
           .spb-oi-status-info
           .spb-oi-products
           .spb-oi-price-info
+
+
+.row
+  .columns
+    .tabs-product-wrap.tabs-product-wrap-dashboard
+      .title.text-center
+        |Рекомендуємо
+
+      = render partial: "partials/dashboard/tab_products", locals: {doors: @recommended_doors}

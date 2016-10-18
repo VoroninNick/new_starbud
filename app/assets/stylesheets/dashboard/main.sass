@@ -484,3 +484,48 @@ ul.custom-breadcrumbs
     border: 1px solid #fff
     a, input[type="submit"], button
       color: inherit
+
+
+.tabs-product-wrap
+  &.tabs-product-wrap-dashboard
+    .title
+      +default_font_style(#455a64, 30, 500, 32)
+      text-transform: uppercase
+      margin-bottom: 40px
+
+  ul.tabs
+    background: transparent
+    border: none
+    li.tabs-title
+      width: 25%
+      position: relative
+      a
+        padding: 0
+        +default_font_style(#90a4ae, 16, 500, 40)
+        text-transform: uppercase
+        text-align: center
+        &:hover
+          color: #546e7a
+          background: transparent
+        &:after
+          display: block
+          content: ""
+          position: absolute
+          bottom: 0
+          width: 100%
+          border-bottom: 2px solid #cfd8dc
+      &.is-active
+        a
+          color: #e91e63
+          background: transparent
+          &:after
+            border: 2px solid #e91e63
+
+  .tabs-content
+    background: transparent
+    border: none
+    .tabs-panel
+      +clear_fix
+      .ps-titles
+        .title
+          margin-bottom: 0

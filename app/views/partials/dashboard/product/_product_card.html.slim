@@ -6,6 +6,13 @@
 
 .product-card-wrap
   .product-card-inner.default-box-shadow-slim
+    .product-labels-wrap
+      - if product_variant.promotion?
+        .product-label.product-is-promotion
+      - elsif product_variant.new?
+        .product-label.product-is-new
+      /= product_variant.inspect
+
     .product-card-door
       .pc-avatar
         a href=product_path(product.slug)

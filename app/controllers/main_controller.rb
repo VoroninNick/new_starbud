@@ -6,6 +6,7 @@ class MainController < ApplicationController
     @partners = Partner.where(published: 't').order(position: :asc)
     @personals = OurRepresentative.published
     @comments = Comment.published
+
   end
 
   def about_company

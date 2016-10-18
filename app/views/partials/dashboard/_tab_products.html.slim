@@ -1,0 +1,35 @@
+ul#products-tabs.tabs data-tabs=""
+  li.tabs-title.is-active
+    a href="#doors" aria-selected="true"
+      |Двері
+
+  li.tabs-title
+    a href="#floors" aria-selected="true"
+      |Підлога
+
+  li.tabs-title
+    a href="#walls" aria-selected="true"
+      |Стіни
+
+  li.tabs-title
+    a href="#related_products" aria-selected="true"
+      |Супутні товари
+
+.tabs-content data-tabs-content="products-tabs"
+  #doors.tabs-panel.is-active
+    .product-list
+      - if doors.any?
+        - doors.each do |product|
+          = render partial: "partials/dashboard/product/product_card", locals: {product: product}
+
+  #floors.tabs-panel
+    p
+      |Підлога
+
+  #walls.tabs-panel
+    p
+      |Стіни
+
+  #related_products.tabs-panel
+    p
+      |Супутні товари

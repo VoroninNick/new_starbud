@@ -3,6 +3,10 @@
 # t.attachment :icon
 # t.attachment :image
 # t.belongs_to :door
+
+# t.boolean :promotion
+# t.boolean :new
+# t.boolean :recommended
 class DoorVariantColor < ActiveRecord::Base
   attr_accessible *attribute_names
 
@@ -61,6 +65,18 @@ class DoorVariantColor < ActiveRecord::Base
         label 'Зображення:'
         help 'Зображення вантажити лише в форматі jpg 300x700 pixels'
       end
+
+      field :promotion do
+        label 'Акційні?'
+      end
+      field :new do
+        label 'Нові?'
+      end
+      field :recommended do
+        label 'Рекомендуємо?'
+        help 'для відображення на головній сторінці.'
+      end
+
       field :door_color_additional_options do
         label 'Варіанти дверей:'
       end

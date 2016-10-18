@@ -109,3 +109,6 @@ class DoorColorAdditionalOption < ActiveRecord::Base
     end
   end
 end
+
+
+# 24+24+32+3+4+18+24+35+23+1+6+8+8+3=215*8= 1720
