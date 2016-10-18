@@ -9,7 +9,7 @@
     .product-labels-wrap
       - if product_variant.promotion?
         .product-label.product-is-promotion
-      - elsif product_variant.new?
+      - if product_variant.new?
         .product-label.product-is-new
       /= product_variant.inspect
 
