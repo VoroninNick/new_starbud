@@ -56,7 +56,9 @@
 
 
 - product = @door
-- product_variant = product.door_variants.first
+- product_colors = product.door_colors
+- product_color = product.door_colors.first
+- product_variant = product_color.door_variants.first
 
 - total_price = product_variant.current_price
 - available_colors = @door.available_colors
@@ -82,7 +84,7 @@
       .product-avatar
         = image_tag available_colors.first.image.url(:large)
         .title
-          = available_colors.first.name_color
+          = available_colors.first.name
 
     .large-8.columns
       .product-body
@@ -93,7 +95,7 @@
             = product.door_collection.door_producer.title
 
           p
-            = raw @door.description
+            = raw product.description
           hr
           .product-total-price
             span
@@ -117,7 +119,7 @@
                   - available_colors.any?
                     - available_colors.each do |color|
                       .input
-                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == available_colors.first) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name_color
+                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == available_colors.first) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name
                         label for="color-#{color.slug}"
                           .image style="background: url('#{color.icon}')no-repeat center center;"
 
@@ -127,12 +129,16 @@
                 .calculator-option-select.dynamic-cos
                   label
                     |Розмір полотна
-                  select
-                    option 600x2000
-                    option 800x2000
-                    option 900x2000
-                    option 1000x2000
-                    option 1100x2000
+                  select name="canvas_size"
+                    - product.door_collection.door_producer.door_canvas_sizes.each do |size|
+                      option value=size.name selected=("selected" if size == product_variant.canvas_size)
+                        = size.name
+
+                    /option 600x2000
+                    /option 800x2000
+                    /option 900x2000
+                    /option 1000x2000
+                    /option 1100x2000
 
                 .calculator-option-select.dynamic-cos
                   label

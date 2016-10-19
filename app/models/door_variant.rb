@@ -15,6 +15,9 @@
 # t.boolean :new
 # t.boolean :recommended
 
+# t.belongs_to :door_color
+
+
 def canvas_size_enum_field
   field :canvas_size, :enum do
     enum_method :available_sizes
@@ -40,9 +43,9 @@ class DoorVariant < ActiveRecord::Base
   extend Enumerize
   enumerize :currency, in: [:'uah', :'usd', :'eur']
 
-  belongs_to :door
-  has_one :door_collection, through: :door
-  has_one :door_producer, through: :door_collection
+  belongs_to :door_color
+
+  has_one :door_producer, through: :door_color
 
   attr_accessible :image, :icon
 
@@ -59,11 +62,11 @@ class DoorVariant < ActiveRecord::Base
   validates_attachment_content_type :icon, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  validates :name_color, :presence => true
+
   validates :canvas_size, :presence => true, if: -> { persisted? }
 
   def to_parameterize
-    "#{name_color.parameterize}"
+    "#{door_color.name.parameterize}"
   end
   def create_slug
     "#{to_parameterize} #{canvas_size}"
@@ -85,23 +88,12 @@ class DoorVariant < ActiveRecord::Base
       field :slug do
         label 'назва'
       end
-      field :image
+
     end
 
     edit do
-      field :door
+      field :door_color
       canvas_size_enum_field
-      field :name_color do
-        label 'Назва кольору:'
-      end
-      field :icon, :paperclip do
-        label 'Іконка:'
-        help 'Зображення вантажити лише в форматі jpg 80x80 pixels'
-      end
-      field :image, :paperclip do
-        label 'Зображення:'
-        help 'Зображення вантажити лише в форматі jpg 300x700 pixels'
-      end
 
       field :promotion do
         label 'Акційні?'
@@ -140,21 +132,11 @@ class DoorVariant < ActiveRecord::Base
     end
 
     nested do
-      field :door do
+      field :door_color do
         visible false
       end
       canvas_size_enum_field
-      field :name_color do
-        label 'Назва кольору:'
-      end
-      field :icon, :paperclip do
-        label 'Іконка:'
-        help 'Зображення вантажити лише в форматі jpg 80x80 pixels'
-      end
-      field :image, :paperclip do
-        label 'Зображення:'
-        help 'Зображення вантажити лише в форматі jpg 300x700 pixels'
-      end
+
     end
 
   end

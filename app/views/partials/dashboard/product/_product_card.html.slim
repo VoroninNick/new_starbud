@@ -1,27 +1,27 @@
-- product_colors = product.door_variants
-- product_variant = product_colors.first
-- first_product_variant_option = product_variant
+- product_colors = product.door_colors
+- product_color = product_colors.first
+- first_product_variant_option = product_color.door_variants.first
 
 - price = first_product_variant_option.current_price
 
 .product-card-wrap
   .product-card-inner.default-box-shadow-slim
     .product-labels-wrap
-      - if product_variant.promotion?
+      - if first_product_variant_option.promotion?
         .product-label.product-is-promotion
-      - if product_variant.new?
+      - if first_product_variant_option.new?
         .product-label.product-is-new
 
     .product-card-door
       .pc-avatar
         a href=product_path(product.slug)
-          = image_tag product_variant.image.url(:large)
+          = image_tag product_color.image.url(:large)
       .pc-body
         .pc-product-variants
           - if product_colors && product_colors
           - product_colors.each do |color|
-            .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_variant)
-              .one-variant data-asset=color.image.url(:large) data-price=color.current_price
+            .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
+              .one-variant data-asset=color.image.url(:large) data-price=color.door_variants.first.current_price
                 .image style="background: url('#{color.icon}')no-repeat center center;"
 
         .pc-product-details
@@ -29,7 +29,7 @@
             .title
               = product.title
             .subtitle
-              |(#{product_variant.name_color})
+              |(#{product_color.name})
             .label-text
               = product.door_collection.door_producer.title
 

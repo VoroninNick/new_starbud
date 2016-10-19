@@ -58,12 +58,13 @@ class Door < ActiveRecord::Base
   enumerize :product_type, in: [:'the_entrance', :'interior']
 
   belongs_to :door_collection
+  has_one :door_producer, through: :door_collection
 
 
-  has_many :door_variants
-  attr_accessible :door_variants
-  accepts_nested_attributes_for :door_variants, allow_destroy: true
-  attr_accessible :door_variants_attributes
+  has_many :door_colors
+  attr_accessible :door_colors
+  accepts_nested_attributes_for :door_colors, allow_destroy: true
+  attr_accessible :door_colors_attributes
 
 
   # validates :product_type, :presence => true
@@ -85,9 +86,10 @@ class Door < ActiveRecord::Base
     label_plural 'Двері'
 
     list do
-      field :title
-      field :door_collection
       field :product_type
+      field :title
+      field :door_producer
+      field :door_collection
       field :description
     end
 
@@ -110,8 +112,8 @@ class Door < ActiveRecord::Base
         label 'Короткий опис:'
       end
 
-      field :door_variants do
-        label 'Варіанти дверей:'
+      field :door_colors do
+        label 'Кольори дверей:'
       end
       group :specification do
         label 'Додаткові опції'
@@ -130,16 +132,16 @@ class Door < ActiveRecord::Base
     end
   end
 
-  def available_sizes
-    if (door_producer rescue false)
-      door_producer.door_canvas_sizes.pluck(:name)
-    else
-      []
-    end
-
-  end
+  # def available_sizes
+  #   if (door_producer rescue false)
+  #     door_producer.door_canvas_sizes.pluck(:name)
+  #   else
+  #     []
+  #   end
+  #
+  # end
 
   def available_colors
-    self.door_variants.uniq
+    self.door_colors.uniq
   end
 end
