@@ -132,13 +132,7 @@
                   select name="canvas_size"
                     - product.door_collection.door_producer.door_canvas_sizes.each do |size|
                       option value=size.name selected=("selected" if size == product_variant.canvas_size)
-                        = size.name
-
-                    /option 600x2000
-                    /option 800x2000
-                    /option 900x2000
-                    /option 1000x2000
-                    /option 1100x2000
+                        |#{size.name}x2000
 
                 .calculator-option-select.dynamic-cos
                   label
@@ -170,14 +164,14 @@
                     option 120 мм
                     option 200 мм
 
-                .calculator-option-select
-                  label
-                    |Колекція
-                  select
-                    option Porto
-                    option Porto new
-                    option Porto old
-                    option Porto antic
+                /.calculator-option-select
+                /  label
+                /    |Колекція
+                /  select
+                /    option Porto
+                /    option Porto new
+                /    option Porto old
+                /    option Porto antic
 
                 .calculator-option-select
                   label

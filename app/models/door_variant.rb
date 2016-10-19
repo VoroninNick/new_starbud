@@ -17,6 +17,7 @@
 
 # t.belongs_to :door_color
 
+# t.string :one_c_id
 
 def canvas_size_enum_field
   field :canvas_size, :enum do
@@ -85,6 +86,9 @@ class DoorVariant < ActiveRecord::Base
     object_label_method :slug
 
     list do
+      field :one_c_id do
+        label 'Ідентифікатор з 1С'
+      end
       field :slug do
         label 'назва'
       end
@@ -92,6 +96,10 @@ class DoorVariant < ActiveRecord::Base
     end
 
     edit do
+      field :one_c_id do
+        label 'Ідентифікатор з 1С'
+        help 'Поле для вводу ID товару з 1С'
+      end
       field :door_color
       canvas_size_enum_field
 
@@ -132,6 +140,10 @@ class DoorVariant < ActiveRecord::Base
     end
 
     nested do
+      field :one_c_id do
+        label 'Ідентифікатор з 1С'
+        help 'Поле для вводу ID товару з 1С'
+      end
       field :door_color do
         visible false
       end
