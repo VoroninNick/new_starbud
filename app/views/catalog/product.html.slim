@@ -149,7 +149,7 @@
                       option selected="selected"
                         |Виберіть добірну дошку
                       - door_add_boards.each do |option|
-                        option value=option.slug
+                        option value=option.one_c_id
                           = option.name
 
               - if door_frames && door_frames.any?
@@ -161,7 +161,7 @@
                       option selected="selected"
                         |Виберіть коробку
                       - door_frames.each do |option|
-                        option value=option.slug
+                        option value=option.one_c_id
                           = option.name
               - if welts && welts.any?
                 .medium-6.columns
@@ -172,7 +172,7 @@
                       option selected="selected"
                         |Виберіть лиштву
                       - welts.each do |option|
-                        option value=option.slug
+                        option value=option.one_c_id
                           = option.name
 
               - if door_strips && door_strips.any?
@@ -184,7 +184,7 @@
                       option selected="selected"
                         |Виберіть притворну планку
                       - door_strips.each do |option|
-                        option value=option.slug
+                        option value=option.one_c_id
                           = option.name
 
               .medium-6.columns
