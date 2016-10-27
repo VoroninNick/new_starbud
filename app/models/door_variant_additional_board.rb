@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: door_variant_frames
+# Table name: door_variant_additional_boards
 #
 #  id                 :integer          not null, primary key
 #  name               :string
@@ -16,7 +16,7 @@
 #  updated_at         :datetime         not null
 #
 
-class DoorVariantFrame < ActiveRecord::Base
+class DoorVariantAdditionalBoard < ActiveRecord::Base
   attr_accessible *attribute_names
 
   extend Enumerize

@@ -30,6 +30,8 @@ class DoorColor < ActiveRecord::Base
   has_many :door_variants
   has_many :door_variant_welts
   has_many :door_variant_frames
+  has_many :door_variant_additional_boards
+  has_many :door_variant_strips
 
 
   has_one :door_collection, through: :door
@@ -46,6 +48,15 @@ class DoorColor < ActiveRecord::Base
   attr_accessible :door_variant_frames
   accepts_nested_attributes_for :door_variant_frames, allow_destroy: true
   attr_accessible :door_variant_frames_attributes
+
+  attr_accessible :door_variant_additional_boards
+  accepts_nested_attributes_for :door_variant_additional_boards, allow_destroy: true
+  attr_accessible :door_variant_additional_boards_attributes
+
+
+  attr_accessible :door_variant_strips
+  accepts_nested_attributes_for :door_variant_strips, allow_destroy: true
+  attr_accessible :door_variant_strips_attributes
 
   attr_accessible :image, :icon
 
@@ -112,11 +123,21 @@ class DoorColor < ActiveRecord::Base
       field :door_variants do
         label 'Варіанти дверей:'
       end
+
+      field :door_variant_additional_boards do
+        label 'Добірна дошка:'
+      end
+
       field :door_variant_frames do
         label 'Коробка:'
       end
+
       field :door_variant_welts do
         label 'Лиштва:'
+      end
+
+      field :door_variant_strips do
+        label 'Притворна планка:'
       end
 
     end

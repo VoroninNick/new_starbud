@@ -58,8 +58,12 @@
 - product = @door
 - product_colors = product.door_colors
 - product_color = product.door_colors.first
+
 - welts = product_color.door_variant_welts
 - door_frames = product_color.door_variant_frames
+- door_add_boards = product_color.door_variant_additional_boards
+- door_strips = product_color.door_variant_strips
+
 - product_variant = product_color.door_variants.first
 
 - total_price = product_variant.current_price
@@ -136,35 +140,34 @@
                       option value=size.name selected=("selected" if size == product_variant.canvas_size)
                         |#{size.name}x2000
 
-              .medium-6.columns
-                .calculator-option-select.dynamic-cos
-                  label
-                    |Добірна дошка
-                  select
-                    option selected="selected"
-                      |Виберіть добірну дошку
-                    option 100 мм
-                    option 110 мм
-                    option 120 мм
-                    option 200 мм
+              - if door_add_boards && door_add_boards.any?
+                .medium-6.columns
+                  .calculator-option-select.dynamic-cos
+                    label
+                      |Добірна дошка
+                    select
+                      option selected="selected"
+                        |Виберіть добірну дошку
+                      - door_add_boards.each do |option|
+                        option value=option.slug
+                          = option.name
 
-              .medium-6.columns
-                .calculator-option-select.dynamic-cos
-                  label
-                    |Коробка
-                  - if door_frames && door_frames.any?
+              - if door_frames && door_frames.any?
+                .medium-6.columns
+                  .calculator-option-select.dynamic-cos
+                    label
+                      |Коробка
                     select
                       option selected="selected"
                         |Виберіть коробку
                       - door_frames.each do |option|
                         option value=option.slug
                           = option.name
-
-              .medium-6.columns
-                .calculator-option-select.dynamic-cos
-                  label
-                    |Лиштва
-                  - if welts && welts.any?
+              - if welts && welts.any?
+                .medium-6.columns
+                  .calculator-option-select.dynamic-cos
+                    label
+                      |Лиштва
                     select
                       option selected="selected"
                         |Виберіть лиштву
@@ -172,18 +175,17 @@
                         option value=option.slug
                           = option.name
 
-
-              .medium-6.columns
-                .calculator-option-select.dynamic-cos
-                  label
-                    |Притворна планка
-                  select
-                    option selected="selected"
-                      |Виберіть притворну планку
-                    option МДФ 70мм
-                    option МДФ 80мм
-                    option МДФ 90мм
-                    option МДФ 100мм
+              - if door_strips && door_strips.any?
+                .medium-6.columns
+                  .calculator-option-select.dynamic-cos
+                    label
+                      |Притворна планка
+                    select
+                      option selected="selected"
+                        |Виберіть притворну планку
+                      - door_strips.each do |option|
+                        option value=option.slug
+                          = option.name
 
               .medium-6.columns
                 .calculator-option-select
