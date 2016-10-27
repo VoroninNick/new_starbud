@@ -124,8 +124,8 @@
                           .image style="background: url('#{color.icon}')no-repeat center center;"
 
             .row
-              .medium-6.columns
 
+              .medium-6.columns
                 .calculator-option-select.dynamic-cos
                   label
                     |Розмір полотна
@@ -134,27 +134,7 @@
                       option value=size.name selected=("selected" if size == product_variant.canvas_size)
                         |#{size.name}x2000
 
-                .calculator-option-select.dynamic-cos
-                  label
-                    |Коробка без ущільнювача
-                  select
-                    option Коробка дерев’яна 40х80 мм
-                    option Коробка дерев’яна 50х80 мм
-                    option Коробка дерев’яна 60х80 мм
-                    option Коробка дерев’яна 60х90 мм
-
-                .calculator-option-select.dynamic-cos
-                  label
-                    |Налічник півкруглий
-                  select
-                    option МДФ 70мм
-                    option МДФ 80мм
-                    option МДФ 90мм
-                    option МДФ 100мм
-
-
               .medium-6.columns
-
                 .calculator-option-select.dynamic-cos
                   label
                     |Добірна дошка
@@ -164,15 +144,37 @@
                     option 120 мм
                     option 200 мм
 
-                /.calculator-option-select
-                /  label
-                /    |Колекція
-                /  select
-                /    option Porto
-                /    option Porto new
-                /    option Porto old
-                /    option Porto antic
+              .medium-6.columns
+                .calculator-option-select.dynamic-cos
+                  label
+                    |Коробка
+                  select
+                    option Коробка дерев’яна 40х80 мм
+                    option Коробка дерев’яна 50х80 мм
+                    option Коробка дерев’яна 60х80 мм
+                    option Коробка дерев’яна 60х90 мм
 
+              .medium-6.columns
+                .calculator-option-select.dynamic-cos
+                  label
+                    |Лиштва
+                  select
+                    option МДФ 70мм
+                    option МДФ 80мм
+                    option МДФ 90мм
+                    option МДФ 100мм
+
+              .medium-6.columns
+                .calculator-option-select.dynamic-cos
+                  label
+                    |Притворна планка
+                  select
+                    option МДФ 70мм
+                    option МДФ 80мм
+                    option МДФ 90мм
+                    option МДФ 100мм
+
+              .medium-6.columns
                 .calculator-option-select
                   label
                     |Додаткові опції
@@ -185,6 +187,9 @@
                     option Розетка квадратна 80х80 (к-т 2 шт.)
                     option Арка Люкс 1270*200*2400
                     option Арка Романська 1270*200*2400
+            .row
+              .columns
+                hr
 
             .row
               .medium-6.columns
