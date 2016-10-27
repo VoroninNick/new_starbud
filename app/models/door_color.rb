@@ -28,6 +28,9 @@ class DoorColor < ActiveRecord::Base
 
   belongs_to :door
   has_many :door_variants
+  has_many :door_variant_welts
+  has_many :door_variant_frames
+
 
   has_one :door_collection, through: :door
   has_one :door_producer, through: :door
@@ -35,6 +38,14 @@ class DoorColor < ActiveRecord::Base
   attr_accessible :door_variants
   accepts_nested_attributes_for :door_variants, allow_destroy: true
   attr_accessible :door_variants_attributes
+
+  attr_accessible :door_variant_welts
+  accepts_nested_attributes_for :door_variant_welts, allow_destroy: true
+  attr_accessible :door_variant_welts_attributes
+
+  attr_accessible :door_variant_frames
+  accepts_nested_attributes_for :door_variant_frames, allow_destroy: true
+  attr_accessible :door_variant_frames_attributes
 
   attr_accessible :image, :icon
 
@@ -100,6 +111,12 @@ class DoorColor < ActiveRecord::Base
 
       field :door_variants do
         label 'Варіанти дверей:'
+      end
+      field :door_variant_frames do
+        label 'Коробка:'
+      end
+      field :door_variant_welts do
+        label 'Лиштва:'
       end
 
     end

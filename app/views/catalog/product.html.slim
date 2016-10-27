@@ -58,6 +58,8 @@
 - product = @door
 - product_colors = product.door_colors
 - product_color = product.door_colors.first
+- welts = product_color.door_variant_welts
+- door_frames = product_color.door_variant_frames
 - product_variant = product_color.door_variants.first
 
 - total_price = product_variant.current_price
@@ -139,6 +141,8 @@
                   label
                     |Добірна дошка
                   select
+                    option selected="selected"
+                      |Виберіть добірну дошку
                     option 100 мм
                     option 110 мм
                     option 120 мм
@@ -148,27 +152,34 @@
                 .calculator-option-select.dynamic-cos
                   label
                     |Коробка
-                  select
-                    option Коробка дерев’яна 40х80 мм
-                    option Коробка дерев’яна 50х80 мм
-                    option Коробка дерев’яна 60х80 мм
-                    option Коробка дерев’яна 60х90 мм
+                  - if door_frames && door_frames.any?
+                    select
+                      option selected="selected"
+                        |Виберіть коробку
+                      - door_frames.each do |option|
+                        option value=option.slug
+                          = option.name
 
               .medium-6.columns
                 .calculator-option-select.dynamic-cos
                   label
                     |Лиштва
-                  select
-                    option МДФ 70мм
-                    option МДФ 80мм
-                    option МДФ 90мм
-                    option МДФ 100мм
+                  - if welts && welts.any?
+                    select
+                      option selected="selected"
+                        |Виберіть лиштву
+                      - welts.each do |option|
+                        option value=option.slug
+                          = option.name
+
 
               .medium-6.columns
                 .calculator-option-select.dynamic-cos
                   label
                     |Притворна планка
                   select
+                    option selected="selected"
+                      |Виберіть притворну планку
                     option МДФ 70мм
                     option МДФ 80мм
                     option МДФ 90мм
@@ -179,6 +190,8 @@
                   label
                     |Додаткові опції
                   select
+                    option selected="selected"
+                      |Виберіть додаткові опції
                     option Капітель 600(946х80)
                     option Капітель 700(1046х80)
                     option Капітель800 (1146х80)
