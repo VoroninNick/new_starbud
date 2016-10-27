@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: publications
+#
+#  id                 :integer          not null, primary key
+#  title              :string
+#  slug               :string
+#  photo_file_name    :string
+#  photo_content_type :string
+#  photo_file_size    :integer
+#  photo_updated_at   :datetime
+#  body               :text
+#  published          :boolean
+#  featured           :boolean
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
 # t.string :title
 # t.string :slug
 # t.has_attached_file :photo

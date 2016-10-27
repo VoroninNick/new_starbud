@@ -1,3 +1,34 @@
+# == Schema Information
+#
+# Table name: door_variants
+#
+#  id                 :integer          not null, primary key
+#  door_id            :integer
+#  name_color         :string
+#  icon_file_name     :string
+#  icon_content_type  :string
+#  icon_file_size     :integer
+#  icon_updated_at    :datetime
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  slug               :string
+#  canvas_size        :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  price              :string
+#  price_minimal      :string
+#  price_group_first  :string
+#  price_group_second :string
+#  currency           :string
+#  promotion          :boolean
+#  new                :boolean
+#  recommended        :boolean
+#  door_color_id      :integer
+#  one_c_id           :string
+#
+
 # t.belongs_to :door
 # t.string :name_color
 # t.attachment :icon
@@ -47,6 +78,10 @@ class DoorVariant < ActiveRecord::Base
   belongs_to :door_color
 
   has_one :door_producer, through: :door_color
+
+  has_price
+
+
 
   attr_accessible :image, :icon
 
@@ -103,39 +138,43 @@ class DoorVariant < ActiveRecord::Base
       field :door_color
       canvas_size_enum_field
 
-      field :promotion do
-        label 'Акційні?'
-      end
-      field :new do
-        label 'Нові?'
-      end
+      # field :promotion do
+      #   label 'Акційні?'
+      # end
+      # field :new do
+      #   label 'Нові?'
+      # end
       field :recommended do
         label 'Рекомендуємо?'
         help 'для відображення на головній сторінці.'
       end
 
-      group :prices do
-        label 'Ціна'
-        active true
+      # field :prices do
+      #   label '0-Ціна:'
+      # end
 
-        field :currency, :enum do
-          label 'Валюта:'
-        end
-
-        field :price_minimal do
-          label 'Мінімальна:'
-        end
-        field :price_group_first do
-          label 'Гурт 1:'
-        end
-        field :price_group_second do
-          label 'Гурт 2:'
-        end
-        field :price do
-          label 'Прайс:'
-        end
-
-      end
+      # group :prices do
+      #   label 'Ціна'
+      #   active true
+      #
+      #   field :currency, :enum do
+      #     label 'Валюта:'
+      #   end
+      #
+      #   field :price_minimal do
+      #     label 'Мінімальна:'
+      #   end
+      #   field :price_group_first do
+      #     label 'Гурт 1:'
+      #   end
+      #   field :price_group_second do
+      #     label 'Гурт 2:'
+      #   end
+      #   field :price do
+      #     label 'Прайс:'
+      #   end
+      #
+      # end
 
     end
 

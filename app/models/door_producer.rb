@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: door_producers
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  slug       :string
+#  country    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # t.string :title
 # t.string :slug
 # t.string :country

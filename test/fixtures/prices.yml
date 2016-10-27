@@ -1,14 +1,15 @@
 # == Schema Information
 #
-# Table name: product_statuses
+# Table name: prices
 #
-#  id         :integer          not null, primary key
-#  product_id :string
-#  name       :string
-#  status     :boolean
-#  quantity   :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  product_id   :integer
+#  product_type :string
+#  user_id      :integer
+#  currency     :string
+#  price        :float
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

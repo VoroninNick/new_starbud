@@ -25,5 +25,7 @@ module StarBudNew
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.precompile += %w( ckeditor/filebrowser/images/gal_del.png )
+
+    # config.autoload_paths << Rails.root.join('lib')
   end
 end

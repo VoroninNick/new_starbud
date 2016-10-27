@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: product_statuses
+#
+#  id         :integer          not null, primary key
+#  product_id :string
+#  name       :string
+#  status     :boolean
+#  quantity   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # t.string :product_id
 # t.string :name
 # t.boolean :status

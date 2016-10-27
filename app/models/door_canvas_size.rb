@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: door_canvas_sizes
+#
+#  id               :integer          not null, primary key
+#  door_producer_id :integer
+#  name             :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
 # t.belongs_to :door_producer
 # t.integer :name
 
