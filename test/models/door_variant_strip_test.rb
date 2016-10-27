@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: door_variant_frames
+# Table name: door_variant_strips
 #
 #  id                 :integer          not null, primary key
 #  name               :string
@@ -18,7 +18,7 @@
 
 require 'test_helper'
 
-class DoorVariantFrameTest < ActiveSupport::TestCase
+class DoorVariantStripTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
