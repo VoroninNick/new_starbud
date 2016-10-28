@@ -46,30 +46,14 @@ $(document).ready ->
         $wrap.addClass("changed")
 
 #===================================================================
-# unchecked checked radio button
+# .product-one-scheme unchecked
 #===================================================================
-#  $('.product-one-scheme input[type="radio"]').change ->
-#    console.log "who: ", $(@)
-#    if $(@).is(':checked')
-#      console.log "this el is checked"
-#      $(@).prop('checked', false)
-#    else
-#      $(@).prop('checked', true)
-
-#  $('.product-info-block-body input[type="radio"]:checked').click ->
-#    $('.product-info-block-body input[type="radio"]:checked').each ->
-#      $(@).attr 'checked', false
+  $('.product-one-scheme input').on 'change', ->
+    $('.product-one-scheme input').not(this).prop 'checked', false
 
 
-#    $(this).checked = false
-#  $('.product-info-block-body input:radio').bind 'click mousedown', do ->
-#    isChecked = undefined
-#    (event) ->
-#      if event.type == 'click'
-#        if isChecked
-#          isChecked = @checked = false
-#        else
-#          isChecked = true
-#      else
-#        isChecked = @checked
-#
+#===================================================================
+# .product-one-scheme unchecked
+#===================================================================
+  $('.product-scheme-variant input').on 'change', ->
+    $('.product-scheme-variant input').not(this).prop 'checked', false

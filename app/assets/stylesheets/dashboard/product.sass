@@ -114,10 +114,6 @@
       padding: 0 24px
       .label-text
         +default_font_style(#90a4ae, 13, 400, 16)
-      hr
-        border-bottom: 1px solid #cfd8dc
-        margin-top: 15px
-        margin-bottom: 30px
 
     &.product-info-block-expand
       height: 52px
@@ -138,6 +134,10 @@
           +rotate(180deg)
 
     &.product-calculator
+      hr
+        border-bottom: 1px solid #cfd8dc
+        margin-top: 15px
+        margin-bottom: 30px
       .color-select-variant
         +clear_fix
         padding-bottom: 40px
@@ -212,11 +212,14 @@
       .product-info-block-body
         +clear_fix
 
+        hr
+
+
         .product-one-scheme
           +grid-column(6)
           position: relative
           padding-top: 12px
-          input[type=radio]
+          input[type=radio], input[type=checkbox]
             position: absolute
             z-index: -1000
             left: -1000px
@@ -261,11 +264,16 @@
                 .label-text
                   color: #546e7a
 
+          &:hover
+            input
+              & ~ label
+                border-color: #cfd8dc
+
         .product-scheme-variant
           //+grid-column(12)
           position: relative
           padding-top: 12px
-          input[type=radio]
+          input[type=radio], input[type=checkbox]
             position: absolute
             z-index: -1000
             left: -1000px
@@ -323,6 +331,10 @@
                   position: absolute
                   top: 20px
                   right: 20px
+          &:hover
+            input
+              & ~ label
+                border-color: #cfd8dc
 
   .default-tabs-head
     border: none

@@ -254,39 +254,40 @@
               |Схема відкриття дверей
 
             .product-one-scheme
-              input#right_inside type="radio" name="scheme_door_opening" value="right_inside" checked="checked"
+              input#right_inside type="checkbox" name="scheme_door_opening" value="right_inside"
                 label for="right_inside"
                   = inline_svg "crm/Starbud-door-schemes-1.svg"
                   .label-text
                     |ПРАВА (в середину)
 
             .product-one-scheme
-              input#left_inside type="radio" name="scheme_door_opening" value="left_inside"
+              input#left_inside type="checkbox" name="scheme_door_opening" value="left_inside"
                 label for="left_inside"
                   = inline_svg "crm/Starbud-door-schemes-2.svg"
                   .label-text
                     |ЛІВА (в середину)
 
             .product-one-scheme
-              input#right_outside type="radio" name="scheme_door_opening" value="right_outside"
+              input#right_outside type="checkbox" name="scheme_door_opening" value="right_outside"
                 label for="right_outside"
                   = inline_svg "crm/Starbud-door-schemes-3.svg"
                   .label-text
                     |ПРАВА (на зовні)
 
             .product-one-scheme
-              input#left_outside type="radio" name="scheme_door_opening" value="left_outside"
+              input#left_outside type="checkbox" name="scheme_door_opening" value="left_outside"
                 label for="left_outside"
                   = inline_svg "crm/Starbud-door-schemes-4.svg"
                   .label-text
                     |ЛІВА (на зовні)
 
+            .clearfix
             hr
             .label-text
               |Схема укомплектування форнітурою
 
             .product-scheme-variant
-              input#variant1 type="radio" name="door_scheme_variant" value="variant1" checked="checked"
+              input#variant1 type="checkbox" name="door_scheme_variant" value="variant1"
                 label for="variant1"
                   .psv-inner
                     .psv-main-photo
@@ -302,7 +303,7 @@
                         .image style="background: url('#{asset_path("crm/Starbud-ruchka.jpg")}')no-repeat center center;"
 
             .product-scheme-variant
-              input#variant2 type="radio" name="door_scheme_variant" value="variant2"
+              input#variant2 type="checkbox" name="door_scheme_variant" value="variant2"
                 label for="variant2"
                   .psv-inner
                     .psv-main-photo
@@ -319,7 +320,7 @@
 
 
             .product-scheme-variant
-              input#variant3 type="radio" name="door_scheme_variant" value="variant3"
+              input#variant3 type="checkbox" name="door_scheme_variant" value="variant3"
                 label for="variant3"
                   .psv-inner
                     .psv-main-photo
@@ -337,7 +338,7 @@
                         .image style="background: url('#{asset_path("crm/Starbud-tsulinder.jpg")}')no-repeat center center;"
 
             .product-scheme-variant
-              input#variant4 type="radio" name="door_scheme_variant" value="variant4"
+              input#variant4 type="checkbox" name="door_scheme_variant" value="variant4"
                 label for="variant4"
                   .psv-inner
                     .psv-main-photo
