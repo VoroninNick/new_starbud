@@ -170,12 +170,12 @@ class DoorVariant < ActiveRecord::Base
     end
 
     edit do
-      field :full_name do
-        label 'Full name:'
-      end
-      field :full_slug do
-        label 'Full slug:'
-      end
+      # field :full_name do
+      #   label 'Full name:'
+      # end
+      # field :full_slug do
+      #   label 'Full slug:'
+      # end
       field :one_c_id do
         label 'Ідентифікатор з 1С'
         help 'Поле для вводу ID товару з 1С'
