@@ -27,6 +27,8 @@
 #  recommended        :boolean
 #  door_color_id      :integer
 #  one_c_id           :string
+#  full_name          :string
+#  full_slug          :string
 #
 
 require 'test_helper'

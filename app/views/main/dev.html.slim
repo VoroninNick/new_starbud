@@ -1,5 +1,23 @@
-.row.medium-8.medium-centered
+/.row.medium-8.medium-centered
   .columns
     form action="/bitrix/admin/1c_exchange.php?type=catalog&mode=file" method="post" multipart="true"
       input type="file" name="filename"
       button type="submit" Submit
+
+.row
+  .columns
+    - if Door.all
+      ul
+        - Door.all.each do |door|
+          li
+            = door.title
+            - if door.door_colors && door.door_colors.any?
+              ul
+                - door.door_colors.each do |color|
+                  li
+                    |"NAME: #{color.name} SLUG: #{color.slug}"
+                    - if color.door_variants && color.door_variants.any?
+                      ul
+                        - color.door_variants.each do |variant|
+                          li
+                            = variant.canvas_size

@@ -46,10 +46,14 @@ $(document).ready ->
     asset_src = $this.attr "data-asset"
     price = $this.attr "data-price"
 
+    $link_to_product = $wrap.find('.pc-avatar a')
+    product_url = $this.attr "data-url"
+
     console.log 'asset: ', asset_src
     console.log 'price: ', price
 
     preview_el.attr "src", asset_src
+    $link_to_product.attr "href", product_url
     price_el.text(price)
 
 #===================================================================

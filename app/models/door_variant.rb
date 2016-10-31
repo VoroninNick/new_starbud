@@ -27,6 +27,8 @@
 #  recommended        :boolean
 #  door_color_id      :integer
 #  one_c_id           :string
+#  full_name          :string
+#  full_slug          :string
 #
 
 # t.belongs_to :door
@@ -111,7 +113,44 @@ class DoorVariant < ActiveRecord::Base
   def save_slug
     self.slug = create_slug
   end
-  before_save :save_slug
+
+
+  def generate_full_slug
+    params = [product_color.product.slug, product_color.slug, canvas_size]
+    product_url_fragment = params.map{|param| param.to_s.underscore }.join("-")
+  end
+  def create_full_slug
+    self.full_slug = generate_full_slug
+  end
+
+
+
+  def generate_full_name
+    params = [product_color.product.title, product_color.name, canvas_size]
+    params.map{|param| param.to_s.underscore }.join(" ")
+  end
+  def create_full_name
+    self.full_name = generate_full_name
+  end
+
+
+  before_save :save_slug, :create_full_name, :create_full_slug
+
+  def base_url
+    "/dashboard/doors/product/"
+  end
+
+  def product_color
+    door_color
+  end
+
+  def url
+    base_url + generate_full_slug
+  end
+
+  def full_name
+    generate_full_name
+  end
 
   rails_admin do
     visible false
@@ -131,6 +170,12 @@ class DoorVariant < ActiveRecord::Base
     end
 
     edit do
+      field :full_name do
+        label 'Full name:'
+      end
+      field :full_slug do
+        label 'Full slug:'
+      end
       field :one_c_id do
         label 'Ідентифікатор з 1С'
         help 'Поле для вводу ID товару з 1С'
@@ -225,5 +270,14 @@ class DoorVariant < ActiveRecord::Base
     end
   end
 
+  scope :find_product_variant_by_string, ->(str) {
+    params_arr = str.split("-")
+    product = params_arr.first
+    product_color = params_arr.second
+    product_canvas_size = params_arr.last
+    find_product_variant(product_canvas_size, product_color, product)
+  }
+  # @door_variant = product_class.joins(door_color: { door: {} }).where(doors: { slug: product }, door_colors: { slug: product_color }, canvas_size: product_canvas_size).first
 
+  scope :find_product_variant, ->(product_canvas_size, product_color, product) { joins(door_color: { door: {} }).where(doors: { slug: product }, door_colors: { slug: product_color } )}
 end

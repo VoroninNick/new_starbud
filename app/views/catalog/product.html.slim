@@ -55,19 +55,10 @@
   boolean :recommended
 
 
-- product = @door
-- product_colors = product.door_colors
-- product_color = product.door_colors.first
 
-- welts = product_color.door_variant_welts
-- door_frames = product_color.door_variant_frames
-- door_add_boards = product_color.door_variant_additional_boards
-- door_strips = product_color.door_variant_strips
-
-- product_variant = product_color.door_variants.first
-
-- total_price = product_variant.current_price
-- available_colors = @door.available_colors
+/.row
+  .columns
+    = @inspect_params.inspect
 
 
 
@@ -83,29 +74,30 @@
             |Двері
         li
           span
-            |Сорренто 800х2000.100.40х80.70
+            = @door_variant.full_name
 
   .row
     .large-4.columns
       .product-avatar
-        = image_tag available_colors.first.image.url(:large)
+        = image_tag @product_color.image.url(:large)
         .title
-          = available_colors.first.name
+          = @product_color.name
 
     .large-8.columns
       .product-body
         .product-main-info
           .title
-            |Сорренто 800х2000.100.40х80.70
+            = @door_variant.full_name
+
           .subtitle
-            = product.door_collection.door_producer.title
+            = @product.door_collection.door_producer.title
 
           p
-            = raw product.description
+            = raw @product.description
           hr
           .product-total-price
             span
-              = number_to_currency(total_price, :precision => 0, unit: '')
+              = number_to_currency(@total_price, :precision => 0, unit: '')
             sup
               |грн.
           .product-status.in-stock
@@ -122,10 +114,10 @@
                   .label-text
                     |Доступні кольори
 
-                  - available_colors.any?
-                    - available_colors.each do |color|
+                  - @available_colors.any?
+                    - @available_colors.each do |color|
                       .input
-                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == available_colors.first) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name
+                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == @product_color) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name
                         label for="color-#{color.slug}"
                           .image style="background: url('#{color.icon}')no-repeat center center;"
 
@@ -136,11 +128,11 @@
                   label
                     |Розмір полотна
                   select name="canvas_size"
-                    - product.door_collection.door_producer.door_canvas_sizes.each do |size|
-                      option value=size.name selected=("selected" if size == product_variant.canvas_size)
+                    - @product.door_collection.door_producer.door_canvas_sizes.each do |size|
+                      option value=size.name selected=("selected" if size == @product_variant.canvas_size)
                         |#{size.name}x2000
 
-              - if door_add_boards && door_add_boards.any?
+              - if @door_add_boards && @door_add_boards.any?
                 .medium-6.columns
                   .calculator-option-select.dynamic-cos
                     label
@@ -148,11 +140,11 @@
                     select
                       option selected="selected"
                         |Виберіть добірну дошку
-                      - door_add_boards.each do |option|
+                      - @door_add_boards.each do |option|
                         option value=option.one_c_id
                           = option.name
 
-              - if door_frames && door_frames.any?
+              - if @door_frames && @door_frames.any?
                 .medium-6.columns
                   .calculator-option-select.dynamic-cos
                     label
@@ -160,10 +152,10 @@
                     select
                       option selected="selected"
                         |Виберіть коробку
-                      - door_frames.each do |option|
+                      - @door_frames.each do |option|
                         option value=option.one_c_id
                           = option.name
-              - if welts && welts.any?
+              - if @welts && @welts.any?
                 .medium-6.columns
                   .calculator-option-select.dynamic-cos
                     label
@@ -171,11 +163,11 @@
                     select
                       option selected="selected"
                         |Виберіть лиштву
-                      - welts.each do |option|
+                      - @welts.each do |option|
                         option value=option.one_c_id
                           = option.name
 
-              - if door_strips && door_strips.any?
+              - if @door_strips && @door_strips.any?
                 .medium-6.columns
                   .calculator-option-select.dynamic-cos
                     label
@@ -183,7 +175,7 @@
                     select
                       option selected="selected"
                         |Виберіть притворну планку
-                      - door_strips.each do |option|
+                      - @door_strips.each do |option|
                         option value=option.one_c_id
                           = option.name
 
@@ -210,7 +202,7 @@
               .medium-6.columns
                 .product-total-price
                   span
-                    = number_to_currency(total_price, :precision => 0, unit: '')
+                    = number_to_currency(@total_price, :precision => 0, unit: '')
                   sup
                     |грн.
                 .product-status.in-stock
@@ -382,17 +374,17 @@
     .tabs-panel.is-active id="specifications"
       .row
         .columns
-          = raw @door.specification
+          = raw @product.specification
 
     .tabs-panel id="care"
       .row
         .columns
-          = raw @door.attention
+          = raw @product.attention
 
     .tabs-panel id="warranty-terms"
       .row
         .columns
-          = raw @door.warranty
+          = raw @product.warranty
 
     .tabs-panel id="reviews"
       .row

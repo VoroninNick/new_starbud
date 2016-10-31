@@ -69,8 +69,6 @@
 # t.belongs_to :door_collection
 
 class Door < ActiveRecord::Base
-  # acts_as_taggable_on :brands
-
   attr_accessible *attribute_names
 
   extend Enumerize
@@ -85,8 +83,6 @@ class Door < ActiveRecord::Base
   accepts_nested_attributes_for :door_colors, allow_destroy: true
   attr_accessible :door_colors_attributes
 
-
-  # validates :product_type, :presence => true
 
 
   def to_slug

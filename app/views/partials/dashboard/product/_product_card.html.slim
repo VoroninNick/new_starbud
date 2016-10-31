@@ -14,14 +14,19 @@
 
     .product-card-door
       .pc-avatar
-        a href=product_path(product.slug)
-          = image_tag product_color.image.url(:large)
+        /a href=first_product_variant_option.url
+        - if first_product_variant_option.full_slug.present?
+          a href=product_path(first_product_variant_option.full_slug)
+            = image_tag product_color.image.url(:large)
+        - else
+          a
+            = image_tag product_color.image.url(:large)
       .pc-body
         .pc-product-variants
           - if product_colors && product_colors
           - product_colors.each do |color|
             .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
-              .one-variant data-asset=color.image.url(:large) data-price=color.door_variants.first.current_price
+              .one-variant data-asset=color.image.url(:large) data-price=color.door_variants.first.current_price data-url=color.door_variants.first.url
                 .image style="background: url('#{color.icon}')no-repeat center center;"
 
         .pc-product-details

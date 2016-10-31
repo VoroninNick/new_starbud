@@ -75,6 +75,10 @@ class DoorColor < ActiveRecord::Base
 
   validates :name, :presence => true
 
+  def product
+    door
+  end
+
   def to_slug
     "#{name.parameterize}"
   end
@@ -86,9 +90,6 @@ class DoorColor < ActiveRecord::Base
   rails_admin do
     visible false
     navigation_label 'Каталог'
-    #
-    # label 'Колір дверей'
-    # label_plural 'Кольори дверей'
 
     list do
     end
@@ -97,9 +98,6 @@ class DoorColor < ActiveRecord::Base
       field :name do
         label 'Назва:'
       end
-      # field :door do
-      #   label 'Двері:'
-      # end
       field :icon, :paperclip do
         label 'Іконка:'
         help 'Зображення вантажити лише в форматі jpg 80x80 pixels'

@@ -27,6 +27,8 @@
 #  recommended        :boolean
 #  door_color_id      :integer
 #  one_c_id           :string
+#  full_name          :string
+#  full_slug          :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
