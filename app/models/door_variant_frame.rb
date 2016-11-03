@@ -17,6 +17,6 @@
 #
 
 class DoorVariantFrame < ActiveRecord::Base
-  extend BaseDoorVariant
+  include BaseDoorVariant
 
 end

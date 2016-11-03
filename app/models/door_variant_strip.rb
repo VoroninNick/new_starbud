@@ -17,5 +17,5 @@
 #
 
 class DoorVariantStrip < ActiveRecord::Base
-  extend BaseDoorVariant
+  include BaseDoorVariant
 end

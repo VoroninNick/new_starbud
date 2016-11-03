@@ -17,5 +17,5 @@
 #
 
 class DoorVariantWelt < ActiveRecord::Base
-  extend BaseDoorVariant
+  include BaseDoorVariant
 end
