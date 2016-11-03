@@ -34,28 +34,28 @@ module BaseDoorVariant
           label 'Ідентифікатор з 1С'
         end
 
-        group :prices do
-          label 'Ціна'
-          active true
-
-          field :currency, :enum do
-            label 'Валюта:'
-          end
-
-          field :price_minimal do
-            label 'Мінімальна:'
-          end
-          field :price_group_first do
-            label 'Гурт 1:'
-          end
-          field :price_group_second do
-            label 'Гурт 2:'
-          end
-          field :price do
-            label 'Прайс:'
-          end
-
-        end
+        # group :prices do
+        #   label 'Ціна'
+        #   active true
+        #
+        #   field :currency, :enum do
+        #     label 'Валюта:'
+        #   end
+        #
+        #   field :price_minimal do
+        #     label 'Мінімальна:'
+        #   end
+        #   field :price_group_first do
+        #     label 'Гурт 1:'
+        #   end
+        #   field :price_group_second do
+        #     label 'Гурт 2:'
+        #   end
+        #   field :price do
+        #     label 'Прайс:'
+        #   end
+        #
+        # end
       end
     end
   end
