@@ -23,6 +23,7 @@ class CatalogController < ApplicationController
       @door_frames = @product_color.door_variant_frames
       @door_add_boards = @product_color.door_variant_additional_boards
       @door_strips = @product_color.door_variant_strips
+      @door_add_options = @product_color.door_variant_additional_options
 
       @product_variant = @door_variant
 

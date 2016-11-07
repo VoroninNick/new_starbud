@@ -179,21 +179,27 @@
                         option value=option.one_c_id
                           = option.name
 
-              .medium-6.columns
-                .calculator-option-select
-                  label
-                    |Додаткові опції
-                  select
-                    option selected="selected"
-                      |Виберіть додаткові опції
-                    option Капітель 600(946х80)
-                    option Капітель 700(1046х80)
-                    option Капітель800 (1146х80)
-                    option Капітель900 (1246х80)
-                    option Лиштва з канелюром 2100х80
-                    option Розетка квадратна 80х80 (к-т 2 шт.)
-                    option Арка Люкс 1270*200*2400
-                    option Арка Романська 1270*200*2400
+              - if @door_add_options && @door_add_options.any?
+                .medium-6.columns
+                  .calculator-option-select
+                    label
+                      |Додаткові опції
+                    select
+                      option selected="selected"
+                        |Виберіть додаткові опції
+
+                      - @door_add_options.each do |option|
+                        option value=option.one_c_id
+                          = option.name
+
+                    /option Капітель 600(946х80)
+                    /option Капітель 700(1046х80)
+                    /option Капітель800 (1146х80)
+                    /option Капітель900 (1246х80)
+                    /option Лиштва з канелюром 2100х80
+                    /option Розетка квадратна 80х80 (к-т 2 шт.)
+                    /option Арка Люкс 1270*200*2400
+                    /option Арка Романська 1270*200*2400
             .row
               .columns
                 hr

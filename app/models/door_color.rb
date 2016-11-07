@@ -32,6 +32,7 @@ class DoorColor < ActiveRecord::Base
   has_many :door_variant_frames
   has_many :door_variant_additional_boards
   has_many :door_variant_strips
+  has_many :door_variant_additional_options
 
 
   has_one :door_collection, through: :door
@@ -53,10 +54,13 @@ class DoorColor < ActiveRecord::Base
   accepts_nested_attributes_for :door_variant_additional_boards, allow_destroy: true
   attr_accessible :door_variant_additional_boards_attributes
 
-
   attr_accessible :door_variant_strips
   accepts_nested_attributes_for :door_variant_strips, allow_destroy: true
   attr_accessible :door_variant_strips_attributes
+
+  attr_accessible :door_variant_additional_options
+  accepts_nested_attributes_for :door_variant_additional_options, allow_destroy: true
+  attr_accessible :door_variant_additional_options_attributes
 
   attr_accessible :image, :icon
 
@@ -136,6 +140,10 @@ class DoorColor < ActiveRecord::Base
 
       field :door_variant_strips do
         label 'Притворна планка:'
+      end
+
+      field :door_variant_additional_options do
+        label 'Додаткові опції:'
       end
 
     end
