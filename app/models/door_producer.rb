@@ -13,6 +13,7 @@
 # t.string :title
 # t.string :slug
 # t.string :country
+# t.integer :height
 class DoorProducer < ActiveRecord::Base
   attr_accessible *attribute_names
 
@@ -44,6 +45,7 @@ class DoorProducer < ActiveRecord::Base
       field :title
       field :slug
       field :country
+      field :height
     end
 
     edit do
@@ -52,6 +54,9 @@ class DoorProducer < ActiveRecord::Base
       end
       field :country do
         label "Країна виробника:"
+      end
+      field :height do
+        label "Висота дверей:"
       end
       field :door_canvas_sizes do
         label "Доступні розміри полотна:"
