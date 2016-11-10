@@ -39,4 +39,11 @@ class DoorCanvasSize < ActiveRecord::Base
     end
   end
 
+  def to_s
+    # 600x2000
+    w = name
+    h = door_producer.height
+    [w,h].join("x")
+  end
+
 end

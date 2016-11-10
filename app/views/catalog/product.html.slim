@@ -130,7 +130,8 @@
                   select name="canvas_size"
                     - @product.door_collection.door_producer.door_canvas_sizes.each do |size|
                       option value=size.name selected=("selected" if size == @product_variant.canvas_size)
-                        |#{size.name}x2000
+                        /|#{size.name}(#{@product.door_collection.door_producer.height} if @product.door_collection.door_producer.presents?)
+                        = size.to_s
 
               - if @door_add_boards && @door_add_boards.any?
                 .medium-6.columns
