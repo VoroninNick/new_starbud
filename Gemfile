@@ -88,3 +88,5 @@ gem "enumerize"
 gem 'annotate'
 
 gem 'db-backuper', github: "pkorenev/db-backuper"
+
+gem 'yaml_db'
