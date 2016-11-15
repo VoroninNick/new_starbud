@@ -187,6 +187,27 @@ body
       z-index: 1
 
 main
+  +clear_fix
+  .recommended-items-block
+    .rib-head
+      padding-left: 0.9375rem
+      padding-right: 0.9375rem
+      .title
+        +default_font_style(#546e7a, 14, 400, 32)
+        margin-bottom: 0
+        text-transform: capitalize
+
+    .product-list
+      +clear_fix
+      padding-bottom: 30px
+      .owl-wrapper-outer
+        overflow-x: hidden
+        overflow-y: initial
+        .owl-wrapper
+          .owl-item
+            .product-card-wrap
+              width: 100%
+
   .index-page-menu
     height: 60px
     background: #fff
@@ -224,6 +245,11 @@ main
           top: 12px
           path
             fill: #e91e63
+
+
+footer
+  background: $main_blue
+  min-height: 214px
 
 .promotion-banner-wrap
   padding-top: 25px
@@ -477,6 +503,14 @@ ul.custom-breadcrumbs
     color: #1976d2
     a, input[type="submit"], button
       color: inherit
+  &.white-grey
+    background: $white
+    color: $dark_gray
+    a, input[type="submit"], button
+      color: inherit
+      svg
+        path
+          fill: $dark_gray
 
   &.white-label
     background: transparent
@@ -485,6 +519,102 @@ ul.custom-breadcrumbs
     a, input[type="submit"], button
       color: inherit
 
+
+
+.mfb-w
+  position: fixed
+  bottom: 0
+  right: 0
+  padding: 23px 12px 23px 15px
+  .mfb
+    //height: 250px
+    width: 60px
+    width: 60px
+    //border: 1px solid
+    .mfb-button
+      font-weight: bold
+      padding-top: 8px
+      position: relative
+      //-webkit-flex-direction: row-reverse
+      //flex-direction: row-reverse
+      //display: -webkit-flex
+      //display: flex
+      &:before
+        content: attr(data-button-title)
+        +default_font_style(#fff, 14, 500, 32)
+        background: #455a64
+        white-space: nowrap
+        padding: 0 13px
+        position: absolute
+        top: 12px
+        right: 72px
+        border-radius: 4px
+        display: none
+      a
+        display: block
+        height: 56px
+        position: relative
+        width: 56px
+        border: none
+        +border-radius(50%)
+        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)
+        svg
+          width: 100%
+          height: 100%
+          padding: 17px
+          path
+            fill: $white
+      &.blue
+        color: $main_blue
+        padding-top: 0
+        a
+          background-color: $main_blue
+      &.red
+        color: $red
+        a
+          background: $red
+          svg
+            padding: 12px
+      &.green
+        color: $green
+        padding-bottom: 8px
+        a
+          background-color: $green
+      &:hover
+        &:before
+          display: block
+
+    .mfb-sub
+      padding-left: 4px
+      position: relative
+      height: 0
+      transition: all 1s
+      .mfb-button
+        //position: absolute
+        transition: all 1s
+        &:nth-child(1)
+          -webkit-transform: translateY(0px) scale(0)
+          transform: translateY(0px) scale(0)
+          transition-delay: 0.08s
+        &:nth-child(2)
+          -webkit-transform: translateY(-30px) scale(0)
+          transform: translateY(-30px) scale(0)
+
+        a
+          width: 48px
+          height: 48px
+
+    &:hover
+      .mfb-sub
+        height: 120px
+        .mfb-button
+          transition-delay: 0.15s
+          &:nth-child(1)
+            -webkit-transform: translateY(0px) scale(1)
+            transform: translateY(0px) scale(1)
+          &:nth-child(2)
+            -webkit-transform: translateY(0px) scale(1)
+            transform: translateY(0px) scale(1)
 
 .tabs-product-wrap
   &.tabs-product-wrap-dashboard

@@ -183,15 +183,18 @@ class DoorVariant < ActiveRecord::Base
       field :door_color
       canvas_size_enum_field
 
-      # field :promotion do
-      #   label 'Акційні?'
-      # end
-      # field :new do
-      #   label 'Нові?'
-      # end
       field :recommended do
         label 'Рекомендуємо?'
         help 'для відображення на головній сторінці.'
+      end
+
+      field :promotion do
+        label 'Акційні?'
+        help 'поле призначене для програміста'
+      end
+      field :new do
+        label 'Нові?'
+        help 'поле призначене для програміста'
       end
 
       # field :prices do
@@ -280,4 +283,5 @@ class DoorVariant < ActiveRecord::Base
   # @door_variant = product_class.joins(door_color: { door: {} }).where(doors: { slug: product }, door_colors: { slug: product_color }, canvas_size: product_canvas_size).first
 
   scope :find_product_variant, ->(product_canvas_size, product_color, product) { joins(door_color: { door: {} }).where(doors: { slug: product }, door_colors: { slug: product_color } )}
+
 end

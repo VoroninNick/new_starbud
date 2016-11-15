@@ -42,7 +42,7 @@
           |Останні замовлення
 
         .spb-navigation-link
-          a
+          a href=purchase_history_path
             = inline_svg "crm/ic_history_black_48px.svg"
             |Вся історія
 
@@ -60,4 +60,4 @@
       .title.text-center
         |Рекомендуємо
 
-      = render partial: "partials/dashboard/tab_products", locals: {doors: @recommended_doors}
+      = render partial: "partials/dashboard/tab_products"

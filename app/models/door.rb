@@ -156,6 +156,15 @@ class Door < ActiveRecord::Base
   #
   # end
 
+  scope :with_recommended_variant, -> () {
+    joins(door_colors: { door_variants: {} }).where(door_variants: { recommended: "t" }).uniq
+  }
+  scope :with_news_variant, -> () {
+    with_recommended_variant.where(door_variants: { new: "t" })
+  }
+  scope :with_promotion_variant, -> () {
+    with_recommended_variant.where(door_variants: { promotion: "t" })
+  }
   def available_colors
     self.door_colors.uniq
   end

@@ -29,6 +29,22 @@ Rails.application.routes.draw do
       root 'catalog#doors', as: "catalog_doors"
       get 'product/:title' => 'catalog#product', as: "product"
     end
+
+    scope "cabinet" do
+      root "cabinet#index", as: "cabinet"
+      get 'balance' => 'cabinet#balance', as: "balance"
+      get 'purchase-history' => 'cabinet#purchase_history', as: "purchase_history"
+      get 'wish-list' => 'cabinet#wish_list', as: "wish_list"
+      get 'my-reviews' => 'cabinet#my_reviews', as: "my_reviews"
+      get 'financial-storage' => 'cabinet#financial_storage', as: "financial_storage"
+    end
+
+    scope "cart" do
+      root "cart#index", as: "cart"
+      get 'purchased' => 'cabinet#purchased', as: "purchased"
+      get 'drafts' => 'cabinet#drafts', as: "drafts"
+    end
+
   end
 
   # match '*args' => 'application#listener_1c', via: [:post, :get, :put]

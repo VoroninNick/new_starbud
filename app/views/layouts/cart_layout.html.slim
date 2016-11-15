@@ -1,0 +1,23 @@
+- content_for :cart_layout do
+  .cart-page-wrap
+    .cart-page-header.default-box-shadow-slim
+      nav
+        li
+          a href=cart_path class=cp(cart_path)
+            = inline_svg "crm/basket.svg"
+            |Актуальні замовлення
+
+        li
+          a href=purchased_path class=cp(purchased_path)
+            = inline_svg "crm/ic_move_to_inbox_black_48px.svg"
+            |Придбане
+
+        li
+          a href=drafts_path class=cp(drafts_path)
+            = inline_svg "crm/ic_save_black_48px.svg"
+            |Чернетка
+
+    .cart-page-body
+      = yield
+
+= render template: "layouts/dashboard"

@@ -25,4 +25,16 @@ html lang="en"
     = render "layouts/dashboard/header"
     = render "layouts/dashboard/main_menu"
     main
-      == yield
+      /== yield
+      = content_for?(:cabinet_layout) ? yield(:cabinet_layout) : content_for?(:cart_layout) ? yield(:cart_layout) : yield
+
+      /- if content_for?(:cabinet_layout)
+      /  = content_for(:cabinet_layout)
+      /- elsif content_for?(:cart_layout)
+      /  = content_for(:cart_layout)
+      /- else
+      /  = yield
+
+    = render "layouts/dashboard/footer"
+
+    = render "layouts/dashboard/menu_function_buttons"

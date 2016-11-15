@@ -9,6 +9,7 @@
 #= require foundation
 
 #= require bxslider
+#= require owl.carousel
 
 #= require dashboard/main
 #= require dashboard/product
