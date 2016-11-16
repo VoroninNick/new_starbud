@@ -1,3 +1,61 @@
 // Place all the styles related to the cabinet controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins"
+@import "variables"
+
+.cabinet-page-wrap
+  .cabinet-page-header
+    min-height: 300px
+    background: $cabinet_main_grey
+    position: relative
+    .cabinet-profile-photo
+      width: 120px
+      margin: 0 auto
+      margin-top: 35px
+      margin-bottom: 15px
+      .image
+        padding-bottom: 100%
+        +border-radius(50%)
+    .title
+      +default_font_style(#fff, 21, 500, 24)
+    nav
+      list-style: none
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      +clear_fix
+      li
+        width: 16.666%
+        float: left
+        a
+          +default_font_style(rgba(255, 255, 255, .5), 16, 500, 19.2)
+          text-transform: uppercase
+          text-align: center
+          display: block
+          padding-bottom: 20px
+          svg
+            height: 32px
+            width: 100%
+            path
+              fill: rgba(255, 255, 255, .5)
+          &.current-page
+            color: rgba(255, 255, 255, 1)
+            position: relative
+            &:after
+              display: block
+              content: ""
+              height: 4px
+              width: 100%
+              background: $white
+              position: absolute
+              bottom: 0
+            svg
+              path
+                fill: rgba(255, 255, 255, 1)
+
+  .cabinet-page-body
+    padding-top: 45px
+    padding-bottom: 90px
+    min-height: 450px

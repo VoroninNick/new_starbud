@@ -17,7 +17,7 @@ class CabinetController < ApplicationController
   def wish_list
 
   end
-  def my_reviews
+  def education
 
   end
   def financial_storage

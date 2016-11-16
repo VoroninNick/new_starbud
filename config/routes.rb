@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       get 'balance' => 'cabinet#balance', as: "balance"
       get 'purchase-history' => 'cabinet#purchase_history', as: "purchase_history"
       get 'wish-list' => 'cabinet#wish_list', as: "wish_list"
-      get 'my-reviews' => 'cabinet#my_reviews', as: "my_reviews"
+      get 'education' => 'cabinet#education', as: "education"
       get 'financial-storage' => 'cabinet#financial_storage', as: "financial_storage"
     end
 

@@ -1,3 +1,45 @@
 - content_for :cabinet_layout do
+  .cabinet-page-wrap
+    .cabinet-page-header.default-box-shadow-slim
+      .row.text-center
+        .columns
+          .cabinet-profile-photo
+            .image style="background: url('#{asset_path("crm/avatar/avatar_2.jpg")}')no-repeat center center;"
+          .title
+            |Клієнт Клієнтович
+      nav
+        li
+          a href=cabinet_path class=cp(cabinet_path)
+            = inline_svg "crm/ic_person_black_48px.svg"
+            |Персональні дані
+
+        li
+          a href=balance_path class=cp(balance_path)
+            = inline_svg "crm/ic_account_balance_wallet_black_48px.svg"
+            |Баланс
+
+        li
+          a href=purchase_history_path class=cp(purchase_history_path)
+            = inline_svg "crm/ic_history_black_48px.svg"
+            |Історія покупок
+
+        li
+          a href=wish_list_path class=cp(wish_list_path)
+            = inline_svg "crm/ic_favorite_black_48px.svg"
+            |Список бажань
+
+        li
+          a href=education_path class=cp(education_path)
+            = inline_svg "crm/ic_chat_black_48px.svg"
+            |Навчання
+
+        li
+          a href=financial_storage_path class=cp(financial_storage_path)
+            = inline_svg "crm/archive.svg"
+            |Матеральне зберігання
+
+
+    .cabinet-page-body
+      = yield
 
 = render template: "layouts/dashboard"
