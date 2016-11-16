@@ -3,7 +3,7 @@ class CartController < ApplicationController
 
 
   def index
-    @recommended_doors = Door.order("RANDOM()").limit(4)
+
   end
   def purchased
 
