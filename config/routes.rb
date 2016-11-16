@@ -41,8 +41,8 @@ Rails.application.routes.draw do
 
     scope "cart" do
       root "cart#index", as: "cart"
-      get 'purchased' => 'cabinet#purchased', as: "purchased"
-      get 'drafts' => 'cabinet#drafts', as: "drafts"
+      get 'purchased' => 'cart#purchased', as: "purchased"
+      get 'drafts' => 'cart#drafts', as: "drafts"
     end
 
   end

@@ -1,9 +1,6 @@
 class CartController < ApplicationController
   layout :get_layout
 
-  def get_layout
-    "cart_layout"
-  end
 
   def index
 
@@ -13,5 +10,9 @@ class CartController < ApplicationController
   end
   def drafts
 
+  end
+
+  def get_layout
+    "cart_layout"
   end
 end

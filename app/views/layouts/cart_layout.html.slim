@@ -1,6 +1,51 @@
 - content_for :cart_layout do
   .cart-page-wrap
     .cart-page-header.default-box-shadow-slim
+      - if action_name == "index"
+        .row.text-center
+          .columns
+            .title
+              = number_to_currency("137020", :precision => 0, unit: '')
+              span
+                |&nbsp;грн.
+
+            .label-text
+              |Товарів на суму
+
+            form
+              .material-component.ripple.default-button.white-grey
+                button Оформити замовлення
+
+      - elsif action_name == "purchased"
+        .row.text-center
+          .columns
+            .title
+              = number_to_currency("2137020", :precision => 0, unit: '')
+              span
+                |&nbsp;грн.
+
+            .label-text
+              |Вартість останнього замовлення
+
+            form
+              .material-component.ripple.default-button.white-grey
+                button Повторити замовлення
+
+      - elsif action_name == "drafts"
+        .row.text-center
+          .columns
+            .title
+              = number_to_currency("2137020", :precision => 0, unit: '')
+              span
+                |&nbsp;грн.
+
+            .label-text
+              |Вартість останнього незавершеного замовлення
+
+            form
+              .material-component.ripple.default-button.white-grey
+                button Завершити замовлення
+
       nav
         li
           a href=cart_path class=cp(cart_path)

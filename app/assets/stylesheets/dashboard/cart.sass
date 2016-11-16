@@ -9,6 +9,14 @@
     min-height: 300px
     background: $light_blue
     position: relative
+    .title
+      +default_font_style(#fff, 72, 600, 50)
+      margin-top: 44px
+      sub, span
+        font-size: 30%
+    .label-text
+      +default_font_style(#fff, 16, 400, 18)
+      margin-bottom: 20px
     nav
       list-style: none
       position: absolute
@@ -47,6 +55,7 @@
 
   .cart-page-body
     padding-top: 25px
+    padding-bottom: 75px
     form
       &.remove-order
         position: relative
