@@ -80,8 +80,10 @@
                 .image-wrap
                 .spb-oip-title
                   |25 од.
-          form
-            button
+
+          .spb-oi-button
+            form
+              button
 
 
 
@@ -100,8 +102,10 @@
               sup
                 |грн.
           .spb-oi-products
-          form
-            button
+
+          .spb-oi-button
+            form
+              button
 
         .spb-one-item.status-not-approved
           .spb-oi-status
@@ -119,9 +123,86 @@
                 |грн.
 
           .spb-oi-products
-          form
-            button
 
+          .spb-oi-button
+            form
+              button
+
+    .standard-page-block data-section-type="all_drafts"
+      .spb-head
+        .spb-switcher
+          .spb-switch-button
+            = inline_svg "crm/window-minimize.svg", class: "minimize"
+            = inline_svg "crm/window-maximize.svg", class: "maximize"
+
+        .spb-title
+          |Чорновики
+
+        .spb-navigation-link
+          a href=drafts_path
+            = inline_svg "crm/ic_save_black_48px.svg"
+            span
+              |Всі чорновики
+
+
+      .spb-body
+        .spb-one-item.status-in-drafts
+          .spb-oi-status
+            .spb-ois-number
+              |130
+            .spb-ois
+
+          .spb-oi-details
+            .spb-oid-date
+              |28 листопада 2015 р. о 13:02
+            .spb-oid-price
+              span
+                = number_to_currency(rand(45000..999999), :precision => 0, unit: '')
+              sup
+                |грн.
+
+          .spb-oi-products
+            .spb-oip-header
+              |Набір матеріалів для Івана додому
+            ul
+              li
+                .image-wrap
+                .spb-oip-title
+                  |25 од.
+              li
+                .image-wrap
+                .spb-oip-title
+                  |25 од.
+              li
+                .image-wrap
+                .spb-oip-title
+                  |25 од.
+
+          .spb-oi-button
+            form
+              button
+
+
+
+        .spb-one-item.status-in-drafts
+          .spb-oi-status
+            .spb-ois-number
+              |129
+            .spb-ois
+
+          .spb-oi-details
+            .spb-oid-date
+              |28 листопада 2015 р. о 13:02
+            .spb-oid-price
+              span
+                = number_to_currency(rand(45000..999999), :precision => 0, unit: '')
+              sup
+                |грн.
+          .spb-oi-products
+
+          .spb-oi-button
+            form
+              button
 
 .row
   .columns

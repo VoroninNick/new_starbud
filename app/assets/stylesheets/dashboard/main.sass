@@ -466,7 +466,7 @@ footer
       span
       sup
 
-  form
+  .spb-oi-button
     top: 0
     right: 0
     position: absolute
@@ -476,20 +476,23 @@ footer
     transition: all 0.8s
     -webkit-transform: translateX(70px)
     transform: translateX(70px)
-    button
-      background: #e91e63
-      display: block
+    form
       width: 100%
       height: 100%
-      position: relative
-      &:after
-        content: ""
-        background: asset-url("crm/reload_cart.svg")
-        width: 26px
-        height: 22px
+      button
+        background: #e91e63
         display: block
-        +my_center_align()
-          position: absolute
+        width: 100%
+        height: 100%
+        position: relative
+        &:after
+          content: ""
+          background: asset-url("crm/reload_cart.svg")
+          width: 26px
+          height: 22px
+          display: block
+          +my_center_align()
+            position: absolute
 
   &.status-closed
     .spb-oi-status
@@ -515,11 +518,20 @@ footer
         &:after
           content: "Не погоджено"
 
+  &.status-in-drafts
+    .spb-oi-status
+      .spb-ois
+        &:before
+          background: asset-url("crm/s_in_drafts.svg")
+        &:after
+          content: "В чорновику"
+
   &:hover
+    background: #eceff1
     .spb-oi-details
       -webkit-transform: translateX(-70px)
       transform: translateX(-70px)
-    form
+    .spb-oi-button
       -webkit-transform: translateX(0px)
       transform: translateX(0px)
 
@@ -527,7 +539,7 @@ footer
       .spb-oi-details
         -webkit-transform: translateX(0px)
         transform: translateX(0px)
-      form
+      .spb-oi-button
         -webkit-transform: translateX(70px)
         transform: translateX(70px)
 
