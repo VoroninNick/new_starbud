@@ -525,6 +525,39 @@ footer
           background: asset-url("crm/s_in_drafts.svg")
         &:after
           content: "В чорновику"
+    .spb-oi-button
+      a
+        display: block
+        width: 100%
+        height: 80px
+        background: #e91e63
+        position: relative
+        &:after
+          content: ""
+          background: asset-url("crm/edit_order.svg")
+          background-size: 100%
+          background-repeat: no-repeat
+          width: 24px
+          height: 24px
+          display: block
+          +my_center_align()
+            position: absolute
+
+      form
+        height: 40px
+        button
+          background: #37474f
+          position: relative
+          &:after
+            content: ""
+            background: asset-url("crm/remove_order.svg")
+            background-size: 100%
+            background-repeat: no-repeat
+            width: 24px
+            height: 24px
+            display: block
+            +my_center_align()
+              position: absolute
 
   &:hover
     background: #eceff1
