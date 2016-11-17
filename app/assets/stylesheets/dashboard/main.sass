@@ -360,7 +360,9 @@ footer
           padding: 6px
           path
             fill: #fff
-
+        span
+          @media screen and (max-width: 740px)
+            display: none
 
   .spb-body
     background: #fff
@@ -381,6 +383,143 @@ footer
       min-height: 0
       height: 0
 
+.spb-one-item
+  border-bottom: 1px solid #eceff1
+  padding-top: 20px
+  position: relative
+  +clear_fix
+  .spb-oi-status, .spb-oi-products,  .spb-oi-details
+    min-height: 100px
+  .spb-oi-status
+    width: 15%
+    float: left
+    @media #{$small-only}
+      width: 25%
+    .spb-ois-number
+      +default_font_style(#455a64, 14, 400, 18)
+      font-family: "Roboto", sans-serif
+      text-align: center
+      &:before
+        content: "№"
+    .spb-ois
+      &:before
+        display: block
+        content: ""
+        width: 34px
+        height: 34px
+        margin: 0 auto
+        //border: 1px solid
+      &:after
+        +default_font_style(#90a4ae, 12, 400, 18)
+        font-family: "Roboto", sans-serif
+        text-align: center
+        display: block
+
+  .spb-oi-products
+    width: 60%
+    float: left
+    @media #{$small-only}
+      width: 100%
+      padding-left: 0.625rem
+      padding-right: 0.625rem
+
+    .spb-oip-header
+      +default_font_style(#455a64, 16, 500, 18)
+      font-family: "Roboto", sans-serif
+    ul
+      list-style: none
+      margin-left: 0
+      li
+        width: 50px
+        margin: 0 6px
+        float: left
+        .image-wrap
+          width: 100%
+          height: 50px
+          margin: 6px 0
+          float: left
+          +box-shadow(1px 1px 3px 0px rgba(0,0,0,0.35))
+        .spb-oip-title
+          +default_font_style(#90a4ae, 12,400, 18)
+          font-family: "Roboto", sans-serif
+          text-align: center
+
+  .spb-oi-details
+    width: 25%
+    padding-right: 18px
+    float: right
+
+    transition: all 0.8s
+
+    @media #{$small-only}
+      float: left
+      width: 70%
+    .spb-oid-date
+      +default_font_style(#90a4ae, 14, 400, 18)
+      font-family: "Roboto", sans-serif
+    .spb-oid-price
+      padding-top: 20px
+      +default_font_style(#0d47a1, 21, 500, 61)
+      font-family: "Roboto", sans-serif
+      span
+      sup
+
+  form
+    top: 0
+    right: 0
+    position: absolute
+    width: 70px
+    height: 120px
+    //transition-delay: 0.08s
+    transition: all 0.8s
+    -webkit-transform: translateX(70px)
+    transform: translateX(70px)
+    button
+      background: #e91e63
+      display: block
+      width: 100%
+      height: 100%
+      position: relative
+      &:after
+        content: ""
+        background: asset-url("crm/reload_cart.svg")
+        width: 26px
+        height: 22px
+        display: block
+        +my_center_align()
+          position: absolute
+
+  &.status-closed
+    .spb-oi-status
+      .spb-ois
+        &:before
+          background: asset-url("crm/s_ready.svg")
+        &:after
+          content: "Закрито"
+
+  &.status-loading
+    .spb-oi-status
+      .spb-ois
+        &:before
+          background: asset-url("crm/s_loading.svg")
+        &:after
+          content: "Відвантаження"
+
+  &.status-not-approved
+    .spb-oi-status
+      .spb-ois
+        &:before
+          background: asset-url("crm/s_not_approved.svg")
+        &:after
+          content: "Не погоджено"
+
+  &:hover
+    .spb-oi-details
+      -webkit-transform: translateX(-70px)
+      transform: translateX(-70px)
+    form
+      -webkit-transform: translateX(0px)
+      transform: translateX(0px)
 
 
 ul.custom-breadcrumbs

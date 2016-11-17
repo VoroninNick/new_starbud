@@ -44,14 +44,83 @@
         .spb-navigation-link
           a href=purchase_history_path
             = inline_svg "crm/ic_history_black_48px.svg"
-            |Вся історія
+            span
+              |Вся історія
 
 
       .spb-body
-        .spb-one-item
-          .spb-oi-status-info
+        .spb-one-item.status-closed
+          .spb-oi-status
+            .spb-ois-number
+              |130
+            .spb-ois
+
+          .spb-oi-details
+            .spb-oid-date
+              |28 листопада 2015 р. о 13:02
+            .spb-oid-price
+              span
+                = number_to_currency(rand(45000..999999), :precision => 0, unit: '')
+              sup
+                |грн.
+
           .spb-oi-products
-          .spb-oi-price-info
+            .spb-oip-header
+              |Набір матеріалів для Івана додому
+            ul
+              li
+                .image-wrap
+                .spb-oip-title
+                  |25 од.
+              li
+                .image-wrap
+                .spb-oip-title
+                  |25 од.
+              li
+                .image-wrap
+                .spb-oip-title
+                  |25 од.
+          form
+            button
+
+
+
+        .spb-one-item.status-loading
+          .spb-oi-status
+            .spb-ois-number
+              |129
+            .spb-ois
+
+          .spb-oi-details
+            .spb-oid-date
+              |28 листопада 2015 р. о 13:02
+            .spb-oid-price
+              span
+                = number_to_currency(rand(45000..999999), :precision => 0, unit: '')
+              sup
+                |грн.
+          .spb-oi-products
+          form
+            button
+
+        .spb-one-item.status-not-approved
+          .spb-oi-status
+            .spb-ois-number
+              |128
+            .spb-ois
+
+          .spb-oi-details
+            .spb-oid-date
+              |28 листопада 2015 р. о 13:02
+            .spb-oid-price
+              span
+                = number_to_currency(rand(45000..999999), :precision => 0, unit: '')
+              sup
+                |грн.
+
+          .spb-oi-products
+          form
+            button
 
 
 .row
