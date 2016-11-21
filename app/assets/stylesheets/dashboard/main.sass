@@ -251,7 +251,47 @@ main
 
 footer
   background: $main_blue
-  min-height: 214px
+  //min-height: 214px
+  .footer-block
+    position: relative
+    padding: 65px 0
+    .fb-icon
+      background: #fff
+      width: 40px
+      height: 40px
+      +border-radius(50%)
+      +my_vertical_align()
+        position: absolute
+      svg
+        path
+          fill: #0d47a1
+
+    .fb-details
+      padding-left: 52px
+      p
+        +default_font_style(#fff, 16, 500, 21)
+        margin-bottom: 0
+        span
+          color: rgba(255, 255, 255, 0.8)
+          font-size: rem-calc(14)
+
+    &.footer-time-block
+      .fb-details
+        p
+          span
+            display: block
+            width: 54px
+            float: left
+
+  .footer-bottom
+    height: 40px
+    background: rgba(0, 0, 0, .1)
+    .footer-bottom-inner
+      height: 40px
+      p
+        +default_font_style(#fff, 12, 400, 21)
+        margin-bottom: 0
+        +my_vertical_align()
 
 .promotion-banner-wrap
   padding-top: 25px
