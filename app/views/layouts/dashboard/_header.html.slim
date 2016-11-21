@@ -1,3 +1,7 @@
+- number = 35280
+- total_balance = number_to_currency(number, :precision => 0, unit: '')
+- currency = "грн."
+- last_operation = "+125"
 header
   .navigation-section
     a.navicon-button
@@ -5,14 +9,40 @@ header
 
   .information-section
     .one-info
-      = inline_svg "crm/ic_today_white_48px.svg"
+      .oi-icon
+        = inline_svg "crm/ic_today_white_48px.svg"
       .title
-        = I18n.l(DateTime.now, format: "%a,%d")
+        = I18n.l(DateTime.now, format: "%a, %d")
     .one-info
-      = inline_svg "crm/ic_dollar_symbol_white_48px.svg"
+      .oi-icon
+        = inline_svg "crm/ic_dollar_symbol_white_48px.svg"
       .title
         |25,40 - 25,65
     .one-info
-      = inline_svg "crm/ic_euro_symbol_white_48px.svg"
+      .oi-icon
+        = inline_svg "crm/ic_euro_symbol_white_48px.svg"
       .title
         |26,33 - 26,94
+
+  .right-navigation-section
+    .rns-search-link
+      a
+        = inline_svg "crm/ic_search_24px.svg"
+    .rns-personal-info
+      .rns-pi-avatar
+        a
+          .image style="background: url('#{asset_path("crm/avatar/avatar_2.jpg")}')no-repeat center center;"
+
+      .rns-pi-balance-info
+        .rns-pi-balance-info-inner
+          .total-balance
+            span
+              = total_balance
+            span.currency
+              = currency
+
+          .last-operation
+            = last_operation
+
+
+

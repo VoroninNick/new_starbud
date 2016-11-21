@@ -83,7 +83,7 @@ header
   +box-shadow(1px 4px 2px 0px rgba(0,0,0,0.35))
   position: relative
   z-index: 10
-  .navigation-section, .information-section
+  .navigation-section, .information-section, .right-navigation-section
     height: 100%
     float: left
   .navigation-section
@@ -91,10 +91,72 @@ header
   .information-section
     width: $header-inf-section-width
     .one-info
+      position: relative
       float: left
-  .title
-    +default_font_style(#fff, 16, 400, 60)
-    display: inline-block
+      padding-left: 65px
+      .oi-icon
+        width: 20px
+        height: 20px
+        +my_vertical_align()
+          position: absolute
+        svg
+          width: 100%
+          height: 100%
+          path
+            fill: rgba(255, 255, 255, .7)
+      .title
+        +default_font_style(#fff, 16, 400, 60)
+        text-transform: uppercase
+        display: inline-block
+        padding-left: 27px
+
+  .right-navigation-section
+    width: 20%
+    position: relative
+    .rns-search-link
+      width: 40px
+      height: 60px
+      position: absolute
+      a
+        display: block
+        height: 100%
+        padding: 6px
+        svg
+          width: 100%
+          height: 100%
+          path
+            fill: #fff
+    .rns-personal-info
+      padding-left: 52px
+      padding-right: 20px
+      position: relative
+      .rns-pi-avatar
+        width: 40px
+        height: 60px
+        position: absolute
+        a
+          display: block
+          padding: 2px
+          height: 100%
+          .image
+            padding-bottom: 100%
+            +border-radius(50%)
+            +my_vertical_align()
+
+      .rns-pi-balance-info
+        padding-left: 47px
+        height: 60px
+        .rns-pi-balance-info-inner
+          +my_vertical_align()
+          .total-balance
+            +default_font_style(#fafafa, 21, 400, 16)
+            font-family: "Roboto", sans-serif
+            span
+              &.currency
+                font-size: 60%
+          .last-operation
+            +default_font_style(#fff, 16, 500, 18)
+            font-family: "Roboto", sans-serif
 
 body
   background: #eceff1
@@ -263,6 +325,10 @@ footer
       +my_vertical_align()
         position: absolute
       svg
+        display: block
+        width: 100%
+        height: 100%
+        padding: 9px
         path
           fill: #0d47a1
 
