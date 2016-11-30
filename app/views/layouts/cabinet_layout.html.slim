@@ -6,7 +6,7 @@
           .cabinet-profile-photo
             .image style="background: url('#{asset_path("crm/avatar/avatar_2.jpg")}')no-repeat center center;"
           .title
-            |Клієнт Клієнтович
+            = current_user.try(:user_name)
       nav
         li
           a href=cabinet_path class=cp(cabinet_path)

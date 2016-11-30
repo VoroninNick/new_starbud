@@ -1,0 +1,24 @@
+
+#sign-in-form.reveal.popup-default-style data-reveal=""
+  .title
+    |Вхід
+  /form.default-animation-form action="" method="POST"
+  = form_for(user = User.new, as: :user, url: session_path(:user), :html => { class: 'default-form log-in-form'}) do |f|
+
+    .input.animate-input.is-completed
+      = f.label :email, 'Ваша електронна скринька'
+      = f.email_field :email, autofocus: true
+
+
+    .input.animate-input.is-completed
+      = f.label :password, 'Ваш пароль'
+      = f.password_field :password, autocomplete: "off"
+
+
+    .button-wrap
+      .material-component.ripple.default-button.red.default-box-shadow-slim.float-right
+        = f.submit "Увійти"
+
+      .material-component.ripple.default-button.white-grey.float-right
+        a data-open="become_s_dealer"
+          |Стати дилером

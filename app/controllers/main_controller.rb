@@ -1,5 +1,4 @@
 class MainController < ApplicationController
-
   def index
     @pdf_catalog = PdfCatalog.first
     @vacancy_all = Vacancy.all

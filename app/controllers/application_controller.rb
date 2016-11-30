@@ -2,8 +2,24 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
 
+
   before_action :do_auth, only: [:listener_1c]
 
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   redirect_to main_app.dashboard_path, :alert => exception.message
+  # end
+  def after_sign_in_path_for(resource)
+    # Here you can write logic based on roles to return different after sign in paths
+    if current_user.superadmin_role?
+      rails_admin_path
+    elsif current_user.supervisor_role?
+      rails_admin_path
+    elsif current_user.client_role?
+      dashboard_path
+    else
+      root_path
+    end
+  end
 
   def do_auth
     #return render inline: params[:args].inspect
@@ -153,6 +169,5 @@ class ApplicationController < ActionController::Base
     # puts "request.body.inspect END"
     # render inline: "file"
   end
-
 
 end

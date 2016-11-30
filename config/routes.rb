@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  # scope "users", controller: "user" do
+  #   post "/by_admin", action: "create", as: :custom_create_user
+  # end
   # You can have the root of your site routed with "root"
   root 'main#index'
   get 'about-company' => 'main#about_company', as: :about_company

@@ -1,0 +1,37 @@
+.row
+  = simple_form_for(current_user, as: :user, url: registration_path(:user), html: {class: 'default-animation-form default-form-with-icons s-ajax-form', method: :put}) do |f|
+    .columns.medium-3
+      .profile-photo
+        .profile-page-block-title
+          |Фотографія профілю
+        .row
+          .small-6.small-centered.columns
+            .profile-avatar
+              .image style="background: url('#{current_user.avatar.url(:large)}')no-repeat center center;"
+        = f.label :avatar
+          |Змінити
+          = f.file_field :avatar, class: 'hide'
+
+
+    .columns.medium-9
+      .profile-page-block-wrap
+        .profile-page-block-title
+          |Змінити
+
+        .profile-page-block.default-box-shadow-slim
+          .row
+            .columns.medium-4
+              = f.label :user_name, "Ім’я"
+            .columns.medium-8
+              = f.input :user_name, label: false, autofocus: true, value: current_user.user_name
+
+          .row
+            .columns.medium-4
+              = f.label :company, "Компанія"
+            .columns.medium-8
+              = f.input :company, label: false, autofocus: true, value: current_user.company
+
+
+      .profile-page-block-wrap
+        .profile-page-block-title
+          |Розсилка новин

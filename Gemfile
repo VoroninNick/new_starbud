@@ -74,6 +74,7 @@ gem 'rails_admin'
 gem 'rails-i18n'
 gem 'truncate_html'
 gem 'devise'
+gem 'cancancan'
 
 gem 'protected_attributes'
 
@@ -90,3 +91,5 @@ gem 'annotate'
 gem 'db-backuper', github: "pkorenev/db-backuper"
 
 gem 'yaml_db'
+
+gem 'simple_form'
