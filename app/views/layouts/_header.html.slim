@@ -20,12 +20,18 @@ header
 
 
 
+  - unless current_user
+    .material-component.ripple.default-button.red.float-right
+      /a href=dashboard_path
+      a  data-open="sign-in-form"
+        = inline_svg "crm/ic_person_white_48px.svg"
+        |Увійти
 
-  .material-component.ripple.default-button.red.float-right
-    /a href=dashboard_path
-    a  data-open="sign-in-form"
-      = inline_svg "crm/ic_person_white_48px.svg"
-      |Увійти
+  - else
+    .link-to-dashboard.float-right
+      a href=dashboard_path
+        .image style="background: url('#{asset_path("crm/avatar/avatar_2.jpg")}')no-repeat center center;"
+
 
   a.header-link.float-right data-open="become_s_dealer"
     |Стати дилером
