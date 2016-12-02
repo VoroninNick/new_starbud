@@ -8,12 +8,15 @@
           |Вид дверей
 
       .filter-body
-        - Door.product_type.values.each do |type|
+        - Door.product_type.values.each do |key|
           .custom-checkbox
-            input id=type type="checkbox" value=type name="door_type"
-            label.cch-icon for=type
-            label.cch-text for=type
-              = t("enumerize.door.product_type.#{type}")
+            input id=key type="checkbox" value=key name="door_type"
+            = f.check_box(:with_product_type, {multiple: true}, key, nil)
+            label.cch-icon for=key
+            label.cch-text for=key
+              = t("enumerize.door.product_type.#{key}")
+
+
     /producers
     .control-filter.expanded
       .filter-head

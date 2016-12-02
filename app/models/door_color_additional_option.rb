@@ -132,3 +132,20 @@ end
 
 
 # 24+24+32+3+4+18+24+35+23+1+6+8+8+3=215*8= 1720
+
+#
+#
+# class InnerDoor
+#   extend ProductUpdater
+#
+#   def self.target_class
+#     Покриття
+#   end
+# end
+#
+# module ProductUpdater
+#   def update_products
+#     ids = 1c_ids
+#     self.target_class.where(ic_id: ids)
+#   end
+# end

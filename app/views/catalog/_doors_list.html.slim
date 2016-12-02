@@ -1,0 +1,10 @@
+- if products.any?
+  - products.each do |product|
+    = render partial: "partials/dashboard/product/product_card", locals: {product: product}
+
+  .row
+    .columns
+      = paginate products
+  .row
+    .columns
+      = session["catalog#doors"]

@@ -2,7 +2,22 @@ class CatalogController < ApplicationController
   layout "dashboard"
 
   def doors
-    @doors = Door.all
+    @filterrific = initialize_filterrific(
+        Door,
+        params[:filterrific],
+        select_options: {
+            sorted_by: Door.options_for_sorted_by,
+        },
+        default_filter_params: {}
+    ) or return
+    @products = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
+    # @doors = Door.all
   end
   
   def product

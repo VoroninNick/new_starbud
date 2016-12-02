@@ -27,6 +27,8 @@
 //= require lightgallery/dist/js/lg-fullscreen.min
 //= require lightgallery/dist/js/lg-video
 
+
+
 //= require material
 //= require video
 //= require main

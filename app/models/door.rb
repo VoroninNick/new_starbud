@@ -168,4 +168,38 @@ class Door < ActiveRecord::Base
   def available_colors
     self.door_colors.uniq
   end
+
+  paginates_per 12
+
+  filterrific(
+      default_filter_params: { sorted_by: 'title_desc' },
+      available_filters: [
+          :sorted_by,
+          :with_product_type
+      ]
+  )
+
+
+
+#   sorted by
+  scope :sorted_by, lambda { |sort_key|
+    direction = (sort_key =~ /desc$/) ? 'desc' : 'asc'
+    case sort_key.to_s
+      when /^title_/
+        order("doors.title #{ direction }")
+      else
+        raise(ArgumentError, "Invalid sort option: #{ sort_key.inspect }")
+    end
+  }
+  def self.options_for_sorted_by
+    [
+        ['Сортувати за алфавітом: нові', 'title_desc'],
+        ['Сортувати за алфавітом: старі', 'title_asc']
+    ]
+  end
+
+  #  product_type
+  scope :with_product_type, lambda { |value|
+    where(product_type: [value])
+  }
 end

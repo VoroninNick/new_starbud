@@ -7,35 +7,19 @@
     = render "catalog/catalog_main_menu"
 
   .catalog-page-body
-    .large-3.columns
-      .catalog-filters-wrap
-        #selected-filters
-          .selected-filters.default-box-shadow-slim
-            .sf-head
-              .title
-                |Вибрані фільтри
-            .sf-body
-              .sf-group
-                .title
-                  |Test title
-                .sf-filter
-                  span
-                    |Test filter
 
+    = form_for_filterrific @filterrific, html: {class: 'catalog-filters-form'} do |f|
+      .columns
+        = f.select(:sorted_by, @filterrific.select_options[:sorted_by])
 
-            .sf-footer
-              a
-                = inline_svg "crm/ic_autorenew_black_48px.svg"
-                |Скинути всі фільтри
-        #control-filters-list
-          = render partial: "catalog/filter_list/doors/filter_list"
+      .large-3.columns
+        .catalog-filters-wrap
+          #selected-filters
+            = render partial: "catalog/selected_filters/doors/filter_list"
 
+          #control-filters-list
+            = render partial: "catalog/filter_list/doors/filter_list", locals: { f: f }
 
-
-
-
-    .large-9.columns
-      .product-list
-        - if @doors.any?
-          - @doors.each do |product|
-            = render partial: "partials/dashboard/product/product_card", locals: {product: product}
+      .large-9.columns
+        #doors-list.product-list
+          = render partial: "catalog/doors_list", locals: { products: @products }

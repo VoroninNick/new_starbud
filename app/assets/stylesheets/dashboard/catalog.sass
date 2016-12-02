@@ -104,8 +104,40 @@
 
             &.expanded
 
+    select#filterrific_sorted_by
+      width: auto
+      float: right
+
+
+nav.pagination
+  text-align: center
+  margin-top: 50px
+  span, a
+    padding: 0!important
+  span
+    display: inline-block
+    width: 36px
+    height: 36px
+    background: #e3e3e3
+    +default_font_style(#b0bec5, 12, 500, 36)
+    font-family: "Roboto", sans-serif
+    text-align: center
+    +border-radius(50%)
+    a
+      color: inherit
+      background: transparent!important
+    &.page
+      &.current
+        background: #0d47a1
+        color: #fff
+    &.next
+    &.last
+    &:hover
+      background: #b0bec5
+      color: #78909c
 
 .product-list
+  padding-bottom: 120px
   .product-card-wrap
 
     height: 433px

@@ -11,6 +11,8 @@
 #= require bxslider
 #= require owl.carousel
 
+#= require filterrific/filterrific-jquery
+
 #= require dashboard/main
 #= require dashboard/product
 #= require_self

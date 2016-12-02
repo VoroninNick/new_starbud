@@ -93,3 +93,6 @@ gem 'db-backuper', github: "pkorenev/db-backuper"
 gem 'yaml_db'
 
 gem 'simple_form'
+
+gem 'filterrific'
+gem 'kaminari'
