@@ -17,8 +17,17 @@ uk:
       usd: Долар
       eur: Євро
 
+    opening_side:
+      left: Ліва
+      right: Права
+
+    coating_type:
+      apartment: Квартирна
+      street: Вулична/vinorit
+
     door:
       product_type:
         the_entrance: Вхідні
         interior: Міжкімнатні
+
 

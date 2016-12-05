@@ -55,15 +55,21 @@ class DoorProducer < ActiveRecord::Base
       field :country do
         label "Країна виробника:"
       end
-      field :height do
-        label "Висота дверей:"
-      end
-      field :door_canvas_sizes do
-        label "Доступні розміри полотна:"
-      end
       field :door_collections do
         label "Колекції:"
       end
+
+      group :specification do
+        label 'Параметри для міжкімнатних дверей'
+        active false
+        field :height do
+          label "Висота дверей:"
+        end
+        field :door_canvas_sizes do
+          label "Доступні розміри полотна:"
+        end
+      end
+
     end
   end
 end

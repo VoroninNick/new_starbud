@@ -69,6 +69,8 @@
 # t.belongs_to :door_collection
 
 class Door < ActiveRecord::Base
+  acts_as_commentable
+
   attr_accessible *attribute_names
 
   extend Enumerize
@@ -97,11 +99,11 @@ class Door < ActiveRecord::Base
   rails_admin do
     navigation_label 'Каталог'
 
-    label 'Двері'
-    label_plural 'Двері'
+    label 'Двері міжкімнатні'
+    label_plural 'Двері міжкімнатні'
 
     list do
-      field :product_type
+      # field :product_type
       field :title
       field :door_producer
       field :door_collection
@@ -112,9 +114,9 @@ class Door < ActiveRecord::Base
       field :title do
         label 'Назва:'
       end
-      field :product_type do
-        label 'Вид дверей:'
-      end
+      # field :product_type do
+      #   label 'Вид дверей:'
+      # end
       field :door_collection_id, :enum do
         enum do
           DoorCollection.includes(:door_producer).all.map { |i| [i.door_producer.title + ', ' + i.title, i.id] }
