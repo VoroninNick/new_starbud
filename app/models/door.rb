@@ -69,7 +69,7 @@
 # t.belongs_to :door_collection
 
 class Door < ActiveRecord::Base
-  acts_as_commentable
+  # acts_as_commentable
 
   attr_accessible *attribute_names
 
