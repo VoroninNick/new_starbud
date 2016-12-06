@@ -80,10 +80,10 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
     label_plural 'Двері вхідні - варіанти'
 
     list do
+      field :id
+      field :full_name
       field :full_slug
-      # field :door_producer
-      # # field :door_collection
-      # field :description
+      field :one_c_id
     end
 
     edit do
