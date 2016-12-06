@@ -130,6 +130,14 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
     end
   end
 
+  # def available_sizes
+  #   if (door_producer rescue false)
+  #     door_producer.door_canvas_sizes.pluck(:name)
+  #   else
+  #     []
+  #   end
+  # end
+
   def current_price
     if price.present?
       price

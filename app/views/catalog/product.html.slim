@@ -114,7 +114,7 @@
                   .label-text
                     |Доступні кольори
 
-                  - @available_colors.any?
+                  - if @available_colors.any?
                     - @available_colors.each do |color|
                       .input
                         input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == @product_color) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name

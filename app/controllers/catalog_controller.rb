@@ -47,7 +47,21 @@ class CatalogController < ApplicationController
   end
 
   def exterior_door
+    @door_variant = Catalog::Door::ExteriorDoorVariant.find_by_full_slug(params[:title])
 
+
+    if @door_variant
+      @product = @door_variant.exterior_door_color.product
+
+      @product_colors = @product.catalog_door_exterior_door_colors
+
+      @product_color = @door_variant.exterior_door_color
+
+      @product_variant = @door_variant
+
+      @total_price = @product_variant.current_price
+      @available_colors = @product.available_colors
+    end
   end
 
 end

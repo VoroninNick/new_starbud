@@ -108,10 +108,11 @@ class Catalog::Door::ExteriorDoor < ActiveRecord::Base
   # scope :with_promotion_variant, -> () {
   #   with_recommended_variant.where(door_variants: { promotion: "t" })
   # }
-  # def available_colors
-  #   self.door_colors.uniq
-  # end
-  #
+
+  def available_colors
+    self.catalog_door_exterior_door_colors.uniq
+  end
+
   # paginates_per 12
   #
   # filterrific(

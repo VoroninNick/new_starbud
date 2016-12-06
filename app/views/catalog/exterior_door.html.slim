@@ -1,4 +1,227 @@
-.row
-  .columns
-    h1
-      |На стадії розробки!!!
+.product-page
+  .row
+    .columns
+      ul.custom-breadcrumbs
+        li
+          a href=dashboard_path
+            = inline_svg "crm/ic_home_black_48px.svg"
+        li
+          a href=catalog_doors_path
+            |Двері
+        li
+          span
+            = @door_variant.full_name
+
+
+  .row
+    .large-4.columns
+      .product-avatar
+        = image_tag @product.image.url(:large)
+        .title
+          = @product_color.name
+
+    .large-8.columns
+      .product-body
+        .product-main-info
+          .title
+            = @door_variant.full_name
+
+          .subtitle
+            = @product.door_collection.door_producer.title
+
+          p
+            = raw @product.description
+          hr
+          .product-total-price
+            span
+              = number_to_currency(@total_price, :precision => 0, unit: '')
+            sup
+              |грн.
+          .product-status.in-stock
+
+        .product-info-block.product-calculator
+          .product-info-block-head
+            .title
+              = inline_svg "crm/calculator.svg"
+              |Калькулятор вартості
+          .product-info-block-body
+            .row
+              .columns
+                .color-select-variant
+                  .label-text
+                    |Доступні кольори
+
+                  - if @available_colors.any?
+                    - @available_colors.each do |color|
+                      .input
+                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == @product_color) value=color.slug data-variant-id=color.id data-title=color.name
+                        label for="color-#{color.slug}"
+                          .image style="background: url('#{color.icon}')no-repeat center center;"
+
+            .row
+
+              /.medium-6.columns
+                .calculator-option-select.dynamic-cos
+                  label
+                    |Розмір полотна
+                  select name="canvas_size"
+                    - @product.door_collection.door_producer.door_canvas_sizes.each do |size|
+                      option value=size.name selected=("selected" if size == @product_variant.canvas_size)
+                        /|#{size.name}(#{@product.door_collection.door_producer.height} if @product.door_collection.door_producer.presents?)
+                        = size.to_s
+
+              /- if @door_add_boards && @door_add_boards.any?
+                .medium-6.columns
+                  .calculator-option-select.dynamic-cos
+                    label
+                      |Добірна дошка
+                    select
+                      option selected="selected"
+                        |Виберіть добірну дошку
+                      - @door_add_boards.each do |option|
+                        option value=option.one_c_id
+                          = option.name
+
+              /- if @door_frames && @door_frames.any?
+                .medium-6.columns
+                  .calculator-option-select.dynamic-cos
+                    label
+                      |Коробка
+                    select
+                      option selected="selected"
+                        |Виберіть коробку
+                      - @door_frames.each do |option|
+                        option value=option.one_c_id
+                          = option.name
+
+              /- if @welts && @welts.any?
+                .medium-6.columns
+                  .calculator-option-select.dynamic-cos
+                    label
+                      |Лиштва
+                    select
+                      option selected="selected"
+                        |Виберіть лиштву
+                      - @welts.each do |option|
+                        option value=option.one_c_id
+                          = option.name
+
+              /- if @door_strips && @door_strips.any?
+                .medium-6.columns
+                  .calculator-option-select.dynamic-cos
+                    label
+                      |Притворна планка
+                    select
+                      option selected="selected"
+                        |Виберіть притворну планку
+                      - @door_strips.each do |option|
+                        option value=option.one_c_id
+                          = option.name
+
+              /- if @door_add_options && @door_add_options.any?
+                .medium-6.columns
+                  .calculator-option-select
+                    label
+                      |Додаткові опції
+                    select
+                      option selected="selected"
+                        |Виберіть додаткові опції
+
+                      - @door_add_options.each do |option|
+                        option value=option.one_c_id
+                          = option.name
+
+            .row
+              .columns
+                hr
+
+            .row
+              .medium-6.columns
+                .product-total-price
+                  span
+                    = number_to_currency(@total_price, :precision => 0, unit: '')
+                  sup
+                    |грн.
+                .product-status.in-stock
+
+              .medium-6.columns
+                .row.product-adding-to-cart
+                  .medium-3.columns.patc-quantity
+                    input#quantity-product type="number" min="1" name="quantity" value="1"
+                    label for="quantity-product"
+                      |Кіл-сть
+                  .medium-9.columns.patc-buttons-wrap
+                    .patc-button-favorite
+                      a
+                        = inline_svg "crm/ic_favorite_black_48px.svg"
+                        |В побажання
+
+                    .patc-button-order
+                      .material-component.ripple.default-button.red
+                        button
+                          |Добавити в корзину
+
+                .row.apply-product-setting-wrap
+                  .columns
+                    .apply-product-setting
+                      .material-component.ripple.default-button.blue
+                        a
+                          = inline_svg "crm/ic_autorenew_black_48px.svg"
+                          |Застосувати зміни
+
+
+  .row
+    .columns
+      ul#category-items-tabs.default-tabs-head.tabs data-tabs=""
+        li.tabs-title.is-active
+          a href="#specifications" aria-selected="true"
+            |Технічні характеристики
+
+        li.tabs-title
+          a href="#care" aria-selected="true"
+            |Догляд
+
+        li.tabs-title
+          a href="#warranty-terms" aria-selected="true"
+            |Умови гарантії
+
+        li.tabs-title
+          a href="#reviews" aria-selected="true"
+            |Відгуки
+
+
+  .tabs-content.default-tabs-content data-tabs-content="category-items-tabs"
+    .tabs-panel.is-active id="specifications"
+      .row
+        .columns
+          = raw @product.specification
+
+    .tabs-panel id="care"
+      .row
+        .columns
+          = raw @product.attention
+
+    .tabs-panel id="warranty-terms"
+      .row
+        .columns
+          = raw @product.warranty
+
+    .tabs-panel id="reviews"
+      .row
+        .columns
+          |Відгуки
+
+    .expand-tabs
+      = inline_svg "crm/ic_keyboard_arrow_down_black_24px.svg"
+
+  .additional-unit.grey-back-board
+    .title
+      |Рекомедуємо до товару
+
+  .additional-unit
+    .title
+      |Купляйте також
+
+    .row
+      .columns
+        = render partial: "partials/dashboard/promotions_banner"
