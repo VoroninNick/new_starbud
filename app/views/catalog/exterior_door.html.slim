@@ -59,15 +59,13 @@
                           .image style="background: url('#{color.icon}')no-repeat center center;"
 
             .row
-
-              /.medium-6.columns
+              .medium-6.columns
                 .calculator-option-select.dynamic-cos
                   label
-                    |Розмір полотна
+                    |Ширина
                   select name="canvas_size"
-                    - @product.door_collection.door_producer.door_canvas_sizes.each do |size|
-                      option value=size.name selected=("selected" if size == @product_variant.canvas_size)
-                        /|#{size.name}(#{@product.door_collection.door_producer.height} if @product.door_collection.door_producer.presents?)
+                    - @product_variant.available_sizes.each do |size|
+                      option value=size selected=("selected" if size == @product_variant.width)
                         = size.to_s
 
               /- if @door_add_boards && @door_add_boards.any?

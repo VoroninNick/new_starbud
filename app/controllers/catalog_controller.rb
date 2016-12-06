@@ -47,6 +47,7 @@ class CatalogController < ApplicationController
   end
 
   def exterior_door
+
     @door_variant = Catalog::Door::ExteriorDoorVariant.find_by_full_slug(params[:title])
 
 
