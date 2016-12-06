@@ -64,6 +64,8 @@
                   label
                     |Ширина
                   select name="canvas_size"
+                    option selected="selected"
+                      |Виберіть розмір
                     - @product_variant.available_sizes.each do |size|
                       option value=size selected=("selected" if size == @product_variant.width)
                         = size.to_s
