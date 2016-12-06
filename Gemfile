@@ -96,3 +96,6 @@ gem 'simple_form'
 
 gem 'filterrific'
 gem 'kaminari'
+
+# for system comments
+gem 'acts_as_commentable'

@@ -21,7 +21,7 @@ class Catalog::Door::ExteriorDoorColor < ActiveRecord::Base
   validates :name, :presence => true
 
   def product
-    door
+    exterior_door
   end
 
   def to_slug

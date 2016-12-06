@@ -1,0 +1,51 @@
+- product_colors = product.catalog_door_exterior_door_colors
+- product_color = product_colors.first
+- first_product_variant_option = product_color.catalog_door_exterior_door_variants.first
+
+- price = first_product_variant_option.current_price
+
+.product-card-wrap
+  .product-card-inner.default-box-shadow-slim
+    .product-labels-wrap
+      - if first_product_variant_option.promotion?
+        .product-label.product-is-promotion
+      - if first_product_variant_option.new?
+        .product-label.product-is-new
+
+    .product-card-door
+      .pc-avatar
+        /= first_product_variant_option.inspect
+        - if first_product_variant_option.full_slug.present?
+          a href=exterior_door_path(first_product_variant_option.full_slug)
+            = image_tag product.image.url(:large)
+        - else
+          a
+            = image_tag product.image.url(:large)
+
+      .pc-body
+        .pc-product-variants
+          - if product_colors && product_colors
+            - product_colors.each do |color|
+              .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
+                .one-variant data-price=color.catalog_door_exterior_door_variants.first.current_price data-url=color.catalog_door_exterior_door_variants.first.url data-color-name="(#{color.name})"
+                  .image style="background: url('#{color.icon}')no-repeat center center;"
+
+        .pc-product-details
+          .ps-titles
+            .title
+              = product.title
+            .subtitle
+              |(#{product_color.name})
+            .label-text
+              = product.door_collection.door_producer.title
+
+          .ps-price-status
+            .ps-price
+              span
+                = number_to_currency(price, :precision => 0, unit: '')
+              sup
+                |грн.
+
+            .ps-product-status.in-stock
+            /.ps-product-status.do-not-have
+            /.ps-product-status.ends

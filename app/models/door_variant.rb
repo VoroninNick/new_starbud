@@ -137,7 +137,7 @@ class DoorVariant < ActiveRecord::Base
   before_save :save_slug, :create_full_name, :create_full_slug
 
   def base_url
-    "/dashboard/doors/product/"
+    "/dashboard/doors/interior-door/"
   end
 
   def product_color

@@ -21,9 +21,7 @@ class CatalogController < ApplicationController
   end
   
   def product
-    # @door = Door.find_by_slug(params[:title])
 
-    # @door_variant = product_class.find_product_variant_by_string(params[:title])
 
     @door_variant = DoorVariant.find_by_full_slug(params[:title])
 
@@ -47,4 +45,9 @@ class CatalogController < ApplicationController
     end
 
   end
+
+  def exterior_door
+
+  end
+
 end

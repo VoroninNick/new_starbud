@@ -14,6 +14,13 @@
 # t.string :price_group_second
 # t.string :currency
 
+# t.string :full_slug
+# t.string :fill_name
+
+# t.boolean :promotion
+# t.boolean :new
+# t.boolean :recommended
+
 class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
   attr_accessible *attribute_names
 
@@ -26,6 +33,46 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
   enumerize :opening_side, in: [:'left', :'right']
   enumerize :coating_type, in: [:'apartment', :'street']
 
+
+  def composed_full_name
+    # Model Color Width Height Segmentation Coating Side_Opening
+    [product_color.product.slug, product_color.slug, width, height, segment, coating_type, opening_side]
+  end
+
+  def generate_full_slug
+    product_url_fragment = composed_full_name.map{|param| param.to_s.underscore }.join("-")
+  end
+
+  def create_full_slug
+    self.full_slug = generate_full_slug
+  end
+
+  def generate_full_name
+    composed_full_name.map{|param| param.to_s.underscore }.join(" ")
+  end
+  def create_full_name
+    self.full_name = generate_full_name
+  end
+
+
+  before_save :create_full_name, :create_full_slug
+
+  def base_url
+    "/dashboard/doors/exterior-door/"
+  end
+
+  def product_color
+    exterior_door_color
+  end
+
+  def url
+    base_url + generate_full_slug
+  end
+
+  def full_name
+    generate_full_name
+  end
+
   rails_admin do
     navigation_label 'Каталог'
 
@@ -33,7 +80,7 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
     label_plural 'Двері вхідні - варіанти'
 
     list do
-      # field :title
+      field :full_slug
       # field :door_producer
       # # field :door_collection
       # field :description
@@ -66,6 +113,45 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
       field :one_c_id do
         label 'Ідентифікатор з 1С'
       end
+
+      field :recommended do
+        label 'Рекомендуємо?'
+        help 'для відображення на головній сторінці.'
+      end
+
+      field :promotion do
+        label 'Акційні?'
+        help 'поле призначене для програміста'
+      end
+      field :new do
+        label 'Нові?'
+        help 'поле призначене для програміста'
+      end
+    end
+  end
+
+  def current_price
+    if price.present?
+      price
+    elsif price_minimal.present?
+      price_minimal
+    elsif price_group_first.present?
+      price_group_first
+    elsif price_group_second.present?
+      price_group_second
+    end
+  end
+
+  def current_currency
+    if currency == 'uah'
+      # t("enumerize.currency.#{currency}")
+      'грн.'
+    elsif currency == 'usd'
+      # t("enumerize.currency.#{currency}")
+      'дол.'
+    elsif currency == 'eur'
+      # t("enumerize.currency.#{currency}")
+      'євро'
     end
   end
 end
