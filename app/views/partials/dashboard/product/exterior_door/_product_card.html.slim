@@ -28,10 +28,12 @@
             - product_colors.each do |color|
               /= color.inspect
               .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
-                = color.catalog_door_exterior_door_variants.first.inspect
-                = color.catalog_door_exterior_door_variants.first.inspect
-                /.one-variant data-price=color.catalog_door_exterior_door_variants.first.current_price data-url=color.catalog_door_exterior_door_variants.first.url data-color-name="(#{color.name})"
-                  .image style="background: url('#{color.icon}')no-repeat center center;"
+                - if color.catalog_door_exterior_door_variants.any?
+                  - variant_price = color.catalog_door_exterior_door_variants.first.current_price
+                  - variant_url = color.catalog_door_exterior_door_variants.first.url
+
+                  .one-variant data-price=variant_price data-url=variant_url data-color-name="(#{color.name})"
+                    .image style="background: url('#{color.icon}')no-repeat center center;"
 
         .pc-product-details
           .ps-titles
