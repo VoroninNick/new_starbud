@@ -33,6 +33,11 @@ Rails.application.routes.draw do
       get 'exterior-door/:title' => 'catalog#exterior_door', as: "exterior_door"
     end
 
+    scope "floors" do
+      root 'catalog#floors', as: "catalog_floors"
+      get '/:title' => 'catalog#floor', as: "floor"
+    end
+
     scope "cabinet" do
       root "cabinet#index", as: "cabinet"
       get 'balance' => 'cabinet#balance', as: "balance"

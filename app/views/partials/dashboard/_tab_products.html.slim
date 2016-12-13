@@ -58,8 +58,14 @@ ul#products-tabs.tabs data-tabs=""
             |Всі двері
 
   #floors.tabs-panel
-    p
-      |Підлога
+    .rib-head
+      .title
+        |Підлога
+
+    .product-list
+      - if @floors.any?
+        - @floors.each do |product|
+          = render partial: "partials/dashboard/product/floor/product_card", locals: {product: product}
 
   #walls.tabs-panel
     p

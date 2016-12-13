@@ -99,3 +99,5 @@ gem 'kaminari'
 
 # for system comments
 gem 'acts_as_commentable'
+
+gem 'nokogiri'

@@ -4,7 +4,7 @@
       input type="file" name="filename"
       button type="submit" Submit
 
-.row
+/.row
   .columns
     - if Door.all
       ul
@@ -21,3 +21,18 @@
                         - color.door_variants.each do |variant|
                           li
                             = variant.canvas_size
+
+
+
+
+/.row
+  .columns
+    = @products.count
+.row
+  .columns
+    - if @products.any?
+      ul
+        - @products.each do |product|
+          li
+            |#{product[:product_id]} - #{product[:product_name]}, доступно (#{product[:available_amount]} #{product[:product_unit]})
+            hr

@@ -75,6 +75,7 @@ class DoorVariant < ActiveRecord::Base
   attr_accessible *attribute_names
 
   extend Enumerize
+  extend ImportData
   enumerize :currency, in: [:'uah', :'usd', :'eur']
 
   belongs_to :door_color
@@ -126,6 +127,9 @@ class DoorVariant < ActiveRecord::Base
 
 
   def generate_full_name
+    if product_color.nil? || product_color.product.nil?
+      return
+    end
     params = [product_color.product.title, product_color.name, canvas_size]
     params.map{|param| param.to_s.underscore }.join(" ")
   end

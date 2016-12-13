@@ -30,4 +30,11 @@ uk:
         the_entrance: Вхідні
         interior: Міжкімнатні
 
+    floor_type:
+      laminate: Ламінат
+      parquetry: Паркет
+      linoleum: Лінолеум
+      carpet: Ковролін
+      decking: Терасна дошка
+
 

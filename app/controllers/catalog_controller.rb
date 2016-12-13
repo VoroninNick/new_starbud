@@ -65,4 +65,27 @@ class CatalogController < ApplicationController
     end
   end
 
+
+  def floors
+    @filterrific = initialize_filterrific(
+        Catalog::Floor::Floor,
+        params[:filterrific],
+        select_options: {
+            sorted_by: Door.options_for_sorted_by,
+        },
+        default_filter_params: {}
+    ) or return
+    @products = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    # @products = Catalog::Floor::Floor.all
+  end
+
+  def floor
+    @product = Catalog::Floor::Floor.find_by_full_slug(params[:title])
+  end
+
 end

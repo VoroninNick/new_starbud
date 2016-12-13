@@ -27,12 +27,14 @@ header
         = inline_svg "crm/ic_person_white_48px.svg"
         |Увійти
 
+
+    a.header-link.float-right data-open="become_s_dealer"
+      |Стати дилером
+
   - else
     .link-to-dashboard.float-right
       a href=dashboard_path
         .image style="background: url('#{asset_path("crm/avatar/avatar_2.jpg")}')no-repeat center center;"
 
 
-  a.header-link.float-right data-open="become_s_dealer"
-    |Стати дилером
 
