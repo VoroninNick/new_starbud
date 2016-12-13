@@ -28,6 +28,8 @@
             - product_colors.each do |color|
               /= color.inspect
               .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
+                = color.catalog_door_exterior_door_variants.inspect
+                = color.catalog_door_exterior_door_variants.inspect
                 /.one-variant data-price=color.catalog_door_exterior_door_variants.first.current_price data-url=color.catalog_door_exterior_door_variants.first.url data-color-name="(#{color.name})"
                   .image style="background: url('#{color.icon}')no-repeat center center;"
 
