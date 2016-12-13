@@ -12,12 +12,14 @@ class CatalogController < ApplicationController
     ) or return
     @products = @filterrific.find.page(params[:page])
 
+    @exterior_doors = Catalog::Door::ExteriorDoor.all
     respond_to do |format|
       format.html
       format.js
     end
 
     # @doors = Door.all
+
   end
   
   def product

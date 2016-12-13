@@ -1,3 +1,7 @@
+- if ext_doors.any?
+  - ext_doors.each do |product|
+    = render partial: "partials/dashboard/product/exterior_door/product_card", locals: {product: product}
+
 - if products.any?
   - products.each do |product|
     = render partial: "partials/dashboard/product/product_card", locals: {product: product}
