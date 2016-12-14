@@ -193,7 +193,11 @@
   .tabs-content.default-tabs-content data-tabs-content="category-items-tabs"
     .tabs-panel.is-active id="specifications"
       .row
-        .columns
+        .columns.large-3
+          .title
+            |Характеристика
+
+        .columns.large-9
           = raw @product.specification
 
     .tabs-panel id="care"

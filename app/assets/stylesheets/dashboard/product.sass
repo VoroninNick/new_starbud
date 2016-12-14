@@ -360,12 +360,16 @@
 
   .tabs-content
     background: #eceff1
-    padding-bottom: 20px
+    //padding-bottom: 20px
     position: relative
     z-index: 1
-    +box-shadow(1px 1px 2px 0px rgba(0,0,0,0.35))
+    //+box-shadow(1px 1px 2px 0px rgba(0,0,0,0.35))
     height: 20px
     overflow: hidden
+
+    -webkit-box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, 0.35)
+    -moz-box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, 0.35)
+    box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, 0.35)
 
     .expand-tabs
       height: 20px
@@ -382,6 +386,28 @@
       height: auto
       .expand-tabs
         display: none
+
+    &.default-tabs-content
+      .tabs-panel
+        padding-top: 50px
+        padding-bottom: 50px
+        .title
+          +default_font_style(#37474f, 16, 500, 20)
+          text-transform: uppercase
+
+        p, li
+          +default_font_style(#546e7a, 16, 400, 21)
+        ul
+          list-style: none
+          margin-bottom: 30px
+          li
+            position: relative
+            margin-bottom: 10px
+
+            &:before
+              content: "\2014"
+              position: absolute
+              left: -16px
 
 .additional-unit
   .title

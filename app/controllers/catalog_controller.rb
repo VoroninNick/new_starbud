@@ -90,4 +90,11 @@ class CatalogController < ApplicationController
     @product = Catalog::Floor::Floor.find_by_full_slug(params[:title])
   end
 
+
+
+  def door_variants
+
+
+  end
+
 end
