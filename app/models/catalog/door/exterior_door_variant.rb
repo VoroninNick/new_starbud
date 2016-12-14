@@ -47,8 +47,18 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
     self.full_slug = generate_full_slug
   end
 
+  # def generate_full_name
+  #   composed_full_name.map{|param| param.to_s.underscore }.join(" ")
+  # end
+  # def create_full_name
+  #   self.full_name = generate_full_name
+  # end
   def generate_full_name
-    composed_full_name.map{|param| param.to_s.underscore }.join(" ")
+    if product_color.nil? || product_color.product.nil?
+      return
+    end
+    params = [product_color.product.title, product_color.name, width, height, segment, coating_type, opening_side]
+    params.map{|param| param.to_s.underscore }.join(" ")
   end
   def create_full_name
     self.full_name = generate_full_name
