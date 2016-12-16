@@ -1,7 +1,12 @@
 - product_colors = product.catalog_door_exterior_door_colors
 - product_color = product_colors.first
 - first_product_variant_option = product_color.catalog_door_exterior_door_variants.first
-= product_color.catalog_door_exterior_door_variants.count
+/= product_color.catalog_door_exterior_door_variants.inspect
+ul
+  - product_color.catalog_door_exterior_door_variants.each do |i|
+    li
+      = i.inspect
+
 - price = first_product_variant_option.current_price
 
 .product-card-wrap
