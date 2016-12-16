@@ -124,19 +124,19 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
         label 'Ідентифікатор з 1С'
       end
 
-      field :recommended do
-        label 'Рекомендуємо?'
-        help 'для відображення на головній сторінці.'
-      end
-
-      field :promotion do
-        label 'Акційні?'
-        help 'поле призначене для програміста'
-      end
-      field :new do
-        label 'Нові?'
-        help 'поле призначене для програміста'
-      end
+      # field :recommended do
+      #   label 'Рекомендуємо?'
+      #   help 'для відображення на головній сторінці.'
+      # end
+      #
+      # field :promotion do
+      #   label 'Акційні?'
+      #   help 'поле призначене для програміста'
+      # end
+      # field :new do
+      #   label 'Нові?'
+      #   help 'поле призначене для програміста'
+      # end
     end
   end
 
