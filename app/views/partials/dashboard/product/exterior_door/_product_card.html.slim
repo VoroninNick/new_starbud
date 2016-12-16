@@ -2,14 +2,19 @@
 - product_color = product_colors.first
 - first_product_variant_option = product_color.catalog_door_exterior_door_variants.first
 /= product_color.catalog_door_exterior_door_variants.inspect
+
+= first_product_variant_option.inspect
+hr
 ul
   - product_color.catalog_door_exterior_door_variants.each do |i|
     li
       = i.inspect
 
-- price = first_product_variant_option.current_price
 
-.product-card-wrap
+
+/- price = first_product_variant_option.current_price
+
+/.product-card-wrap
   .product-card-inner.default-box-shadow-slim
     .product-labels-wrap
       - if first_product_variant_option.promotion?
