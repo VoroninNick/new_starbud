@@ -2,22 +2,22 @@
 - product_color = product_colors.first
 - first_product_variant_option = product_color.catalog_door_exterior_door_variants.first
 /= product_color.catalog_door_exterior_door_variants.inspect
-h1
+/h1
   = product.id
   = product_color.inspect
 
-= first_product_variant_option.inspect
-hr
-ul
+/= first_product_variant_option.inspect
+/hr
+/ul
   - product_color.catalog_door_exterior_door_variants.each do |i|
     li
       = i.inspect
 
 
 
-/- price = first_product_variant_option.current_price
+- price = first_product_variant_option.current_price
 
-/.product-card-wrap
+.product-card-wrap
   .product-card-inner.default-box-shadow-slim
     .product-labels-wrap
       - if first_product_variant_option.promotion?
