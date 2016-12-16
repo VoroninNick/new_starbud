@@ -94,7 +94,6 @@ class CatalogController < ApplicationController
 
   def door_variants
 
-
   end
 
 end

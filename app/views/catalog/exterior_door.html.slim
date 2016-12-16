@@ -63,12 +63,60 @@
                 .calculator-option-select.dynamic-cos
                   label
                     |Ширина
-                  select name="canvas_size"
+                  select name="door_width"
                     option selected="selected"
-                      |Виберіть розмір
+                      |Виберіть опцію...
                     - @product_variant.available_sizes.each do |size|
                       option value=size selected=("selected" if size == @product_variant.width)
                         = size.to_s
+
+              .medium-6.columns
+                .calculator-option-select.dynamic-cos
+                  label
+                    |Висота
+                  select name="door_height"
+                    option selected="selected"
+                      |Виберіть опцію...
+                    - @product_variant.available_heights.each do |option|
+                      option value=option selected=("selected" if option == @product_variant.height)
+                        = option.to_s
+
+                  /= @product_variant.height
+                  /= @product_variant.available_heights.first
+
+              .medium-6.columns
+                .calculator-option-select.dynamic-cos
+                  label
+                    |Сегмент виконання
+                  select name="segment"
+                    option selected="selected"
+                      |Виберіть опцію...
+                    - @product_variant.available_segment.each do |option|
+                      option value=option selected=("selected" if option == @product_variant.segment)
+                        = option.to_s
+
+              .medium-6.columns
+                .calculator-option-select.dynamic-cos
+                  label
+                    |Тип плівки
+                  select name="coating_type"
+                    option selected="selected"
+                      |Виберіть опцію...
+                    - @product_variant.available_coating_types.each do |option|
+                      option value=option selected=("selected" if option == @product_variant.coating_type)
+                        = option.to_s
+
+              .medium-6.columns.end
+                .calculator-option-select.dynamic-cos
+                  label
+                    |Схема врізки полотна
+                  select name="opening_side"
+                    option selected="selected"
+                      |Виберіть опцію...
+                    - @product_variant.available_opening_side.each do |option|
+                      option value=option selected=("selected" if option == @product_variant.opening_side)
+                        = option.to_s
+
 
               /- if @door_add_boards && @door_add_boards.any?
                 .medium-6.columns

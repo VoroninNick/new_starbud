@@ -172,5 +172,38 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
       'євро'
     end
   end
+
+  def variants_by_width
+    # product_color.catalog_door_exterior_door_variants.pluck(:width).uniq
+  end
+  def variants_by_height
+
+  end
+  def variants_by_segment
+
+  end
+  def variants_by_coating_type
+
+  end
+  def variants_by_opening_side
+
+  end
+
+  def variants_by_color
+    Catalog::Door::ExteriorDoorVariant.joins(:exterior_door_color)
+        .where(exterior_door_color_id: self.exterior_door_color_id)
+  end
+  def available_heights
+    variants_by_color.where(width: self.width).pluck(:height)
+  end
+  def available_segment
+    variants_by_color.where(width: self.width).where(height: self.height).pluck(:segment)
+  end
+  def available_coating_types
+    variants_by_color.where(width: self.width).where(height: self.height).where(segment: self.segment).pluck(:coating_type)
+  end
+  def available_opening_side
+    variants_by_color.where(width: self.width).where(height: self.height).where(segment: self.segment).where(coating_type: self.coating_type).pluck(:opening_side)
+  end
 end
 
