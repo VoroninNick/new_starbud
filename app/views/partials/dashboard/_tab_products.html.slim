@@ -67,6 +67,14 @@ ul#products-tabs.tabs data-tabs=""
         - @floors.each do |product|
           = render partial: "partials/dashboard/product/floor/product_card", locals: {product: product}
 
+
+    .row.text-center
+      .columns
+        .material-component.ripple.default-button.white-grey
+          a href=catalog_floors_path
+            = inline_svg "crm/layers.svg"
+            |Вся підлога
+
   #walls.tabs-panel
     p
       |Стіни

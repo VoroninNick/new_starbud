@@ -15,14 +15,11 @@
       .large-3.columns
         .catalog-filters-wrap
           #selected-filters
-            = render partial: "catalog/selected_filters/doors/filter_list"
+            = render partial: "catalog/selected_filters/floors/filter_list"
 
           #control-filters-list
-            = render partial: "catalog/filter_list/doors/filter_list", locals: { f: f }
+            = render partial: "catalog/filter_list/floors/filter_list", locals: { f: f }
 
       .large-9.columns
-        #doors-list.product-list
-          - if @products.any?
-            - @products.each do |product|
-              = render partial: "partials/dashboard/product/floor/product_card", locals: {product: product}
-          /= render partial: "catalog/doors_list", locals: { products: @products }
+        #products-list.product-list
+          = render partial: "catalog/floors/product_list", locals: { products: @products }

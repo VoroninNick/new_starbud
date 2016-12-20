@@ -73,7 +73,7 @@ class CatalogController < ApplicationController
         Catalog::Floor::Floor,
         params[:filterrific],
         select_options: {
-            sorted_by: Door.options_for_sorted_by,
+            sorted_by: Catalog::Floor::Floor.options_for_sorted_by,
         },
         default_filter_params: {}
     ) or return
