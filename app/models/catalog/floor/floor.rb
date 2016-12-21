@@ -28,6 +28,8 @@ class Catalog::Floor::Floor < ActiveRecord::Base
 
   has_one :product_addition_option, as: :productable, dependent: :destroy
 
+  belongs_to :catalog_floor_collection, :class_name => 'Catalog::Floor::Collection'
+
   extend Enumerize
 
   enumerize :floor_type, in: [ :laminate, :parquetry, :linoleum, :carpet, :decking]
@@ -103,6 +105,17 @@ class Catalog::Floor::Floor < ActiveRecord::Base
       field :name do
         label 'Назва:'
       end
+      # field :catalog_floor_collection do
+      #   label 'Коллекція'
+      # end
+
+      field :catalog_floor_collection_id, :enum do
+        enum do
+          Catalog::Floor::Collection.includes(:catalog_floor_brand).all.map { |i| [i.catalog_floor_brand.name + ', ' + i.name, i.id] }
+        end
+        label "Колекція:"
+      end
+
       field :avatar, :paperclip do
         label 'Головне зображення:'
         help 'Зображення вантажити лише в форматі jpg 320х220 pixels'

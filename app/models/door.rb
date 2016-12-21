@@ -120,7 +120,6 @@ class Door < ActiveRecord::Base
       field :door_collection_id, :enum do
         enum do
           DoorCollection.includes(:door_producer).all.map { |i| [i.door_producer.title + ', ' + i.title, i.id] }
-
         end
         label "Колекція:"
       end
