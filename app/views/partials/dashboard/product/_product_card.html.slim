@@ -26,9 +26,15 @@
         .pc-product-variants
           - if product_colors && product_colors
           - product_colors.each do |color|
-            .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
-              .one-variant data-asset=color.image.url(:large) data-price=color.door_variants.first.current_price data-url=color.door_variants.first.url data-color-name="(#{color.name})"
-                .image style="background: url('#{color.icon}')no-repeat center center;"
+            - if product_colors.count > 1
+              .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
+                .one-variant data-asset=color.image.url(:large) data-price=color.door_variants.first.current_price data-url=color.door_variants.first.url data-color-name="(#{color.name})"
+                  .image style="background: url('#{color.icon}')no-repeat center center;"
+            - else
+              .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
+                .one-variant data-asset=color.image.url(:large) data-price=color.door_variants.first.current_price data-url=color.door_variants.first.url data-color-name="(#{color.name})"
+                  .image style="background: url('#{color.icon}')repeat-x center center;"
+                    /|this
 
         .pc-product-details
           .ps-titles

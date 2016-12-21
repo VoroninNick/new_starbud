@@ -104,18 +104,18 @@
                       |Виберіть опцію...
                     - @product_variant.available_coating_types.each do |option|
                       option value=option selected=("selected" if option == @product_variant.coating_type)
-                        = option.to_s
+                        = t("enumerize.coating_type.#{option.to_s}")
 
               .medium-6.columns.end
                 .calculator-option-select.dynamic-cos
                   label
-                    |Схема врізки полотна
+                    |Схема відкриття дверей
                   select name="opening_side"
                     option selected="selected"
                       |Виберіть опцію...
                     - @product_variant.available_opening_side.each do |option|
                       option value=option selected=("selected" if option == @product_variant.opening_side)
-                        = option.to_s
+                        = t("enumerize.opening_side.#{option.to_s}")
 
 
             .row
