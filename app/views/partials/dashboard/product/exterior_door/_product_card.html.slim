@@ -47,6 +47,9 @@
 
                   .one-variant data-price=variant_price data-url=variant_url data-color-name="(#{color.name})"
                     .image style="background: url('#{color.icon}')no-repeat center center;"
+                - else
+                  .one-variant data-price="" data-url="" data-color-name="(#{color.name})"
+                    .image style="background: url('#{color.icon}')no-repeat center center;"
 
         .pc-product-details
           .ps-titles

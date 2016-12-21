@@ -102,6 +102,13 @@ class Catalog::Door::ExteriorDoor < ActiveRecord::Base
   scope :with_recommended_variant, -> () {
     joins(catalog_door_exterior_door_colors: { catalog_door_exterior_door_variants: {} }).where(catalog_door_exterior_door_variants: { recommended: "t" }).uniq
   }
+
+  # colors with present variants
+  scope :present_variants, -> () {
+    joins(catalog_door_exterior_door_colors: { catalog_door_exterior_door_variants: {} })
+  }
+
+
   # scope :with_news_variant, -> () {
   #   with_recommended_variant.where(door_variants: { new: "t" })
   # }
