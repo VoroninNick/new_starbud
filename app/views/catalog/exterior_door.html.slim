@@ -118,67 +118,6 @@
                         = option.to_s
 
 
-              /- if @door_add_boards && @door_add_boards.any?
-                .medium-6.columns
-                  .calculator-option-select.dynamic-cos
-                    label
-                      |Добірна дошка
-                    select
-                      option selected="selected"
-                        |Виберіть добірну дошку
-                      - @door_add_boards.each do |option|
-                        option value=option.one_c_id
-                          = option.name
-
-              /- if @door_frames && @door_frames.any?
-                .medium-6.columns
-                  .calculator-option-select.dynamic-cos
-                    label
-                      |Коробка
-                    select
-                      option selected="selected"
-                        |Виберіть коробку
-                      - @door_frames.each do |option|
-                        option value=option.one_c_id
-                          = option.name
-
-              /- if @welts && @welts.any?
-                .medium-6.columns
-                  .calculator-option-select.dynamic-cos
-                    label
-                      |Лиштва
-                    select
-                      option selected="selected"
-                        |Виберіть лиштву
-                      - @welts.each do |option|
-                        option value=option.one_c_id
-                          = option.name
-
-              /- if @door_strips && @door_strips.any?
-                .medium-6.columns
-                  .calculator-option-select.dynamic-cos
-                    label
-                      |Притворна планка
-                    select
-                      option selected="selected"
-                        |Виберіть притворну планку
-                      - @door_strips.each do |option|
-                        option value=option.one_c_id
-                          = option.name
-
-              /- if @door_add_options && @door_add_options.any?
-                .medium-6.columns
-                  .calculator-option-select
-                    label
-                      |Додаткові опції
-                    select
-                      option selected="selected"
-                        |Виберіть додаткові опції
-
-                      - @door_add_options.each do |option|
-                        option value=option.one_c_id
-                          = option.name
-
             .row
               .columns
                 hr
