@@ -200,10 +200,10 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
     variants_by_color.where(width: self.width).where(height: self.height).pluck(:segment).uniq
   end
   def available_coating_types
-    variants_by_color.where(width: self.width).where(height: self.height).where(segment: self.segment).pluck(:coating_type)
+    variants_by_color.where(width: self.width).where(height: self.height).where(segment: self.segment).pluck(:coating_type).uniq
   end
   def available_opening_side
-    variants_by_color.where(width: self.width).where(height: self.height).where(segment: self.segment).where(coating_type: self.coating_type).pluck(:opening_side)
+    variants_by_color.where(width: self.width).where(height: self.height).where(segment: self.segment).where(coating_type: self.coating_type).pluck(:opening_side).uniq
   end
 end
 
