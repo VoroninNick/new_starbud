@@ -194,10 +194,10 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
         .where(exterior_door_color_id: self.exterior_door_color_id)
   end
   def available_heights
-    variants_by_color.where(width: self.width).pluck(:height)
+    variants_by_color.where(width: self.width).pluck(:height).uniq
   end
   def available_segment
-    variants_by_color.where(width: self.width).where(height: self.height).pluck(:segment)
+    variants_by_color.where(width: self.width).where(height: self.height).pluck(:segment).uniq
   end
   def available_coating_types
     variants_by_color.where(width: self.width).where(height: self.height).where(segment: self.segment).pluck(:coating_type)
