@@ -1,5 +1,6 @@
 - product = @product
 - product_avatar = product.avatar.url(:large)
+- producer = product.catalog_floor_collection.catalog_floor_brand.name
 
 .product-page.floor-page
   .row
@@ -29,7 +30,7 @@
             = product.full_name
 
           .subtitle
-            /= @product.door_collection.door_producer.title
+            = producer
 
           - if product.product_addition_option
             p
@@ -58,74 +59,6 @@
                 .material-component.ripple.default-button.red
                   button
                     |Добавити в корзину
-        /.product-info-block.product-calculator
-          .product-info-block-head
-            .title
-              = inline_svg "crm/calculator.svg"
-              |Калькулятор вартості
-          .product-info-block-body
-            .row
-              .columns
-                .color-select-variant
-                  .label-text
-                    |Доступні кольори
-
-                  - if @available_colors.any?
-                    - @available_colors.each do |color|
-                      .input
-                        input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == @product_color) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name
-                        label for="color-#{color.slug}"
-                          .image style="background: url('#{color.icon}')no-repeat center center;"
-
-            .row
-              .medium-6.columns
-                .calculator-option-select.dynamic-cos
-                  label
-                    |Розмір полотна
-                  select name="canvas_size"
-                    - @product.door_collection.door_producer.door_canvas_sizes.each do |size|
-                      option value=size.name selected=("selected" if size == @product_variant.canvas_size)
-                        /|#{size.name}(#{@product.door_collection.door_producer.height} if @product.door_collection.door_producer.presents?)
-                        = size.to_s
-
-            .row
-              .columns
-                hr
-
-            .row
-              .medium-6.columns
-                .product-total-price
-                  span
-                    = number_to_currency(@total_price, :precision => 0, unit: '')
-                  sup
-                    |грн.
-                .product-status.in-stock
-
-              .medium-6.columns
-                .row.product-adding-to-cart
-                  .medium-3.columns.patc-quantity
-                    input#quantity-product type="number" min="1" name="quantity" value="1"
-                    label for="quantity-product"
-                      |Кіл-сть
-                  .medium-9.columns.patc-buttons-wrap
-                    .patc-button-favorite
-                      a
-                        = inline_svg "crm/ic_favorite_black_48px.svg"
-                        |В побажання
-
-                    .patc-button-order
-                      .material-component.ripple.default-button.red
-                        button
-                          |Добавити в корзину
-
-                .row.apply-product-setting-wrap
-                  .columns
-                    .apply-product-setting
-                      .material-component.ripple.default-button.blue
-                        a
-                          = inline_svg "crm/ic_autorenew_black_48px.svg"
-                          |Застосувати зміни
-
 
   .row
     .columns
@@ -165,19 +98,16 @@
               .label-text
                 |Перспектива
               .image style="background: url('#{asset_path(product.perspective.url(:large))}')no-repeat center center;"
-              /= image_tag product.perspective.url(:large)
 
             .medium-4.columns
               .label-text
                 |Структура
               .image style="background: url('#{asset_path(product.structure.url(:large))}')no-repeat center center;"
-              /= image_tag product.structure.url(:large)
 
             .medium-4.columns
               .label-text
                 |Інтер'єр
               .image style="background: url('#{asset_path(product.interior.url(:large))}')no-repeat center center;"
-              /= image_tag product.interior.url(:large)
 
     .tabs-panel id="care"
       .row
