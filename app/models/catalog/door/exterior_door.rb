@@ -10,6 +10,7 @@ class Catalog::Door::ExteriorDoor < ActiveRecord::Base
   has_one :door_producer, through: :door_collection
 
 
+
   attr_accessible :image
 
   has_attached_file :image,
@@ -118,6 +119,22 @@ class Catalog::Door::ExteriorDoor < ActiveRecord::Base
 
   def available_colors
     self.catalog_door_exterior_door_colors.uniq
+  end
+
+  def versions
+    door_variants =  Catalog::Door::ExteriorDoorVariant.joins(exterior_door_color: { exterior_door: {} }).where(catalog_door_exterior_doors: {id: self.id})
+
+    vs = door_variants.map {|v|
+      h = {}
+      h[:color_id] = v.color.id
+      h[:width] = v.width
+      h[:height] = v.height
+      h[:segment] = v.segment
+      h[:coating_type] = v.coating_type
+      h[:opening_side] = v.opening_side
+
+      h
+    }
   end
 
   # paginates_per 12

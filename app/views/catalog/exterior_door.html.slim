@@ -1,3 +1,5 @@
+- data = @product.versions
+
 .product-page
   .row
     .columns
@@ -44,7 +46,8 @@
             .title
               = inline_svg "crm/calculator.svg"
               |Калькулятор вартості
-          .product-info-block-body
+
+          .product-info-block-body data_calc=data.to_json
             .row
               .columns
                 .color-select-variant
@@ -53,6 +56,9 @@
 
                   - if @available_colors.any?
                     - @available_colors.each do |color|
+
+
+
                       .input
                         input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == @product_color) value=color.slug data-variant-id=color.id data-title=color.name
                         label for="color-#{color.slug}"

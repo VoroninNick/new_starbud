@@ -27,11 +27,16 @@ class Catalog::Door::ExteriorDoorVariant < ActiveRecord::Base
   extend Enumerize
 
   belongs_to :exterior_door_color, :class_name => 'Catalog::Door::ExteriorDoorColor'
+  has_one :exterior_door, class_name: 'Catalog::Door::ExteriorDoor', through: :exterior_door_color
 
   validates_presence_of :width, :height, :segment, :coating_type, :opening_side
 
   enumerize :opening_side, in: [:'left', :'right']
   enumerize :coating_type, in: [:'apartment', :'street']
+
+  def color
+    exterior_door_color
+  end
 
 
   def composed_full_name
