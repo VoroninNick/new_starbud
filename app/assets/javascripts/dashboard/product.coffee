@@ -57,3 +57,8 @@ $(document).ready ->
 #===================================================================
   $('.product-scheme-variant input').on 'change', ->
     $('.product-scheme-variant input').not(this).prop 'checked', false
+
+
+#===================================================================
+# exterior door calcing
+#===================================================================
