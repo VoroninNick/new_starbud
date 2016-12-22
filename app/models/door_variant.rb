@@ -52,6 +52,8 @@
 
 # t.string :one_c_id
 
+# t.integer :available_amount
+
 def canvas_size_enum_field
   field :canvas_size, :enum do
     enum_method :available_sizes

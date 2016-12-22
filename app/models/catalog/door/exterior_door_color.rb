@@ -12,8 +12,13 @@ class Catalog::Door::ExteriorDoorColor < ActiveRecord::Base
   attr_accessible :icon
 
   has_attached_file :icon,
-                    styles: { large: "240x240>"},
-                    convert_options: { large: "-quality 94 -interlace Plane"},
+                    styles: { large: "360x80>", three: "320x80>", two: "160x80>", thumb: "80x80>"},
+                    convert_options: {
+                        large: "-quality 94 -interlace Plane",
+                        three: "-quality 94 -interlace Plane",
+                        two: "-quality 94 -interlace Plane",
+                        thumb: "-quality 94 -interlace Plane"
+                    },
                     default_url: "/images/:style/missing.png"
 
   validates_attachment_content_type :icon, content_type: /\Aimage\/.*\Z/
@@ -45,7 +50,7 @@ class Catalog::Door::ExteriorDoorColor < ActiveRecord::Base
       end
       field :icon, :paperclip do
         label 'Іконка:'
-        help 'Зображення вантажити лише в форматі jpg 80x80 pixels'
+        help 'Зображення вантажити лише в форматі jpg 80x360 pixels'
       end
 
     end
