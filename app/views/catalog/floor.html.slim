@@ -96,15 +96,16 @@
 
           - if product_characteristics && product_characteristics.any?
             .row
-              .columns
-                ul
-                  - product_characteristics.each do |option|
-                    li
-                      p data-slug=option.value_slug
-                        b data-slug=option.key_slug
-                          = option.key
-                        = option.value
-                      = image_tag option.avatar.url(:thumb)
+              - product_characteristics.each do |option|
+                .small-6.columns class=("end" if option == product_characteristics.last)
+                  .one-collection-characteristic
+                    = image_tag option.avatar.url(:thumb)
+                    p data-slug=option.value_slug
+                      = option.value
+                      b data-slug=option.key_slug
+                        = option.key
+
+
           .row
             .medium-4.columns
               .label-text
