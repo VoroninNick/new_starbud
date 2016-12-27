@@ -7,6 +7,12 @@ class Catalog::Floor::Collection < ActiveRecord::Base
   belongs_to :catalog_floor_brand, :class_name => 'Catalog::Floor::Brand', foreign_key: :catalog_floor_brand_id
   has_one :catalog_floor_collection
 
+  has_many :catalog_floor_collection_characteristics, :class_name => 'Catalog::Floor::CollectionCharacteristic', foreign_key: :catalog_floor_collection_id
+
+  attr_accessible :catalog_floor_collection_characteristics
+  accepts_nested_attributes_for :catalog_floor_collection_characteristics, allow_destroy: true
+  attr_accessible :catalog_floor_collection_characteristics_attributes
+
   def to_slug
     "#{name.parameterize}"
   end
@@ -27,6 +33,9 @@ class Catalog::Floor::Collection < ActiveRecord::Base
     edit do
       field :name do
         label 'Назва:'
+      end
+      field :catalog_floor_collection_characteristics do
+        label "Характеристики:"
       end
     end
   end

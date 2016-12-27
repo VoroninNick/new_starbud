@@ -56,17 +56,17 @@ class MainController < ApplicationController
 
   def dev
 
-    @products = []
-    @doc = Nokogiri::XML(File.open("#{Rails.root}/public/products_05_12_2016_06_41_05.xml"))
-    @doc.xpath('//product').each do |el|
-      @product = {}
-      @product[:product_id] = el.xpath('product_id').text
-      @product[:product_name] = el.xpath('product_name').text
-      @product[:available_amount] = el.xpath('available_amount').text
-      @product[:product_unit] = el.xpath('product_unit').text
-
-      @products << @product
-    end
-    @products
+    # @products = []
+    # @doc = Nokogiri::XML(File.open("#{Rails.root}/public/products_05_12_2016_06_41_05.xml"))
+    # @doc.xpath('//product').each do |el|
+    #   @product = {}
+    #   @product[:product_id] = el.xpath('product_id').text
+    #   @product[:product_name] = el.xpath('product_name').text
+    #   @product[:available_amount] = el.xpath('available_amount').text
+    #   @product[:product_unit] = el.xpath('product_unit').text
+    #
+    #   @products << @product
+    # end
+    # @products
   end
 end

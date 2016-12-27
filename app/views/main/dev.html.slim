@@ -28,7 +28,7 @@
 /.row
   .columns
     = @products.count
-.row
+/.row
   .columns
     - if @products.any?
       ul
@@ -36,3 +36,7 @@
           li
             |#{product[:product_id]} - #{product[:product_name]}, доступно (#{product[:available_amount]} #{product[:product_unit]})
             hr
+
+.row
+  .columns
+    = Catalog::Floor::Collection.includes(:catalog_floor_brand).all.map { |i| [i.catalog_floor_brand.name + ', ' + i.name, i.id] }
