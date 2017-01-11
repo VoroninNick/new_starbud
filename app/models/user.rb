@@ -15,13 +15,20 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  superadmin_role        :boolean          default(FALSE)
+#  supervisor_role        :boolean          default(FALSE)
+#  client_role            :boolean          default(TRUE)
+#  user_name              :string
+#  avatar_file_name       :string
+#  avatar_content_type    :string
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
+#  company                :string
+#  phone_number           :string
+#  address                :text
+#  one_c_id               :string
+#  approved               :boolean          default(FALSE), not null
 #
-# t.string :user_name
-# t.attachment :avatar
-# t.string :company
-# t.string :phone_number
-# t.text :address
-# t.string :one_c_id
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:

@@ -1,6 +1,15 @@
-# t.string :name
-# t.string :slug
-# t.belongs_to :catalog_floor_brand
+# == Schema Information
+#
+# Table name: catalog_floor_collections
+#
+#  id                     :integer          not null, primary key
+#  name                   :string
+#  slug                   :string
+#  catalog_floor_brand_id :integer
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+
 class Catalog::Floor::Collection < ActiveRecord::Base
   attr_accessible *attribute_names
 
@@ -30,4 +39,5 @@ class Catalog::Floor::Collection < ActiveRecord::Base
       end
     end
   end
+
 end

@@ -29,6 +29,7 @@
 #  one_c_id           :string
 #  full_name          :string
 #  full_slug          :string
+#  available_amount   :integer
 #
 
 # t.belongs_to :door

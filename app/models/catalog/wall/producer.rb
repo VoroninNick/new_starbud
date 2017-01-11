@@ -1,22 +1,19 @@
 # == Schema Information
 #
-# Table name: catalog_floor_brands
+# Table name: catalog_wall_producers
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  country    :string
 #  slug       :string
+#  country    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Catalog::Floor::Brand < ActiveRecord::Base
+class Catalog::Wall::Producer < ActiveRecord::Base
   attr_accessible *attribute_names
 
-  has_many :catalog_floor_collections, :class_name => 'Catalog::Floor::Collection', foreign_key: :catalog_floor_brand_id
-  attr_accessible :catalog_floor_collections
-  accepts_nested_attributes_for :catalog_floor_collections, allow_destroy: true
-  attr_accessible :catalog_floor_collections_attributes
+  has_many :catalog_wall_wallpapers, :class_name => 'Catalog::Wall::Wallpaper', foreign_key: :catalog_wall_producer_id
 
   def to_slug
     "#{name.parameterize}"
@@ -29,8 +26,8 @@ class Catalog::Floor::Brand < ActiveRecord::Base
   rails_admin do
     navigation_label 'Каталог'
 
-    label 'Виробник підлоги'
-    label_plural 'Виробники підлоги'
+    label 'Виробник декору для стіни'
+    label_plural 'Виробники декорів для стіни'
 
     list do
       field :name
@@ -45,10 +42,6 @@ class Catalog::Floor::Brand < ActiveRecord::Base
       field :country do
         label "Країна виробника:"
       end
-      field :catalog_floor_collections do
-        label "Колекції:"
-      end
-
     end
   end
 end

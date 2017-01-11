@@ -40,6 +40,11 @@ Rails.application.routes.draw do
       get '/:title' => 'catalog#floor', as: "floor"
     end
 
+    scope "walls" do
+      root 'catalog#walls', as: "catalog_walls"
+      get '/:title' => 'catalog#wall', as: "wall"
+    end
+
     scope "cabinet" do
       root "cabinet#index", as: "cabinet"
       get 'balance' => 'cabinet#balance', as: "balance"

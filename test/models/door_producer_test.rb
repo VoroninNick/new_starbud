@@ -8,6 +8,7 @@
 #  country    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  height     :integer
 #
 
 require 'test_helper'

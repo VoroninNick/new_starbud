@@ -1,9 +1,17 @@
-# t.integer :productable_id
-# t.string :productable_type
-# t.text :short_description
-# t.text :specification
-# t.text :attention
-# t.text :warranty
+# == Schema Information
+#
+# Table name: product_addition_options
+#
+#  id                :integer          not null, primary key
+#  productable_id    :integer
+#  productable_type  :string
+#  short_description :text
+#  specification     :text
+#  attention         :text
+#  warranty          :text
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
 
 class ProductAdditionOption < ActiveRecord::Base
   attr_accessible *attribute_names

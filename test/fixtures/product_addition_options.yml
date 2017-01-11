@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: product_addition_options
+#
+#  id                :integer          not null, primary key
+#  productable_id    :integer
+#  productable_type  :string
+#  short_description :text
+#  specification     :text
+#  attention         :text
+#  warranty          :text
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the

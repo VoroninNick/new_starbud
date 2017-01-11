@@ -1,13 +1,13 @@
 # == Schema Information
 #
-# Table name: catalog_floor_collections
+# Table name: catalog_wall_producers
 #
-#  id                     :integer          not null, primary key
-#  name                   :string
-#  slug                   :string
-#  catalog_floor_brand_id :integer
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
+#  id         :integer          not null, primary key
+#  name       :string
+#  slug       :string
+#  country    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
