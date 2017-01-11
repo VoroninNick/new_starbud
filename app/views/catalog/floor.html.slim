@@ -1,7 +1,8 @@
 - product = @product
 - product_avatar = product.avatar.url(:large)
 - producer = product.catalog_floor_collection.catalog_floor_brand.name
-
+- collection = product.catalog_floor_collection
+- product_characteristics = collection.catalog_floor_collection_characteristics
 .product-page.floor-page
   .row
     .columns
@@ -92,6 +93,18 @@
             .columns
               - if product.product_addition_option
                 = raw product.product_addition_option.specification
+
+          - if product_characteristics && product_characteristics.any?
+            .row
+              - product_characteristics.each do |option|
+                .small-6.columns class=("end" if option == product_characteristics.last)
+                  .one-collection-characteristic
+                    = image_tag option.avatar.url(:thumb)
+                    p data-slug=option.value_slug
+                      = option.value
+                      b data-slug=option.key_slug
+                        = option.key
+
 
           .row
             .medium-4.columns

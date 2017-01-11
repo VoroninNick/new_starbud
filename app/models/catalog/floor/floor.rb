@@ -166,9 +166,9 @@ class Catalog::Floor::Floor < ActiveRecord::Base
       field :one_c_id do
         label 'Ідентифікатор з 1С:'
       end
-      field :amount do
-        label 'Кількість:'
-      end
+      # field :amount do
+      #   label 'Кількість:'
+      # end
       field :perspective, :paperclip do
         label 'Перспектива:'
         help 'Зображення вантажити лише в форматі jpg 320x180 pixels'
