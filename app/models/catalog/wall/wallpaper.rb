@@ -66,7 +66,7 @@ class Catalog::Wall::Wallpaper < ActiveRecord::Base
         label 'Назва:'
       end
       field :image, :paperclip do
-        label 'Головне зображення:'
+        label "Інтер'єр:"
         help 'Зображення вантажити лише в форматі jpg 600х450 pixels'
       end
       field :catalog_wall_wallpaper_variants do
