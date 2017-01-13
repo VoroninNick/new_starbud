@@ -8,5 +8,13 @@ class DashboardController < ApplicationController
     @promotion_doors = Door.with_promotion_variant.limit(4)
 
     @floors = Catalog::Floor::Floor.all
+
+  end
+
+  private
+
+  helper_method :walls_item
+  def walls_item
+    Catalog::Wall::Wallpaper.all
   end
 end

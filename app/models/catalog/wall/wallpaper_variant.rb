@@ -87,4 +87,26 @@ class Catalog::Wall::WallpaperVariant < ActiveRecord::Base
       end
     end
   end
+
+  def current_price
+    if price.present?
+      price
+    elsif price_minimal.present?
+      price_minimal
+    elsif price_group_first.present?
+      price_group_first
+    elsif price_group_second.present?
+      price_group_second
+    end
+  end
+
+  def current_currency
+    if currency == 'uah'
+      'грн.'
+    elsif currency == 'usd'
+      'дол.'
+    elsif currency == 'eur'
+      'євро'
+    end
+  end
 end

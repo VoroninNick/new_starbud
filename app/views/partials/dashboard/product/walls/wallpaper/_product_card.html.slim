@@ -1,0 +1,55 @@
+/- product_colors = product.catalog_door_exterior_door_colors
+/- product_color = product_colors.first
+
+- first_product_variant_option = product.catalog_wall_wallpaper_variants.first
+
+- price = first_product_variant_option.current_price
+
+.product-card-wrap.floor-card-wrap
+  .product-card-inner.default-box-shadow-slim
+    /.product-labels-wrap
+      - if first_product_variant_option.promotion?
+        .product-label.product-is-promotion
+      - if first_product_variant_option.new?
+        .product-label.product-is-new
+
+    .product-card-wall
+      .pc-avatar
+        a href=wall_path(product.slug)
+          = image_tag first_product_variant_option.avatar.url(:large)
+
+      .pc-body
+        /.pc-product-variants
+          - if product_colors && product_colors
+            - product_colors.each do |color|
+              .one-variant-wrap style="width: #{100/product_colors.count}%;" class=("active" if color == product_color)
+                .one-variant data-price=color.catalog_door_exterior_door_variants.first.current_price data-url=color.catalog_door_exterior_door_variants.first.url data-color-name="(#{color.name})"
+                  .image style="background: url('#{color.icon}')no-repeat center center;"
+
+        .pc-product-details
+          .ps-titles
+            .title
+              = product.name
+            /.subtitle
+              |(#{product_color.name})
+            .label-text
+              = product.catalog_wall_producer.name
+
+          .ps-price-status
+            .ps-product-status.in-stock
+            /.ps-product-status.do-not-have
+            /.ps-product-status.ends
+
+            .ps-price
+              .ps-pack-price
+                span
+                  /= number_to_currency(price, :precision => 0, unit: '')
+                  |2300
+                sup
+                  |за упак.
+
+              .ps-one-price
+                span
+                  |110
+                sup
+                  |грн./м

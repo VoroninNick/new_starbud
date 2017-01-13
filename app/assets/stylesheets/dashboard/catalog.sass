@@ -136,6 +136,21 @@ nav.pagination
       background: #b0bec5
       color: #78909c
 
+.ps-product-status
+  &:after
+    +default_font_style(#000, 12, 400, 18)
+    font-family: "Roboto", sans-serif
+  &.in-stock:after
+    content: 'Є на складі'
+    color: #43a047
+
+  &.do-not-have
+    content: 'Немає'
+    color: #455a64
+  &.ends
+    content: 'Закінчується'
+    color: #e91e63
+
 .product-list
   padding-bottom: 120px
   .product-card-wrap
@@ -249,20 +264,33 @@ nav.pagination
             span
             sup
               font-size: 60%
-          .ps-product-status
-            &:after
-              +default_font_style(#000, 12, 400, 18)
-              font-family: "Roboto", sans-serif
-            &.in-stock:after
-              content: 'Є на складі'
-              color: #43a047
 
-            &.do-not-have
-              content: 'Немає'
-              color: #455a64
-            &.ends
-              content: 'Закінчується'
-              color: #e91e63
+
+    .product-card-wall
+      .pc-body
+        .pc-product-details
+          .ps-titles
+            .title
+              +default_font_style(#455a64, 16, 500, 18)
+            .label-text
+              +default_font_style(#78909c, 14, 400, 18)
+
+          .ps-price-status
+            +clear_fix
+            .ps-product-status, .ps-price
+              width: 50%
+              float: left
+
+            .ps-product-status
+            .ps-price
+              .ps-pack-price
+                span
+                  +default_font_style(#0d47a1, 18, 500, 18)
+                sup
+                  +default_font_style(#0d47a1, 16, 300, 18)
+                  top: -3px
+              .ps-one-price
+
 
     .product-card-inner
       background: #fff
