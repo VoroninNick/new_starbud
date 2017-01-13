@@ -44,7 +44,7 @@ class Catalog::Wall::WallpaperVariant < ActiveRecord::Base
                     default_url: "/images/:style/missing.png"
 
   has_attached_file :avatar,
-                    styles: { large: "380x220>"},
+                    styles: { large: "400x250>"},
                     convert_options: { large: "-quality 94 -interlace Plane"},
                     default_url: "/images/:style/missing.png"
 
@@ -83,7 +83,7 @@ class Catalog::Wall::WallpaperVariant < ActiveRecord::Base
       end
       field :avatar, :paperclip do
         label 'Аватар:'
-        help 'Зображення вантажити лише в форматі jpg 380x220 pixels'
+        help 'Зображення вантажити лише в форматі jpg 400x250 pixels'
       end
     end
   end
