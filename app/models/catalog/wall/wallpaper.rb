@@ -78,4 +78,33 @@ class Catalog::Wall::Wallpaper < ActiveRecord::Base
       end
     end
   end
+
+
+  paginates_per 12
+
+  filterrific(
+      default_filter_params: { sorted_by: 'name_desc' },
+      available_filters: [
+          :sorted_by
+      ]
+  )
+
+
+
+#   sorted by
+  scope :sorted_by, lambda { |sort_key|
+    direction = (sort_key =~ /desc$/) ? 'desc' : 'asc'
+    case sort_key.to_s
+      when /^name_/
+        order("catalog_wall_wallpapers.name #{ direction }")
+      else
+        raise(ArgumentError, "Invalid sort option: #{ sort_key.inspect }")
+    end
+  }
+  def self.options_for_sorted_by
+    [
+        ['Сортувати за алфавітом: нові', 'name_desc'],
+        ['Сортувати за алфавітом: старі', 'name_asc']
+    ]
+  end
 end

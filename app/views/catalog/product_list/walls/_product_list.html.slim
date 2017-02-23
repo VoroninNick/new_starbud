@@ -1,0 +1,15 @@
+/- if ext_doors.any?
+  - ext_doors.each do |product|
+    - if product.catalog_door_exterior_door_colors.any? && product.catalog_door_exterior_door_colors.first.catalog_door_exterior_door_variants.any?
+      = render partial: "partials/dashboard/product/exterior_door/product_card", locals: {product: product}
+
+- if products.any?
+  - products.each do |product|
+    = render partial: "partials/dashboard/product/walls/wallpaper/product_card", locals: {product: product}
+
+  .row
+    .columns
+      = paginate products
+  .row
+    .columns
+      = session["catalog#walls"]

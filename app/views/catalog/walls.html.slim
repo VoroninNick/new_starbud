@@ -1,0 +1,25 @@
+.catalog-page
+  .catalog-page-head
+    .row
+      .columns
+        = render partial: "partials/dashboard/promotions_banner"
+
+    = render "navigation/catalog_main_menu"
+
+  .catalog-page-body
+
+    = form_for_filterrific @filterrific, html: {class: 'catalog-filters-form'} do |f|
+      .columns
+        = f.select(:sorted_by, @filterrific.select_options[:sorted_by])
+
+      .large-3.columns
+        .catalog-filters-wrap
+          #selected-filters
+            = render partial: "catalog/selected_filters/walls/filter_list"
+
+          #control-filters-list
+            = render partial: "catalog/filter_list/walls/filter_list", locals: { f: f }
+
+      .large-9.columns
+        #products-list.product-list
+          = render partial: "catalog/product_list/walls/product_list", locals: { products: @products }

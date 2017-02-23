@@ -67,7 +67,7 @@ class CatalogController < ApplicationController
     end
   end
 
-
+  # floor list page
   def floors
     @filterrific = initialize_filterrific(
         Catalog::Floor::Floor,
@@ -86,13 +86,30 @@ class CatalogController < ApplicationController
     # @products = Catalog::Floor::Floor.all
   end
 
+  # floor item page
   def floor
     @product = Catalog::Floor::Floor.find_by_full_slug(params[:title])
   end
 
+  # walls list page
   def walls
+    @filterrific = initialize_filterrific(
+        Catalog::Wall::Wallpaper,
+        params[:filterrific],
+        select_options: {
+            sorted_by: Catalog::Wall::Wallpaper.options_for_sorted_by,
+        },
+        default_filter_params: {}
+    ) or return
+    @products = @filterrific.find.page(params[:page])
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+
+  # wall item page
   def wall
 
   end
