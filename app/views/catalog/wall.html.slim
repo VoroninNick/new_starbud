@@ -63,6 +63,20 @@
                   = inline_svg "crm/ic_favorite_black_48px.svg"
                   |В побажання
 
+        .product-info-block-body
+          .row
+            .columns
+              .color-select-variant
+                .label-text
+                  |Доступні кольори
+
+                /- if @available_colors.any?
+                  - @available_colors.each do |color|
+                    .input
+                      input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == @product_color) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name
+                      label for="color-#{color.slug}"
+                        .image style="background: url('#{color.icon}')no-repeat center center;"
+
   .row
     .columns
       ul#category-items-tabs.default-tabs-head.tabs data-tabs=""
