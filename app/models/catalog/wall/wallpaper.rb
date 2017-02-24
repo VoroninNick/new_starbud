@@ -79,6 +79,9 @@ class Catalog::Wall::Wallpaper < ActiveRecord::Base
     end
   end
 
+  def available_variants
+    self.catalog_wall_wallpaper_variants.uniq
+  end
 
 
   paginates_per 12

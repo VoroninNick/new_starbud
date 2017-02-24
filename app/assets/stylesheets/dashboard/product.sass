@@ -209,6 +209,7 @@
 
     &.product-scheme-door-opening
       margin-bottom: 75px
+
       .product-info-block-body
         +clear_fix
 
@@ -446,6 +447,67 @@
               +default_font_style( #546e7a, 1.125rem, 500, 21)
               font-style: normal
               margin-top: 5px
+
+  &.wall-page
+    .color-select-variant
+      +clear_fix
+      padding-bottom: 40px
+      //border-bottom: 1px solid #cfd8dc
+      margin-top: 20px
+      margin-bottom: 20px
+      .label-text
+        +default_font_style(#90a4ae, 13, 400,  15.6)
+        padding-bottom: 15px
+      input[type=radio]
+        position: absolute
+        z-index: -1000
+        left: -1000px
+        overflow: hidden
+        clip: rect(0 0 0 0)
+        height: 1px
+        width: 1px
+        margin: -1px
+        padding: 0
+        border: 0
+        & ~ label
+          display: block
+          width: 45px
+          height: 45px
+          position: relative
+          float: left
+          margin-left: 0
+          margin-right: 1px
+          cursor: pointer
+          .image
+            height: 100%
+
+        //&#color-92969b
+        //  & ~ label
+        //    background: #92969b
+        //&#color-78746e
+        //  & ~ label
+        //    background: #78746e
+        //&#color-bea18e
+        //  & ~ label
+        //    background: #bea18e
+        //&#color-ffffff
+        //  & ~ label
+        //    background: #fff
+        //&#color-5b5e5b
+        //  & ~ label
+        //    background: #5b5e5b
+        //&#color-a36b40
+        //  & ~ label
+        //    background: #a36b40
+
+        &:checked
+          & ~ label
+            &:after
+              content: ''
+              +triangle(top, 9px, #455a64)
+              +my_horizontal_align
+                position: absolute
+              bottom: -15px
 
 .additional-unit
   .title

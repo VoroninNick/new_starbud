@@ -7,7 +7,7 @@
 /- collection = product.catalog_floor_collection
 /- product_characteristics = collection.catalog_floor_collection_characteristics
 
-.product-page.floor-page
+.product-page.wall-page
   .row
     .columns
       ul.custom-breadcrumbs
@@ -51,7 +51,7 @@
             .medium-3.columns.patc-quantity
               input#quantity-product type="number" min="1" name="quantity" value="1"
               label for="quantity-product"
-                |Кіл-сть
+                |Кіл-сть в уп.
             .medium-9.columns.patc-buttons-wrap
               .patc-button-order
                 .material-component.ripple.default-button.red
@@ -70,10 +70,10 @@
                 .label-text
                   |Доступні кольори
 
-                /- if @available_colors.any?
-                  - @available_colors.each do |color|
+                - if product.available_variants.any?
+                  - product.available_variants.each do |color|
                     .input
-                      input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == @product_color) value=color.slug data-variant-id=color.id data-image=color.image.url(:large) data-title=color.name
+                      input id="color-#{color.slug}" type="radio" name="color_variant" checked=("checked" if color == product_variant) value=color.slug data-variant-id=color.id data-image=color.avatar.url(:large) data-title=color.name
                       label for="color-#{color.slug}"
                         .image style="background: url('#{color.icon}')no-repeat center center;"
 
