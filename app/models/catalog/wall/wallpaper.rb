@@ -80,6 +80,7 @@ class Catalog::Wall::Wallpaper < ActiveRecord::Base
   end
 
 
+
   paginates_per 12
 
   filterrific(

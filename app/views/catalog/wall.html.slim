@@ -1,0 +1,155 @@
+- product = @product
+- producer = product.catalog_wall_producer.name
+
+- product_variant = product.catalog_wall_wallpaper_variants.first
+- product_avatar = product_variant.avatar.url(:large)
+- price = product_variant.current_price
+/- collection = product.catalog_floor_collection
+/- product_characteristics = collection.catalog_floor_collection_characteristics
+
+.product-page.floor-page
+  .row
+    .columns
+      ul.custom-breadcrumbs
+        li
+          a href=dashboard_path
+            = inline_svg "crm/ic_home_black_48px.svg"
+        li
+          a href=catalog_walls_path
+            |Стіни
+        li
+          span
+            = product.name
+
+  .row
+    .large-4.columns
+      .product-avatar
+        = image_tag product_avatar
+
+    .large-8.columns
+      .product-body
+        .product-main-info
+          .title
+            = product.name
+
+          .subtitle
+            = producer
+
+          - if product.product_addition_option
+            p
+              = raw product.product_addition_option.short_description
+
+          hr
+          .product-total-price
+            span
+              = number_to_currency(price, :precision => 0, unit: '')
+            sup
+              |грн.
+          .product-status.in-stock
+
+          .row.product-adding-to-cart
+            .medium-3.columns.patc-quantity
+              input#quantity-product type="number" min="1" name="quantity" value="1"
+              label for="quantity-product"
+                |Кіл-сть
+            .medium-9.columns.patc-buttons-wrap
+              .patc-button-order
+                .material-component.ripple.default-button.red
+                  button
+                    |Добавити в корзину
+
+              .patc-button-favorite
+                a
+                  = inline_svg "crm/ic_favorite_black_48px.svg"
+                  |В побажання
+
+  .row
+    .columns
+      ul#category-items-tabs.default-tabs-head.tabs data-tabs=""
+        li.tabs-title.is-active
+          a href="#specifications" aria-selected="true"
+            |Технічні характеристики
+
+        li.tabs-title
+          a href="#care" aria-selected="true"
+            |Догляд
+
+        li.tabs-title
+          a href="#warranty-terms" aria-selected="true"
+            |Умови гарантії
+
+        li.tabs-title
+          a href="#reviews" aria-selected="true"
+            |Відгуки
+
+
+  .tabs-content.default-tabs-content data-tabs-content="category-items-tabs"
+    .tabs-panel.is-active id="specifications"
+      .row
+        .columns.large-3
+          .title
+            |Характеристика
+
+        .columns.large-9
+          .row
+            .columns
+              - if product.product_addition_option
+                = raw product.product_addition_option.specification
+
+          /- if product_characteristics && product_characteristics.any?
+            .row
+              - product_characteristics.each do |option|
+                .small-6.columns class=("end" if option == product_characteristics.last)
+                  .one-collection-characteristic
+                    = image_tag option.avatar.url(:thumb)
+                    p data-slug=option.value_slug
+                      = option.value
+                      b data-slug=option.key_slug
+                        = option.key
+
+
+          .row
+            /.medium-4.columns
+              .label-text
+                |Перспектива
+              .image style="background: url('#{asset_path(product.perspective.url(:large))}')no-repeat center center;"
+
+            /.medium-4.columns
+              .label-text
+                |Структура
+              .image style="background: url('#{asset_path(product.structure.url(:large))}')no-repeat center center;"
+
+            .columns
+              .label-text
+                |Інтер'єр
+              .image style="background: url('#{asset_path(product.image.url(:large))}')no-repeat center center;"
+
+    .tabs-panel id="care"
+      .row
+        .columns
+    /= raw @product.attention
+
+    .tabs-panel id="warranty-terms"
+      .row
+        .columns
+    /= raw @product.warranty
+
+    .tabs-panel id="reviews"
+      .row
+        .columns
+          |Відгуки
+
+    .expand-tabs
+      = inline_svg "crm/ic_keyboard_arrow_down_black_24px.svg"
+
+  /.additional-unit.grey-back-board
+      .title
+        |Рекомедуємо до товару
+
+  .additional-unit
+    .title
+      |Купляйте також
+
+    .row
+      .columns
+        = render partial: "partials/dashboard/promotions_banner"

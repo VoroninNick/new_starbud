@@ -111,7 +111,7 @@ class CatalogController < ApplicationController
 
   # wall item page
   def wall
-
+    @product = Catalog::Wall::Wallpaper.find_by_slug(params[:title])
   end
 
 

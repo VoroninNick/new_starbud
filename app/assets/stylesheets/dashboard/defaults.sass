@@ -1,0 +1,15 @@
+@import "mixins"
+
+$main-dark-text: #455a64
+
+select
+  &.default-select
+    background-color: transparent
+    +default_font_style($main-dark-text, 14, 500, 16)
+    border-bottom: 1px solid #b0bec5
+    height: auto
+    padding: 7px 0px
+    padding-right: 20px
+    background-image: asset-url("crm/ic_arrow_drop_down_black_24dp_2x.png")
+    background-size: 9%
+

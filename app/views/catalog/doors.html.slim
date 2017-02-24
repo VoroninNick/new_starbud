@@ -10,7 +10,7 @@
 
     = form_for_filterrific @filterrific, html: {class: 'catalog-filters-form'} do |f|
       .columns
-        = f.select(:sorted_by, @filterrific.select_options[:sorted_by])
+        = f.select(:sorted_by, @filterrific.select_options[:sorted_by], {}, { class: 'default-select' })
 
       .large-3.columns
         .catalog-filters-wrap
