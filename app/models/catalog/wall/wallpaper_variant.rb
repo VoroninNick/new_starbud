@@ -97,6 +97,8 @@ class Catalog::Wall::WallpaperVariant < ActiveRecord::Base
       price_group_first
     elsif price_group_second.present?
       price_group_second
+    else
+      2300
     end
   end
 
@@ -109,4 +111,18 @@ class Catalog::Wall::WallpaperVariant < ActiveRecord::Base
       'євро'
     end
   end
+
+  def amount_pack
+    if amount_pack.present?
+      amount_pack
+    else
+      11
+    end
+  end
+
+  def one_price
+    # current_price/amount_pack
+    110
+  end
+
 end

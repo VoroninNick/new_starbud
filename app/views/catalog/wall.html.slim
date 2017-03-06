@@ -4,6 +4,7 @@
 - product_variant = product.catalog_wall_wallpaper_variants.first
 - product_avatar = product_variant.avatar.url(:large)
 - price = product_variant.current_price
+- one_item_price = product_variant.one_price
 /- collection = product.catalog_floor_collection
 /- product_characteristics = collection.catalog_floor_collection_characteristics
 
@@ -44,7 +45,13 @@
             span
               = number_to_currency(price, :precision => 0, unit: '')
             sup
-              |грн.
+              |грн./упаковка
+          .product-one-item-price
+            span
+              = one_item_price
+            sup
+              |грн./рулон
+
           .product-status.in-stock
 
           .row.product-adding-to-cart

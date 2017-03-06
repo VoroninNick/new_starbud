@@ -43,8 +43,7 @@
             .ps-price
               .ps-pack-price
                 span
-                  /= number_to_currency(price, :precision => 0, unit: '')
-                  |2300
+                  = number_to_currency(price, :precision => 0, unit: '')
                 sup
                   |за упак.
 
